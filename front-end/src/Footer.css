@@ -1,0 +1,20 @@
+.footer{
+    background-color:orangered;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    padding:5px 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.text{
+    align-self: center;
+    font-size:12px;   
+}
+
+.logos{
+    display: flex;
+    gap:10px;
+}
