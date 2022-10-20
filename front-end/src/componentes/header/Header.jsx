@@ -1,13 +1,12 @@
 import React from 'react'
-
+import '../../index.css'
 const Header = () => {
   return (
     <header>
         <nav>
             <div>
-                <img src="" alt="" srcset="" />
+                <img src="" alt=""  />
             </div>
-            <input type="text" placeholder='busca tu auto favorito' />
             <button>Iniciar Sesion</button>
             <button>Crear Cuenta</button>
         </nav>

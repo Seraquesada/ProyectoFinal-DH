@@ -1,16 +1,4 @@
-:root{
-  --main-bg-color:#F0572D;
---main-text-color:#DFE4EA;
-}
-
-
-*{
-  box-sizing: border-box;
-  padding: 0;
-  margin:0;
-}
-
-/* #root {
+#root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -44,19 +32,10 @@
   }
 }
 
-.page-container{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.content-wrap{
-  flex:1;
-}
 .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
-} */
+}
