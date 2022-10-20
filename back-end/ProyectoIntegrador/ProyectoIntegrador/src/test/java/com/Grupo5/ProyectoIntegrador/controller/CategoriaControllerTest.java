@@ -57,7 +57,7 @@ class CategoriaControllerTest {
                 .andExpect(content().contentType("application/json"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.descripcion").value("muy premium"));
 
-        //testeamos metodo para actualizar un odontologo
+        //testeamos metodo para actualizar una categoria
 
         String payloadJson1 = "{\"id\" : \"2\", \"titulo\" : \"electrico\", \"descripcion\" : \"muy electrico\", \"urlImagen\" : \"www.imagen2.com\"}";
 
@@ -68,7 +68,7 @@ class CategoriaControllerTest {
                 .andExpect(content().contentType("application/json"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.descripcion").value("muy electrico"));
 
-        //testeamos metodo para eliminar un turno
+        //testeamos metodo para eliminar una categoria
 
         MvcResult respuesta4 = mockMvc.perform(MockMvcRequestBuilders.delete("/categorias/2"))
                 .andDo(print()).andExpect(status().isOk())
