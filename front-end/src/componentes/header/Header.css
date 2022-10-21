@@ -1,0 +1,36 @@
+header{
+    display: flex;
+    flex-direction: column;
+}
+.a{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.right-header{
+    display: flex;
+    align-items: flex-end;
+
+}
+.left-header{
+    display: flex;
+    align-items: flex-end;
+    padding-right: 1%;
+}
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+input{
+    width:max-content;
+    border-radius: 8px;
+}
+input:hover{
+    border-color: #434cfa;
+}
+
+img{
+    width: 100px;
+    border-radius: 8px;
+}
