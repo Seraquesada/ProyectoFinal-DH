@@ -21,11 +21,6 @@ const Header = () => {
                 <img id="logo" src="https://archive.org/download/revolt_dev_version/cover.jpg" alt="logo" />
                 <h4>¿Necesitas un auto? Aca te espera</h4>
             </div>
-            <div>
-                <button>Iniciar Sesion</button>
-                <button>Crear Cuenta</button>                
-            </div>
-
         </div>
         <nav>
             <form onSubmit={handleSubmit}>

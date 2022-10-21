@@ -1,18 +1,18 @@
-import './App.css'
-import Header from './componentes/header/Header'
-import Footer from './componentes/footer/Footer'
-import './Footer.css'
+import './App.css';
+import Login from './componentes/login/Login';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { PaginaPrincipal } from './componentes/paginaPrincipal/PaginaPrincipal';
 
 function App() {
 
 
   return (
-    <div >
-      <Header/>
-
-      <Footer/>
-    </div>
-    
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PaginaPrincipal />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
