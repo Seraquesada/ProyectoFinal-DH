@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.category {
+  border: 1 px solid #ddd;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.item img {
+    width: 120 px;
+    height: auto;
+}
+
+.item {
+    border: 0.5px solid #ddd;
+    padding: 20px;
+    width: 33%;
+    height: 350px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: top;
+    overflow-y:hidden;
+    gap: 10px;
+  }
+
+.item button{
+    padding: 5px;
+}
