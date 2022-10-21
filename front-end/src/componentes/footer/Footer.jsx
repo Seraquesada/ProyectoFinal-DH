@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.module.css'
+import './Footer.css'
 import {BsFacebook,BsTwitter,BsInstagram} from 'react-icons/bs'
 import {GrLinkedinOption} from 'react-icons/gr'
 

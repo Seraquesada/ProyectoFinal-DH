@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import "./Login.module.css";
+import "./Login.css";
+import axios from "axios";
 
 
 
@@ -9,8 +10,19 @@ export const Login = (props) => {
     const changeAuthMode = () => {
       setAuthMode(authMode === "signin" ? "signup" : "signin")
     }
-    const registrarUsuario = () => {
-      
+    const registrarUsuario = (e) => {
+      e.preventDefault();
+      let payload = {
+        "username": document.querySelector("#email").value,
+        "password" : document.querySelector("#contraseña").value
+      }
+      axios.post('http://localhost:8080/usuarios/authenticate', payload)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     }
   
     if (authMode === "signin") {
@@ -30,6 +42,7 @@ export const Login = (props) => {
                 <input
                   type="email"
                   className="form-control mt-1"
+                  id="email"
                   placeholder="Enter email"
                 />
               </div>
@@ -38,11 +51,12 @@ export const Login = (props) => {
                 <input
                   type="password"
                   className="form-control mt-1"
+                  id="contraseña"
                   placeholder="Enter password"
                 />
               </div>
               <div className="d-grid gap-2 mt-3">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-primary" onClick={registrarUsuario}>
                   Submit
                 </button>
               </div>
