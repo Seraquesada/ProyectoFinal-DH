@@ -35,7 +35,7 @@ public class UsuarioService implements UserDetailsService {
     public Usuario guardar(Usuario usuario) throws AlreadyExistException {
         List<Usuario> usuarios = buscarTodos();
         for (Usuario usu : usuarios) {
-            if (usu.getUserName() == usuario.getUserName()) {
+            if (usu.getMail() == usuario.getMail()) {
                 throw new AlreadyExistException("El usuario ya existe en la base de datos");
             }
         }
