@@ -1,5 +1,5 @@
-import React,{useState,useEffect} from 'react'
-import "./Header.module.css";
+import React,{useState} from 'react'
+import "./Header.css";
 
 const Header = () => {
 

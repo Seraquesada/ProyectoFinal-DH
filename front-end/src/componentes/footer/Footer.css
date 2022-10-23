@@ -18,3 +18,9 @@
     display: flex;
     gap:10px;
 }
+
+@media screen and (max-width:420px){
+   .logos{
+    display: none;
+   } 
+}
