@@ -10,7 +10,7 @@ export const Login = (props) => {
     const changeAuthMode = () => {
       setAuthMode(authMode === "signin" ? "signup" : "signin")
     }
-    const registrarUsuario = (e) => {
+    const iniciarSesion = (e) => {
       e.preventDefault();
       let payload = {
         "username": document.querySelector("#email").value,
@@ -24,44 +24,61 @@ export const Login = (props) => {
         console.log(error);
       });
     }
+
+    const registrarUsuario = (e) => {
+      e.preventDefault();
+      let payload = {
+        "nombre": document.querySelector("#nombre").value,
+        "apellido": document.querySelector("#apellido").value,
+        "email": document.querySelector("#email").value,
+        "password" : document.querySelector("#contraseña").value
+      }
+      axios.post('http://localhost:8080/usuarios/register', payload)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }
   
     if (authMode === "signin") {
       return (
         <div className="Auth-form-container">
           <form className="Auth-form">
             <div className="Auth-form-content">
-              <h3 className="Auth-form-title">Sign In</h3>
-              <div className="text-center">
-                Not registered yet?{" "}
-                <span className="link-primary" onClick={changeAuthMode}>
-                  Sign Up
-                </span>
-              </div>
+              <h3 className="Auth-form-title">Iniciar Sesión</h3>
               <div className="form-group mt-3">
-                <label>Email address</label>
+                <label for="email">Correo Electrónico</label>
                 <input
                   type="email"
                   className="form-control mt-1"
                   id="email"
-                  placeholder="Enter email"
+                  placeholder="Ingresa tu correo electrónico"
                 />
               </div>
               <div className="form-group mt-3">
-                <label>Password</label>
+                <label for="password">Contraseña</label>
                 <input
                   type="password"
                   className="form-control mt-1"
-                  id="contraseña"
-                  placeholder="Enter password"
+                  id="password"
+                  placeholder="Ingresa tu contraseña"
                 />
               </div>
               <div className="d-grid gap-2 mt-3">
-                <button type="submit" className="btn btn-primary" onClick={registrarUsuario}>
-                  Submit
+                <button type="submit" className="btn btn-primary" onClick={iniciarSesion}>
+                  Ingresar
                 </button>
               </div>
+              <div className="text-center">
+              ¿Todavía no te registraste?{" "}
+                <span className="link-primary" onClick={changeAuthMode}>
+                  Registrarse
+                </span>
+              </div>
               <p className="text-center mt-2">
-                Forgot <a href="#">password?</a>
+              ¿Olvidaste tu <a href="#">contraseña?</a>
               </p>
             </div>
           </form>
@@ -73,44 +90,65 @@ export const Login = (props) => {
       <div className="Auth-form-container">
         <form className="Auth-form">
           <div className="Auth-form-content">
-            <h3 className="Auth-form-title">Sign In</h3>
-            <div className="text-center">
-              Already registered?{" "}
-              <span className="link-primary" onClick={changeAuthMode}>
-                Sign In
-              </span>
-            </div>
+            <h3 className="Auth-form-title">Registro</h3>
             <div className="form-group mt-3">
-              <label>Full Name</label>
+              <label for="nombre">Nombre</label>
               <input
-                type="email"
+                type="text"
+                id="nombre"
                 className="form-control mt-1"
-                placeholder="e.g Jane Doe"
+                placeholder="Nombre"
               />
             </div>
             <div className="form-group mt-3">
-              <label>Email address</label>
+              <label for="apellido">Apellido</label>
               <input
-                type="email"
+                type="text"
+                id="apellido"
                 className="form-control mt-1"
-                placeholder="Email Address"
+                placeholder="Apellido"
               />
             </div>
             <div className="form-group mt-3">
-              <label>Password</label>
+              <label for="email">Correo Elecrónico</label>
+              <input
+                type="email"
+                id="email"
+                className="form-control mt-1"
+                placeholder="Correo Electrónico"
+              />
+            </div>
+            <div className="form-group mt-3">
+              <label for="password">Ingresar contraseña</label>
               <input
                 type="password"
+                id="password"
                 className="form-control mt-1"
-                placeholder="Password"
+                placeholder="Contraseña"
+              />
+            </div>
+            <div className="form-group mt-3">
+              <label for="passwordCheck">Confirmar contraseña</label>
+              <input
+                type="password"
+                id="passwordCheck"
+                className="form-control mt-1"
+                placeholder="Confirmar contraseña"
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary">
-                Submit
+              <button type="submit" className="btn btn-primary" onClick={registrarUsuario}>
+                Crear Cuenta
               </button>
             </div>
+            <div className="text-center">
+              ¿Ya estás registrado?{" "}
+              <span className="link-primary" onClick={changeAuthMode}>
+                Iniciar Sesión
+              </span>
+            </div>
             <p className="text-center mt-2">
-              Forgot <a href="#">password?</a>
+              ¿Olvidaste tu <a href="#">contraseña?</a>
             </p>
           </div>
         </form>
