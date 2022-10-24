@@ -1,16 +1,18 @@
 import React from "react";
+import './ItemCategory.css'
 
 
-const Item = ({id,titulo,descripcion,url_imagen}) => {
+const ItemCategory = ({id,titulo,descripcion,url_imagen}) => {
 
 return (
+
     <div className="item" key={id}>
         <img src={url_imagen} alt ="fotorender"/>
-        <h3>{titulo}</h3>
+        <h2>{titulo}</h2>
         <p>{descripcion}</p>
-        <button> Ver Detalle </button>
+        
     
     </div>
 )
 }
-export default Item
+export default ItemCategory

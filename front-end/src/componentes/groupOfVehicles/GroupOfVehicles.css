@@ -3,24 +3,24 @@
     margin: 0;
     box-sizing: border-box;
 }
-.category {
-  border: 1px solid rgb(197, 61, 61);
-  margin: 5px;
-  padding: 10px 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.groupOfVehicles{
+    border: 10px solid blue;
+    margin: 5px;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
-.tituloCategoria{
-  color: green;
-}
-.itemCategoria{
- display: flex;
- margin: 5px;
+.itemGroupOfVehicles{
+    display: flex;
+    margin: 5px;
 
 }
-
+.tituloGroupOfVehicles{
+    color: green;
+}
+/*
 .item img {
     width: 180px;
     height: 120px;
@@ -38,3 +38,4 @@
     gap: 10px;
   }
 
+*/

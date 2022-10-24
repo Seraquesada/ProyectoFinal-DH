@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*
+.vehicle {
+  border: 1px solid rgb(197, 61, 61);
+  padding: 20px 20px;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  size: 50vh;
+}
+*/
+.vehicle {
+  border: 0.5px solid #ddd;
+  margin: 10px;
+  padding: 10px;
+  width: 33%;
+  height: 200px;
+  border-radius: 5px;
+  display: flex;
+  text-align: top;
+  gap: 10px;
+}
+
+.descriptionVehicle{
+ margin: 3px;
+ color: red;
+}
+
+.vehicle {
+    border: 0.5px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    width: 33%;
+    height: 200px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    text-align: top;
+    gap: 10px;
+  }
+
+.vehicle button{
+  color: yellow;
+  background-color:blue;
+    padding: 5px;
+}
