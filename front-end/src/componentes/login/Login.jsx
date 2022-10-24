@@ -44,30 +44,30 @@ export const Login = (props) => {
   
     if (authMode === "signin") {
       return (
-        <div className="Auth-form-container">
+        <div className="Auth-form-container bg-dark">
           <form className="Auth-form">
             <div className="Auth-form-content">
               <h3 className="Auth-form-title">Iniciar Sesión</h3>
-              <div className="form-group mt-3">
-                <label for="email">Correo Electrónico</label>
+              <div className="form-floating mt-3">
                 <input
                   type="email"
                   className="form-control mt-1"
                   id="email"
                   placeholder="Ingresa tu correo electrónico"
                 />
+                <label htmlFor="email">Correo Electrónico</label>
               </div>
-              <div className="form-group mt-3">
-                <label for="password">Contraseña</label>
+              <div className="form-floating mt-3">
                 <input
                   type="password"
                   className="form-control mt-1"
                   id="password"
                   placeholder="Ingresa tu contraseña"
                 />
+                <label htmlFor="password">Contraseña</label>
               </div>
               <div className="d-grid gap-2 mt-3">
-                <button type="submit" className="btn btn-primary" onClick={iniciarSesion}>
+                <button type="submit" className="btn btn-warning" onClick={iniciarSesion}>
                   Ingresar
                 </button>
               </div>
@@ -78,7 +78,7 @@ export const Login = (props) => {
                 </span>
               </div>
               <p className="text-center mt-2">
-              ¿Olvidaste tu <a href="#">contraseña?</a>
+              ¿Olvidaste tu <a href="#">contraseña</a>?
               </p>
             </div>
           </form>
@@ -87,57 +87,62 @@ export const Login = (props) => {
     }
   
     return (
-      <div className="Auth-form-container">
+      <div className="Auth-form-container bg-dark">
         <form className="Auth-form">
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Crear Cuenta</h3>
-            <div className="form-group mt-3">
-              <label for="nombre">Nombre</label>
+            <div className="form-floating mt-3">
               <input
                 type="text"
                 id="nombre"
                 className="form-control mt-1"
                 placeholder="Nombre"
               />
+              <label htmlFor="nombre">Nombre</label>
             </div>
-            <div className="form-group mt-3">
-              <label for="apellido">Apellido</label>
+            <div className="form-floating mt-3">
               <input
                 type="text"
                 id="apellido"
                 className="form-control mt-1"
                 placeholder="Apellido"
               />
+              <label htmlFor="apellido">Apellido</label>
             </div>
-            <div className="form-group mt-3">
-              <label for="email">Correo Elecrónico</label>
+            <div className="form-floating mt-3">
               <input
                 type="email"
                 id="email"
                 className="form-control mt-1"
-                placeholder="Correo Electrónico"
+                placeholder="ejemplo@mail.com"
+                required
               />
+              <label htmlFor="email">Correo Elecrónico</label>
             </div>
-            <div className="form-group mt-3">
-              <label for="password">Ingresar contraseña</label>
+            <div className="form-floating mt-3">
               <input
                 type="password"
                 id="password"
                 className="form-control mt-1"
-                placeholder="Contraseña"
+                placeholder="Ingresa tu contraseña"
+                required
+                minLength={6}
               />
+              <label htmlFor="password">Contraseña</label>
             </div>
-            <div className="form-group mt-3">
-              <label for="passwordCheck">Confirmar contraseña</label>
+            <div className="form-floating mt-3">
               <input
                 type="password"
                 id="passwordCheck"
                 className="form-control mt-1"
-                placeholder="Confirmar contraseña"
+                placeholder="Confirmar Contraseña"
+                required
+                minLength={6}
               />
+              <label htmlFor="passwordCheck">Confirmar Contraseña</label>
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary" onClick={registrarUsuario}>
+              <button type="submit" className="btn btn-warning" onClick={registrarUsuario}>
                 Registrarse
               </button>
             </div>
@@ -147,9 +152,6 @@ export const Login = (props) => {
                 Iniciar Sesión
               </span>
             </div>
-            <p className="text-center mt-2">
-              ¿Olvidaste tu <a href="#">contraseña?</a>
-            </p>
           </div>
         </form>
       </div>
