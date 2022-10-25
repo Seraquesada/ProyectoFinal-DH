@@ -1,4 +1,5 @@
 header{
+<<<<<<< HEAD
 
     display: flex;
     justify-content: space-between;
@@ -15,6 +16,15 @@ header{
 .left-header{
     display: flex;
     align-items: flex-end;
+=======
+    display: flex;
+    flex-direction: column;
+}
+div .a{
+    display: flex;
+justify-content: space-between;
+width: 100%;
+>>>>>>> footer
 }
 
 h1 {
@@ -34,3 +44,25 @@ img{
     width: 100px;
     border-radius: 8px;
 }
+<<<<<<< HEAD
+=======
+
+button {
+    border-radius: 8px;
+    border: 1px solid #7eee4a;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #e9f5a6;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+button:hover {
+    border-color: #434cfa;
+}
+button:focus,
+    button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+>>>>>>> footer

@@ -7,6 +7,7 @@ export const Home = (props) => {
     <div >
       <Header/>
       <SearchBar/>
+      <SideBar/>
       <Footer/>
     </div>
     )
