@@ -68,7 +68,7 @@ export const Login = (props) => {
                 type="email"
                 className="form-control mt-1"
                 id="email"
-                placeholder="Ingresa tu correo electrónico"
+                placeholder=" "
               />
               <label htmlFor="email">Correo Electrónico</label>
             </div>
@@ -77,7 +77,7 @@ export const Login = (props) => {
                 type="password"
                 className="form-control mt-1"
                 id="password"
-                placeholder="Ingresa tu contraseña"
+                placeholder=" "
               />
               <label htmlFor="password">Contraseña</label>
             </div>
@@ -88,12 +88,12 @@ export const Login = (props) => {
             </div>
             <div className="text-center">
             ¿Todavía no te registraste?{" "}
-              <span className="link-primary" onClick={changeAuthMode}>
+              <span style={{cursor:"pointer"}} className="link-primary" onClick={changeAuthMode}>
                 Registrarse
               </span>
             </div>
             <p className="text-center mt-2">
-            ¿Olvidaste tu <a href="#">contraseña</a>?
+            ¿Olvidaste tu <span style={{cursor:"pointer"}} className="link-primary" >contraseña</span>?
             </p>
           </div>
         </form>
@@ -105,33 +105,33 @@ export const Login = (props) => {
     <div className="Auth-form-container bg-dark">
       <Form className="Auth-form" noValidate validated={validated} onSubmit={handleSubmit}>
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Iniciar Sesión</h3>
+          <h3 className="Auth-form-title">Registrarse</h3>
             <Form.Group className="mb-3" controlId="nombre">
               <FloatingLabel controlId="nombre" label="Nombre" className="mb-3">
-                <Form.Control type="text" placeholder="Nombre" required/>
+                <Form.Control type="text" placeholder=" " required/>
               </FloatingLabel>
             </Form.Group>
             <Form.Group className="mb-3" controlId="apellido">
               <FloatingLabel controlId="apellido" label="Apellido" className="mb-3">
-                <Form.Control type="text" placeholder="Apellido" required/>
+                <Form.Control type="text" placeholder=" " required/>
               </FloatingLabel>
             </Form.Group>
             <Form.Group className="mb-3" controlId="email">
               <FloatingLabel controlId="email" label="Correo Elecrónico" className="mb-3">
-                <Form.Control type="email" placeholder="correo@dominio.com" required/>
+                <Form.Control type="email" placeholder=" " required/>
               </FloatingLabel>
             </Form.Group>
             <Form.Group className="mb-3" controlId="password">
               <FloatingLabel controlId="password" label="Contraseña">
-                <Form.Control type="password" placeholder="Contraseña" required/>
+                <Form.Control type="password" placeholder=" " minLength={6} required/>
               </FloatingLabel>
             </Form.Group>
             <Form.Group className="mb-3" controlId="passwordCheck">
               <FloatingLabel controlId="passwordCheck" label="Verificar Contraseña">
-                <Form.Control type="password" placeholder="passwordCheck" min={6} required />
+                <Form.Control type="password" placeholder=" " minLength={6} required />
               </FloatingLabel>
             </Form.Group>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3" controlId="formCheck">
             <Form.Check
               required
               label="Acepto términos y condiciones."
@@ -145,7 +145,7 @@ export const Login = (props) => {
               </Button>
               <div className="text-center">
               ¿Ya estás registrado?{" "}
-              <span className="link-primary" onClick={changeAuthMode}>
+              <span style={{cursor:"pointer"}} className="link-primary" onClick={changeAuthMode}>
                 Iniciar Sesión
               </span>
               </div>

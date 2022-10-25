@@ -2,22 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
 }
 
 .Auth-form {
-  width: 420px;
+  width: 85%;
   box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  border-radius: 8px;
+  padding-top: 3vh;
+  padding-bottom: 2vh;
+  border-radius: 7px;
   background-color: white;
 }
 
 .Auth-form-content {
-  padding-left: 12%;
-  padding-right: 12%;
+  padding-left: 7%;
+  padding-right: 7%;
 }
 
 .Auth-form-title {
