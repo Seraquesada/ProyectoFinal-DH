@@ -1,0 +1,22 @@
+[
+    {
+        "value":"buenosAires",
+        "label":"Buenos Aires"
+    },
+    {
+        "value":"laPlata",
+        "label":"La Plata"
+    },
+    {
+        "value":"comodoroRivadavia",
+        "label":"Comodoro Rivadavia"
+    },
+    {
+        "value":"salta",
+        "label":"Salta"
+    },
+    {
+        "value":"bariloche",
+        "label":"Bariloche"
+    }
+]
