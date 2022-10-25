@@ -20,8 +20,6 @@ export const Login = (props) => {
     }else {
       registrarUsuario(event)
     }
-
-
   };
 
   const changeAuthMode = () => {
