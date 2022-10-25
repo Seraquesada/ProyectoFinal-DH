@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 import React,{useState,useEffect} from 'react';
 import CustomModal from "../customModal/CustomModal";
 
-=======
-import React,{useState} from 'react'
->>>>>>> footer
 import "./Header.css";
 
 const Header = () => {
