@@ -9,6 +9,12 @@
     width: 100%;
 }
 
+.fab{
+    padding: 0px 8px;
+    font-size: 20px;
+    
+}
+
 .text{
     align-self: center;
     font-size:12px;   
@@ -18,6 +24,17 @@
     display: flex;
     gap:10px;
 }
+
+@media screen and (max-width: 768px) {
+    footer {
+        height: 34px;
+        font-size: 0.8rem;
+    }
+    .fab {
+        font-size: 1rem;
+    }
+}
+    
 
 @media screen and (max-width:420px){
    .logos{

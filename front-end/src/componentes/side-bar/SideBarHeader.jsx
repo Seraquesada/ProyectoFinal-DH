@@ -2,8 +2,8 @@ import { VscChromeClose } from "react-icons/vsc";
 import React from 'react'
 function SideBarHeader() {
     return ( 
-        <div>
-            <label>  <VscChromeClose /> </label>
+        <div className="SideBarHeader">
+            <label htmlFor='btn-menu' className="menuAncore">  <VscChromeClose /> </label>
             <h3>MENÚ</h3>
         </div>
      );
