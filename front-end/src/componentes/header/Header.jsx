@@ -1,12 +1,10 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect} from 'react';
+import CustomModal from "../customModal/CustomModal";
 
 import "./Header.css";
 
 const Header = () => {
 
-
-
-    //TODO cambiar logo
   return (
     <header>
             <div className="left-header">            
@@ -14,8 +12,7 @@ const Header = () => {
                 <h4>¿Necesitas un auto? Aca te espera</h4>
             </div>
             <div className="right-header">
-                <button>Iniciar Sesion</button>
-                <button>Crear Cuenta</button>
+              <CustomModal/>
             </div>
     </header>
   )
