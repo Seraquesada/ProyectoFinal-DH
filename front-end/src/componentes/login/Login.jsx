@@ -7,8 +7,8 @@ import axios from "axios";
 
 
 
-export const Login = (props) => {
-  const [authMode, setAuthMode] = useState("signin")
+export const Login = ({authMode, setAuthMode}) => {
+  
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
@@ -89,7 +89,7 @@ export const Login = (props) => {
             <div className="text-center">
             ¿Todavía no te registraste?{" "}
               <span style={{cursor:"pointer"}} className="link-primary" onClick={changeAuthMode}>
-                Registrarse
+                Registrate
               </span>
             </div>
             <p className="text-center mt-2">

@@ -6,18 +6,29 @@ import "./CustomModal.css";
 
 export const CustomModal = (props) => {
   const [show, setShow] = useState(false);
+  const [authMode, setAuthMode] = useState("signin")
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const wrapperFunctionSignIn = () => {
+    handleShow();
+    setAuthMode("signin");
+  }
+  
+  const wrapperFunctionSignUp = () => {
+    handleShow();
+    setAuthMode("signup");
+  }
+
   return (
     <>
-      <Button variant="warning" onClick={handleShow}>
+      <Button variant="warning" onClick={wrapperFunctionSignIn}>
         Iniciar Sesión
       </Button>
 
-      <Button variant="secondary" onClick={handleShow}>
-        Registrarse
+      <Button variant="secondary" onClick={wrapperFunctionSignUp}>
+        Registrate
       </Button>
 
       <Modal
@@ -27,10 +38,10 @@ export const CustomModal = (props) => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Bienvenido a Re-Volt Rentals</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-dark">
-          <Login/>
+          <Login authMode={authMode} setAuthMode={setAuthMode}/>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
