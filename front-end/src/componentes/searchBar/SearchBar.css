@@ -1,0 +1,34 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    background-color:#FF9E00;
+    border-radius: 80px ;
+}
+
+.container-forms{
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid blue;
+    border-radius: 8px;
+}
+
+.buscar{
+    cursor: pointer;
+    border: none;
+    border-radius:25px;
+    width: 100%;
+    padding:0.5rem;
+    background-color:#3D9CF4;
+}
+
+.select{
+    width:100%;
+    padding:0.5rem;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0px;
+}
