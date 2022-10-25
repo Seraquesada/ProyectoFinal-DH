@@ -1,22 +1,22 @@
 header{
-    display: flex;
-    flex-direction: column;
-}
-.a{
+
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width:100%;
+    padding:1%;
+    
 }
+
 .right-header{
     display: flex;
     align-items: flex-end;
-
 }
+
 .left-header{
     display: flex;
     align-items: flex-end;
-    padding-right: 1%;
 }
+
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
