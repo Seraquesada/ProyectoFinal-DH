@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="footer">
                 <div className="text">
                     <p className="p-derechos">
-                    © 2021 RE-VOLT RENTALS INC
+                    © 2022 RE-VOLT RENTALS INC
                     </p>
                 </div>
                 <div className="logos">

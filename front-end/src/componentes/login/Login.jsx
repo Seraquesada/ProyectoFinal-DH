@@ -23,10 +23,7 @@ const Login = ({authMode, setAuthMode, logIn}) => {
   };
 
   const changeAuthMode = () => {
-    if(authMode ==="signup"){
-      setAuthMode("signin")
-    }
-    //setAuthMode(authMode === "signin" ? "signup" : "signin")
+    setAuthMode(authMode === "signin" ? "signup" : "signin")
   }
   const iniciarSesion = (e) => {
     e.preventDefault();
