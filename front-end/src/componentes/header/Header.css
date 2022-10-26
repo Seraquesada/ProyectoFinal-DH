@@ -1,0 +1,39 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    padding:1%;
+
+}
+
+.right-header{
+    display: flex;
+    align-items: center;
+    width: 35vw;
+    justify-content: space-evenly
+}
+
+.left-header{
+    display: flex;
+    align-items: center;
+    width: 65vw;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+input{
+    width:max-content;
+    border-radius: 8px;
+}
+input:hover{
+    border-color: #434cfa;
+}
+
+img#logo{
+    display: flex;
+    width: 100px;
+    border-radius: 8px;
+}

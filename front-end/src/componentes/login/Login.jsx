@@ -1,120 +1,159 @@
 import React, {useState} from 'react';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import "./Login.css";
 import axios from "axios";
 
 
 
-export const Login = (props) => {
-    let [authMode, setAuthMode] = useState("signin")
+const Login = ({authMode, setAuthMode, logIn}) => {
+  
+  const [validated, setValidated] = useState(false);
 
-    const changeAuthMode = () => {
-      setAuthMode(authMode === "signin" ? "signup" : "signin")
-    }
-    const registrarUsuario = (e) => {
-      e.preventDefault();
-      let payload = {
-        "username": document.querySelector("#email").value,
-        "password" : document.querySelector("#contraseña").value
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+      setValidated(true);
+    }else {
+      if(authMode==='signin'){
+        iniciarSesion(event);
       }
-      axios.post('http://localhost:8080/usuarios/authenticate', payload)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+      registrarUsuario(event);
     }
-  
-    if (authMode === "signin") {
-      return (
-        <div className="Auth-form-container">
-          <form className="Auth-form">
-            <div className="Auth-form-content">
-              <h3 className="Auth-form-title">Sign In</h3>
-              <div className="text-center">
-                Not registered yet?{" "}
-                <span className="link-primary" onClick={changeAuthMode}>
-                  Sign Up
-                </span>
-              </div>
-              <div className="form-group mt-3">
-                <label>Email address</label>
-                <input
-                  type="email"
-                  className="form-control mt-1"
-                  id="email"
-                  placeholder="Enter email"
-                />
-              </div>
-              <div className="form-group mt-3">
-                <label>Password</label>
-                <input
-                  type="password"
-                  className="form-control mt-1"
-                  id="contraseña"
-                  placeholder="Enter password"
-                />
-              </div>
-              <div className="d-grid gap-2 mt-3">
-                <button type="submit" className="btn btn-primary" onClick={registrarUsuario}>
-                  Submit
-                </button>
-              </div>
-              <p className="text-center mt-2">
-                Forgot <a href="#">password?</a>
-              </p>
-            </div>
-          </form>
-        </div>
-      )
+  };
+
+  const changeAuthMode = () => {
+    setAuthMode(authMode === "signin" ? "signup" : "signin")
+    setValidated(false)
+  }
+  const iniciarSesion = (e) => {
+    e.preventDefault();
+    let payload = {
+      "username": document.querySelector("#email").value,
+      "password" : document.querySelector("#password").value
     }
+    //logIn();
+    axios.post('http://localhost:8080/usuarios/authenticate', payload)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
+  }
+
+  const registrarUsuario = (e) => {
+    e.preventDefault();
+    let payload = {
+      "nombre": document.querySelector("#nombre").value + " " + document.querySelector("#apellido").value,
+      "userName": document.querySelector("#email").value,
+      "mail": document.querySelector("#email").value,
+      "password" : document.querySelector("#password").value
+    }
+    axios.post('http://localhost:8080/usuarios', payload)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
   
+  if (authMode === "signin") {
     return (
-      <div className="Auth-form-container">
-        <form className="Auth-form">
+      <div className="Auth-form-container bg-dark">
+        <Form className="Auth-form" noValidate validated={validated} onSubmit={handleSubmit}>
           <div className="Auth-form-content">
-            <h3 className="Auth-form-title">Sign In</h3>
+            <h3 className="Auth-form-title">Iniciar Sesión</h3>
+            <Form.Group className="mb-3" controlId="email">
+              <FloatingLabel controlId="email" label="Correo Elecrónico" className="mb-3">
+                <Form.Control type="email" placeholder=" " required/>
+              </FloatingLabel>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="password">
+              <FloatingLabel controlId="password" label="Contraseña">
+                <Form.Control type="password" placeholder=" " minLength={6} required/>
+              </FloatingLabel>
+            </Form.Group>
+            <div className="d-grid gap-2 mt-3">
+              <Button type="submit" className="btn-warning">             
+                Ingresar
+              </Button>
+              
+            </div>
             <div className="text-center">
-              Already registered?{" "}
-              <span className="link-primary" onClick={changeAuthMode}>
-                Sign In
+            ¿Todavía no te registraste?{" "}
+              <span style={{cursor:"pointer"}} className="link-primary" onClick={changeAuthMode}>
+                Registrate
               </span>
             </div>
-            <div className="form-group mt-3">
-              <label>Full Name</label>
-              <input
-                type="email"
-                className="form-control mt-1"
-                placeholder="e.g Jane Doe"
-              />
-            </div>
-            <div className="form-group mt-3">
-              <label>Email address</label>
-              <input
-                type="email"
-                className="form-control mt-1"
-                placeholder="Email Address"
-              />
-            </div>
-            <div className="form-group mt-3">
-              <label>Password</label>
-              <input
-                type="password"
-                className="form-control mt-1"
-                placeholder="Password"
-              />
-            </div>
-            <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary">
-                Submit
-              </button>
-            </div>
             <p className="text-center mt-2">
-              Forgot <a href="#">password?</a>
+            ¿Olvidaste tu <span style={{cursor:"pointer"}} className="link-primary" >contraseña</span>?
             </p>
           </div>
-        </form>
+        </Form>
       </div>
-    )
+    ) 
+  }else{
+
+    
+    return (
+    <div className="Auth-form-container bg-dark">
+      <Form className="Auth-form" noValidate validated={validated} onSubmit={handleSubmit}>
+        <div className="Auth-form-content">
+          <h3 className="Auth-form-title">Registrarse</h3>
+            <Form.Group className="mb-3" controlId="nombre">
+              <FloatingLabel controlId="nombre" label="Nombre" className="mb-3">
+                <Form.Control type="text" placeholder=" " required/>
+              </FloatingLabel>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="apellido">
+              <FloatingLabel controlId="apellido" label="Apellido" className="mb-3">
+                <Form.Control type="text" placeholder=" " required/>
+              </FloatingLabel>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="email">
+              <FloatingLabel controlId="email" label="Correo Elecrónico" className="mb-3">
+                <Form.Control type="email" placeholder=" " required/>
+              </FloatingLabel>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="password">
+              <FloatingLabel controlId="password" label="Contraseña">
+                <Form.Control type="password" placeholder=" " minLength={6} required/>
+              </FloatingLabel>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="passwordCheck">
+              <FloatingLabel controlId="passwordCheck" label="Verificar Contraseña">
+                <Form.Control type="password" placeholder=" " minLength={6} required />
+              </FloatingLabel>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formCheck">
+            <Form.Check
+              required
+              label="Acepto términos y condiciones."
+              feedback="Debes aceptar los términos y condiciones antes de registrarte"
+              feedbackType="invalid"
+            />
+            </Form.Group>
+            <div className="d-grid gap-2 mt-3">
+              <Button type="submit" className="btn-warning">
+                Crear Cuenta
+              </Button>
+              <div className="text-center">
+              ¿Ya estás registrado?{" "}
+              <span style={{cursor:"pointer"}} className="link-primary" onClick={changeAuthMode}>
+                Iniciar Sesión
+              </span>
+              </div>
+            </div>
+        </div>
+      </Form>
+    </div>    
+  )
+}
 }
 export default Login

@@ -1,12 +1,17 @@
 .footer{
-    background-color:orangered;
+    background-color:#FF9E00;
     color:white;
     display: flex;
     justify-content: space-between;
     padding:5px 15px;
-    position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.fab{
+    padding: 0px 8px;
+    font-size: 20px;
+    
 }
 
 .text{
@@ -16,5 +21,27 @@
 
 .logos{
     display: flex;
+    align-items: center;
     gap:10px;
+}
+
+.p-derechos{
+    margin: 1rem 0 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        height: 34px;
+        font-size: 0.8rem;
+    }
+    .fab {
+        font-size: 1rem;
+    }
+}
+    
+
+@media screen and (max-width:420px){
+   .logos{
+    display: none;
+   } 
 }

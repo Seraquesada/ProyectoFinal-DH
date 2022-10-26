@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    background-color:#FF9E00;
+    border-radius: 80px ;
+    align-items: center;
+}
+
+.container-forms{
+    width:100%;
+}
+.form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0.5rem 0px;    
+}
+.buscar{
+    border: none;
+    background-color:#3D9CF4;
+}
+
+.select{
+    min-width:210px ;
+}
