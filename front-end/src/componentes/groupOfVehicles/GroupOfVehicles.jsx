@@ -3,7 +3,7 @@ import Item from '../vehicle/Vehicle'
 import data from '../assets/vehiculos.json'
 import './GroupOfVehicles.css'
 
-const GroupOfVehicles = ()=> {
+const GroupOfVehicles = (props)=> {
 
 return (
 
@@ -14,7 +14,8 @@ return (
         </div>
       <div className='itemGroupOfVehicles'>
       {
-        data.map((singleItem)=> 
+        data.filter(singleItem => singleItem.category == props.categoria1.titulo).map((singleItem)=> 
+        
         <Item
           key={singleItem.id}
           url_imagen = {singleItem.url_imagen}
@@ -24,6 +25,7 @@ return (
           description={singleItem.description}
         
         /> 
+        
       )
       }</div>
     </div>

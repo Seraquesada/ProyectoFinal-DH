@@ -17,7 +17,7 @@ const Header = () => {
     <header>
         <div className="a">
 
-            <div className>            
+            <div className="hola">            
                 <img id="logo" src="https://archive.org/download/revolt_dev_version/cover.jpg" alt="logo" />
                 <h4>¿Necesitas un auto? Aca te espera</h4>
             </div>
