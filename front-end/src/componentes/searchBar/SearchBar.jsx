@@ -45,7 +45,7 @@ const SearchBar = () => {
             
         })}
     return (
-        <div className="container">    
+        <div className="container my-4">    
             <div className="container-forms">
                 <form className="form" onSubmit={handleSubmit}>
 

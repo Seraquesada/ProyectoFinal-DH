@@ -18,12 +18,16 @@ const Login = ({authMode, setAuthMode, logIn}) => {
       event.stopPropagation();
       setValidated(true);
     }else {
-      registrarUsuario(event)
+      if(authMode==='signin'){
+        iniciarSesion(event);
+      }
+      registrarUsuario(event);
     }
   };
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin")
+    setValidated(false)
   }
   const iniciarSesion = (e) => {
     e.preventDefault();
@@ -62,31 +66,24 @@ const Login = ({authMode, setAuthMode, logIn}) => {
   if (authMode === "signin") {
     return (
       <div className="Auth-form-container bg-dark">
-        <form className="Auth-form">
+        <Form className="Auth-form" noValidate validated={validated} onSubmit={handleSubmit}>
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Iniciar Sesión</h3>
-            <div className="form-floating mt-3">
-              <input
-                type="email"
-                className="form-control mt-1"
-                id="email"
-                placeholder=" "
-              />
-              <label htmlFor="email">Correo Electrónico</label>
-            </div>
-            <div className="form-floating mt-3">
-              <input
-                type="password"
-                className="form-control mt-1"
-                id="password"
-                placeholder=" "
-              />
-              <label htmlFor="password">Contraseña</label>
-            </div>
+            <Form.Group className="mb-3" controlId="email">
+              <FloatingLabel controlId="email" label="Correo Elecrónico" className="mb-3">
+                <Form.Control type="email" placeholder=" " required/>
+              </FloatingLabel>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="password">
+              <FloatingLabel controlId="password" label="Contraseña">
+                <Form.Control type="password" placeholder=" " minLength={6} required/>
+              </FloatingLabel>
+            </Form.Group>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-warning" onClick={iniciarSesion}>
+              <Button type="submit" className="btn-warning">             
                 Ingresar
-              </button>
+              </Button>
+              
             </div>
             <div className="text-center">
             ¿Todavía no te registraste?{" "}
@@ -98,7 +95,7 @@ const Login = ({authMode, setAuthMode, logIn}) => {
             ¿Olvidaste tu <span style={{cursor:"pointer"}} className="link-primary" >contraseña</span>?
             </p>
           </div>
-        </form>
+        </Form>
       </div>
     ) 
   }else{
