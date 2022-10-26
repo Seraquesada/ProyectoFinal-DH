@@ -12,13 +12,13 @@ const Header = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
     }
-    //TODO cambiar logo
+
   return (
     <header>
         <div className="a">
 
-            <div className>            
-                <img id="logo" src="https://archive.org/download/revolt_dev_version/cover.jpg" alt="logo" />
+            <div className="hola">            
+                
                 <h4>¿Necesitas un auto? Aca te espera</h4>
             </div>
         </div>

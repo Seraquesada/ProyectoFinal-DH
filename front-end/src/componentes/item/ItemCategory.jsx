@@ -1,7 +1,8 @@
 import React from "react";
 
 
-const ItemCategory = ({id,titulo,descripcion,url_imagen}) => {
+const ItemCategory = ({titulo,descripcion,url_imagen, cambioCategoria}) => {
+
 
 return (
     
@@ -12,7 +13,8 @@ return (
         <h2>{titulo}</h2>
         <p>{descripcion}</p>
         </div>
-    
+        <button onClick= {()=>cambioCategoria(titulo)} > Ver Vehiculos </button>
+
     </div>
 )
 }
