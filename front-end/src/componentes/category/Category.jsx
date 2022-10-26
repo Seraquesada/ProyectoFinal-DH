@@ -1,14 +1,15 @@
 import React from 'react'
 import Item from '../item/ItemCategory'
 import data from '../assets/categorias.json'
-import './Category.css'
+import './category.css'
 
 const Category = ()=> {
 
 return (
-
+    
     
     <div className='category'>
+      <div className='container-category'>
         <div className='tituloCategoria'>
         <h2>Selecciona la categoria</h2>
         </div>
@@ -24,6 +25,7 @@ return (
         /> 
       )
       }</div>
+      </div>
     </div>
   )
 }

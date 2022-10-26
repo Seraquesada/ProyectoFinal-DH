@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from '../vehicle/Vehicle'
 import data from '../assets/vehiculos.json'
-import './GroupOfVehicles.css'
+import './groupOfVehicles.css'
 
 const GroupOfVehicles = ()=> {
 
@@ -9,9 +9,8 @@ return (
 
     
     <div className='groupOfVehicles'>
-        <div className='tituloGroupOfVehicles'>
-        <h2>Recomendaciones</h2>
-        </div>
+       <div className='container-reco'>
+        <h2 className='tituloReco'>Recomendaciones</h2>
       <div className='itemGroupOfVehicles'>
       {
         data.map((singleItem)=> 
@@ -22,10 +21,11 @@ return (
           title = {singleItem.title}
           location ={singleItem.location}
           description={singleItem.description}
-        
+
         /> 
       )
       }</div>
+    </div>
     </div>
   )
 }

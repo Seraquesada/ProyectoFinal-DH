@@ -2,25 +2,25 @@
 	{
 		"id" : "1",
 		"titulo" : "Sedan",
-		"descripcion" : "Vehiculo de cuatro puertas y baúl. Ideal para cuatro personas y dos valijas grandes.",
+		"descripcion" : "300 vehiculos",
 		"url_imagen" : "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
 	},
 	{
 		"id" : "2",
 		"titulo" : "Sport Utility Vehicle",
-		"descripcion" : "Los SUVs  son  para uso en caminos mantenidos, ya sean pavimentados, de grava o de tierra. Amplios y con baul integrado, ideales para aventureros!",
+		"descripcion" : "200 vehiculos",
 		"url_imagen" : "https://imageio.forbes.com/specials-images/imageserve/5d389da195e0230008f6724a/2020-Ford-Explorer/0x0.jpg?format=jpg&crop=4560,2565,x430,y658,safe&width=960"
 	},
 	{
 		"id" : "3",
 		"titulo" : "Hatchback",
-		"descripcion" : "Vechículos de tres o cinco puertas contando la puerta trasera que abre hacia arriba para brindar acceso a un área de carga. Son amplios, ideales para llevar todo tu equipaje!",
+		"descripcion" : "3 vehiculos",
 		"url_imagen" : "https://hagerty-media-prod.imgix.net/2021/12/2021-Toyota-Corolla-Hatchback-SE-Nightshade-3-scaled.jpg?auto=format%2Ccompress&ixlib=php-3.3.0"
 	},
 	{
 		"id" : "4",
 		"titulo" : "Coupe",
-		"descripcion" : "Los cupés logran un gran equilibrio entre estilo, sustancia y espacio. La mayoría tienen dos puertas y cuatro asientos, algunos tienen asientos traseros más prácticos que otros. El baul suele ser espacioso.",
+		"descripcion" : "100 vehiculos",
 		"url_imagen" : "https://carsguide-res.cloudinary.com/image/upload/f_auto%2Cfl_lossy%2Cq_auto%2Ct_default/v1/editorial/BMW-4-Series_Coupe_2014.jpg"
 	}
 ]

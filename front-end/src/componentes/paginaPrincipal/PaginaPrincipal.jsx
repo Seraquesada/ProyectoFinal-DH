@@ -7,10 +7,11 @@ import GroupOfVehicles from "../GroupOfVehicles/GroupOfVehicles";
 export const PaginaPrincipal = (props) => {
     return (
         <div >
-      <Header/>
+          
       <Category/>
       <GroupOfVehicles/>
-      <Footer/>
+      
+
     </div>
     )
 }
