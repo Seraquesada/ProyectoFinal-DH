@@ -33,3 +33,22 @@
 [2022-10-21 17:38:05] [ INFO ] [CategoriaController:37] Se busco todas las categorias
 [2022-10-21 17:38:14] [ INFO ] [CategoriaController:66] La categoria se actualizo
 [2022-10-21 17:38:23] [ INFO ] [CategoriaController:58] Se elimino la categoria
+[2022-10-25 17:53:41] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-25 17:53:41] [ INFO ] [CategoriaController:50] Se encontro la categoria economico
+[2022-10-25 17:53:41] [ INFO ] [CategoriaController:30] Se registro la categoria premium
+[2022-10-25 17:53:41] [ INFO ] [CategoriaController:66] La categoria se actualizo
+[2022-10-25 17:53:42] [ INFO ] [CategoriaController:58] Se elimino la categoria
+[2022-10-25 18:04:31] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-25 18:04:31] [ INFO ] [CategoriaController:50] Se encontro la categoria economico
+[2022-10-25 18:04:32] [ INFO ] [CategoriaController:30] Se registro la categoria premium
+[2022-10-25 18:04:32] [ INFO ] [CategoriaController:66] La categoria se actualizo
+[2022-10-25 18:04:32] [ INFO ] [CategoriaController:58] Se elimino la categoria
+[2022-10-26 17:57:59] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-26 17:58:26] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-26 19:16:19] [ INFO ] [CategoriaController:30] Se registro la categoria economico
+[2022-10-26 19:16:25] [ INFO ] [CategoriaController:30] Se registro la categoria premium
+[2022-10-26 19:16:34] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-26 19:16:50] [ INFO ] [CategoriaController:30] Se registro la categoria economico
+[2022-10-26 19:17:02] [ INFO ] [CategoriaController:30] Se registro la categoria no economico
+[2022-10-26 19:17:34] [ INFO ] [CategoriaController:30] Se registro la categoria premium
+[2022-10-26 19:17:48] [ INFO ] [CategoriaController:37] Se busco todas las categorias
