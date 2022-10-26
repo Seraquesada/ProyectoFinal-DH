@@ -6,7 +6,7 @@ const ItemCategory = ({titulo,descripcion,url_imagen, cambioCategoria}) => {
 
 return (
     
-    <div className="item" key={id}>
+    <div className="item" >
         <img src={url_imagen} alt ="fotorender"/>
         
         <div className="container-category-text">  

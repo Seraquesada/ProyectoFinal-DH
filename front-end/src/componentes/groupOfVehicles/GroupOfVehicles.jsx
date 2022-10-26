@@ -13,7 +13,7 @@ return (
         <h2 className='tituloReco'>Recomendaciones</h2>
       <div className='itemGroupOfVehicles'>
       {
-        data.filter(singleItem => singleItem.category == props.categoria1.titulo).map((singleItem)=> 
+        data.filter(singleItem=>singleItem.category == props.categoria1).map((singleItem)=> 
         
         <Item
           key={singleItem.id}

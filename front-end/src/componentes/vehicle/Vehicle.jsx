@@ -4,7 +4,6 @@ import { GrStar } from "react-icons/gr";
 import {IoMdPin} from "react-icons/io";
 import{GiCarWheel,GiCarSeat} from "react-icons/gi";
 const Vehicle = ({
-  id,
   url_imagen,
   category,
   title,
@@ -12,7 +11,7 @@ const Vehicle = ({
   description,
 }) => {
   return (
-    <div className="vehicle" key={id}>
+    <div className="vehicle">
       <div  className="container-img-vehicle">
         <img className="imgVehicle" src={url_imagen} alt="fotorender" />
       </div>

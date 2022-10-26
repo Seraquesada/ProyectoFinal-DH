@@ -1,6 +1,5 @@
 import React from 'react'
 import ItemCategory from '../item/ItemCategory'
-import data from '../assets/categorias.json'
 import './category.css'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
