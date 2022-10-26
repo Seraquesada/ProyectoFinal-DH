@@ -1,46 +1,75 @@
 import React,{useState} from 'react'
 import Select from 'react-select'
 import DatePicker from "react-datepicker"
+import "bootstrap/dist/css/bootstrap.min.css"
 import "react-datepicker/dist/react-datepicker.css";
-
 import ciudades from '../../assets/ciudades.json'
 import "./SearchBar.css"
 
 const SearchBar = () => {
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    }
-
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(null);
-    const onChange = (dates) => {
+    const [city, setCity] = useState({} );
+        
+
+
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let payload = {
+            "ciudad": city,
+            "fechaInicio": startDate,
+            "fechaFinal": endDate 
+        }
+    }
+
+    const handleDateChange = (dates) => {
         const [start, end] = dates;
         setStartDate(start);
         setEndDate(end);
     };
+
+    const handleCityChange = (e) =>{
+        setCity(e.value)
+        
+    }
+    const customStyles = {
+        option: (provided) => ({
+            ...provided,
+            padding: 10,
+            colors:{
+                ...provided.colors,
+                primary:"red"
+            }
+            
+        })}
     return (
         <div className="container">    
             <div className="container-forms">
                 <form className="form" onSubmit={handleSubmit}>
-                    <Select className="select" options={ciudades}/>
-                    <DatePicker
+
+                        <Select
+                        styles={customStyles}
+                        placeholder="Eliga localidad" 
+                        className="select" 
+                        options={ciudades}
+                        onChange={handleCityChange}
+                    />
+
+                        <DatePicker
+                        className="datepicker"
                         selected={startDate}
-                        onChange={onChange}
+                        onChange={handleDateChange}
                         startDate={startDate}
                         endDate={endDate}
                         withPortal
                         selectsRange
-                        
                         />
-                    <button className='buscar'>Buscar</button>
+                    
+
+                    <button className='buscar btn btn-secondary'>Buscar</button>
                 </form>
-            </div>
-            <div className="title">
-                <h1>
-                    Re-Volts Rental
-                </h1>
-                <img id="logo" src="https://archive.org/download/revolt_dev_version/cover.jpg" alt="logo" />
             </div>
         </div>
     )

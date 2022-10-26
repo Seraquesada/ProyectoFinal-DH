@@ -1,34 +1,24 @@
 .container{
     display: flex;
-    justify-content: space-around;
     background-color:#FF9E00;
     border-radius: 80px ;
 }
 
 .container-forms{
-    display: flex;
-    justify-content: space-evenly;
-    border: 1px solid blue;
-    border-radius: 8px;
+    width:100%;
 }
-
-.buscar{
-    cursor: pointer;
-    border: none;
-    border-radius:25px;
+.form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
-    padding:0.5rem;
+    margin: 0.5rem 0px;    
+}
+.buscar{
+    border: none;
     background-color:#3D9CF4;
 }
 
 .select{
-    width:100%;
-    padding:0.5rem;
-}
-
-.title{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0px;
+    min-width:210px ;
 }

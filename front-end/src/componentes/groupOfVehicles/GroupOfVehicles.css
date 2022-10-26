@@ -1,0 +1,102 @@
+.groupOfVehicles{
+    background: #DFE4EA;
+}
+.tituloReco{
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #31363F;   
+    font-size: 25px;
+    color: color ;
+    padding-top: 10px;
+}
+.vehicle .descriptionVehicle{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 10px;
+justify-content: space-between;
+}
+
+  .container-reco{
+    margin: 0px  28px;
+    padding-bottom: 20px;
+  
+  }
+ 
+  .imgVehicle{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.itemGroupOfVehicles{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+}
+
+.vehicle{
+    height: 282px;
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    text-align: center;
+    transition: all 0.25s;
+}
+.category-star{
+    display: flex;
+    gap: 5px;
+}
+.reco-name-category{
+text-transform: uppercase;
+color:#383B58;
+font-size: 12px;
+align-self: center;
+}
+.star{
+    color:#F0572D;
+}
+.titleCard{
+   color: #31363F;
+   font-size: 20px;
+   text-align: initial;
+}
+.container-location{
+    display: flex;
+    gap:10px;
+    font-size: 15px;
+}
+.container-location>div{
+    display: flex;
+    font-size: 15px;
+}
+
+.linkMap{
+    color:#F0572D; 
+}
+.features{
+font-size: 18px;
+}
+.description{
+    text-align: start;
+}
+.buttonVerMas{
+    padding: 0.7rem;
+    
+    width: 100%;
+    background-color: #F0572D;
+    color:white ;
+    font-weight: 700;
+    font-style: normal;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media  screen and (max-width:768px){
+    .itemGroupOfVehicles{
+        grid-template-columns: repeat(1,1fr) !important;     
+    }
+}
+@media screen and (max-width:470px){
+    
+}
