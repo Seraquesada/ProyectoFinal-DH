@@ -12,15 +12,16 @@ const SearchBar = () => {
     const [endDate, setEndDate] = useState(null);
     const [city, setCity] = useState({} );
         
-    let payload = {
+
+
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let payload = {
             "ciudad": city,
             "fechaInicio": startDate,
             "fechaFinal": endDate 
         }
-    console.log(payload);
-    
-    const handleSubmit = (e) => {
-        e.preventDefault()
     }
 
     const handleDateChange = (dates) => {
@@ -33,19 +34,30 @@ const SearchBar = () => {
         setCity(e.value)
         
     }
-
+    const customStyles = {
+        option: (provided) => ({
+            ...provided,
+            padding: 10,
+            colors:{
+                ...provided.colors,
+                primary:"red"
+            }
+            
+        })}
     return (
         <div className="container">    
             <div className="container-forms">
                 <form className="form" onSubmit={handleSubmit}>
-                    <Select
-                    placeholder="Eliga localidad" 
-                    className="select mb-2" 
-                    options={ciudades}
-                    onChange={handleCityChange}
+
+                        <Select
+                        styles={customStyles}
+                        placeholder="Eliga localidad" 
+                        className="select" 
+                        options={ciudades}
+                        onChange={handleCityChange}
                     />
-                    
-                    <DatePicker
+
+                        <DatePicker
                         className="datepicker"
                         selected={startDate}
                         onChange={handleDateChange}
@@ -54,14 +66,10 @@ const SearchBar = () => {
                         withPortal
                         selectsRange
                         />
-                    <button className='buscar'>Buscar</button>
+                    
+
+                    <button className='buscar btn btn-secondary'>Buscar</button>
                 </form>
-            </div>
-            <div className="title">
-                <h1>
-                    Re-Volts Rental
-                </h1>
-                <img id="logo" src="https://archive.org/download/revolt_dev_version/cover.jpg" alt="logo" />
             </div>
         </div>
     )
