@@ -27,11 +27,11 @@ const Login = ({authMode, setAuthMode, logIn}) => {
   }
   const iniciarSesion = (e) => {
     e.preventDefault();
-    logIn();
     let payload = {
       "username": document.querySelector("#email").value,
-      "password" : document.querySelector("#contraseña").value
+      "password" : document.querySelector("#password").value
     }
+    //logIn();
     axios.post('http://localhost:8080/usuarios/authenticate', payload)
     .then(function (response) {
       console.log(response);
@@ -47,8 +47,8 @@ const Login = ({authMode, setAuthMode, logIn}) => {
     let payload = {
       "nombre": document.querySelector("#nombre").value + " " + document.querySelector("#apellido").value,
       "userName": document.querySelector("#email").value,
-      "email": document.querySelector("#email").value,
-      "password" : document.querySelector("#contraseña").value
+      "mail": document.querySelector("#email").value,
+      "password" : document.querySelector("#password").value
     }
     axios.post('http://localhost:8080/usuarios', payload)
     .then(function (response) {
