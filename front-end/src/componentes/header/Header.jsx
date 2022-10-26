@@ -30,7 +30,7 @@ const Header = () => {
     )
   }
   return (
-    <header className="bg-dark">
+    <header className="bg-dark mb-4">
             <div className="left-header">            
                 <img id="logo" src="https://archive.org/download/revolt_dev_version/cover.jpg" alt="logo" />
                 <h4 className="text-light">¿Necesitas un auto?</h4>

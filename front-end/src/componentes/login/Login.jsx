@@ -23,7 +23,10 @@ const Login = ({authMode, setAuthMode, logIn}) => {
   };
 
   const changeAuthMode = () => {
-    setAuthMode(authMode === "signin" ? "signup" : "signin")
+    if(authMode ==="signup"){
+      setAuthMode("signin")
+    }
+    //setAuthMode(authMode === "signin" ? "signup" : "signin")
   }
   const iniciarSesion = (e) => {
     e.preventDefault();
@@ -101,9 +104,10 @@ const Login = ({authMode, setAuthMode, logIn}) => {
         </form>
       </div>
     ) 
-  }
+  }else{
 
-  return (
+    
+    return (
     <div className="Auth-form-container bg-dark">
       <Form className="Auth-form" noValidate validated={validated} onSubmit={handleSubmit}>
         <div className="Auth-form-content">
@@ -156,5 +160,6 @@ const Login = ({authMode, setAuthMode, logIn}) => {
       </Form>
     </div>    
   )
+}
 }
 export default Login
