@@ -1,17 +1,16 @@
-import React, { useState }  from "react";
-import Header from "../header/Header";
+import React from "react";
+import Header from "../header/Header"
 import Category from "../category/Category"
 import Footer from "../footer/Footer"
 import GroupOfVehicles from "../GroupOfVehicles/GroupOfVehicles";
-import SearchBar from "../searchBar/SearchBar";
-import SideBar from "../sideBar/SideBar";
+import { useState } from "react";
 
-export const Home = (props) => {
+export const PaginaPrincipal = () => {
 const [categoria, setCategoria] = useState(" ");
+console.log(categoria)
     return (
-    <div >
+        <div >
       <Header/>
-      <SearchBar/>
       <Category cambioCategoria = {setCategoria}/>
       <GroupOfVehicles categoria1={categoria}/>
       <Footer/>
