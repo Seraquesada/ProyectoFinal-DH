@@ -8,12 +8,15 @@ header{
 
 .right-header{
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    width: 35vw;
+    justify-content: space-evenly
 }
 
 .left-header{
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    width: 65vw;
 }
 
 h1 {
@@ -29,7 +32,8 @@ input:hover{
     border-color: #434cfa;
 }
 
-img{
+img#logo{
+    display: flex;
     width: 100px;
     border-radius: 8px;
 }

@@ -7,8 +7,8 @@ import axios from "axios";
 
 
 
-export const Login = (props) => {
-  const [authMode, setAuthMode] = useState("")
+const Login = ({authMode, setAuthMode, logIn}) => {
+  
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
@@ -30,6 +30,7 @@ export const Login = (props) => {
   }
   const iniciarSesion = (e) => {
     e.preventDefault();
+    logIn();
     let payload = {
       "username": document.querySelector("#email").value,
       "password" : document.querySelector("#contraseña").value
@@ -41,6 +42,7 @@ export const Login = (props) => {
     .catch(function (error) {
       console.log(error);
     });
+    
   }
 
   const registrarUsuario = (e) => {
@@ -92,7 +94,7 @@ export const Login = (props) => {
             <div className="text-center">
             ¿Todavía no te registraste?{" "}
               <span style={{cursor:"pointer"}} className="link-primary" onClick={changeAuthMode}>
-                Registrarse
+                Registrate
               </span>
             </div>
             <p className="text-center mt-2">
