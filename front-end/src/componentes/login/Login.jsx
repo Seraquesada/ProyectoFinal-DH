@@ -7,7 +7,7 @@ import axios from "axios";
 
 
 
-export const Login = ({authMode, setAuthMode}) => {
+const Login = ({authMode, setAuthMode, logIn}) => {
   
   const [validated, setValidated] = useState(false);
 
@@ -27,6 +27,7 @@ export const Login = ({authMode, setAuthMode}) => {
   }
   const iniciarSesion = (e) => {
     e.preventDefault();
+    logIn();
     let payload = {
       "username": document.querySelector("#email").value,
       "password" : document.querySelector("#contraseña").value
@@ -38,6 +39,7 @@ export const Login = ({authMode, setAuthMode}) => {
     .catch(function (error) {
       console.log(error);
     });
+    
   }
 
   const registrarUsuario = (e) => {
