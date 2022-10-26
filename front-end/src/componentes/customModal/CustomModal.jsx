@@ -24,7 +24,7 @@ const CustomModal = ({logIn}) => {
   return (
     <>
       <Button variant="warning" onClick={wrapperFunctionSignIn}>
-        Iniciar Sesión
+        Ingresar
       </Button>
 
       <Button variant="secondary" onClick={wrapperFunctionSignUp}>
