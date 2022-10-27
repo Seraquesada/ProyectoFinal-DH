@@ -28,9 +28,6 @@ input{
     width:max-content;
     border-radius: 8px;
 }
-input:hover{
-    border-color: #434cfa;
-}
 
 img#logo{
     display: flex;

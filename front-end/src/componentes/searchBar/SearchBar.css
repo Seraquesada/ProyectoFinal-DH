@@ -1,7 +1,7 @@
 .container{
     display: flex;
     background-color:#FF9E00;
-    border-radius: 80px ;
+    border-radius: 10px ;
     align-items: center;
 }
 
@@ -14,10 +14,6 @@
     align-items: center;
     width: 100%;
     margin: 0.5rem 0px;    
-}
-.buscar{
-    border: none;
-    background-color:#3D9CF4;
 }
 
 .select{

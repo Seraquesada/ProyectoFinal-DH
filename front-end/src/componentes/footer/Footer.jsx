@@ -5,7 +5,7 @@ import {GrLinkedinOption} from 'react-icons/gr'
 
 const Footer = () => {
     return(
-        <footer className="footer">
+        <footer className="footer text-dark">
                 <div className="text">
                     <p className="p-derechos">
                     © 2022 RE-VOLT RENTALS INC

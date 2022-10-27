@@ -51,7 +51,7 @@ const SearchBar = () => {
 
                         <Select
                         styles={customStyles}
-                        placeholder="Eliga localidad" 
+                        placeholder="Elija localidad" 
                         className="select" 
                         options={ciudades}
                         onChange={handleCityChange}
@@ -68,7 +68,7 @@ const SearchBar = () => {
                         />
                     
 
-                    <button className='buscar btn btn-secondary'>Buscar</button>
+                    <button className='btn btn-secondary'>Buscar</button>
                 </form>
             </div>
         </div>
