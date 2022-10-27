@@ -2,14 +2,16 @@ import React, {useState} from 'react';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
 import "./Login.css";
 import axios from "axios";
 
 
 
-const Login = ({authMode, setAuthMode, logIn}) => {
+const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
   
   const [validated, setValidated] = useState(false);
+  const [badCredentials, setBadCredentials] = useState(false);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -18,12 +20,17 @@ const Login = ({authMode, setAuthMode, logIn}) => {
       event.stopPropagation();
       setValidated(true);
     }else {
-      registrarUsuario(event)
+      authMode === "signin" ? iniciarSesion(event) : registrarUsuario(event)
     }
-  };
-
+  }
+  function parseJwt (token) {
+    let base64Url = token.split('.')[1];
+    let base64 = base64Url.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64));
+  }
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin")
+    setValidated(false)
   }
   const iniciarSesion = (e) => {
     e.preventDefault();
@@ -31,13 +38,19 @@ const Login = ({authMode, setAuthMode, logIn}) => {
       "username": document.querySelector("#email").value,
       "password" : document.querySelector("#password").value
     }
-    //logIn();
     axios.post('http://localhost:8080/usuarios/authenticate', payload)
     .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
+      if(response.status === 200){
+        localStorage.setItem('jwt', response.data.jwt);
+        const unjwt = parseJwt(localStorage.getItem('jwt'))
+        console.log(unjwt)
+        setUserName(unjwt.sub)
+        logIn();
+      }else{
+        console.log(response);
+      }
+    }).catch(function (error) {
+      error.code === 'ERR_BAD_REQUEST' ? setBadCredentials(true) : console.log(error);
     });
     
   }
@@ -53,6 +66,9 @@ const Login = ({authMode, setAuthMode, logIn}) => {
     axios.post('http://localhost:8080/usuarios', payload)
     .then(function (response) {
       console.log(response);
+      if(response.status === 200){
+        setShow(false);
+    }
     })
     .catch(function (error) {
       console.log(error);
@@ -62,31 +78,27 @@ const Login = ({authMode, setAuthMode, logIn}) => {
   if (authMode === "signin") {
     return (
       <div className="Auth-form-container bg-dark">
-        <form className="Auth-form">
+        <Form className="Auth-form" noValidate validated={validated} onSubmit={handleSubmit}>
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Iniciar Sesión</h3>
-            <div className="form-floating mt-3">
-              <input
-                type="email"
-                className="form-control mt-1"
-                id="email"
-                placeholder=" "
-              />
-              <label htmlFor="email">Correo Electrónico</label>
-            </div>
-            <div className="form-floating mt-3">
-              <input
-                type="password"
-                className="form-control mt-1"
-                id="password"
-                placeholder=" "
-              />
-              <label htmlFor="password">Contraseña</label>
-            </div>
+            <Form.Group className="mb-3" controlId="email">
+              <FloatingLabel controlId="email" label="Correo Elecrónico" className="mb-3">
+                <Form.Control type="email" placeholder=" " required/>
+              </FloatingLabel>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="password">
+              <FloatingLabel controlId="password" label="Contraseña">
+                <Form.Control type="password" placeholder=" " minLength={6} required/>
+              </FloatingLabel>
+            </Form.Group>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-warning" onClick={iniciarSesion}>
+            <Alert className={badCredentials ? null : "d-none"} key={"danger"} variant={"danger"} >
+              Credenciales Inválidas, por favor intenta de nuevo.
+            </Alert>
+              <Button type="submit" className="btn-warning">             
                 Ingresar
-              </button>
+              </Button>
+              
             </div>
             <div className="text-center">
             ¿Todavía no te registraste?{" "}
@@ -98,7 +110,7 @@ const Login = ({authMode, setAuthMode, logIn}) => {
             ¿Olvidaste tu <span style={{cursor:"pointer"}} className="link-primary" >contraseña</span>?
             </p>
           </div>
-        </form>
+        </Form>
       </div>
     ) 
   }else{

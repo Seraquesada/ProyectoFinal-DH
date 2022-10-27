@@ -92,6 +92,8 @@ font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
 }
+
+
 @media  screen and (max-width:768px){
     .itemGroupOfVehicles{
         grid-template-columns: repeat(1,1fr) !important;     

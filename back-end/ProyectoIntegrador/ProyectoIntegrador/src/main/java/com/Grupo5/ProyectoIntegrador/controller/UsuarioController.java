@@ -49,7 +49,7 @@ public class UsuarioController {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String passHash = passwordEncoder.encode(usuario.getPassword());
         usuario.setPassword(passHash);
-        usuario.setUsuarioRol(RolUsuario.ROLE_USER);
+        usuario.setUsuarioRol(RolUsuario.ROLE_ADMIN);
         ResponseEntity<Usuario> respuesta;
         respuesta=ResponseEntity.ok(usuarioService.guardar(usuario));
         return respuesta;

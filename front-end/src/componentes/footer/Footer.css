@@ -4,7 +4,6 @@
     display: flex;
     justify-content: space-between;
     padding:5px 15px;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
