@@ -43,8 +43,9 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
       if(response.status === 200){
         localStorage.setItem('jwt', response.data.jwt);
         const unjwt = parseJwt(localStorage.getItem('jwt'))
-        console.log(unjwt)
-        setUserName(unjwt.sub)
+        console.log(unjwt.sub)
+        const iniciales = unjwt.sub.substr(0, 2).toUpperCase();
+        setUserName(iniciales)
         logIn();
       }else{
         console.log(response);
