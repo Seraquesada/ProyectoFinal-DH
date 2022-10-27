@@ -2,14 +2,16 @@ import React, {useState} from 'react';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
 import "./Login.css";
 import axios from "axios";
 
 
 
-const Login = ({authMode, setAuthMode, logIn}) => {
+const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
   
   const [validated, setValidated] = useState(false);
+  const [badCredentials, setBadCredentials] = useState(false);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -18,13 +20,14 @@ const Login = ({authMode, setAuthMode, logIn}) => {
       event.stopPropagation();
       setValidated(true);
     }else {
-      if(authMode==='signin'){
-        iniciarSesion(event);
-      }
-      registrarUsuario(event);
+      authMode === "signin" ? iniciarSesion(event) : registrarUsuario(event)
     }
-  };
-
+  }
+  function parseJwt (token) {
+    let base64Url = token.split('.')[1];
+    let base64 = base64Url.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64));
+  }
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin")
     setValidated(false)
@@ -35,13 +38,19 @@ const Login = ({authMode, setAuthMode, logIn}) => {
       "username": document.querySelector("#email").value,
       "password" : document.querySelector("#password").value
     }
-    //logIn();
     axios.post('http://localhost:8080/usuarios/authenticate', payload)
     .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
+      if(response.status === 200){
+        localStorage.setItem('jwt', response.data.jwt);
+        const unjwt = parseJwt(localStorage.getItem('jwt'))
+        console.log(unjwt)
+        setUserName(unjwt.sub)
+        logIn();
+      }else{
+        console.log(response);
+      }
+    }).catch(function (error) {
+      error.code === 'ERR_BAD_REQUEST' ? setBadCredentials(true) : console.log(error);
     });
     
   }
@@ -57,6 +66,9 @@ const Login = ({authMode, setAuthMode, logIn}) => {
     axios.post('http://localhost:8080/usuarios', payload)
     .then(function (response) {
       console.log(response);
+      if(response.status === 200){
+        setShow(false);
+    }
     })
     .catch(function (error) {
       console.log(error);
@@ -80,6 +92,9 @@ const Login = ({authMode, setAuthMode, logIn}) => {
               </FloatingLabel>
             </Form.Group>
             <div className="d-grid gap-2 mt-3">
+            <Alert className={badCredentials ? null : "d-none"} key={"danger"} variant={"danger"} >
+              Credenciales Inválidas, por favor intenta de nuevo.
+            </Alert>
               <Button type="submit" className="btn-warning">             
                 Ingresar
               </Button>
