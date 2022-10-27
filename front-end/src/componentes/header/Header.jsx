@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import CustomModal from "../customModal/CustomModal";
 import Button from 'react-bootstrap/Button';
-import SearchBar from "../searchBar/SearchBar";
 
 import "./Header.css";
 
@@ -23,7 +22,7 @@ const Header = () => {
                   <img id="logo" src="https://archive.org/download/revolt_dev_version/cover.jpg" alt="logo" />
                   <h4 className="text-light">¿Necesitas un auto?</h4>
               </div>
-              <SearchBar/>
+              
               <div className="right-header">
                 <div id="username" className="text-center text-light">{userName}</div>
                 <Button variant="warning" onClick={logOut}>
@@ -40,7 +39,6 @@ const Header = () => {
                 <h4 className="text-light">¿Necesitas un auto?</h4>
             </div>
             
-            <SearchBar/>
             <div className="right-header">
               <CustomModal logIn={logIn} setUserName={setUserName}/>
             </div>
