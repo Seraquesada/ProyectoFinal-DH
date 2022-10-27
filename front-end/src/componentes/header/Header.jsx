@@ -8,7 +8,9 @@ import "./Header.css";
 const Header = () => {
 
   const [loggedIn, setLoggedIn] = useState(false);
+  const [userName, setUserName] = useState("Juan");
   const logOut = () => {
+    localStorage.removeItem('jwt');
     setLoggedIn(false)
   }
   const logIn = () => {
@@ -23,7 +25,7 @@ const Header = () => {
               </div>
               <SearchBar/>
               <div className="right-header">
-                <div className="text-center text-light">user_name</div>
+                <div id="username" className="text-center text-light">{userName}</div>
                 <Button variant="warning" onClick={logOut}>
                   Cerrar Sesión
                 </Button>
@@ -40,7 +42,7 @@ const Header = () => {
             
             <SearchBar/>
             <div className="right-header">
-              <CustomModal logIn={logIn}/>
+              <CustomModal logIn={logIn} setUserName={setUserName}/>
             </div>
     </header>
   )
