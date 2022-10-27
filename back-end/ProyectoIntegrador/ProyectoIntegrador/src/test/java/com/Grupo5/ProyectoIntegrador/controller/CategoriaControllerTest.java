@@ -29,10 +29,6 @@ class CategoriaControllerTest {
 
     @Test
     public void categoriaControllerTest () throws Exception{
-        Categoria categoria1 = new Categoria("economico", "muy economico", "www.imagen.com");
-        Categoria categoria2 = new Categoria("premium", "muy premium", "www.imagen2.com");
-
-        Categoria categoriaGuardar1 = categoriaService.guardar(categoria1);
 
         //testeamos metodo listar todos
         MvcResult respuesta = mockMvc.perform(MockMvcRequestBuilders.get("/categorias").accept(MediaType.APPLICATION_JSON)).andDo(print()).andExpect(status().isOk()).andReturn();
@@ -41,7 +37,7 @@ class CategoriaControllerTest {
         //testeamos metodo get by id
         MvcResult respuesta1 = mockMvc.perform(MockMvcRequestBuilders.get("/categorias/1"))
                 .andDo(print()).andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.titulo").value("economico"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.titulo").value("Sedan"))
                 .andReturn();
 
         assertEquals("application/json", respuesta1.getResponse().getContentType());

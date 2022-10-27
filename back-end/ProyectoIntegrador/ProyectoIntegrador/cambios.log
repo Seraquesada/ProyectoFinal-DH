@@ -6092,3 +6092,20 @@
 [2022-10-27 14:33:14] [ INFO ] [CategoriaController:37] Se busco todas las categorias
 [2022-10-27 14:36:33] [ INFO ] [CategoriaController:37] Se busco todas las categorias
 [2022-10-27 14:44:20] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-27 17:40:26] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-27 17:40:26] [ INFO ] [CategoriaController:50] Se encontro la categoria Sedan
+[2022-10-27 17:42:55] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-27 17:42:56] [ INFO ] [CategoriaController:50] Se encontro la categoria Sedan
+[2022-10-27 17:42:56] [ INFO ] [CategoriaController:30] Se registro la categoria premium
+[2022-10-27 17:42:56] [ INFO ] [CategoriaController:66] La categoria se actualizo
+[2022-10-27 17:42:56] [ INFO ] [CategoriaController:58] Se elimino la categoria
+[2022-10-27 19:06:49] [ INFO ] [CategoriaController:30] Se registro la categoria economico
+[2022-10-27 19:07:07] [ INFO ] [CategoriaController:30] Se registro la categoria premium
+[2022-10-27 19:12:25] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-27 19:15:20] [ INFO ] [CategoriaController:30] Se registro la categoria economico
+[2022-10-27 19:15:24] [ INFO ] [CategoriaController:30] Se registro la categoria premium
+[2022-10-27 19:15:28] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-27 19:15:31] [ INFO ] [CategoriaController:50] Se encontro la categoria economico
+[2022-10-27 19:15:39] [ INFO ] [CategoriaController:66] La categoria se actualizo
+[2022-10-27 19:15:46] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-27 19:15:52] [ INFO ] [CategoriaController:58] Se elimino la categoria
