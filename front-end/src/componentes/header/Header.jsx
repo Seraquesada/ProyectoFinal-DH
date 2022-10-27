@@ -24,7 +24,7 @@ const Header = () => {
               </div>
               
               <div className="right-header">
-                <div id="username" className="text-center text-light">{userName}</div>
+                <div id="username" className="text-center text-light rounded-circle">{userName}</div>
                 <Button variant="warning" onClick={logOut}>
                   Cerrar Sesión
                 </Button>
