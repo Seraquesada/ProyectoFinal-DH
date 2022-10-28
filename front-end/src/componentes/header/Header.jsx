@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import CustomModal from "../customModal/CustomModal";
 import Button from 'react-bootstrap/Button';
+import SideBarBootstrap from '../sideBarBootsStrap/sideBarBootstrap'
 import SideBar from "../sideBar/SideBar";
-import { Divide as Hamburger } from 'hamburger-react'
 import "./Header.css";
 
 const Header = () => {
@@ -51,8 +51,8 @@ const Header = () => {
 
             <div className="right-header">
               <CustomModal logIn={logIn} setUserName={setUserName}/>
-              
-            </div><Hamburger />
+            </div>
+            <SideBarBootstrap   placement={"end"}/>
     </header>
   )
 }

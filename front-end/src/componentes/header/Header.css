@@ -49,8 +49,4 @@ div#username{
     .right-header {
         display: none;
     }
-    .hamburger-react{
-        display: block;
-        color: white;
-    }
 }

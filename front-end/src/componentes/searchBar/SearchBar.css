@@ -14,31 +14,56 @@
     padding: 0.5rem 0px;
 }
 
+.react-datepicker__input-container{
+    display: grid;
+}
 .datepicker{
     min-width:20vw ;
 }
+
+
 .select{
     min-width:20vw ;
 }
 @media screen and (max-width: 768px) {
     .form{
-        display:grid;
+        
         gap: 10px ;
         grid-template-columns: auto auto ;
         grid-template-rows: auto 100%;
         width: 100%;
     }
     .select{
+        font-size:1rem;
         grid-row: 1/2;
     }
     .btn{
+
         grid-row:2/3 ;
         grid-column: 1/3;
     }
     .datepicker{
-        display:flex;
-        flex-wrap: wrap;
         width:40vw;
         text-align:center;
     }
-}    
+}  
+
+@media screen and (max-width:400px) {
+    .form{
+        display:grid;
+        
+        grid-template-columns:auto;
+        grid-template-rows: auto auto auto;
+    }
+    .datepicker{
+        grid-row: 2/3;
+    }
+    .select{
+
+        grid-row: 1/2;
+    }
+
+    .btn{
+        grid-row: 3/4;
+    }
+}

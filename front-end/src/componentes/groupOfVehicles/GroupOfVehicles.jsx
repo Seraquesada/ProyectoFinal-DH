@@ -9,11 +9,11 @@ return (
 
     
     <div className='groupOfVehicles'>
-       <div className='container-reco'>
+      <div className='container-reco'>
         <h2 className='tituloReco'>Recomendaciones</h2>
       <div className='itemGroupOfVehicles'>
       {
-        data.filter(singleItem=>singleItem.category == props.categoria1).map((singleItem)=> 
+        data.filter(singleItem=>singleItem.category === props.categoria1).map((singleItem)=> 
         
         <Item
           key={singleItem.id}

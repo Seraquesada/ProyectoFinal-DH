@@ -40,10 +40,9 @@ const Vehicle = ({
         <h4 className="titleCard">{title}</h4>
         </div>
         <div className="container-location">
-           <div>
+          <div>
             <span><IoMdPin/></span>
-        
-        <p>{location}</p>
+            <p>{location}</p>
         </div>
         <p className="linkMap"><a>MOSTRAR EN EL MAPA</a></p>
         </div>
