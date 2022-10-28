@@ -94,7 +94,7 @@ font-size: 18px;
 }
 
 
-@media  screen and (max-width:1000px){
+@media  screen and (max-width: 768px){
     .itemGroupOfVehicles{
         grid-template-columns: repeat(1,1fr) !important;     
     }
@@ -108,5 +108,5 @@ font-size: 18px;
         height:auto;
         flex-direction: column
     }
-   
+
 }
