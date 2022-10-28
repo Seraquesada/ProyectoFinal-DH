@@ -19,8 +19,8 @@ const SearchBar = () => {
         e.preventDefault();
         let payload = {
             "ciudad": city,
-            "fechaInicio": startDate,
-            "fechaFinal": endDate 
+            "startDate": startDate,
+            "endDate": endDate 
         }
     }
 
@@ -37,15 +37,10 @@ const SearchBar = () => {
     const customStyles = {
         option: (provided) => ({
             ...provided,
-            padding: 10,
-            colors:{
-                ...provided.colors,
-                primary:"red"
-            }
-            
+            padding: 10
         })}
     return (
-        <div className="container my-4">    
+          
             <div className="container-forms">
                 <form className="form" onSubmit={handleSubmit}>
 
@@ -71,7 +66,7 @@ const SearchBar = () => {
                     <button className='btn btn-secondary'>Buscar</button>
                 </form>
             </div>
-        </div>
+        
     )
 }
 
