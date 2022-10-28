@@ -14,16 +14,15 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 10px 10px;
-justify-content: space-between;
+    justify-content: space-between;
 }
 
-  .container-reco{
+.container-reco{
     margin: 0px  28px;
     padding-bottom: 20px;
-  
-  }
- 
-  .imgVehicle{
+}
+
+.imgVehicle{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -36,8 +35,10 @@ justify-content: space-between;
 }
 
 .vehicle{
-    height: 282px;
+    height: 406px;    
     display: flex;
+    height:auto;
+    
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    text-align: center;
@@ -82,7 +83,6 @@ font-size: 18px;
 }
 .buttonVerMas{
     padding: 0.7rem;
-    
     width: 100%;
     background-color: #F0572D;
     color:white ;
@@ -94,11 +94,19 @@ font-size: 18px;
 }
 
 
-@media  screen and (max-width:768px){
+@media  screen and (max-width: 768px){
     .itemGroupOfVehicles{
         grid-template-columns: repeat(1,1fr) !important;     
     }
+    .container-location
+    {
+        flex-direction: column;
+    }
 }
 @media screen and (max-width:470px){
-    
+    .vehicle{
+        height:auto;
+        flex-direction: column
+    }
+
 }
