@@ -27,6 +27,7 @@ h1 {
 input{
     width:max-content;
     border-radius: 8px;
+    text-align:center
 }
 
 img#logo{
@@ -34,10 +35,18 @@ img#logo{
     width: 100px;
     border-radius: 8px;
 }
-
+.hamburger-react{
+    display:none;
+}
 div#username{
     background-color: black;
     display: flex;
     font-size: 2rem;
     padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+}
+
+@media screen and (max-width: 650px) {
+    .right-header {
+        display: none;
+    }
 }
