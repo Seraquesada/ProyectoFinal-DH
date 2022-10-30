@@ -1,15 +1,18 @@
 import React from "react";
+import { Route, Link, useParams, Outlet } from 'react-router-dom'
 import "../groupOfVehicles/groupOfVehicles.css";
 import { GrStar } from "react-icons/gr";
 import {IoMdPin} from "react-icons/io";
 import{GiCarWheel,GiCarSeat} from "react-icons/gi";
-const Vehicle = ({
+  const Vehicle = ({
   url_imagen,
+  id,
   category,
   title,
   location,
   description,
-}) => {
+    }) => {
+      
   return (
     <div className="vehicle">
       <div  className="container-img-vehicle">
@@ -51,9 +54,13 @@ const Vehicle = ({
 <GiCarSeat/>
         </div>
         <p className="description">{description}</p>
-         <button className="buttonVerMas">ver más</button>
+        <button className="buttonVerMas">
+            <Link className="link" to={"/singleVehicle/" + id }>Ver Mas</Link>
+            <Outlet/>
+        </button>
       </div>
     </div>
   );
 };
 export default Vehicle;
+

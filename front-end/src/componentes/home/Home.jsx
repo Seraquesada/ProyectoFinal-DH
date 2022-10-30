@@ -13,7 +13,6 @@ export const Home = (props) => {
     <div >
       <Header/>
       <SearchBar />
-      
       <Category cambioCategoria = {setCategoria}/>
       <GroupOfVehicles categoria1={categoria}/>
       <Footer/>

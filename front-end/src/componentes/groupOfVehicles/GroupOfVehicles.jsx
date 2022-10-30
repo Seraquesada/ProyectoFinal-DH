@@ -16,7 +16,7 @@ return (
         data.filter(singleItem=>singleItem.category === props.categoria1).map((singleItem)=> 
         
         <Item
-          key={singleItem.id}
+          id={singleItem.id}
           url_imagen = {singleItem.url_imagen}
           category = {singleItem.category}
           title = {singleItem.title}
