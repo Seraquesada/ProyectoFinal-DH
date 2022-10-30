@@ -3,6 +3,7 @@ import CustomModal from "../customModal/CustomModal";
 import Button from 'react-bootstrap/Button';
 import SideBarBootstrap from '../sideBarBootsStrap/sideBarBootstrap'
 import SideBar from "../sideBar/SideBar";
+import Hamburger from 'hamburger-react';
 import "./Header.css";
 
 const Header = () => {

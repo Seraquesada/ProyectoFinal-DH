@@ -67,7 +67,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
       if(response.status === 200){
         localStorage.setItem('jwt', response.data.jwt);
         const unjwt = parseJwt(localStorage.getItem('jwt'))
-        console.log(unjwt.sub)
+        console.log(unjwt)
         const iniciales = unjwt.sub.substr(0, 2).toUpperCase();
         setUserName(iniciales)
         logIn();
@@ -83,7 +83,8 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
   const registrarUsuario = (e) => {
     e.preventDefault();
     let payload = {
-      "nombre": document.querySelector("#nombre").value + " " + document.querySelector("#apellido").value,
+      "nombre": document.querySelector("#nombre").value,
+      "apellido": document.querySelector("#apellido").value,
       "userName": document.querySelector("#email").value,
       "mail": document.querySelector("#email").value,
       "password" : document.querySelector("#password").value
