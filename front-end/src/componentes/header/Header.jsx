@@ -3,13 +3,12 @@ import CustomModal from "../customModal/CustomModal";
 import Button from 'react-bootstrap/Button';
 import SideBarBootstrap from '../sideBarBootsStrap/sideBarBootstrap'
 import SideBar from "../sideBar/SideBar";
-import Hamburger from 'hamburger-react';
 import "./Header.css";
 
 const Header = () => {
 
   const [loggedIn, setLoggedIn] = useState(false);
-  const [userName, setUserName] = useState("Juan");
+  const [userName, setUserName] = useState(" ");
   const logOut = () => {
     localStorage.removeItem('jwt');
     setLoggedIn(false)
@@ -25,20 +24,13 @@ const Header = () => {
                   <h4 className="text-light">¿Necesitas un auto?</h4>
               </div>
               
-              <div className="right-header">
-                <div id="username" className="text-center text-light">{userName}</div>
+              <div className="right-header-login">
+                <div id="username" className="text-center text-light rounded-circle">{userName}</div>
                 <Button variant="warning" onClick={logOut}>
                   Cerrar Sesión
                 </Button>
-                
               </div>
-              <Hamburger 
-              onToggle={toggled => {
-                if (toggled) {
-                  console.log()
-                  } 
-                }}
-              />
+              
       </header>
     )
   }
@@ -53,7 +45,7 @@ const Header = () => {
             <div className="right-header">
               <CustomModal logIn={logIn} setUserName={setUserName}/>
             </div>
-            <SideBarBootstrap   placement={"end"}/>
+            <SideBarBootstrap logIn={logIn} setUserName={setUserName} placement={"end"}/>
     </header>
   )
 }
