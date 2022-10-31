@@ -19,11 +19,13 @@
 }
 .datepicker{
     min-width:20vw ;
+    text-align:center
 }
 
 
 .select{
     min-width:20vw ;
+
 }
 @media screen and (max-width: 768px) {
     .form{
@@ -49,22 +51,23 @@
     }
 }  
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:470px) {
     .form{
-        display:grid;
-        
-        grid-template-columns:auto;
-        grid-template-rows: auto auto auto;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items: stretch;
+    }    
+    .select{
+        width: 100%;
     }
     .datepicker{
-        grid-row: 2/3;
-    }
-    .select{
 
-        grid-row: 1/2;
+        width: 100%;
     }
+
 
     .btn{
-        grid-row: 3/4;
+        width: 100%;
     }
 }
