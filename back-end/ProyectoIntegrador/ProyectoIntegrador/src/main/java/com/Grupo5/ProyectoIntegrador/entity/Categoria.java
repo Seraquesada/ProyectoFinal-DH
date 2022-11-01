@@ -3,7 +3,9 @@ package com.Grupo5.ProyectoIntegrador.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -21,7 +23,7 @@ public class Categoria {
 
     @OneToMany(mappedBy ="categoria", fetch = FetchType.LAZY)
     @JsonIgnore
-    private Set<Producto> productos = new HashSet<>();
+    private List<Producto> productos = new ArrayList<>();
 
     public Categoria(Long id, String titulo, String descripcion, String urlImagen) {
         this.id = id;
@@ -71,11 +73,11 @@ public class Categoria {
         this.urlImagen = urlImagen;
     }
 
-    public Set<Producto> getProductos() {
+    public List<Producto> getProductos() {
         return productos;
     }
 
-    public void setProductos(Set<Producto> productos) {
+    public void setProductos(List<Producto> productos) {
         this.productos = productos;
     }
 }
