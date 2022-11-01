@@ -7,4 +7,9 @@
         display: block !important;
         color:white !important;
     }
+    .offcanvas-body{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
 }

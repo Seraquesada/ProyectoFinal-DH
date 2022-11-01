@@ -1,11 +1,17 @@
 header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width:100%;
     padding:1%;
 
 }
-
+.right-header-login{
+    display: flex;
+    align-items: center;
+    width: 35vw;
+    justify-content: space-evenly
+}
 .right-header{
     display: flex;
     align-items: center;
@@ -24,7 +30,7 @@ h1 {
     line-height: 1.1;
 }
 
-input{
+input .form{
     width:max-content;
     border-radius: 8px;
     text-align:center

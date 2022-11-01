@@ -68,7 +68,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
         localStorage.setItem('jwt', response.data.jwt);
         const unjwt = parseJwt(localStorage.getItem('jwt'))
         console.log(unjwt)
-        const iniciales = unjwt.sub.substr(0, 2).toUpperCase();
+        const iniciales = unjwt.apellido.substr(0, 1).toUpperCase() + unjwt.nombre.substr(0, 1).toUpperCase();
         setUserName(iniciales)
         logIn();
       }else{
@@ -174,6 +174,9 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
             <Form.Group className="mb-3" controlId="password">
               <FloatingLabel controlId="password" label="Contraseña">
                 <Form.Control type="password" placeholder=" " pattern="^\S{6,}$" required/>
+                <Form.Control.Feedback type="invalid">
+                  Debe contener al menos 6 caracteres.
+                </Form.Control.Feedback>
               </FloatingLabel>
             </Form.Group>
             <Form.Group className="mb-3" controlId="passwordCheck">

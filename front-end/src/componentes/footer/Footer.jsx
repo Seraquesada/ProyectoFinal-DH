@@ -12,10 +12,10 @@ const Footer = () => {
                     </p>
                 </div>
                 <div className="logos">
-                    <span><BsFacebook/></span>
-                    <span><GrLinkedinOption/></span>
-                    <span><BsTwitter/></span>
-                    <span><BsInstagram/></span>
+                    <BsFacebook/>
+                    <GrLinkedinOption/>
+                    <BsTwitter/>
+                    <BsInstagram/>
                 </div>
         </footer>
     )
