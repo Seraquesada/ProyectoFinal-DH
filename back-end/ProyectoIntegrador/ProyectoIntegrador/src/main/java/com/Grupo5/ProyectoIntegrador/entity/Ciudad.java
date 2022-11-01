@@ -3,7 +3,9 @@ package com.Grupo5.ProyectoIntegrador.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -17,7 +19,7 @@ public class Ciudad {
 
     @OneToMany(mappedBy ="ciudad", fetch = FetchType.LAZY)
     @JsonIgnore
-    private Set<Producto> productos = new HashSet<>();
+    private List<Producto> productos = new ArrayList<>();
 
     public Ciudad(Long id, String nombre) {
         this.id = id;
@@ -47,11 +49,11 @@ public class Ciudad {
         this.nombre = nombre;
     }
 
-    public Set<Producto> getProductos() {
+    public List<Producto> getProductos() {
         return productos;
     }
 
-    public void setProductos(Set<Producto> productos) {
+    public void setProductos(List<Producto> productos) {
         this.productos = productos;
     }
 }
