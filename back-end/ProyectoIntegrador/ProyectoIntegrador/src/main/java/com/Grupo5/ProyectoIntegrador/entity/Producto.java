@@ -2,6 +2,7 @@ package com.Grupo5.ProyectoIntegrador.entity;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -22,16 +23,16 @@ public class Producto {
     private Categoria categoria;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "producto_id")
-    private Set<Imagen> imagenes;
+    private List<Imagen> imagenes;
     @ManyToMany
     @JoinTable(
             name = "caracteristicas_auto",
             joinColumns = @JoinColumn(name = "id_producto"),
             inverseJoinColumns = @JoinColumn(name = "id_caracteristica")
     )
-    private Set <Caracteristica> caracteristicas;
+    private List<Caracteristica> caracteristicas;
 
-    public Producto(Long id, String titulo, String descripcion, Ciudad ciudad, Categoria categoria, Set<Imagen> imagenes, Set<Caracteristica> caracteristicas) {
+    public Producto(Long id, String titulo, String descripcion, Ciudad ciudad, Categoria categoria, List<Imagen> imagenes, List<Caracteristica> caracteristicas) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -41,7 +42,7 @@ public class Producto {
         this.caracteristicas = caracteristicas;
     }
 
-    public Producto(String titulo, String descripcion, Ciudad ciudad, Categoria categoria, Set<Imagen> imagenes, Set<Caracteristica> caracteristicas) {
+    public Producto(String titulo, String descripcion, Ciudad ciudad, Categoria categoria, List<Imagen> imagenes, List<Caracteristica> caracteristicas) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.ciudad = ciudad;
@@ -93,19 +94,19 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public Set<Imagen> getImagenes() {
+    public List<Imagen> getImagenes() {
         return imagenes;
     }
 
-    public void setImagenes(Set<Imagen> imagenes) {
+    public void setImagenes(List<Imagen> imagenes) {
         this.imagenes = imagenes;
     }
 
-    public Set<Caracteristica> getCaracteristicas() {
+    public List<Caracteristica> getCaracteristicas() {
         return caracteristicas;
     }
 
-    public void setCaracteristicas(Set<Caracteristica> caracteristicas) {
+    public void setCaracteristicas(List<Caracteristica> caracteristicas) {
         this.caracteristicas = caracteristicas;
     }
 }
