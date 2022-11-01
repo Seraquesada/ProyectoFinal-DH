@@ -17,6 +17,8 @@ public class Usuario implements UserDetails {
     @Column
     private String nombre;
     @Column
+    private String apellido;
+    @Column
     private String userName;
     @Column
     private String mail;
@@ -25,8 +27,9 @@ public class Usuario implements UserDetails {
     @Enumerated(EnumType.STRING)
     private RolUsuario usuarioRol;
 
-    public Usuario(String nombre, String userName, String mail, String password, RolUsuario usuarioRol) {
+    public Usuario(String nombre, String apellido, String userName, String mail, String password, RolUsuario usuarioRol) {
         this.nombre = nombre;
+        this.apellido=apellido;
         this.userName = userName;
         this.mail = mail;
         this.password = password;
@@ -34,6 +37,14 @@ public class Usuario implements UserDetails {
     }
 
     public Usuario() {
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public Long getId() {

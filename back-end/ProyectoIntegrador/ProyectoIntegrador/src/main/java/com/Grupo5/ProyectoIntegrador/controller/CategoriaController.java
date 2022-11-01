@@ -24,7 +24,7 @@ public class CategoriaController {
         this.categoriaService = categoriaService;
     }
     @PostMapping
-    public ResponseEntity<Categoria> registarCategoria (@RequestBody Categoria categoria) throws AlreadyExistException {
+    public ResponseEntity<Categoria> registrarCategoria (@RequestBody Categoria categoria) throws AlreadyExistException {
         ResponseEntity<Categoria> respuesta;
         respuesta = ResponseEntity.ok(categoriaService.guardar(categoria));
         logger.info("Se registro la categoria " + categoria.getTitulo());

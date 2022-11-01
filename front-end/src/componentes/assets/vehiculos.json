@@ -10,7 +10,7 @@
 		"title" : " BMW 323 i",
         "location": "Buenos Aires",
 		"description" : "Et iste do corporis, yet nostrum laboris perspiciatis. Exercitation adipisicing. Vitae. Fugiat euo.",
-		"caracterisiticas" : [
+		"caracteristicas" : [
 			{"id":"1",
 			"nombre":"Transmisión",
 			"valor":"Manual"},
@@ -40,7 +40,7 @@
 		"title" : " Chevrolet Cruze RS",
         "location": "La Plata",
 		"description" : "Fugit nisi totam, so quasi. Aspernatur duis, and eiusmod, or ad, nor qui, or adipisci, for sequi.",
-		"caracterisiticas" : [
+		"caracteristicas" : [
 			{"id":"1",
 			"nombre":"Transmisión",
 			"valor":"Manual"},
@@ -70,7 +70,7 @@
 		"title" : " Haval H2",
         "location": "Bariloche",
 		"description" : "Vel odit adipisicing. Eaque duis, or nemo. Do. Laboriosam sunt quia molestiae, nor eius. Corporis perspiciatis..",
-		"caracterisiticas" : [
+		"caracteristicas" : [
 			{"id":"1",
 			"nombre":"Transmisión",
 			"valor":"Automático"},
@@ -100,7 +100,7 @@
 		"title" : " Mazda CX-5",
         "location": "La Plata",
 		"description" : "Illo adipisci ratione eaque odit quo anim. Laboriosam illum, and commodo tempora eum. Eos ut dolorem",
-		"caracterisiticas" : [
+		"caracteristicas" : [
 			{"id":"1",
 			"nombre":"Transmisión",
 			"valor":"Manual"},
@@ -130,7 +130,7 @@
 		"title" : " Volkswagen Golf GTI",
         "location": "Buenos Aires",
 		"description" : "Si laboriosam, nor incididunt sit doloremque aperiam. Est eu, or exercitation, and aliquid.",
-		"caracterisiticas" : [
+		"caracteristicas" : [
 			{"id":"1",
 			"nombre":"Transmisión",
 			"valor":"Manual"},
@@ -160,7 +160,7 @@
 		"title" : " Kia Rio",
         "location": "Salta",
 		"description" : "Incididunt beatae. Qui incididunt nemo ut omnis, yet si. Exercitation ipsum, but ullamco, nor magnam, for corporis, nor iure.",
-		"caracterisiticas" : [
+		"caracteristicas" : [
 			{"id":"1",
 			"nombre":"Transmisión",
 			"valor":"Manual"},
@@ -189,25 +189,7 @@
 		"category": "Coupe",
 		"title" : " Ford Mustang",
         "location": "Comodoro Rivadavia",
-		"description" : "Lorem minim, and natus consequat, so voluptatem. Deserunt. Ab irure, so nisi. Duis nemo aperiam.",
-		"caracterisiticas" : [
-			{"id":"1",
-			"nombre":"Transmisión",
-			"valor":"Manual"},
-			{"id":"2",
-			"nombre":"Aire Acondicionado",
-			"valor":"SI"},
-			{"id":"3",
-			"nombre":"Capacidad",
-			"valor":"4"},
-			{"id":"4",
-			"nombre":"Consumo",
-			"valor":"8 Km/l"}],
-		"disponibilidad": "yy",
-		"politica":[
-			{"normas": "norma1"},
-			{"seguridad":"seguridad1"},
-			{"cancelacion":"cancelacion1"}]
+		"description" : "Lorem minim, and natus consequat, so voluptatem. Deserunt. Ab irure, so nisi. Duis nemo aperiam."
 	},
     {
 		"id" : "8",
@@ -220,7 +202,7 @@
 		"title" : " Peugeot 208 GT",
         "location": "La Plata",
 		"description" : "Voluptate totam. Lorem ipsam. Reprehenderit exercitation, but nequeporro occaecat, and architecto lorem. Id.",
-		"caracterisiticas" : [
+		"caracteristicas" : [
 			{"id":"1",
 			"nombre":"Transmisión",
 			"valor":"Manual"},

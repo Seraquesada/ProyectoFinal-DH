@@ -1,6 +1,10 @@
 package com.Grupo5.ProyectoIntegrador.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="categorias")
@@ -14,6 +18,10 @@ public class Categoria {
     private String descripcion;
     @Column
     private String urlImagen;
+
+    @OneToMany(mappedBy ="categoria", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set<Producto> productos = new HashSet<>();
 
     public Categoria(Long id, String titulo, String descripcion, String urlImagen) {
         this.id = id;
@@ -61,5 +69,13 @@ public class Categoria {
 
     public void setUrlImagen(String urlImagen) {
         this.urlImagen = urlImagen;
+    }
+
+    public Set<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(Set<Producto> productos) {
+        this.productos = productos;
     }
 }

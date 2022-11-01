@@ -1,5 +1,6 @@
 package com.Grupo5.ProyectoIntegrador.Security;
 
+import com.Grupo5.ProyectoIntegrador.entity.Usuario;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -35,8 +36,10 @@ public class JWTUtil {
         return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
     }
 
-    public String generateToken(UserDetails userDetails) {
+    public String generateToken(Usuario userDetails) {
         Map<String, Object> claims = new HashMap<>();
+        claims.put("nombre", userDetails.getNombre());
+        claims.put("apellido", userDetails.getApellido());
         return createToken(claims, userDetails.getUsername());
     }
 

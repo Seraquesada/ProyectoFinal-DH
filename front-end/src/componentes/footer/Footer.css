@@ -2,12 +2,12 @@
     background-color:#FF9E00;
     color:white;
     display: flex;
+    position: absolute;
     justify-content: space-between;
     padding:5px 15px;
-    bottom: 0;
     width: 100%;
+    bottom: 0;
 }
-
 .fab{
     padding: 0px 8px;
     font-size: 20px;
@@ -26,13 +26,13 @@
 }
 
 .p-derechos{
-    margin: 1rem 0 1rem 0;
+    margin: 0.8rem 0 0.8rem 0;
+    font-size: 0.7rem;
 }
 
 @media screen and (max-width: 768px) {
     footer {
-        height: 34px;
-        font-size: 0.8rem;
+        font-size: 1.1rem;
     }
     .fab {
         font-size: 1rem;

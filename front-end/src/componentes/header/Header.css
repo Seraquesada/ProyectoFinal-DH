@@ -1,11 +1,17 @@
 header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width:100%;
     padding:1%;
 
 }
-
+.right-header-login{
+    display: flex;
+    align-items: center;
+    width: 35vw;
+    justify-content: space-evenly
+}
 .right-header{
     display: flex;
     align-items: center;
@@ -24,16 +30,29 @@ h1 {
     line-height: 1.1;
 }
 
-input{
+input .form{
     width:max-content;
     border-radius: 8px;
-}
-input:hover{
-    border-color: #434cfa;
+    text-align:center
 }
 
 img#logo{
     display: flex;
     width: 100px;
     border-radius: 8px;
+}
+.hamburger-react{
+    display:none;
+}
+div#username{
+    background-color: black;
+    display: flex;
+    font-size: 2rem;
+    padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+}
+
+@media screen and (max-width: 650px) {
+    .right-header {
+        display: none;
+    }
 }

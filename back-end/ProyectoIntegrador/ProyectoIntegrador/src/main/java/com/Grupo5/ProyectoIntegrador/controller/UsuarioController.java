@@ -33,7 +33,7 @@ public class UsuarioController {
         }catch (BadCredentialsException e) {
             throw new Exception("Incorrect", e);
         }
-        final UserDetails userDetails = usuarioService.loadUserByUsername(authenticationRequest.getUsername());
+        final Usuario userDetails = usuarioService.loadUserByUsername(authenticationRequest.getUsername());
         final String jwt = jwtUtil.generateToken(userDetails);
 
         return ResponseEntity.ok(new AuthenticationResponse((jwt)));
@@ -49,7 +49,7 @@ public class UsuarioController {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String passHash = passwordEncoder.encode(usuario.getPassword());
         usuario.setPassword(passHash);
-        usuario.setUsuarioRol(RolUsuario.ROLE_ADMIN);
+        usuario.setUsuarioRol(RolUsuario.ROLE_USER);
         ResponseEntity<Usuario> respuesta;
         respuesta=ResponseEntity.ok(usuarioService.guardar(usuario));
         return respuesta;

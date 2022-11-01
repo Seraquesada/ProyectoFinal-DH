@@ -1,8 +1,8 @@
-import React from 'react'
 import ItemCategory from '../item/ItemCategory'
 import './category.css'
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { React, useEffect, useState } from 'react';
+import Spinner from 'react-bootstrap/Spinner';
 
 const Category = (props)=> {
   const [data1, setData1] = useState(null);
@@ -13,7 +13,7 @@ useEffect(()=>{
   axios.get('http://localhost:8080/categorias')
   .then(res=> 
   {
-      var datos = res.data
+      let datos = res.data
       setData1(datos)
       setLoading(false)
   }
@@ -22,7 +22,7 @@ useEffect(()=>{
 
   if (isLoading) {
     console.debug("renders: Loading...");
-    return <div className="App">Loading...</div>;
+    return <Spinner animation="border" size="sm" />;
   }
 return (
     
