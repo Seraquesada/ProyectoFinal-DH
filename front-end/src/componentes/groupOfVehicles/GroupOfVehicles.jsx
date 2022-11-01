@@ -17,12 +17,12 @@ return (
         
         <Item
           id={singleItem.id}
+          key = {singleItem.id}
           url_imagen = {singleItem.url_imagen}
           category = {singleItem.category}
           title = {singleItem.title}
           location ={singleItem.location}
           description={singleItem.description}
-
         /> 
         
       )
