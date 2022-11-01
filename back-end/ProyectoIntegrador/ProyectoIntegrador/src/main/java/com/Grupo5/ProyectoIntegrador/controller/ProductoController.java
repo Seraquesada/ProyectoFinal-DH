@@ -36,18 +36,29 @@ public class ProductoController {
         logger.info("Se buscaron productos random?");
         return respuesta;
     }
-    @GetMapping(path = {"/productos", "/productos/{categoria},{ciudad}"})
-    public ResponseEntity<List<Producto>> filtrarProductos(@RequestParam(required = false) String categoria, @RequestParam(required = false) String ciudad){
+    @GetMapping(path = "/filter/")
+    public ResponseEntity<List<Producto>> filtrarProductos(@RequestParam(required = false, defaultValue = "") String categoria, @RequestParam(required = false, defaultValue = "") String ciudad){
         ResponseEntity<List<Producto>> respuesta = null;
-        if(categoria.isBlank() || ciudad.isBlank()){
-            respuesta=ResponseEntity.ok(productoService.buscarPorCategoriaOCiudad(categoria, ciudad));
-            logger.info("Se filtraron productos por categoria O ciudad");
-        }else if(!categoria.isBlank() && !categoria.isBlank()){
-            respuesta=ResponseEntity.ok(productoService.buscarPorCategoriaYCiudad(categoria, ciudad));
+        if(!categoria.isBlank() && !ciudad.isBlank() ) {
+            Long categoria_id = Long.valueOf(categoria);
+            Long ciudad_id = Long.valueOf(ciudad);
+            respuesta = ResponseEntity.ok(productoService.buscarPorCategoriaYCiudad(categoria_id, ciudad_id));
             logger.info("Se filtraron productos por categoria Y ciudad");
         }else if(categoria.isBlank() && ciudad.isBlank()){
             respuesta=ResponseEntity.ok(productoService.buscarTodos());
             logger.info("Se buscaron todos los productos");
+        }else {
+            if (ciudad.isBlank()) {
+                Long categoria_id = Long.valueOf(categoria);
+                respuesta = ResponseEntity.ok(productoService.buscarPorCategoriaOCiudad(categoria_id, 0L));
+                logger.info("Se filtraron productos por categoria");
+            }
+            if (categoria.isBlank()){
+                Long ciudad_id = Long.valueOf(ciudad);
+                respuesta=ResponseEntity.ok(productoService.buscarPorCategoriaOCiudad(0L, ciudad_id));
+                logger.info("Se filtraron productos por ciudad");
+            }
+
         }
 
         return respuesta;

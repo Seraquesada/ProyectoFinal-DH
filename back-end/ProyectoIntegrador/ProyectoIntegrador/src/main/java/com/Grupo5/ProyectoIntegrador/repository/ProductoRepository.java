@@ -7,8 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
-    List<Producto> findByCategoriaAndCiudad(String categoria, String ciudad);
-    List<Producto> findByCategoriaOrCiudad(String categoria, String ciudad);
-    @Query(value = "SELECT * FROM Productos ORDER BY NEWID()", nativeQuery = true)
+    List<Producto> findByCategoriaAndCiudad(Long categoria, Long ciudad);
+    List<Producto> findByCategoriaOrCiudad(Long categoria, Long ciudad);
+    @Query(value = "SELECT * FROM Productos ORDER BY rand()", nativeQuery = true)
     List<Producto> buscarProductosRandom();
 }
