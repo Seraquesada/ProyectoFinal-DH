@@ -6110,3 +6110,12 @@
 [2022-10-26 16:11:11] [ INFO ] [CategoriaController:37] Se busco todas las categorias
 >>>>>>> 4f2c158fc486523510b63f454750b1da87a6deb0
 >>>>>>> 25d6fe59a4f145abd577a09c73b0fcbe0ae7d9ee
+[2022-10-27 13:54:02] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-27 13:54:40] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-27 13:55:22] [ INFO ] [CategoriaController:30] Se registro la categoria no economico
+[2022-10-27 13:55:27] [ INFO ] [CategoriaController:30] Se registro la categoria premium
+[2022-10-27 13:55:43] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-10-27 13:57:48] [ INFO ] [CategoriaController:50] Se encontro la categoria Sedan
+[2022-10-27 13:59:39] [ INFO ] [CategoriaController:58] Se elimino la categoria
+[2022-10-27 17:34:09] [ INFO ] [CategoriaController:30] Se registro la categoria no economico
+[2022-10-27 17:34:37] [ INFO ] [CategoriaController:37] Se busco todas las categorias
