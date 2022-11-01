@@ -2,11 +2,11 @@
     background-color:#FF9E00;
     color:white;
     display: flex;
+    position: absolute;
     justify-content: space-between;
     padding:5px 15px;
-    bottom: 0;
     width: 100%;
-    position: absolute;
+    bottom: 0;
 }
 .fab{
     padding: 0px 8px;
