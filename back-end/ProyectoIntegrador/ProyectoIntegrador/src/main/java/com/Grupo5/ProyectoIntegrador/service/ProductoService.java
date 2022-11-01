@@ -1,10 +1,7 @@
 package com.Grupo5.ProyectoIntegrador.service;
 
-import com.Grupo5.ProyectoIntegrador.Exceptions.AlreadyExistException;
 import com.Grupo5.ProyectoIntegrador.Exceptions.ResourceNotFoundException;
-import com.Grupo5.ProyectoIntegrador.entity.Categoria;
 import com.Grupo5.ProyectoIntegrador.entity.Producto;
-import com.Grupo5.ProyectoIntegrador.repository.CategoriaRepository;
 import com.Grupo5.ProyectoIntegrador.repository.ProductoRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
