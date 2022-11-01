@@ -1,8 +1,7 @@
 import React,{useEffect ,useState} from 'react';
 import Header from "../header/Header";
-import { BrowserRouter, Route, Routes, useParams, Outlet } from 'react-router-dom';
+import {  useParams, Outlet } from 'react-router-dom';
 import axios from 'axios'
-
 
 const SingleVehicle = () => {
 
@@ -10,6 +9,7 @@ const SingleVehicle = () => {
     // esta con esa api porque la nuestra no tiene el endpoint para hacerlo
     // pero sacando eso """"creo que funciona""""
     //no borrar porfa
+
     const {id} = useParams();
     const [name, setName] = useState("");
     const [imagen, setImagen] = useState("")
@@ -27,14 +27,15 @@ const SingleVehicle = () => {
             setPlanet(res.data.location.name)
         }
         )},[id])
+        
     return (
         <>
-        <Header/>
-        <div>
-            <h2>{name}</h2>
-            <h2>{planet}</h2>
-            <img src={imagen} alt={name} />
-        </div>
+            <Header/>
+            <div>
+                <h2>{name}</h2>
+                <h2>{planet}</h2>
+                <img src={imagen} alt={name} />
+            </div>
         </>
     )
 }

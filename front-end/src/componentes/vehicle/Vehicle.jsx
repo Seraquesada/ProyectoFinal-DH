@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link, useParams, Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import "../groupOfVehicles/groupOfVehicles.css";
 import { GrStar } from "react-icons/gr";
 import {IoMdPin} from "react-icons/io";
@@ -54,10 +54,8 @@ import{GiCarWheel,GiCarSeat} from "react-icons/gi";
 <GiCarSeat/>
         </div>
         <p className="description">{description}</p>
-        <button className="buttonVerMas">
-            <Link className="link" to={"/singleVehicle/" + id }>Ver Mas</Link>
+            <Link className="buttonVerMas link" to={"/singleVehicle/" + id }>Ver Mas</Link>
             <Outlet/>
-        </button>
       </div>
     </div>
   );

@@ -6,8 +6,8 @@
     padding:5px 15px;
     bottom: 0;
     width: 100%;
+    position: absolute;
 }
-
 .fab{
     padding: 0px 8px;
     font-size: 20px;
