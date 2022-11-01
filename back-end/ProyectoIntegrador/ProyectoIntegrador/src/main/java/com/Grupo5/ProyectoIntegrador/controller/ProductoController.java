@@ -30,12 +30,29 @@ public class ProductoController {
         return respuesta;
     }
     @GetMapping
-    public ResponseEntity<List<Producto>> buscarAllProductos(){
+    public ResponseEntity<List<Producto>> buscarProductosRandom(){
         ResponseEntity<List<Producto>> respuesta;
-        respuesta=ResponseEntity.ok(productoService.buscarTodos());
-        logger.info("Se busco todos los productos");
+        respuesta=ResponseEntity.ok(productoService.buscarProductosRandom());
+        logger.info("Se buscaron productos random?");
         return respuesta;
     }
+    @GetMapping(path = {"/productos", "/productos/{categoria},{ciudad}"})
+    public ResponseEntity<List<Producto>> filtrarProductos(@RequestParam(required = false) String categoria, @RequestParam(required = false) String ciudad){
+        ResponseEntity<List<Producto>> respuesta = null;
+        if(categoria.isBlank() || ciudad.isBlank()){
+            respuesta=ResponseEntity.ok(productoService.buscarPorCategoriaOCiudad(categoria, ciudad));
+            logger.info("Se filtraron productos por categoria O ciudad");
+        }else if(!categoria.isBlank() && !categoria.isBlank()){
+            respuesta=ResponseEntity.ok(productoService.buscarPorCategoriaYCiudad(categoria, ciudad));
+            logger.info("Se filtraron productos por categoria Y ciudad");
+        }else if(categoria.isBlank() && ciudad.isBlank()){
+            respuesta=ResponseEntity.ok(productoService.buscarTodos());
+            logger.info("Se buscaron todos los productos");
+        }
+
+        return respuesta;
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Producto> buscarProducto(@PathVariable Long id) throws ResourceNotFoundException {
         ResponseEntity<Producto> respuesta;
