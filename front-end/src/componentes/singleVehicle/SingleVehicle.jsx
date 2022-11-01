@@ -1,8 +1,9 @@
 import React,{useEffect ,useState} from 'react';
 import Header from "../header/Header";
+import DatePicker from "react-datepicker"
 import {  useParams, Outlet } from 'react-router-dom';
 import axios from 'axios'
-
+import Footer from "../footer/Footer"
 const SingleVehicle = () => {
 
     //si no se entiende carajo es porque vamos bien
@@ -14,9 +15,17 @@ const SingleVehicle = () => {
     const [name, setName] = useState("");
     const [imagen, setImagen] = useState("")
     const [planet, setPlanet] = useState("")
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(null);
 
-    const url = "https://rickandmortyapi.com/api"
-    const characters = "/character"
+    const handleDateChange = (dates) => {
+        const [start, end] = dates;
+        setStartDate(start);
+        setEndDate(end);
+    };
+
+    const url = "https://rickandmortyapi.com/api";
+    const characters = "/character";
     
     useEffect(()=>{
         axios.get(url + characters + "/" + id)
@@ -24,10 +33,10 @@ const SingleVehicle = () => {
         {
             setName(res.data.name);
             setImagen(res.data.image);
-            setPlanet(res.data.location.name)
+            setPlanet(res.data.location.name);
         }
         )},[id])
-        
+
     return (
         <>
             <Header/>
@@ -36,6 +45,19 @@ const SingleVehicle = () => {
                 <h2>{planet}</h2>
                 <img src={imagen} alt={name} />
             </div>
+            <div className="container-calendar">
+                <DatePicker
+                    selected={startDate}
+                    onChange={handleDateChange}
+                    startDate={startDate}
+                    endDate={endDate}
+                    selectsRange
+                    inline
+                    excludeDates={[new Date(), (new Date(), 1)]}
+                    monthsShown={2}
+                    />
+            </div>
+            <Footer/>
         </>
     )
 }
