@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Select from 'react-select'
 import DatePicker from "react-datepicker"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -10,18 +10,23 @@ const SearchBar = () => {
 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(null);
-    const [city, setCity] = useState({} );
-        
-
-
+    const [city, setCity] = useState({});
     
+    // cuando este listo el endpoint de ciudades descomentar
+    //const [cities, setCities]=useState[]
+    //useEffect(()=>{axios.get('http://localhost:8080/ciudades')
+    //    .then(res=>{
+    //        setCities(res.data)
+    //    })
+    //},[])
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        let payload = {
+        /* let payload = {
             "ciudad": city,
             "startDate": startDate,
             "endDate": endDate 
-        }
+        }*/
     }
 
     const handleDateChange = (dates) => {
@@ -32,15 +37,14 @@ const SearchBar = () => {
 
     const handleCityChange = (e) =>{
         setCity(e.value)
-        
     }
     const customStyles = {
         option: (provided) => ({
             ...provided,
             padding: 10
         })}
+
     return (
-          
             <div className="container-forms">
                 <form className="form" onSubmit={handleSubmit}>
 
@@ -58,7 +62,7 @@ const SearchBar = () => {
                         onChange={handleDateChange}
                         startDate={startDate}
                         endDate={endDate}
-                        withPortal
+                        showDisabledMonthNavigation
                         selectsRange
                         />
                     

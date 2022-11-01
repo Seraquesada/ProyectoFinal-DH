@@ -1,6 +1,5 @@
 package com.Grupo5.ProyectoIntegrador.controller;
 
-import com.Grupo5.ProyectoIntegrador.entity.Categoria;
 import com.Grupo5.ProyectoIntegrador.service.CategoriaService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

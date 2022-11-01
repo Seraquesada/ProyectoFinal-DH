@@ -1,7 +1,6 @@
 package com.Grupo5.ProyectoIntegrador.service;
 
 import com.Grupo5.ProyectoIntegrador.entity.Caracteristica;
-import com.Grupo5.ProyectoIntegrador.entity.Producto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

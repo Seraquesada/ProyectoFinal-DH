@@ -4,7 +4,6 @@ import com.Grupo5.ProyectoIntegrador.Exceptions.AlreadyExistException;
 import com.Grupo5.ProyectoIntegrador.entity.Usuario;
 import com.Grupo5.ProyectoIntegrador.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,5 @@
 package com.Grupo5.ProyectoIntegrador.service;
 
-import com.Grupo5.ProyectoIntegrador.entity.Caracteristica;
 import com.Grupo5.ProyectoIntegrador.entity.Ciudad;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -30,12 +30,40 @@ public class ProductoController {
         return respuesta;
     }
     @GetMapping
-    public ResponseEntity<List<Producto>> buscarAllProductos(){
+    public ResponseEntity<List<Producto>> buscarProductosRandom(){
         ResponseEntity<List<Producto>> respuesta;
-        respuesta=ResponseEntity.ok(productoService.buscarTodos());
-        logger.info("Se busco todos los productos");
+        respuesta=ResponseEntity.ok(productoService.buscarProductosRandom());
+        logger.info("Se buscaron productos random?");
         return respuesta;
     }
+    @GetMapping(path = "/filter/")
+    public ResponseEntity<List<Producto>> filtrarProductos(@RequestParam(required = false, defaultValue = "") String categoria, @RequestParam(required = false, defaultValue = "") String ciudad){
+        ResponseEntity<List<Producto>> respuesta = null;
+        if(!categoria.isBlank() && !ciudad.isBlank() ) {
+            Long categoria_id = Long.valueOf(categoria);
+            Long ciudad_id = Long.valueOf(ciudad);
+            respuesta = ResponseEntity.ok(productoService.buscarPorCategoriaYCiudad(categoria_id, ciudad_id));
+            logger.info("Se filtraron productos por categoria Y ciudad");
+        }else if(categoria.isBlank() && ciudad.isBlank()){
+            respuesta=ResponseEntity.ok(productoService.buscarTodos());
+            logger.info("Se buscaron todos los productos");
+        }else {
+            if (ciudad.isBlank()) {
+                Long categoria_id = Long.valueOf(categoria);
+                respuesta = ResponseEntity.ok(productoService.buscarPorCategoriaOCiudad(categoria_id, 0L));
+                logger.info("Se filtraron productos por categoria");
+            }
+            if (categoria.isBlank()){
+                Long ciudad_id = Long.valueOf(ciudad);
+                respuesta=ResponseEntity.ok(productoService.buscarPorCategoriaOCiudad(0L, ciudad_id));
+                logger.info("Se filtraron productos por ciudad");
+            }
+
+        }
+
+        return respuesta;
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Producto> buscarProducto(@PathVariable Long id) throws ResourceNotFoundException {
         ResponseEntity<Producto> respuesta;

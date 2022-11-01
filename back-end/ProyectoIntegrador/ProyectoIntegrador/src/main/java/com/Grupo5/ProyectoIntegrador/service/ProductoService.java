@@ -25,6 +25,17 @@ public class ProductoService {
     public List<Producto> buscarTodos() {
         return productoRepository.findAll();
     }
+    public List<Producto> buscarProductosRandom() {
+        return productoRepository.buscarProductosRandom();
+    }
+
+    public List<Producto> buscarPorCategoriaYCiudad(Long categoria,Long ciudad){
+        return productoRepository.findByCategoriaAndCiudad(categoria, ciudad);
+    }
+
+    public List<Producto> buscarPorCategoriaOCiudad(Long categoria,Long ciudad){
+        return productoRepository.findByCategoriaOrCiudad(categoria, ciudad);
+    }
 
     public Producto buscar(Long id) throws ResourceNotFoundException {
         Optional<Producto> producto = productoRepository.findById(id);

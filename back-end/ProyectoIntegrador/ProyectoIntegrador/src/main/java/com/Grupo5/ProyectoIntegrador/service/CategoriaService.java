@@ -2,7 +2,6 @@ package com.Grupo5.ProyectoIntegrador.service;
 
 import com.Grupo5.ProyectoIntegrador.Exceptions.AlreadyExistException;
 import com.Grupo5.ProyectoIntegrador.Exceptions.ResourceNotFoundException;
-import com.Grupo5.ProyectoIntegrador.controller.CategoriaController;
 import com.Grupo5.ProyectoIntegrador.entity.Categoria;
 import com.Grupo5.ProyectoIntegrador.repository.CategoriaRepository;
 import org.apache.log4j.Logger;
