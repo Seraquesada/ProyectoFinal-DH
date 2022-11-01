@@ -25,6 +25,7 @@ public class CargaDatos implements ApplicationRunner {
         String passHash = passwordEncoder.encode(password);
         Usuario usuario = new Usuario();
         usuario.setNombre("Nicolas");
+        usuario.setApellido("Montero");
         usuario.setMail("nico.monterosabeli@gmail.com");
         usuario.setUserName("nico.monterosabeli@gmail.com");
         usuario.setPassword(passHash);

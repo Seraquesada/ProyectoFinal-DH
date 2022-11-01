@@ -16,6 +16,7 @@ class CategoriaServiceTest {
 
     @Test
     public void CategoriaTest() throws Exception {
+
         Categoria categoria1 = new Categoria("economico", "muy economico", "www.imagen.com");
         Categoria categoria2 = new Categoria("premium", "muy premium", "www.imagen2.com");
 
