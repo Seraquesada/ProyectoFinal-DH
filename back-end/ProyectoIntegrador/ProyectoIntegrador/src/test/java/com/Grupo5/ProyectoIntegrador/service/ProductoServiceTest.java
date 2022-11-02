@@ -28,8 +28,8 @@ class ProductoServiceTest {
         Categoria categoria2 = new Categoria("Sport Utility Vehicle", "Los SUVs  son  para uso en caminos mantenidos, ya sean pavimentados, de grava o de tierra. Amplios y con baul integrado, ideales para aventureros!", "https://imageio.forbes.com/specials-images/imageserve/5d389da195e0230008f6724a/2020-Ford-Explorer/0x0.jpg?format=jpg&crop=4560,2565,x430,y658,safe&width=960");
         Categoria categoriaGuardada1 = categoriaService.guardar(categoria1);
         Categoria categoriaGuardada2 = categoriaService.guardar(categoria2);
-        Ciudad ciudad1 = new Ciudad("Catamarca");
-        Ciudad ciudad2 = new Ciudad("Cordoba");
+        Ciudad ciudad1 = new Ciudad("Catamarca", -28.429150582935314, -65.78580975432385);
+        Ciudad ciudad2 = new Ciudad("Cordoba",-30.776425257706205, -64.1885096801536);
         Ciudad ciudadGuardada1 = ciudadService.guardar(ciudad1);
         Ciudad ciudadGuardada2 = ciudadService.guardar(ciudad2);
         List<Imagen> imagenes=new ArrayList<>();

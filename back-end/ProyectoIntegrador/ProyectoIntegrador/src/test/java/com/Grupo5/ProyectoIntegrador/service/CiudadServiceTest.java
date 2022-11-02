@@ -14,8 +14,8 @@ class CiudadServiceTest {
     CiudadService ciudadService;
     @Test
     public void CiudadTest() throws Exception{
-        Ciudad ciudad1 = new Ciudad("Catamarca");
-        Ciudad ciudad2 = new Ciudad("Jujuy");
+        Ciudad ciudad1 = new Ciudad("Catamarca", -28.429150582935314, -65.78580975432385);
+        Ciudad ciudad2 = new Ciudad("Jujuy", -24.15159239485633, -65.301496769158);
 
         //Testeando metodo guardar
         Ciudad ciudadPrueba1 = ciudadService.guardar(ciudad1);
@@ -33,7 +33,7 @@ class CiudadServiceTest {
         assertEquals(1, listaCiudad2.size());
 
         //Testeamos metodo actualizar
-        Ciudad ciudad3 = new Ciudad(2L,"Formosa");
+        Ciudad ciudad3 = new Ciudad(2L,"Formosa", -25.40551598517284, -58.427682968946264);
         ciudadService.actualizar(ciudad3);
 
         //Testeando metodo buscar

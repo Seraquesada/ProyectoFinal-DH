@@ -46,8 +46,13 @@ public class CargaDatos implements ApplicationRunner {
         categoriaService.guardar(categoria2);
         categoriaService.guardar(categoria3);
         categoriaService.guardar(categoria4);
-        Ciudad ciudad1 = new Ciudad("Catamarca");
-        Ciudad ciudad2 = new Ciudad("Cordoba");
+        Ciudad ciudad1 = new Ciudad("Catamarca", -28.429150582935314, -65.78580975432385);
+        Ciudad ciudad2 = new Ciudad("Cordoba",-30.776425257706205, -64.1885096801536);
+        Ciudad ciudad3 = new Ciudad("Buenos Aires", -33.4332690719713, -58.25930123975371);
+        Ciudad ciudad4 = new Ciudad("La Plata",-34.82769111860079, -57.95626284397974);
+        Ciudad ciudad5 = new Ciudad("Comodoro Rivadavia", -45.81929975939069, -67.48423025055946);
+        Ciudad ciudad6 = new Ciudad("Salta", -24.681875332528787, -65.40838584304728);
+        Ciudad ciudad7 = new Ciudad("San Carlos de Bariloche", -41.035482618111146, -71.2996413834136);
         Ciudad ciudadGuardada1 = ciudadService.guardar(ciudad1);
         Ciudad ciudadGuardada2 = ciudadService.guardar(ciudad2);
         List<Imagen> imagenes=new ArrayList<>();
