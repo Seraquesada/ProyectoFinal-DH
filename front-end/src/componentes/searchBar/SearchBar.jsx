@@ -4,29 +4,36 @@ import DatePicker from "react-datepicker"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "react-datepicker/dist/react-datepicker.css";
 import ciudades from '../../assets/ciudades.json'
+import axios  from 'axios';
 import "./SearchBar.css"
 
 const SearchBar = () => {
 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(null);
-    const [city, setCity] = useState({});
-    
-    // cuando este listo el endpoint de ciudades descomentar
-    //const [cities, setCities]=useState[]
-    //useEffect(()=>{axios.get('http://localhost:8080/ciudades')
-    //    .then(res=>{
-    //        setCities(res.data)
-    //    })
-    //},[])
+    const [city, setCity] = useState();
+
+    let options = [];
+
+    useEffect(()=>{axios.get('http://localhost:8080/ciudades')
+        .then(res=>{
+            let aaa =  res.data.map(c =>{
+                c.label = c.nombre
+                delete c.nombre
+                return c;
+                    })
+            options=[aaa]
+        })
+    })
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        /* let payload = {
+        /*let payload = {
             "ciudad": city,
             "startDate": startDate,
             "endDate": endDate 
         }*/
+        
     }
 
     const handleDateChange = (dates) => {
@@ -36,7 +43,8 @@ const SearchBar = () => {
     };
 
     const handleCityChange = (e) =>{
-        setCity(e.value)
+        console.log(e)
+        setCity(e.id)
     }
     const customStyles = {
         option: (provided) => ({
@@ -52,9 +60,10 @@ const SearchBar = () => {
                         styles={customStyles}
                         placeholder="Elija localidad" 
                         className="select" 
-                        options={ciudades}
+                        label="nombre"
+                        options={options}
                         onChange={handleCityChange}
-                    />
+                        />
 
                         <DatePicker
                         className="datepicker"
@@ -62,8 +71,10 @@ const SearchBar = () => {
                         onChange={handleDateChange}
                         startDate={startDate}
                         endDate={endDate}
+                        minDate={new Date()}
                         showDisabledMonthNavigation
                         selectsRange
+                        withPortal
                         />
                     
 
