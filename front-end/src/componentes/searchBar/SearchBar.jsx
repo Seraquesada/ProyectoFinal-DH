@@ -1,38 +1,41 @@
-import React,{useState,useEffect} from 'react'
-import Select from 'react-select'
-import DatePicker from "react-datepicker"
-import "bootstrap/dist/css/bootstrap.min.css"
+import React,{useState,useEffect} from 'react';
+import DatePicker from "react-datepicker";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "react-datepicker/dist/react-datepicker.css";
-import ciudades from '../../assets/ciudades.json'
+import Select from 'react-select';
 import axios  from 'axios';
-import "./SearchBar.css"
+import "./SearchBar.css";
 
 const SearchBar = () => {
 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(null);
-    const [city, setCity] = useState();
-
-    let options = [];
+    const [selectDisplay, setSelectDisplay] = useState("Cargando...")
 
     useEffect(()=>{axios.get('http://localhost:8080/ciudades')
         .then(res=>{
-            let aaa =  res.data.map(c =>{
-                c.label = c.nombre
-                delete c.nombre
+            let options = res.data;
+            options.map( (c) => {
+                c[`label`] = c.nombre;
+                c[`value`] = c.id;
+
+                delete c.nombre;
+                delete c.id;
+                delete c.latitud;
+                delete c.longitud;
                 return c;
-                    })
-            options=[aaa]
+              });
+              console.log(options)
+              setSelectDisplay(options);
         })
-    })
+    }, []);
+
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        /*let payload = {
-            "ciudad": city,
-            "startDate": startDate,
-            "endDate": endDate 
-        }*/
+        console.log("Apretaste buscar");
+        console.log(e);
         
     }
 
@@ -42,28 +45,11 @@ const SearchBar = () => {
         setEndDate(end);
     };
 
-    const handleCityChange = (e) =>{
-        console.log(e)
-        setCity(e.id)
-    }
-    const customStyles = {
-        option: (provided) => ({
-            ...provided,
-            padding: 10
-        })}
-
     return (
             <div className="container-forms">
                 <form className="form" onSubmit={handleSubmit}>
 
-                        <Select
-                        styles={customStyles}
-                        placeholder="Elija localidad" 
-                        className="select" 
-                        label="nombre"
-                        options={options}
-                        onChange={handleCityChange}
-                        />
+                        <Select className='select'  options={selectDisplay} />
 
                         <DatePicker
                         className="datepicker"
