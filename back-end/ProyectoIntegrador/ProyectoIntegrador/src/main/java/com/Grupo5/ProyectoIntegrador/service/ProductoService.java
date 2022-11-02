@@ -30,11 +30,11 @@ public class ProductoService {
     }
 
     public List<Producto> buscarPorCategoriaYCiudad(Long categoria,Long ciudad){
-        return productoRepository.findByCategoriaAndCiudad(categoria, ciudad);
+        return productoRepository.findByCategoria_idAndCiudad_id(categoria, ciudad);
     }
 
     public List<Producto> buscarPorCategoriaOCiudad(Long categoria,Long ciudad){
-        return productoRepository.findByCategoriaOrCiudad(categoria, ciudad);
+        return productoRepository.findByCategoria_idOrCiudad_id(categoria, ciudad);
     }
 
     public Producto buscar(Long id) throws ResourceNotFoundException {

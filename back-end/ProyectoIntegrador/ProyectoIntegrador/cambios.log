@@ -6288,3 +6288,14 @@
 [2022-11-01 13:00:38] [ INFO ] [CategoriaController:37] Se busco todas las categorias
 [2022-11-01 13:11:02] [ INFO ] [CategoriaController:37] Se busco todas las categorias
 [2022-11-01 16:35:28] [ ERROR] [CategoriaService:27] La categoria ya existe
+[2022-11-01 20:15:12] [ INFO ] [CategoriaController:59] Se filtraron productos por ciudad
+[2022-11-01 20:15:40] [ INFO ] [CategoriaController:59] Se filtraron productos por ciudad
+[2022-11-01 20:18:11] [ INFO ] [CategoriaController:46] Se filtraron productos por categoria Y ciudad
+[2022-11-01 20:18:15] [ INFO ] [CategoriaController:46] Se filtraron productos por categoria Y ciudad
+[2022-11-01 20:18:19] [ INFO ] [CategoriaController:46] Se filtraron productos por categoria Y ciudad
+[2022-11-01 20:18:22] [ INFO ] [CategoriaController:46] Se filtraron productos por categoria Y ciudad
+[2022-11-01 20:18:30] [ INFO ] [CategoriaController:49] Se buscaron todos los productos
+[2022-11-01 20:18:37] [ INFO ] [CategoriaController:36] Se buscaron productos random?
+[2022-11-01 20:18:39] [ INFO ] [CategoriaController:36] Se buscaron productos random?
+[2022-11-01 20:18:40] [ INFO ] [CategoriaController:36] Se buscaron productos random?
+[2022-11-01 20:18:41] [ INFO ] [CategoriaController:36] Se buscaron productos random?

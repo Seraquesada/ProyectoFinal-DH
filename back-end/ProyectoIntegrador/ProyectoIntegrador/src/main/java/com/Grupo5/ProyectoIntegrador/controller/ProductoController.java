@@ -36,7 +36,7 @@ public class ProductoController {
         logger.info("Se buscaron productos random?");
         return respuesta;
     }
-    @GetMapping(path = "/filter/")
+    @GetMapping("/filter")
     public ResponseEntity<List<Producto>> filtrarProductos(@RequestParam(required = false, defaultValue = "") String categoria, @RequestParam(required = false, defaultValue = "") String ciudad){
         ResponseEntity<List<Producto>> respuesta = null;
         if(!categoria.isBlank() && !ciudad.isBlank() ) {
