@@ -25,7 +25,6 @@ const SearchBar = () => {
                 delete c.longitud;
                 return c;
               });
-              console.log(options)
               setSelectDisplay(options);
         })
     }, []);
@@ -35,7 +34,6 @@ const SearchBar = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Apretaste buscar");
-        console.log(e);
         
     }
 
