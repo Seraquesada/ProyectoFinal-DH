@@ -24,8 +24,8 @@ const SearchBar = () => {
                 delete c.latitud;
                 delete c.longitud;
                 return c;
-              });
-              setSelectDisplay(options);
+                });
+                setSelectDisplay(options);
         })
     }, []);
 
@@ -50,15 +50,15 @@ const SearchBar = () => {
                         <Select className='select'  options={selectDisplay} />
 
                         <DatePicker
-                        className="datepicker"
-                        selected={startDate}
-                        onChange={handleDateChange}
-                        startDate={startDate}
-                        endDate={endDate}
-                        minDate={new Date()}
-                        showDisabledMonthNavigation
-                        selectsRange
-                        withPortal
+                            className="datepicker"
+                            selected={startDate}
+                            onChange={handleDateChange}
+                            startDate={startDate}
+                            endDate={endDate}
+                            minDate={new Date()}
+                            showDisabledMonthNavigation
+                            selectsRange
+                            withPortal
                         />
                     
 

@@ -4,7 +4,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import axios from 'axios';
 import './category.css'
 
-const Category = (props)=> {
+const Category = ()=> {
     const [data1, setData1] = useState(null);
     const [isLoading, setLoading] = useState(true);
     
@@ -17,8 +17,7 @@ const Category = (props)=> {
         setLoading(false)
     }
     )}, [])
-
-    console.log(data1)
+    
     if (isLoading) {
       console.debug("renders: Loading...");
       return <Spinner animation="border" size="sm" />;
@@ -38,7 +37,6 @@ const Category = (props)=> {
             key={item.id}
             titulo = {item.titulo}
             descripcion={item.descripcion}
-            cambioCategoria={props.cambioCategoria}
           /> 
         )
         }</div>

@@ -9,6 +9,7 @@ const Header = () => {
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [userName, setUserName] = useState(" ");
+  
   const logOut = () => {
     localStorage.removeItem('jwt');
     setLoggedIn(false)

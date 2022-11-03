@@ -1,21 +1,24 @@
-import React, { useState }  from "react";
+import React  from "react";
 import Header from "../header/Header";
 import Category from "../category/Category"
 import Footer from "../footer/Footer"
 import GroupOfVehicles from "../GroupOfVehicles/GroupOfVehicles";
 
 import SearchBar from "../searchBar/SearchBar"
+import { CategoryProvider } from "../../context/CategoryContext";
 
 export const Home = (props) => {
-    const [categoria, setCategoria] = useState(" ");
+    
 
     return (
-    <div >
-      <Header/>
-      <SearchBar />
-      <Category cambioCategoria = {setCategoria} categoria1={categoria}/>
-      <GroupOfVehicles categoria1={categoria}/>
-      <Footer/>
-    </div>
+      <CategoryProvider>
+        <div>
+          <Header/>
+          <SearchBar/>
+          <Category  />
+          <GroupOfVehicles/>
+          <Footer/>
+        </div>
+      </CategoryProvider>
     )
 }
