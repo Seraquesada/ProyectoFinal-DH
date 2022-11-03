@@ -30,7 +30,11 @@ public class Producto {
     )
     private List<Caracteristica> caracteristicas;
 
-    public Producto(Long id, String titulo, String descripcion, Ciudad ciudad, Categoria categoria, List<Imagen> imagenes, List<Caracteristica> caracteristicas) {
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "politicasProducto_id" , referencedColumnName ="id")
+    private PoliticasProducto politicasProducto;
+
+    public Producto(Long id, String titulo, String descripcion, Ciudad ciudad, Categoria categoria, List<Imagen> imagenes, List<Caracteristica> caracteristicas, PoliticasProducto politicasProducto) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -38,15 +42,17 @@ public class Producto {
         this.categoria = categoria;
         this.imagenes = imagenes;
         this.caracteristicas = caracteristicas;
+        this.politicasProducto = politicasProducto;
     }
 
-    public Producto(String titulo, String descripcion, Ciudad ciudad, Categoria categoria, List<Imagen> imagenes, List<Caracteristica> caracteristicas) {
+    public Producto(String titulo, String descripcion, Ciudad ciudad, Categoria categoria, List<Imagen> imagenes, List<Caracteristica> caracteristicas, PoliticasProducto politicasProducto) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.ciudad = ciudad;
         this.categoria = categoria;
         this.imagenes = imagenes;
         this.caracteristicas = caracteristicas;
+        this.politicasProducto = politicasProducto;
     }
 
     public Producto() {
@@ -106,5 +112,13 @@ public class Producto {
 
     public void setCaracteristicas(List<Caracteristica> caracteristicas) {
         this.caracteristicas = caracteristicas;
+    }
+
+    public PoliticasProducto getPoliticasProducto() {
+        return politicasProducto;
+    }
+
+    public void setPoliticasProducto(PoliticasProducto politicasProducto) {
+        this.politicasProducto = politicasProducto;
     }
 }

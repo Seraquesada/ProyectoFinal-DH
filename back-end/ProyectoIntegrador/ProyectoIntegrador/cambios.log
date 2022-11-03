@@ -6299,3 +6299,30 @@
 [2022-11-01 20:18:39] [ INFO ] [CategoriaController:36] Se buscaron productos random?
 [2022-11-01 20:18:40] [ INFO ] [CategoriaController:36] Se buscaron productos random?
 [2022-11-01 20:18:41] [ INFO ] [CategoriaController:36] Se buscaron productos random?
+[2022-11-02 16:11:15] [ ERROR] [CiudadService:27] La ciudad ya existe
+[2022-11-02 16:15:39] [ INFO ] [CategoriaController:31] Se buscaron todas lsas ciudades
+[2022-11-02 16:17:07] [ INFO ] [CategoriaController:31] Se buscaron todas lsas ciudades
+[2022-11-02 16:32:43] [ INFO ] [CategoriaController:77] Se encontro el producto bmw
+[2022-11-02 16:47:26] [ INFO ] [CategoriaController:36] Se buscaron productos random?
+[2022-11-02 16:47:26] [ INFO ] [CategoriaController:77] Se encontro el producto bmw
+[2022-11-02 16:53:31] [ INFO ] [CategoriaController:36] Se buscaron productos random?
+[2022-11-02 16:53:31] [ INFO ] [CategoriaController:77] Se encontro el producto bmw
+[2022-11-02 16:53:32] [ INFO ] [CategoriaController:29] Se registro el producto bmw
+[2022-11-02 16:53:32] [ INFO ] [CategoriaController:93] El producto se actualizo
+[2022-11-02 16:54:17] [ INFO ] [CategoriaController:36] Se buscaron productos random?
+[2022-11-02 16:54:17] [ INFO ] [CategoriaController:77] Se encontro el producto bmw
+[2022-11-02 16:54:17] [ INFO ] [CategoriaController:29] Se registro el producto bmw
+[2022-11-02 16:54:17] [ INFO ] [CategoriaController:93] El producto se actualizo
+[2022-11-02 16:54:17] [ INFO ] [CategoriaController:85] Se elimino el producto
+[2022-11-02 17:22:16] [ INFO ] [CategoriaController:36] Se buscaron productos random?
+[2022-11-02 17:22:16] [ INFO ] [CategoriaController:77] Se encontro el producto bmw
+[2022-11-02 17:22:16] [ INFO ] [CategoriaController:29] Se registro el producto bmw
+[2022-11-02 17:22:16] [ INFO ] [CategoriaController:93] El producto se actualizo
+[2022-11-02 17:22:16] [ INFO ] [CategoriaController:85] Se elimino el producto
+[2022-11-02 17:22:16] [ INFO ] [CategoriaController:54] Se filtraron productos por categoria
+[2022-11-02 17:30:15] [ INFO ] [CategoriaController:36] Se buscaron productos random?
+[2022-11-02 17:30:15] [ INFO ] [CategoriaController:77] Se encontro el producto bmw
+[2022-11-02 17:30:15] [ INFO ] [CategoriaController:29] Se registro el producto bmw
+[2022-11-02 17:30:15] [ INFO ] [CategoriaController:93] El producto se actualizo
+[2022-11-02 17:30:15] [ INFO ] [CategoriaController:85] Se elimino el producto
+[2022-11-02 17:30:15] [ INFO ] [CategoriaController:54] Se filtraron productos por categoria

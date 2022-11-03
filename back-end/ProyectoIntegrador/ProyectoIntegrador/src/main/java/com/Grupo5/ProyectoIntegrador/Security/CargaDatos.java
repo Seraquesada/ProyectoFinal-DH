@@ -55,15 +55,17 @@ public class CargaDatos implements ApplicationRunner {
         Ciudad ciudad7 = new Ciudad("San Carlos de Bariloche", -41.035482618111146, -71.2996413834136);
         Ciudad ciudadGuardada1 = ciudadService.guardar(ciudad1);
         Ciudad ciudadGuardada2 = ciudadService.guardar(ciudad2);
-        ciudadService.guardar(ciudad3);
-        ciudadService.guardar(ciudad4);
-        ciudadService.guardar(ciudad5);
-        ciudadService.guardar(ciudad6);
-        ciudadService.guardar(ciudad7);
+        Ciudad ciudadGuardada3 = ciudadService.guardar(ciudad3);
+        Ciudad ciudadGuardada4 = ciudadService.guardar(ciudad4);
+        Ciudad ciudadGuardada5 = ciudadService.guardar(ciudad5);
+        Ciudad ciudadGuardada6 = ciudadService.guardar(ciudad6);
+        Ciudad ciudadGuardada7 = ciudadService.guardar(ciudad7);
         List<Imagen> imagenes=new ArrayList<>();
         List<Caracteristica> caracteristicas = new ArrayList<>();
-        Producto producto1 = new Producto("bmw", "auto genial", ciudadGuardada1, categoria1, imagenes, caracteristicas);
-        Producto producto2 = new Producto("audi", "auto super genial", ciudadGuardada2, categoria2, imagenes, caracteristicas);
+        PoliticasProducto politicas1 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
+        PoliticasProducto politicas2 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
+        Producto producto1 = new Producto("bmw", "auto genial", ciudadGuardada1, categoria1, imagenes, caracteristicas, politicas1);
+        Producto producto2 = new Producto("audi", "auto super genial", ciudadGuardada2, categoria2, imagenes, caracteristicas, politicas2);
         productoService.guardar(producto1);
         productoService.guardar(producto2);
 
