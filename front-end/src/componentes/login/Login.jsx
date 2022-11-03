@@ -12,7 +12,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
   
   const [validated, setValidated] = useState(false);
   const [badCredentials, setBadCredentials] = useState(false);
-  const [passwordMatch, setPasswordMatch] = useState(false);
+  const [originalPasswordPattern, setOriginalPasswordPattern] = useState("");
 
 
   const handleSubmit = (event) => {
@@ -27,14 +27,9 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
   }
 
   const checkEquals = (e) => {
-    console.log(e.target);
     let mainPassword = document.getElementById("password").value;
-    let passwordCheck = document.getElementById("passwordCheck");
-    if (value === mainPassword){
-      setPasswordMatch(true)
-    }else{
-      setPasswordMatch(false)
-    }
+
+    setOriginalPasswordPattern(mainPassword); 
   }
 
   function parseJwt (token) {
@@ -67,7 +62,6 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
       if(response.status === 200){
         localStorage.setItem('jwt', response.data.jwt);
         const unjwt = parseJwt(localStorage.getItem('jwt'))
-        console.log(unjwt)
         const iniciales = unjwt.apellido.substr(0, 1).toUpperCase() + unjwt.nombre.substr(0, 1).toUpperCase();
         setUserName(iniciales)
         logIn();
@@ -173,7 +167,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="password">
               <FloatingLabel controlId="password" label="Contraseña">
-                <Form.Control type="password" placeholder=" " pattern="^\S{6,}$" required/>
+                <Form.Control type="password" placeholder=" " onChange={e => checkEquals(e)} pattern="^\S{6,}$" required/>
                 <Form.Control.Feedback type="invalid">
                   Debe contener al menos 6 caracteres.
                 </Form.Control.Feedback>
@@ -181,7 +175,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="passwordCheck">
               <FloatingLabel controlId="passwordCheck" label="Verificar Contraseña">
-                <Form.Control pattern="^\S{6,}$" onChange={e => checkEquals(e)} type="password" placeholder=" " required />
+                <Form.Control pattern={`${originalPasswordPattern}`} onChange={e => checkEquals(e)} type="password" placeholder=" " required/>
                 <Form.Control.Feedback type="invalid">
                   Las contraseñas no coinciden.
                 </Form.Control.Feedback>
