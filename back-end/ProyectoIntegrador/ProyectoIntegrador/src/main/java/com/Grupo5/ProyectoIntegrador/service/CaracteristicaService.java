@@ -19,13 +19,6 @@ public class CaracteristicaService {
         this.caracteristicaRepository = caracteristicaRepository;
     }
     public Caracteristica guardar(Caracteristica caracteristica) throws AlreadyExistException {
-        List<Caracteristica> caracteristicas=buscarTodos();
-        for (Caracteristica car:caracteristicas) {
-            if (car.getNombre() == caracteristica.getNombre()){
-                logger.error("La caracteristica ya existe");
-                throw new AlreadyExistException("La caracteristica ya existe en la base de datos");
-            }
-        }
         return caracteristicaRepository.save(caracteristica);
     }
     public List<Caracteristica> buscarTodos() {
