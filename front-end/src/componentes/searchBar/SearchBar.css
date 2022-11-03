@@ -12,7 +12,6 @@
     grid-template-columns: auto auto 150px;
     padding: 0.5rem 0px;
 }
-
 .react-datepicker__input-container{
     display: grid;
 }

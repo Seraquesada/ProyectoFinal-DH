@@ -1,31 +1,31 @@
 [
     {
         "value":"buenosAires",
-        "label":"Buenos Aires",
+        "nombre":"Buenos Aires",
         "latitud":"-34.55798",
         "longitud": "-58.41699"
     },
     {
         "value":"laPlata",
-        "label":"La Plata",
+        "nombre":"La Plata",
         "latitud":"-34.90556",
         "longitud": "-57.95416"
     },
     {
         "value":"comodoroRivadavia",
-        "label":"Comodoro Rivadavia",
+        "nombre":"Comodoro Rivadavia",
         "latitud":"-45.79154",
         "longitud": "-67.46691"
     },
     {
         "value":"salta",
-        "label":"Salta",
+        "nombre":"Salta",
         "latitud":"-24.84435",
         "longitud": "-65.47820"
     },
     {
         "value":"bariloche",
-        "label":"Bariloche",
+        "nombre":"Bariloche",
         "latitud":"-41.14583",
         "longitud": "-71.16161"
     }

@@ -53,7 +53,8 @@ const SingleVehicle = () => {
                     endDate={endDate}
                     selectsRange
                     inline
-                    excludeDates={[new Date(), (new Date(), 1)]}
+                    minDate={new Date(startDate)}
+                    excludeDates={[new Date(), (new Date(),10)]}
                     monthsShown={2}
                     />
             </div>
