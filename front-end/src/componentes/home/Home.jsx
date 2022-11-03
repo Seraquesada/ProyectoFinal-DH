@@ -8,12 +8,12 @@ import SearchBar from "../searchBar/SearchBar"
 
 export const Home = (props) => {
     const [categoria, setCategoria] = useState(" ");
-    
+
     return (
     <div >
       <Header/>
       <SearchBar />
-      <Category cambioCategoria = {setCategoria}/>
+      <Category cambioCategoria = {setCategoria} categoria1={categoria}/>
       <GroupOfVehicles categoria1={categoria}/>
       <Footer/>
     </div>
