@@ -1,6 +1,6 @@
 import React from 'react'
 import Item from '../vehicle/Vehicle'
-import data from '../assets/vehiculos.json'
+import data from '../../assets/vehiculos.json'
 import './groupOfVehicles.css'
 
 const GroupOfVehicles = (props)=> {
