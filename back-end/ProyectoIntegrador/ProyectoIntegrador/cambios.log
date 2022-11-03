@@ -6326,3 +6326,5 @@
 [2022-11-02 17:30:15] [ INFO ] [CategoriaController:93] El producto se actualizo
 [2022-11-02 17:30:15] [ INFO ] [CategoriaController:85] Se elimino el producto
 [2022-11-02 17:30:15] [ INFO ] [CategoriaController:54] Se filtraron productos por categoria
+[2022-11-03 14:06:29] [ INFO ] [CategoriaController:37] Se busco todas las categorias
+[2022-11-03 14:26:52] [ INFO ] [CategoriaController:37] Se busco todas las categorias
