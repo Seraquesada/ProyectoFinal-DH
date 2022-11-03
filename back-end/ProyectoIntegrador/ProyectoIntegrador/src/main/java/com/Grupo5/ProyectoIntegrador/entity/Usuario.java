@@ -63,10 +63,6 @@ public class Usuario implements UserDetails {
         this.nombre = nombre;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -91,7 +87,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public String getUsername() {
-        return mail;
+        return userName;
     }
 
     @Override

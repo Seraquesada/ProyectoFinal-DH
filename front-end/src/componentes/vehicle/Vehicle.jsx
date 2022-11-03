@@ -4,15 +4,19 @@ import "../groupOfVehicles/groupOfVehicles.css";
 import { GrStar } from "react-icons/gr";
 import {IoMdPin} from "react-icons/io";
 import{GiCarWheel,GiCarSeat} from "react-icons/gi";
+
+
+
   const Vehicle = ({
-  url_imagen,
-  id,
-  category,
-  title,
-  location,
-  description,
+      url_imagen,
+      id,
+      title,
+      location,
+      description,
+      category
     }) => {
-      
+
+  
   return (
     <div className="vehicle">
       <div  className="container-img-vehicle">
