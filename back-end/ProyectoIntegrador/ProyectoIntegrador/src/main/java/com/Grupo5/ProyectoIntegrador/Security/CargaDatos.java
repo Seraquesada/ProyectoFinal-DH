@@ -55,6 +55,11 @@ public class CargaDatos implements ApplicationRunner {
         Ciudad ciudad7 = new Ciudad("San Carlos de Bariloche", -41.035482618111146, -71.2996413834136);
         Ciudad ciudadGuardada1 = ciudadService.guardar(ciudad1);
         Ciudad ciudadGuardada2 = ciudadService.guardar(ciudad2);
+        ciudadService.guardar(ciudad3);
+        ciudadService.guardar(ciudad4);
+        ciudadService.guardar(ciudad5);
+        ciudadService.guardar(ciudad6);
+        ciudadService.guardar(ciudad7);
         List<Imagen> imagenes=new ArrayList<>();
         List<Caracteristica> caracteristicas = new ArrayList<>();
         Producto producto1 = new Producto("bmw", "auto genial", ciudadGuardada1, categoria1, imagenes, caracteristicas);
