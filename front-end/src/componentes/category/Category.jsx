@@ -35,6 +35,7 @@ const Category = ()=> {
           <ItemCategory
             url_imagen = {item.urlImagen}
             key={item.id}
+            id={item.id}
             titulo = {item.titulo}
             descripcion={item.descripcion}
           /> 
