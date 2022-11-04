@@ -47,7 +47,7 @@ const SearchBar = () => {
             <div className="container-forms">
                 <form className="form" onSubmit={handleSubmit}>
 
-                        <Select className='select'  options={selectDisplay} />
+                        <Select placeholder="Elija una localidad..." className='select'  options={selectDisplay} />
 
                         <DatePicker
                             className="datepicker"

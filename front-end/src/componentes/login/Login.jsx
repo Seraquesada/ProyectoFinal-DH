@@ -63,6 +63,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
         localStorage.setItem('jwt', response.data.jwt);
         const unjwt = parseJwt(localStorage.getItem('jwt'))
         const iniciales = unjwt.apellido.substr(0, 1).toUpperCase() + unjwt.nombre.substr(0, 1).toUpperCase();
+        localStorage.setItem('username', iniciales)
         setUserName(iniciales)
         logIn();
       }else{
@@ -103,7 +104,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
             <h3 className="Auth-form-title">Iniciar Sesión</h3>
             <Form.Group className="mb-3" controlId="emailLog">
               <FloatingLabel controlId="emailLog" label="Correo Elecrónico" className="mb-3">
-                <Form.Control type="email" placeholder=" " required/>
+                <Form.Control type="email" pattern="\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+" placeholder=" " required/>
               </FloatingLabel>
             </Form.Group>
             <Form.Group className="mb-3" controlId="passwordLog">
