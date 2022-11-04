@@ -12,11 +12,11 @@ const Category = ()=> {
     axios.get('http://localhost:8080/categorias')
     .then(res=> 
     {
-        let datos = res.data
-        setData1(datos)
-        setLoading(false)
+      let datos = res.data
+      setData1(datos)
+      setLoading(false)
     }
-    )}, [])
+    )},[])
     
     if (isLoading) {
       console.debug("renders: Loading...");

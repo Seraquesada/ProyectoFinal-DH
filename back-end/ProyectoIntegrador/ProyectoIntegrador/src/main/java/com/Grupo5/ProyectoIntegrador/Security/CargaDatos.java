@@ -64,10 +64,25 @@ public class CargaDatos implements ApplicationRunner {
         List<Caracteristica> caracteristicas = new ArrayList<>();
         PoliticasProducto politicas1 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
         PoliticasProducto politicas2 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
+        PoliticasProducto politicas3 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
+        PoliticasProducto politicas4 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
+        PoliticasProducto politicas5 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
+        PoliticasProducto politicas6 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
+        PoliticasProducto politicas7 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
         Producto producto1 = new Producto("bmw", "auto genial", ciudadGuardada1, categoria1, imagenes, caracteristicas, politicas1);
         Producto producto2 = new Producto("audi", "auto super genial", ciudadGuardada2, categoria2, imagenes, caracteristicas, politicas2);
+        Producto producto3 = new Producto("audi", "auto super genial", ciudadGuardada3, categoria3, imagenes, caracteristicas, politicas3);
+        Producto producto4 = new Producto("audi", "auto super genial", ciudadGuardada4, categoria4, imagenes, caracteristicas, politicas4);
+        Producto producto5 = new Producto("audi", "auto super genial", ciudadGuardada5, categoria1, imagenes, caracteristicas, politicas5);
+        Producto producto6 = new Producto("audi", "auto super genial", ciudadGuardada6, categoria2, imagenes, caracteristicas, politicas6);
+        Producto producto7 = new Producto("audi", "auto super genial", ciudadGuardada7, categoria3, imagenes, caracteristicas, politicas7);
         productoService.guardar(producto1);
         productoService.guardar(producto2);
+        productoService.guardar(producto3);
+        productoService.guardar(producto4);
+        productoService.guardar(producto5);
+        productoService.guardar(producto6);
+        productoService.guardar(producto7);
 
     }
 }
