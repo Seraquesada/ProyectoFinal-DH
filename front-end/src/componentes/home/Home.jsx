@@ -7,7 +7,7 @@ import GroupOfVehicles from "../GroupOfVehicles/GroupOfVehicles";
 import SearchBar from "../searchBar/SearchBar"
 import { CategoryProvider } from "../../context/CategoryContext";
 
-export const Home = (props) => {
+export const Home = () => {
     
 
     return (
@@ -15,7 +15,7 @@ export const Home = (props) => {
         <div>
           <Header/>
           <SearchBar/>
-          <Category  />
+          <Category/>
           <GroupOfVehicles/>
           <Footer/>
         </div>
