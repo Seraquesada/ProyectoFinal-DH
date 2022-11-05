@@ -26,7 +26,7 @@ const Category = ()=> {
       <div className='category'>
         <div className='container-category'>
           <div className='tituloCategoria'>
-          <h2>Selecciona la categoria</h2>
+          <h2>Selecciona una categoria</h2>
           </div>
         <div className='itemCategoria'>
         

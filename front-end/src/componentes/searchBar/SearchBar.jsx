@@ -1,16 +1,21 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect, useContext} from 'react';
 import DatePicker from "react-datepicker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-datepicker/dist/react-datepicker.css";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import Select from 'react-select';
 import axios  from 'axios';
 import "./SearchBar.css";
+import { CategoryContext } from "../../context/CategoryContext";
 
 const SearchBar = () => {
 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(null);
     const [selectDisplay, setSelectDisplay] = useState("Cargando...")
+    const {setCiudad} = useContext(CategoryContext);
+    const [userChoice, setUserChoice] = useState(undefined)
 
     useEffect(()=>{axios.get('http://localhost:8080/ciudades')
         .then(res=>{
@@ -31,9 +36,9 @@ const SearchBar = () => {
 
     
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Apretaste buscar");
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setCiudad(userChoice);
         
     }
 
@@ -45,25 +50,22 @@ const SearchBar = () => {
 
     return (
             <div className="container-forms">
-                <form className="form" onSubmit={handleSubmit}>
+                <Form className="form" onSubmit={handleSubmit}>
+                    <Select placeholder="Elija una localidad..." className='select'  options={selectDisplay} onChange={(choice) => setUserChoice(choice.value)}/>
 
-                        <Select placeholder="Elija una localidad..." className='select'  options={selectDisplay} />
-
-                        <DatePicker
-                            className="datepicker"
-                            selected={startDate}
-                            onChange={handleDateChange}
-                            startDate={startDate}
-                            endDate={endDate}
-                            minDate={new Date()}
-                            showDisabledMonthNavigation
-                            selectsRange
-                            withPortal
-                        />
-                    
-
-                    <button className='btn btn-secondary'>Buscar</button>
-                </form>
+                    <DatePicker
+                        className="datepicker"
+                        selected={startDate}
+                        onChange={handleDateChange}
+                        startDate={startDate}
+                        endDate={endDate}
+                        minDate={new Date()}
+                        showDisabledMonthNavigation
+                        selectsRange
+                        withPortal
+                    />
+                    <Button className='btn btn-secondary' type="submit">Buscar</Button>
+                </Form>
             </div>
         
     )
