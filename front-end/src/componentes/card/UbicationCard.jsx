@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, Outlet } from 'react-router-dom'
-import './HeaderCard.css'
+import './UbicationCard.css'
+import StarRating from './StarRating'
 
-const HeaderCard = () => {
+const UbicationCard = () => {
     
     const [data, setData] = useState([]);
     const url = "https://rickandmortyapi.com/api";
@@ -20,15 +20,17 @@ const HeaderCard = () => {
 
     return(
         <div className="ubicationCard">
+            
             <div className="infoUbicacion">
                 <h5> {data.status} aca va la ciudad</h5>
                 <h6> {data.gender} aca va la distancia del centro</h6>
             </div>
             <div className ="iconosUbicacion">
                 <div> 
-                    <h5>Calificacion</h5>
-                    <h6>estrellas</h6>
+                   <h5>Calificacion</h5>
+                   <StarRating /> 
                 </div>
+                
                 <div>
                     <p>puntos</p>
                 </div>
@@ -36,5 +38,5 @@ const HeaderCard = () => {
         </div>
     );
 };
-export default HeaderCard
+export default UbicationCard
 

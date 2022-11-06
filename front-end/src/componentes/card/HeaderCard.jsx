@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, Outlet } from 'react-router-dom'
-import './UbicationCard.css'
+import './HeaderCard.css'
 import {BsChevronLeft}from 'react-icons/bs';
 
-const UbicationCard = () => {
+const HeaderCard = () => {
     
     const [data, setData] = useState([]);
     const url = "https://rickandmortyapi.com/api";
@@ -32,5 +32,5 @@ const UbicationCard = () => {
             </div>
     );
 };
-export default UbicationCard
+export default HeaderCard
 
