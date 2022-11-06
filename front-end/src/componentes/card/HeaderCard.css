@@ -2,14 +2,14 @@
 .headerCard {
     display: grid;
     grid-template-columns: 90% 10%;
-    color:blue;
-    background-color: beige;
+    color:white;
+    background-color:#FF9E00;
     margin-bottom: 5px;
     padding: 20px;
 }
 
 .flechaAtraslink {
-    color: blue;
+    color: white;
     font-size: 40px;
 }
 

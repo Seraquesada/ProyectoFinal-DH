@@ -26,13 +26,12 @@ const UbicationCard = () => {
                 <h6> {data.gender} aca va la distancia del centro</h6>
             </div>
             <div className ="iconosUbicacion">
-                <div> 
-                   <h5>Calificacion</h5>
+                <div id="raiting"> 
+                   <h5>Excelente</h5>
                    <StarRating /> 
                 </div>
-                
-                <div>
-                    <p>puntos</p>
+                <div id="points">
+                    <p>8</p>
                 </div>
             </div>
         </div>

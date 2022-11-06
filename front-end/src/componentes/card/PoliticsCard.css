@@ -1,6 +1,6 @@
 .politicsCard{
     padding: 20px;
-    background-color:antiquewhite; 
+    background-color:whitesmoke; 
     margin-bottom: 5px;
 }
 
@@ -8,11 +8,11 @@
 .politicsDetails {
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    color:blue;
+    color:black;
 }
 
 .politicsItem{
-    color: blue;
+    color: black;
 }
 
 ul {

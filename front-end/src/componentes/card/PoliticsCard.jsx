@@ -22,31 +22,31 @@ const PoliticsCard = () => {
 
     return(
         <div className="politicsCard">
-            <h3> ¿ Qué tenés que saber ?</h3>
+            <h3> ¿Qué tenés que saber ?</h3>
             <hr></hr>
             <div className="politicsDetails">
                 <div className="politicsItem">
-                    <h4> titulito</h4>
+                    <h4> {data.name}</h4>
                     <ul>
-                        <li>la 1</li>
-                        <li>la 2</li>
-                        <li>la 3</li>
+                        <li>{data.gender}</li>
+                        <li>{data.gender}</li>
+                        <li>{data.gender}</li>
                     </ul>
                 </div>
-                <div>
-                    <h4> titulito</h4>
+                <div className="politicsItem">
+                    <h4> {data.name}</h4>
                     <ul>
-                        <li>la 1</li>
-                        <li>la 2</li>
-                        <li>la 3</li>
+                        <li>{data.gender}</li>
+                        <li>{data.gender}</li>
+                        <li>{data.gender}</li>
                     </ul>
                 </div>
-                <div>
-                    <h4> titulito</h4>
+                <div className="politicsItem">
+                    <h4> {data.name}</h4>
                     <ul>
-                        <li>la 1</li>
-                        <li>la 2</li>
-                        <li>la 3</li>
+                        <li>{data.gender}</li>
+                        <li>{data.gender}</li>
+                        <li>{data.gender}</li>
                     </ul>
                 </div>
             </div>

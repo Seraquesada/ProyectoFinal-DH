@@ -1,6 +1,7 @@
 .descriptionCard {
-    color:red;
-    background-color: aquamarine;
+    color:black;
+    background-color: whitesmoke;
     padding: 20px;
     margin-bottom: 5px;
+    margin-top: 10px;
 }
