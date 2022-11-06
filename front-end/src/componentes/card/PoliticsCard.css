@@ -1,0 +1,36 @@
+.politicsCard{
+    padding: 20px;
+    background-color:antiquewhite; 
+    margin-bottom: 5px;
+}
+
+
+.politicsDetails {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    color:blue;
+}
+
+.politicsItem{
+    color: blue;
+}
+
+ul {
+    list-style-type: none;
+        
+}
+@media screen and (max-width: 768px) {
+    .politicsDetails {
+        grid-template-columns: 50% 50%;
+                
+    }
+}
+    
+
+@media screen and (max-width:420px){
+    .politicsDetails {
+        grid-template-columns: 100%;
+        align-items: center;
+                
+    }
+}

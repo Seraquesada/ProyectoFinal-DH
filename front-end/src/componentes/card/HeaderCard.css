@@ -1,0 +1,22 @@
+
+.headerCard {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    color:blue;
+    background-color: beige;
+    margin-bottom: 5px;
+    padding: 20px;
+}
+
+.flechaAtraslink {
+    color: blue;
+    font-size: 40px;
+}
+
+@media screen and (max-width:420px){
+    .headerCard {
+        grid-template-columns: 100%;
+        align-items: center;
+                
+    }
+}

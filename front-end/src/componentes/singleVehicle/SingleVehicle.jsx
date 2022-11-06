@@ -3,11 +3,17 @@ import Header from "../header/Header";
 //import CarouselBlock from "../product/carousel/CarouselBlock";//
 //import '../product/carousel/Carousel.css'//
 import SliderCard from "../card/SliderCard";
+import HeaderCard from "../card/HeaderCard";
+import UbicationCard from "../card/UbicationCard";
+import DescriptionCard from "../card/DescriptionCard";
+import FeaturesCard from "../card/FeaturesCard";
+import PoliticsCard from "../card/PoliticsCard";
 import "../card/SliderCard.css";
 import DatePicker from "react-datepicker";
 import { useParams, Outlet } from "react-router-dom";
 import axios from "axios";
 import Footer from "../footer/Footer";
+
 const SingleVehicle = () => {
   //si no se entiende carajo es porque vamos bien
   // esta con esa api porque la nuestra no tiene el endpoint para hacerlo
@@ -48,7 +54,17 @@ const SingleVehicle = () => {
     <>
       <Header />
 
+      <HeaderCard />
+      
+      <UbicationCard />
+
       <SliderCard />
+
+      <DescriptionCard/>
+
+      <FeaturesCard/>
+
+      <PoliticsCard/>
 
       {/*<div className="container-calendar">
         <DatePicker

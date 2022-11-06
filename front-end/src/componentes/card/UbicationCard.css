@@ -1,0 +1,22 @@
+
+.ubicationCard {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    color:red;
+    background-color: aquamarine;
+    padding: 20px;
+}
+
+.iconosUbicacion {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    color:green;
+}
+
+@media screen and (max-width:420px){
+    .ubicationCard {
+        grid-template-columns: 100%;
+        align-items: center;
+                
+    }
+}
