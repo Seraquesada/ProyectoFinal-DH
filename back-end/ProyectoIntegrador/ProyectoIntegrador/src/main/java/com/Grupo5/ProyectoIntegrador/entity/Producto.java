@@ -20,7 +20,7 @@ public class Producto {
     @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "producto_id")
+    @JoinColumn(name = "imagen_id")
     private List<Imagen> imagenes;
     @ManyToMany
     @JoinTable(

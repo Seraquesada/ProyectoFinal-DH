@@ -1,6 +1,10 @@
 package com.Grupo5.ProyectoIntegrador.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="imagenes")
@@ -12,7 +16,6 @@ public class Imagen {
     private String titulo;
     @Column
     private String url;
-
     public Imagen(Long id, String titulo, String url) {
         this.id = id;
         this.titulo = titulo;
