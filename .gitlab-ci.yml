@@ -1,0 +1,46 @@
+cache:
+  paths:
+    - node_modules
+
+stages:
+  - build
+  - run
+
+variables:
+  S3_BUCKET_DEV: ${DEV_S3_BUCKET}
+
+
+.npm_build:
+  image: node:10
+  script: |
+    npm install
+    npm run dev:${APP_ENV} # Build command
+  artifacts:
+    paths:
+      - ./build
+      
+npm_dev:
+  extends: .npm_build
+  stage: build
+  before_script:
+    - export APP_ENV="dev"
+  only:
+    refs:
+      - dev
+
+.deploy_aws:
+  image: python:latest
+  when: manual
+  script: |
+    pip install awscli #Install awscli tools
+    aws s3 sync ./build/ s3://${S3_BUCKET}
+deploy_dev:
+  extends: .deploy_aws
+  stage: run
+  dependencies:
+    - npm_dev
+  before_script:
+    - export S3_BUCKET=${S3_BUCKET_DEV}
+  only:
+    refs:
+      - dev

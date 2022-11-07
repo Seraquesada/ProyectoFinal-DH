@@ -44,7 +44,7 @@ const GroupOfVehicles = ()=> {
             <h2 className='tituloReco'>Recomendaciones</h2>
             <div className='itemGroupOfVehicles'>
             {         
-              data?.map((singleItem)=>
+              data?.map(singleItem=>
               <Item
                 id={singleItem.id}
                 key = {singleItem.id}
