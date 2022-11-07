@@ -66,18 +66,20 @@ const SingleVehicle = () => {
 
       <PoliticsCard/>
 
-      {/*<div className="container-calendar">
+      <div className="container-calendar ">
         <DatePicker
           selected={startDate}
           onChange={handleDateChange}
           startDate={startDate}
           endDate={endDate}
+          minDate={new Date()}
           selectsRange
           inline
-          excludeDates={[new Date(), (new Date(), 1)]}
+          excludeDates={[/* aca va el array de fechas no discponibles */]}
           monthsShown={2}
         />
-  </div>*/}
+      </div>
+
       <Footer />
     </>
   );

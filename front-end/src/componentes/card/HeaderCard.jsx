@@ -28,7 +28,7 @@ const HeaderCard = () => {
             </div>
             </div>
                 
-                <Link className="flechaAtraslink" to={"/singleVehicle/1" }> <BsChevronLeft /> </Link>
+                <Link className="flechaAtraslink" to={"/" }> <BsChevronLeft /> </Link>
             </div>
     );
 };

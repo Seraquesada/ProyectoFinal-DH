@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Outlet } from 'react-router-dom'
 import "../groupOfVehicles/groupOfVehicles.css";
+import "./vehicle.css";
 import { GrStar } from "react-icons/gr";
 import {IoMdPin} from "react-icons/io";
 import{GiCarWheel,GiCarSeat} from "react-icons/gi";
@@ -20,7 +21,7 @@ import{GiCarWheel,GiCarSeat} from "react-icons/gi";
   return (
     <div className="vehicle">
       <div  className="container-img-vehicle">
-        <img className="imgVehicle" src={url_imagen} alt="fotorender" />
+        <img className="imgVehicle" src={url_imagen} alt="fotoVehiculo" />
       </div>
       <div className="descriptionVehicle">
         <div>

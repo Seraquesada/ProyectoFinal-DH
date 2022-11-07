@@ -70,7 +70,7 @@ const SliderCard = () => {
               <img src={array[3]?.image} />
             {/*<h2>{array[4]?.name}</h2>*/}
               <img src={array[4]?.image} />
-            <p class="p-ver-mas" onClick={open}>
+            <p className="p-ver-mas" onClick={open}>
               VER MAS
             </p>
           </div>
