@@ -1,0 +1,41 @@
+
+.ubicationCard {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    color:black;
+    background-color:rgb(167, 164, 164);
+    padding: 20px;
+}
+
+.iconosUbicacion {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    color:black;
+}
+
+#raiting{
+    text-align: right;
+    margin-right: 10px;;
+}
+#raiting h5{
+    color:black;
+}
+
+#points{
+    font-size: 1.5em;
+    color:white ;
+    background-color:#FF9E00 ;
+    text-align: center;
+    padding: 3px;
+    border-radius: 18%;
+
+}
+
+
+@media screen and (max-width:420px){
+    .ubicationCard {
+        grid-template-columns: 100%;
+        align-items: center;
+                
+    }
+}
