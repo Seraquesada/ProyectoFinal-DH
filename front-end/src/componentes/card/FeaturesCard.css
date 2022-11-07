@@ -1,0 +1,34 @@
+
+.featuresCard{
+    padding: 20px;
+    background-color: whitesmoke;
+    margin-bottom: 5px;
+}
+
+.featuresDetails {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    color:blue;
+    
+}
+
+.featuresItem{
+    color: black;
+    display:flex;
+    justify-content:space-around;
+        
+}
+@media screen and (max-width: 768px) {
+    .featuresDetails {
+        grid-template-columns: 50% 50%;
+                
+    }
+}
+    
+
+@media screen and (max-width:420px){
+    .featuresDetails {
+        grid-template-columns: 100%;
+                
+    }
+}
