@@ -5,6 +5,7 @@ import com.Grupo5.ProyectoIntegrador.entity.*;
 import com.Grupo5.ProyectoIntegrador.repository.UsuarioRepository;
 import com.Grupo5.ProyectoIntegrador.service.CategoriaService;
 import com.Grupo5.ProyectoIntegrador.service.CiudadService;
+import com.Grupo5.ProyectoIntegrador.service.ImagenService;
 import com.Grupo5.ProyectoIntegrador.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -17,6 +18,8 @@ import java.util.List;
 
 @Component
 public class CargaDatos implements ApplicationRunner {
+    @Autowired
+    ImagenService imagenService;
     @Autowired
     UsuarioRepository usuarioRepository;
     @Autowired
@@ -61,6 +64,18 @@ public class CargaDatos implements ApplicationRunner {
         Ciudad ciudadGuardada6 = ciudadService.guardar(ciudad6);
         Ciudad ciudadGuardada7 = ciudadService.guardar(ciudad7);
         List<Imagen> imagenes=new ArrayList<>();
+        List<Imagen> imagenes1= new ArrayList<>();
+        Imagen imagen1a =  new Imagen("Exterior - delantero", "https://i.ytimg.com/vi/nx9PvLVssms/maxresdefault.jpg");
+        Imagen imagen1b =  new Imagen("Exterior - trasero", "https://f87.bimmerpost.com/forums/e90garageimg/1713/bmw_323i_2.jpg");
+        Imagen imagen1c =  new Imagen("Exterior - lateral", "https://images.drive.com.au/caradvice/image/private/c_fill,f_auto,g_auto,h_674,q_auto:eco,w_1200/e3f44ef594fd69816dbe633290d6cbcb");
+        Imagen imagen1d =  new Imagen("Interior - volante", "https://g05.bimmerpost.com/forums//picture.php?albumid=2828&pictureid=23445");
+        Imagen imagen1e =  new Imagen("Interior - trasero", "https://api.exportfrom.jp/en/files/view/bmw-323i-interior-rear-2.jpg");
+        imagenes1.add(imagen1a);
+        imagenes1.add(imagen1b);
+        imagenes1.add(imagen1c);
+        imagenes1.add(imagen1d);
+        imagenes1.add(imagen1e);
+        System.out.println(imagenes1);
         List<Caracteristica> caracteristicas = new ArrayList<>();
         PoliticasProducto politicas1 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
         PoliticasProducto politicas2 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
@@ -69,7 +84,7 @@ public class CargaDatos implements ApplicationRunner {
         PoliticasProducto politicas5 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
         PoliticasProducto politicas6 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
         PoliticasProducto politicas7 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
-        Producto producto1 = new Producto("bmw", "auto genial", ciudadGuardada1, categoria1, imagenes, caracteristicas, politicas1);
+        Producto producto1 = new Producto("bmw", "auto genial", ciudadGuardada1, categoria1, imagenes1, caracteristicas, politicas1);
         Producto producto2 = new Producto("audi", "auto super genial", ciudadGuardada2, categoria2, imagenes, caracteristicas, politicas2);
         Producto producto3 = new Producto("audi", "auto super genial", ciudadGuardada3, categoria3, imagenes, caracteristicas, politicas3);
         Producto producto4 = new Producto("audi", "auto super genial", ciudadGuardada4, categoria4, imagenes, caracteristicas, politicas4);
