@@ -10,17 +10,17 @@ variables:
   S3_BUCKET_DEV: ${DEV_S3_BUCKET}
 
 
-.yarn_build:
+.npm_build:
   image: node:10
   script: |
-    yarn # Install all dependencies
-    yarn build:${APP_ENV} # Build command
+    npm # Install all dependencies
+    npm run build:${APP_ENV} # Build command
   artifacts:
     paths:
       - ./build
       
-yarn_dev:
-  extends: .yarn_build
+npm_dev:
+  extends: .npm_build
   stage: build
   before_script:
     - export APP_ENV="dev"
@@ -38,7 +38,7 @@ deploy_dev:
   extends: .deploy_aws
   stage: run
   dependencies:
-    - yarn_dev
+    - npm_dev
   before_script:
     - export S3_BUCKET=${S3_BUCKET_DEV}
   only:
