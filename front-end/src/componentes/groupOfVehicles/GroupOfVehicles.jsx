@@ -16,7 +16,7 @@ const GroupOfVehicles = ()=> {
     .then(res=>{
       setData(res.data)
     })
-    }else{
+    } else{
     axios.get(`http://localhost:8080/productos/filter?categoria=${categoria}`)
       .then(res=>{
         setData(res.data)
@@ -33,7 +33,7 @@ const GroupOfVehicles = ()=> {
             <h2 className='tituloReco'>Recomendaciones</h2>
             <div className='itemGroupOfVehicles'>
             {         
-              data?.map((singleItem)=>
+              data?.map(singleItem=>
               <Item
                 id={singleItem.id}
                 key = {singleItem.id}
