@@ -8,21 +8,32 @@ const GroupOfVehicles = ()=> {
   
   const [data, setData] = useState([]);
   const {categoria} = useContext(CategoryContext)
-  const jwt = localStorage.getItem('jwt')
-  
+  const {ciudad} = useContext(CategoryContext)
+
   useEffect(()=>{
-    if(categoria === undefined){
+    if(categoria === undefined && ciudad === undefined){
           axios.get('http://localhost:8080/productos')
     .then(res=>{
       setData(res.data)
     })
-    } else{
+    }else if(categoria != undefined && ciudad === undefined){
     axios.get(`http://localhost:8080/productos/filter?categoria=${categoria}`)
       .then(res=>{
         setData(res.data)
     })
+    }else if(categoria === undefined && ciudad != undefined){
+    axios.get(`http://localhost:8080/productos/filter?ciudad=${ciudad}`)
+      .then(res=>{
+        setData(res.data)
+    })
     }
-  },[categoria])
+    else{
+    axios.get(`http://localhost:8080/productos/filter?categoria=${categoria}&ciudad=${ciudad}`)
+      .then(res=>{
+        setData(res.data)
+    })
+    }
+  },[categoria, ciudad])
 
   
   

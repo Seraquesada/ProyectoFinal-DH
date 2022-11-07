@@ -4,9 +4,10 @@ export const CategoryContext = createContext();
 
 export const CategoryProvider = ({children}) => {
     const [categoria, setCategoria] = useState();
+    const [ciudad, setCiudad] = useState();
 
     return (
-    <CategoryContext.Provider value={{categoria,setCategoria}}>
+    <CategoryContext.Provider value={{categoria, setCategoria, ciudad, setCiudad}}>
         {children}
     </CategoryContext.Provider>
   )
