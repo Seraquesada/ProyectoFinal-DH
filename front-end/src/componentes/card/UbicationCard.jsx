@@ -27,8 +27,8 @@ const UbicationCard = () => {
             </div>
             <div className ="iconosUbicacion">
                 <div id="raiting"> 
-                   <h5>Excelente</h5>
-                   <StarRating /> 
+                    <h5>Excelente</h5>
+                    <StarRating /> 
                 </div>
                 <div id="points">
                     <p>8</p>
