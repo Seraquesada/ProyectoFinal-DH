@@ -32,8 +32,7 @@
     gap: 30px;
 }
 
-.vehicle{
-    height: 406px;    
+.vehicle{ 
     display: flex;
     background-color: white;
     border-radius: 8px;

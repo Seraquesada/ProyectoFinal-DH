@@ -20,9 +20,9 @@ public class Producto {
     @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "imagenes_auto")
+    @JoinColumn(name = "imagen_id")
     private List<Imagen> imagenes;
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
             name = "caracteristicas_auto",
             joinColumns = @JoinColumn(name = "id_producto"),

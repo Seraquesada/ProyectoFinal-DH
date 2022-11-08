@@ -40,6 +40,7 @@ img#logo{
     display: flex;
     width: 100px;
     border-radius: 8px;
+    margin-right: 0.8rem;
 }
 .hamburger-react{
     display:none;
