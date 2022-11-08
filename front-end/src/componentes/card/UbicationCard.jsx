@@ -1,13 +1,15 @@
-import './UbicationCard.css'
-import StarRating from './StarRating'
+import './UbicationCard.css';
+import StarRating from './StarRating';
+import {IoMdPin} from "react-icons/io";
 
 const UbicationCard = ({respuesta}) => {
     return(
         <div className="ubicationCard">
             
             <div className="infoUbicacion">
-                <h5> {respuesta.ciudad.nombre} aca va la ciudad</h5>
-                <h6> {respuesta.ciudad.nombre} aca va la distancia del centro</h6>
+                <h5>Ubicación del vehículo: {respuesta.ciudad.nombre}</h5>
+                <h6><span><IoMdPin/> </span> {respuesta.ciudad.nombre}
+                </h6>
             </div>
             <div className ="iconosUbicacion">
                 <div id="raiting"> 
@@ -15,7 +17,7 @@ const UbicationCard = ({respuesta}) => {
                    <StarRating /> 
                 </div>
                 <div id="points">
-                    <p>8</p>
+                    <p>10</p>
                 </div>
             </div>
         </div>

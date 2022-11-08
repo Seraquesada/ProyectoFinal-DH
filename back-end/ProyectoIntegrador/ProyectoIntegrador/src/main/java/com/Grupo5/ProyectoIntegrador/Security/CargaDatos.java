@@ -26,8 +26,7 @@ public class CargaDatos implements ApplicationRunner {
     CiudadService ciudadService;
     @Autowired
     ProductoService productoService;
-    @Autowired
-    ImagenService imagenService;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -151,12 +150,102 @@ public class CargaDatos implements ApplicationRunner {
 
 
         List<Caracteristica> caracteristicas1 = new ArrayList<>();
+        Caracteristica caracteristica1a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
+        Caracteristica caracteristica1b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 3 valijas grandes");
+        Caracteristica caracteristica1c =  new Caracteristica("Transmisión: ", "Automática");
+        Caracteristica caracteristica1d =  new Caracteristica("Cantidad de Airbags en cabina: ", "7");
+        Caracteristica caracteristica1e =  new Caracteristica("Velocidad máxima: ", "228 km/h");
+        Caracteristica caracteristica1f =  new Caracteristica("Combustible: ","Nafta Premium");
+        caracteristicas1.add(caracteristica1a);
+        caracteristicas1.add(caracteristica1b);
+        caracteristicas1.add(caracteristica1c);
+        caracteristicas1.add(caracteristica1d);
+        caracteristicas1.add(caracteristica1e);
+        caracteristicas1.add(caracteristica1f);
+
         List<Caracteristica> caracteristicas2 = new ArrayList<>();
+        Caracteristica caracteristica2a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
+        Caracteristica caracteristica2b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 3 valijas");
+        Caracteristica caracteristica2c =  new Caracteristica("Transmisión: ", "Automática");
+        Caracteristica caracteristica2d =  new Caracteristica("Cantidad de Airbags en cabina: ", "7");
+        Caracteristica caracteristica2e =  new Caracteristica("Velocidad máxima: ", "215 km/h");
+        Caracteristica caracteristica2f =  new Caracteristica("Combustible: ","Nafta Premium");
+        caracteristicas2.add(caracteristica2a);
+        caracteristicas2.add(caracteristica2b);
+        caracteristicas2.add(caracteristica2c);
+        caracteristicas2.add(caracteristica2d);
+        caracteristicas2.add(caracteristica2e);
+        caracteristicas2.add(caracteristica2f);
+
         List<Caracteristica> caracteristicas3 = new ArrayList<>();
+        Caracteristica caracteristica3a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
+        Caracteristica caracteristica3b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 5 valijas");
+        Caracteristica caracteristica3c =  new Caracteristica("Transmisión: ", "Automática");
+        Caracteristica caracteristica3d =  new Caracteristica("Cantidad de Airbags en cabina: ", "8");
+        Caracteristica caracteristica3e =  new Caracteristica("Velocidad máxima: ", "190 km/h");
+        Caracteristica caracteristica3f =  new Caracteristica("Combustible: ","Nafta Premium");
+        caracteristicas3.add(caracteristica3a);
+        caracteristicas3.add(caracteristica3b);
+        caracteristicas3.add(caracteristica3c);
+        caracteristicas3.add(caracteristica3d);
+        caracteristicas3.add(caracteristica3e);
+        caracteristicas3.add(caracteristica3f);
+
         List<Caracteristica> caracteristicas4 = new ArrayList<>();
+        Caracteristica caracteristica4a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
+        Caracteristica caracteristica4b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 5 valijas");
+        Caracteristica caracteristica4c =  new Caracteristica("Transmisión: ", "Automática");
+        Caracteristica caracteristica4d =  new Caracteristica("Cantidad de Airbags en cabina: ", "8");
+        Caracteristica caracteristica4e =  new Caracteristica("Velocidad máxima: ", "210 km/h");
+        Caracteristica caracteristica4f =  new Caracteristica("Combustible: ","Nafta Premium");
+        caracteristicas4.add(caracteristica4a);
+        caracteristicas4.add(caracteristica4b);
+        caracteristicas4.add(caracteristica4c);
+        caracteristicas4.add(caracteristica4d);
+        caracteristicas4.add(caracteristica4e);
+        caracteristicas4.add(caracteristica4f);
+
         List<Caracteristica> caracteristicas5 = new ArrayList<>();
+        Caracteristica caracteristica5a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
+        Caracteristica caracteristica5b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 3 valijas");
+        Caracteristica caracteristica5c =  new Caracteristica("Transmisión: ", "Automática");
+        Caracteristica caracteristica5d =  new Caracteristica("Cantidad de Airbags en cabina: ", "5");
+        Caracteristica caracteristica5e =  new Caracteristica("Velocidad máxima: ", "245 km/h");
+        Caracteristica caracteristica5f =  new Caracteristica("Combustible: ","Nafta Premium");
+        caracteristicas5.add(caracteristica5a);
+        caracteristicas5.add(caracteristica5b);
+        caracteristicas5.add(caracteristica5c);
+        caracteristicas5.add(caracteristica5d);
+        caracteristicas5.add(caracteristica5e);
+        caracteristicas5.add(caracteristica5f);
+
         List<Caracteristica> caracteristicas6 = new ArrayList<>();
+        Caracteristica caracteristica6a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
+        Caracteristica caracteristica6b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 4 valijas");
+        Caracteristica caracteristica6c =  new Caracteristica("Transmisión: ", "Automática");
+        Caracteristica caracteristica6d =  new Caracteristica("Cantidad de Airbags en cabina: ", "5");
+        Caracteristica caracteristica6e =  new Caracteristica("Velocidad máxima: ", "180 km/h");
+        Caracteristica caracteristica6f =  new Caracteristica("Combustible: ","Híbrido (Nafta Premium y Electricidad)");
+        caracteristicas6.add(caracteristica6a);
+        caracteristicas6.add(caracteristica6b);
+        caracteristicas6.add(caracteristica6c);
+        caracteristicas6.add(caracteristica6d);
+        caracteristicas6.add(caracteristica6e);
+        caracteristicas6.add(caracteristica6f);
+
         List<Caracteristica> caracteristicas7 = new ArrayList<>();
+        Caracteristica caracteristica7a =  new Caracteristica("Capacidad Máxima: ", "4 adultos");
+        Caracteristica caracteristica7b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 2 valijas");
+        Caracteristica caracteristica7c =  new Caracteristica("Transmisión: ", "Automática");
+        Caracteristica caracteristica7d =  new Caracteristica("Cantidad de Airbags en cabina: ", "5");
+        Caracteristica caracteristica7e =  new Caracteristica("Velocidad máxima: ", "270 km/h");
+        Caracteristica caracteristica7f =  new Caracteristica("Combustible: ","Nafta Premium");
+        caracteristicas7.add(caracteristica7a);
+        caracteristicas7.add(caracteristica7b);
+        caracteristicas7.add(caracteristica7c);
+        caracteristicas7.add(caracteristica7d);
+        caracteristicas7.add(caracteristica7e);
+        caracteristicas7.add(caracteristica7f);
 
         PoliticasProducto politicas1 = new PoliticasProducto("normas1", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
         PoliticasProducto politicas2 = new PoliticasProducto("normas2", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");

@@ -8,8 +8,8 @@ const HeaderCard = ({respuesta}) => {
         <div className="headerCard">
             <div>
             <div className="category-header">
-            <h3> {respuesta.categoria.titulo} aca va la categoria</h3>
-            <h4> {respuesta.titulo} aca va el titulo</h4>
+            <h3> {respuesta.categoria.titulo}</h3>
+            <h4> {respuesta.titulo}</h4>
             </div>
             </div>
                 

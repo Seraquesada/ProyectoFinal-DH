@@ -22,7 +22,7 @@ public class Producto {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "imagen_id")
     private List<Imagen> imagenes;
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
             name = "caracteristicas_auto",
             joinColumns = @JoinColumn(name = "id_producto"),
