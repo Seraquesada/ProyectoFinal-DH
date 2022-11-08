@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import singleVehicle from "../singleVehicle/SingleVehicle";
+import React, { useState } from "react";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { VscChromeClose } from "react-icons/vsc";
 
-const SliderCard = () => {
+const SliderCard = ({respuesta}) => {
   const [visible, setVisible] = useState(true);
-
-  const [array, setArray] = useState([]);
-  const url = "https://rickandmortyapi.com/api";
-  const characters = "/character";
-
-  useEffect(() => {
-    axios.get(url + characters + "/").then((res) => {
-      console.log(res.data.results);
-      setArray(res.data.results);
-      console.log(array);
-    });
-  }, []);
 
   const open = () => {
     setVisible(false);
@@ -29,24 +15,24 @@ const SliderCard = () => {
   };
   const images = [
     {
-      original: array !== null && array[0]?.image,
-      thumbnail: array !== null && array[0]?.image,
+      original: respuesta.imagenes !== null && respuesta.imagenes[0]?.url,
+      thumbnail: respuesta.imagenes !== null && respuesta.imagenes[0]?.url,
     },
     {
-      original: array !== null && array[1]?.image,
-      thumbnail: array !== null && array[1]?.image,
+      original: respuesta.imagenes !== null && respuesta.imagenes[1]?.url,
+      thumbnail: respuesta.imagenes !== null && respuesta.imagenes[1]?.url,
     },
     {
-      original: array !== null && array[2]?.image,
-      thumbnail: array !== null && array[2]?.image,
+      original: respuesta.imagenes !== null && respuesta.imagenes[2]?.url,
+      thumbnail: respuesta.imagenes !== null && respuesta.imagenes[2]?.url,
     },
     {
-      original: array !== null && array[3]?.image,
-      thumbnail: array !== null && array[3]?.image,
+      original: respuesta.imagenes !== null && respuesta.imagenes[3]?.url,
+      thumbnail: respuesta.imagenes !== null && respuesta.imagenes[3]?.url,
     },
     {
-      original: array !== null && array[4]?.image,
-      thumbnail: array !== null && array[4]?.image,
+      original: respuesta.imagenes !== null && respuesta.imagenes[4]?.url,
+      thumbnail: respuesta.imagenes !== null && respuesta.imagenes[4]?.url,
     },
   ];
 
@@ -55,22 +41,22 @@ const SliderCard = () => {
       <div className="container-pictures">
         <div className="card-ltside">
           {/*<h2>{array[0]?.name}</h2>*/}
-          <img className="test" src={array[0]?.image} />
+          <img className="test" src={respuesta.imagenes[0]?.url} />
         </div>
 
         <div className="card">
           <div>
             {/*<h2>{array[1]?.name}</h2>*/}
-              <img src={array[1]?.image} />
+              <img src={respuesta.imagenes[1]?.url} />
             {/*<h2>{array[2]?.name}</h2>*/}
-              <img src={array[2]?.image} />
+              <img src={respuesta.imagenes[2]?.url} />
           </div>
           <div>
             {/*<h2>{array[3]?.name}</h2>*/}
-              <img src={array[3]?.image} />
+              <img src={respuesta.imagenes[3]?.url} />
             {/*<h2>{array[4]?.name}</h2>*/}
-              <img src={array[4]?.image} />
-            <p class="p-ver-mas" onClick={open}>
+              <img src={respuesta.imagenes[4]?.url} />
+            <p className="p-ver-mas" onClick={open}>
               VER MAS
             </p>
           </div>

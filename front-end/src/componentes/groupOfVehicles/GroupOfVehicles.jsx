@@ -1,7 +1,7 @@
-import React,{useEffect,useState,useContext} from 'react'
-import Item from '../vehicle/Vehicle'
+import React,{useEffect,useState,useContext} from 'react';
+import Item from '../vehicle/Vehicle';
 import axios  from 'axios';
-import './groupOfVehicles.css'
+import './groupOfVehicles.css';
 import { CategoryContext } from '../../context/CategoryContext';
 
 const GroupOfVehicles = ()=> {
@@ -48,7 +48,7 @@ const GroupOfVehicles = ()=> {
               <Item
                 id={singleItem.id}
                 key = {singleItem.id}
-                url_imagen = {singleItem.url_imagen}
+                url_imagen = {singleItem.imagenes[0]?.url}
                 title = {singleItem.titulo}
                 location ={singleItem.ciudad.nombre}
                 description={singleItem.descripcion}

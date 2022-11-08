@@ -1,30 +1,15 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Link, Outlet } from 'react-router-dom'
-import './HeaderCard.css'
+import './HeaderCard.css';
 import {BsChevronLeft}from 'react-icons/bs';
+import { Link } from 'react-router-dom'
 
-const HeaderCard = () => {
-    
-    const [data, setData] = useState([]);
-    const url = "https://rickandmortyapi.com/api";
-    const characters = "/character/2";
-
-    useEffect(() => {
-      axios.get(url + characters ).then((res) => {
-        console.log(res.data.results);
-        setData(res.data);
-        console.log(data);
-        });
-      }, []);
-
+const HeaderCard = ({respuesta}) => {
 
     return(
         <div className="headerCard">
             <div>
             <div className="category-header">
-            <h3> {data.name} aca va la categoria</h3>
-            <h4> {data.species} aca va el titulo</h4>
+            <h3> {respuesta.categoria.titulo}</h3>
+            <h4> {respuesta.titulo}</h4>
             </div>
             </div>
                 

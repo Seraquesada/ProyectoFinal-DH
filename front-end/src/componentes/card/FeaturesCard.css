@@ -11,11 +11,17 @@
     color:blue;
     
 }
+.featuresDetails p {
+    margin-bottom: unset;
+    margin-left: 0.5rem;
+
+}
 
 .featuresItem{
     color: black;
     display:flex;
-    justify-content:space-around;
+    justify-content: flex-start;
+    align-items: center;
         
 }
 @media screen and (max-width: 768px) {
