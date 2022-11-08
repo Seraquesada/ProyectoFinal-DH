@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Header from "../header/Header";
-//import CarouselBlock from "../product/carousel/CarouselBlock";//
-//import '../product/carousel/Carousel.css'//
 import SliderCard from "../card/SliderCard";
 import HeaderCard from "../card/HeaderCard";
 import UbicationCard from "../card/UbicationCard";
@@ -10,61 +8,54 @@ import FeaturesCard from "../card/FeaturesCard";
 import PoliticsCard from "../card/PoliticsCard";
 import "../card/SliderCard.css";
 import DatePicker from "react-datepicker";
-import { useParams, Outlet } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Footer from "../footer/Footer";
+import Spinner from 'react-bootstrap/Spinner';
 
 const SingleVehicle = () => {
-  //si no se entiende carajo es porque vamos bien
-  // esta con esa api porque la nuestra no tiene el endpoint para hacerlo
-  // pero sacando eso """"creo que funciona""""
-  //no borrar porfa
 
   const { id } = useParams();
-  const [name, setName] = useState("");
-  const [imagen, setImagen] = useState("");
-  const [planet, setPlanet] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
+  const [isLoading, setLoading] = useState(true);
+  const [respuesta, setRespuesta] = useState();
 
   const handleDateChange = (dates) => {
     const [start, end] = dates;
     setStartDate(start);
     setEndDate(end);
   };
-  const [array, setArray] = useState([]);
-  const url = "https://rickandmortyapi.com/api";
-  const characters = "/character";
-  console.log(array[0]?.name);
-  useEffect(() => {
-    axios.get(url + characters + "/").then((res) => {
-      console.log(res.data.results);
-      setArray(res.data.results);
-      console.log(array);
-      {
-        /*setName(res.data.name);
-            console.log(name);
-            setImagen(res.data.image);
-            setPlanet(res.data.location.name);*/
-      }
-    });
-  }, []);
+  
+  const url = "http://localhost:8080/productos/";
+  useEffect(()=>{
+    axios.get(url + id)
+    .then(res=> 
+    {
+      const datos = res.data
+      setRespuesta(datos)
+      setLoading(false)
+    }
+    )}, [])
 
+  if (isLoading) {
+    return <Spinner animation="border" size="sm" />;
+  }
   return (
     <>
       <Header />
 
-      <HeaderCard />
+      <HeaderCard respuesta={respuesta} />
       
-      <UbicationCard />
+      <UbicationCard respuesta={respuesta} />
 
-      <SliderCard />
+      <SliderCard respuesta={respuesta} />
 
-      <DescriptionCard/>
+      <DescriptionCard respuesta={respuesta}/>
 
-      <FeaturesCard/>
+      <FeaturesCard respuesta={respuesta}/>
 
-      <PoliticsCard/>
+      <PoliticsCard respuesta={respuesta}/>
 
       <div className="container-calendar ">
         <DatePicker
@@ -75,7 +66,7 @@ const SingleVehicle = () => {
           minDate={new Date()}
           selectsRange
           inline
-          excludeDates={[/* aca va el array de fechas no discponibles */]}
+          excludeDates={[/* aca va el array de fechas no disponibles */]}
           monthsShown={2}
         />
       </div>
