@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import Header from "../header/Header";
 import SliderCard from "../card/SliderCard";
+import "../card/SliderCard.css";
 import HeaderCard from "../card/HeaderCard";
 import UbicationCard from "../card/UbicationCard";
 import DescriptionCard from "../card/DescriptionCard";
 import FeaturesCard from "../card/FeaturesCard";
 import PoliticsCard from "../card/PoliticsCard";
-import "../card/SliderCard.css";
-import DatePicker from "react-datepicker";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 import Footer from "../footer/Footer";
 import Spinner from 'react-bootstrap/Spinner';
+
+import DatePicker from 'react-date-picker';
 
 const SingleVehicle = () => {
 

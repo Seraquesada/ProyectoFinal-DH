@@ -1,21 +1,32 @@
 import React,{useState,useEffect, useContext} from 'react';
-import DatePicker from "react-datepicker";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "react-datepicker/dist/react-datepicker.css";
+import { CategoryContext } from "../../context/CategoryContext";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Select from 'react-select';
+import DatePicker from "react-datepicker";
+
 import axios  from 'axios';
+import { set } from 'react-hook-form';
+import "react-datepicker/dist/react-datepicker.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./SearchBar.css";
-import { CategoryContext } from "../../context/CategoryContext";
+
+
 
 const SearchBar = () => {
 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(null);
     const [selectDisplay, setSelectDisplay] = useState("Cargando...")
-    const {setCiudad} = useContext(CategoryContext);
     const [userChoice, setUserChoice] = useState(undefined)
+    
+    const {setCiudad,setCategoria,categoria,ciudad } = useContext(CategoryContext);
+
+    const forms = document.querySelector(".form");
+
+    useEffect(()=>{
+        console.log(ciudad + " ciudad")
+    },[ciudad])
 
     useEffect(()=>{axios.get('http://localhost:8080/ciudades')
         .then(res=>{
@@ -42,6 +53,13 @@ const SearchBar = () => {
         
     }
 
+    /*const handleLimpiarFiltro = () =>{
+        setCiudad(undefined);
+        setCategoria(undefined);
+        forms.reset();
+        <Button className='btn btn-secondary' type="submit" onClick={handleLimpiarFiltro}>Limpiar Filtros</Button>
+    }*/
+
     const handleDateChange = (dates) => {
         const [start, end] = dates;
         setStartDate(start);
@@ -64,6 +82,7 @@ const SearchBar = () => {
                         selectsRange
                         withPortal
                     />
+                    
                     <Button className='btn btn-secondary' type="submit">Buscar</Button>
                 </Form>
             </div>
