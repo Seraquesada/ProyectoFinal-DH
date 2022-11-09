@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -34,7 +35,7 @@ public class UsuarioService implements UserDetailsService {
     public Usuario guardar(Usuario usuario) throws AlreadyExistException {
         List<Usuario> usuarios = buscarTodos();
         for (Usuario usu : usuarios) {
-            if (usu.getMail() == usuario.getMail()) {
+            if (Objects.equals(usu.getMail(), usuario.getMail())) {
                 throw new AlreadyExistException("El usuario ya existe en la base de datos");
             }
         }

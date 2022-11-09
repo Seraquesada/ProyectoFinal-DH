@@ -40,10 +40,10 @@ public class CargaDatos implements ApplicationRunner {
         usuario.setPassword(passHash);
         usuario.setUsuarioRol(RolUsuario.ROLE_ADMIN);
         usuarioRepository.save(usuario);
-        Categoria categoria1 = new Categoria("Sedan", "Vehiculo de cuatro puertas y baúl. Ideal para cuatro personas y dos valijas grandes.", "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
-        Categoria categoria2 = new Categoria("Sport Utility Vehicle", "Los SUVs  son  para uso en caminos mantenidos, ya sean pavimentados, de grava o de tierra. Amplios y con baul integrado, ideales para aventureros!", "https://imageio.forbes.com/specials-images/imageserve/5d389da195e0230008f6724a/2020-Ford-Explorer/0x0.jpg?format=jpg&crop=4560,2565,x430,y658,safe&width=960");
-        Categoria categoria3 = new Categoria("Hatchback", "Vechículos de tres o cinco puertas contando la puerta trasera que abre hacia arriba para brindar acceso a un área de carga. Son amplios, ideales para llevar todo tu equipaje!", "https://hagerty-media-prod.imgix.net/2021/12/2021-Toyota-Corolla-Hatchback-SE-Nightshade-3-scaled.jpg?auto=format%2Ccompress&ixlib=php-3.3.0");
-        Categoria categoria4 = new Categoria("Coupe", "Los cupés logran un gran equilibrio entre estilo, sustancia y espacio. La mayoría tienen dos puertas y cuatro asientos, algunos tienen asientos traseros más prácticos que otros. El baul suele ser espacioso.", "https://carsguide-res.cloudinary.com/image/upload/f_auto%2Cfl_lossy%2Cq_auto%2Ct_default/v1/editorial/BMW-4-Series_Coupe_2014.jpg");
+        Categoria categoria1 = new Categoria("Sedan", "Vehículo de cuatro puertas y baúl. Ideal para cuatro personas y dos valijas grandes.", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/categorias/sedan.avif");
+        Categoria categoria2 = new Categoria("Sport Utility Vehicle", "Los SUVs  son  para uso en caminos mantenidos, ya sean pavimentados, de grava o de tierra. Amplios y con baul integrado, ideales para aventureros!", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/categorias/suv.jpg");
+        Categoria categoria3 = new Categoria("Hatchback", "Vehículos de tres o cinco puertas contando la puerta trasera que abre hacia arriba para brindar acceso a un área de carga. Son amplios, ideales para llevar todo tu equipaje!", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/categorias/hatckback.avif");
+        Categoria categoria4 = new Categoria("Coupe", "Los cupés logran un gran equilibrio entre estilo, sustancia y espacio. La mayoría tienen dos puertas y cuatro asientos, algunos tienen asientos traseros más prácticos que otros. El baul suele ser espacioso.", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/categorias/coupe.jpg");
         categoriaService.guardar(categoria1);
         categoriaService.guardar(categoria2);
         categoriaService.guardar(categoria3);
@@ -64,11 +64,11 @@ public class CargaDatos implements ApplicationRunner {
         Ciudad ciudadGuardada7 = ciudadService.guardar(ciudad7);
 
         List<Imagen> imagenes1= new ArrayList<>();
-        Imagen imagen1a =  new Imagen("Exterior - delantero", "https://i.ytimg.com/vi/nx9PvLVssms/maxresdefault.jpg");
-        Imagen imagen1b =  new Imagen("Exterior - trasero", "https://f87.bimmerpost.com/forums/e90garageimg/1713/bmw_323i_2.jpg");
-        Imagen imagen1c =  new Imagen("Exterior - lateral", "https://images.drive.com.au/caradvice/image/private/c_fill,f_auto,g_auto,h_674,q_auto:eco,w_1200/e3f44ef594fd69816dbe633290d6cbcb");
-        Imagen imagen1d =  new Imagen("Interior - volante", "https://g05.bimmerpost.com/forums//picture.php?albumid=2828&pictureid=23445");
-        Imagen imagen1e =  new Imagen("Interior - trasero", "https://api.exportfrom.jp/en/files/view/bmw-323i-interior-rear-2.jpg");
+        Imagen imagen1a =  new Imagen("Exterior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/bmw_323i/front.jpg");
+        Imagen imagen1b =  new Imagen("Exterior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/bmw_323i/back.jpg");
+        Imagen imagen1c =  new Imagen("Exterior - lateral", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/bmw_323i/frontII.avif");
+        Imagen imagen1d =  new Imagen("Interior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/bmw_323i/interior.jpg");
+        Imagen imagen1e =  new Imagen("Interior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/bmw_323i/interior_rear.jpg");
         imagenes1.add(imagen1a);
         imagenes1.add(imagen1b);
         imagenes1.add(imagen1c);
@@ -76,11 +76,11 @@ public class CargaDatos implements ApplicationRunner {
         imagenes1.add(imagen1e);
 
         List<Imagen> imagenes2=new ArrayList<>();
-        Imagen imagen2a =  new Imagen("Exterior - delantero", "https://www.chevrolet.com.ar/bypass/gmccontenthub/chevrolet/gm-ar/colorizer_cruze_rs/images/colorizer-1.png");
-        Imagen imagen2b =  new Imagen("Exterior - trasero", "https://www.chevrolet.com.ar/bypass/gmccontenthub/chevrolet/gm-ar/colorizer_cruze_rs/images/lateral-cruze-chili-red.png");
-        Imagen imagen2c =  new Imagen("Interior - volante", "https://www.chevrolet.com.ar/content/dam/chevrolet/mercosur/argentina/espanol/index/cars/nuevo-cruze-rs/gallery/interna-cruze-rs-direcao.jpg?imwidth=1200");
-        Imagen imagen2d =  new Imagen("Interior - vertical", "https://www.chevrolet.com.ar/content/dam/chevrolet/mercosur/argentina/espanol/index/cars/nuevo-cruze-rs/gallery/inter-cruze-rs-teto-solar.jpg?imwidth=1200");
-        Imagen imagen2e =  new Imagen("Interior - trasero", "https://www.chevrolet.com.ar/content/dam/chevrolet/mercosur/argentina/espanol/index/cars/nuevo-cruze-rs/gallery/interna-cruze-rs-banco-trasero.jpg?imwidth=1200");
+        Imagen imagen2a =  new Imagen("Exterior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/chervolet_cruze_rs/front.webp");
+        Imagen imagen2b =  new Imagen("Exterior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/chervolet_cruze_rs/side.webp");
+        Imagen imagen2c =  new Imagen("Interior - volante", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/chervolet_cruze_rs/interior.webp");
+        Imagen imagen2d =  new Imagen("Interior - vertical", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/chervolet_cruze_rs/interior_top.webp");
+        Imagen imagen2e =  new Imagen("Interior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/chervolet_cruze_rs/interior_rear.webp");
         imagenes2.add(imagen2a);
         imagenes2.add(imagen2b);
         imagenes2.add(imagen2c);
@@ -89,11 +89,11 @@ public class CargaDatos implements ApplicationRunner {
 
 
         List<Imagen> imagenes3=new ArrayList<>();
-        Imagen imagen3a =  new Imagen("Exterior - delantero", "https://img.autotrader.co.za/5253834");
-        Imagen imagen3b =  new Imagen("Exterior - delantero", "http://avatars.mds.yandex.net/get-verba/1030388/2a000001609d0944b2c4c3f718f5eb48773d/cattouch");
-        Imagen imagen3c =  new Imagen("Interior - volante", "https://autotest.com.ar/wp-content/uploads/2019/12/haval-h2-interior.jpg");
-        Imagen imagen3d =  new Imagen("Interior - lateral", "https://images.wapcar.my/file1/a885b51185724f48aabd9a791958b8e5_1072x604.jpg");
-        Imagen imagen3e =  new Imagen("Interior - trasero", "https://images.wapcar.my/file1/a3adfb17e8864dfda977e92485e61b79_1072x604.jpg");
+        Imagen imagen3a =  new Imagen("Exterior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/haval_h2/front.jpg");
+        Imagen imagen3b =  new Imagen("Exterior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/haval_h2/frontII.jpg");
+        Imagen imagen3c =  new Imagen("Interior - volante", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/haval_h2/interior.webp");
+        Imagen imagen3d =  new Imagen("Interior - lateral", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/haval_h2/interior_side.jpg");
+        Imagen imagen3e =  new Imagen("Interior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/haval_h2/interior_top.jpg");
         imagenes3.add(imagen3a);
         imagenes3.add(imagen3b);
         imagenes3.add(imagen3c);
@@ -101,11 +101,11 @@ public class CargaDatos implements ApplicationRunner {
         imagenes3.add(imagen3e);
 
         List<Imagen> imagenes4=new ArrayList<>();
-        Imagen imagen4a =  new Imagen("Exterior - lateral - izq", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2022/10/mazda-cx-5-2022-2836135.jpg");
-        Imagen imagen4b =  new Imagen("Exterior - lateral - der", "https://s1.eestatic.com/2022/04/27/motor/668194096_223891148_1024x576.jpg");
-        Imagen imagen4c =  new Imagen("Interior - volante", "https://di-uploads-pod18.dealerinspire.com/woodhousemazdaofomaha/uploads/2021/01/2021-CX-5-interior-1.jpg");
-        Imagen imagen4d =  new Imagen("Interior - lateral", "https://di-uploads-pod23.dealerinspire.com/faulknermazdaharrisburg/uploads/2021/03/2021-Mazda-CX-5-Cabin-Space.jpg");
-        Imagen imagen4e =  new Imagen("Interior - lateral", "https://www.carbodydesign.com/media/2012/02/Mazda-CX-5-Interior-05.jpg");
+        Imagen imagen4a =  new Imagen("Exterior - lateral - izq", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/mazda_cx_5/front.webp");
+        Imagen imagen4b =  new Imagen("Exterior - lateral - der", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/mazda_cx_5/frontII.webp");
+        Imagen imagen4c =  new Imagen("Interior - volante", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/mazda_cx_5/interior.jpg");
+        Imagen imagen4d =  new Imagen("Interior - lateral", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/mazda_cx_5/interior_side.jpg");
+        Imagen imagen4e =  new Imagen("Interior - vertical", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/mazda_cx_5/interior_top.jpg");
         imagenes4.add(imagen4a);
         imagenes4.add(imagen4b);
         imagenes4.add(imagen4c);
@@ -113,11 +113,11 @@ public class CargaDatos implements ApplicationRunner {
         imagenes4.add(imagen4e);
 
         List<Imagen> imagenes5=new ArrayList<>();
-        Imagen imagen5a =  new Imagen("Exterior - lateral - izq", "https://autotest.com.ar/wp-content/uploads/2020/10/VOLKSWAGEN-GOLF-GTI-CLUBSPORT.jpg");
-        Imagen imagen5b =  new Imagen("Exterior - lateral - der", "https://thumbor.pijper.io/SFE-0oATFE3lniuHkxVNpWgjhC8=/1290x726/center/middle/https://cdn.pijper.io/2020/10/QFQz9mtVhWSCsl1602661129.jpeg");
-        Imagen imagen5c =  new Imagen("Interior - volante", "https://editorial.pxcrush.net/carsales/general/editorial/new-golf-gti-6.jpg?width=1024&height=683");
-        Imagen imagen5d =  new Imagen("Interior - volante2", "https://www.megautos.com/wp-content/uploads/2020/10/Volkswagen-Golf-GTI-8-Clubsport-interior.jpg");
-        Imagen imagen5e =  new Imagen("Interior - trasero", "https://cdn.carbuzz.com/gallery-images/2022-volkswagen-golf-gti-back-seats-carbuzz-872440-1600.jpg");
+        Imagen imagen5a =  new Imagen("Exterior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/volkswagen_golf_gti/front.webp");
+        Imagen imagen5b =  new Imagen("Exterior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/volkswagen_golf_gti/back.jpeg");
+        Imagen imagen5c =  new Imagen("Interior - volante", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/volkswagen_golf_gti/interior.jpg");
+        Imagen imagen5d =  new Imagen("Interior - volante2", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/volkswagen_golf_gti/interiorII.jpg");
+        Imagen imagen5e =  new Imagen("Interior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/volkswagen_golf_gti/interior_rear.jpg");
         imagenes5.add(imagen5a);
         imagenes5.add(imagen5b);
         imagenes5.add(imagen5c);
@@ -125,11 +125,11 @@ public class CargaDatos implements ApplicationRunner {
         imagenes5.add(imagen5e);
 
         List<Imagen> imagenes6=new ArrayList<>();
-        Imagen imagen6a =  new Imagen("Exterior - frente - der", "https://autotest.com.ar/wp-content/uploads/2020/11/TOYOTA-C-HR-SPORT-2.jpg");
-        Imagen imagen6b =  new Imagen("Exterior - trasero - izq", "https://autotest.com.ar/wp-content/uploads/2020/11/TOYOTA-CH-R-SPORT-4.jpg");
-        Imagen imagen6c =  new Imagen("Interior - volante", "https://ottoyota.sfo2.digitaloceanspaces.com/2022/C-HR/CHR_MY19_0025_V005.webp");
-        Imagen imagen6d =  new Imagen("Interior - volante2", "https://www.megautos.com/wp-content/uploads/2019/10/Toyota-C-HR-GR-Sport-interior-1.jpg");
-        Imagen imagen6e =  new Imagen("Interior - trasero", "https://m.atcdn.co.uk/vms/media/e62eb82b80cd4facb54b580e8a89f5bd.jpg");
+        Imagen imagen6a =  new Imagen("Exterior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/toyota_chr/front.webp");
+        Imagen imagen6b =  new Imagen("Exterior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/toyota_chr/rear.webp");
+        Imagen imagen6c =  new Imagen("Interior - volante", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/toyota_chr/interior.webp");
+        Imagen imagen6d =  new Imagen("Interior - lateral", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/toyota_chr/interior_side.jpg");
+        Imagen imagen6e =  new Imagen("Interior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/toyota_chr/Interior_rear.jpg");
         imagenes6.add(imagen6a);
         imagenes6.add(imagen6b);
         imagenes6.add(imagen6c);
@@ -137,11 +137,11 @@ public class CargaDatos implements ApplicationRunner {
         imagenes6.add(imagen6e);
 
         List<Imagen> imagenes7=new ArrayList<>();
-        Imagen imagen7a =  new Imagen("Exterior - frontal", "https://es.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/mustang/2022/collections/equipment/3-2/21_FRD_MST_wdmp_200510_01649a_32.jpg");
-        Imagen imagen7b =  new Imagen("Exterior - trasero", "https://i.auto-bild.de/ir_img/2/5/8/5/3/7/9/Mit-487-PS-Ford-bringt-den-Mustang-Mach-1-zurueck-560x373-f00996d7594c6ecd.jpg?impolicy=leadteaser");
-        Imagen imagen7c =  new Imagen("Exterior - lateral", "https://cdn.motor1.com/images/mgl/wOKNR/s3/2021-ford-mustang-mach-1.webp");
-        Imagen imagen7d =  new Imagen("Interior - volante", "https://hips.hearstapps.com/hmg-prod/images/2022-ford-mustang-shelby-gt500-17-1636734565.jpg");
-        Imagen imagen7e =  new Imagen("Interior - trasero", "https://mediacloud.carbuyer.co.uk/image/private/s--WJEDFPJj--/v1635407853/autoexpress/2021/10/Ford%20Mustang%20Mach%201%20UK%202021-6.jpg");
+        Imagen imagen7a =  new Imagen("Exterior - frontal", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/front.jpg");
+        Imagen imagen7b =  new Imagen("Exterior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/rear.jpg");
+        Imagen imagen7c =  new Imagen("Exterior - lateral", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/side.webp");
+        Imagen imagen7d =  new Imagen("Interior - volante", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/interior.jpg");
+        Imagen imagen7e =  new Imagen("Interior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/interior_rear.jpg");
         imagenes7.add(imagen7a);
         imagenes7.add(imagen7b);
         imagenes7.add(imagen7c);
@@ -247,21 +247,27 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas7.add(caracteristica7e);
         caracteristicas7.add(caracteristica7f);
 
-        PoliticasProducto politicas1 = new PoliticasProducto("normas1", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
-        PoliticasProducto politicas2 = new PoliticasProducto("normas2", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
-        PoliticasProducto politicas3 = new PoliticasProducto("normas3", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
-        PoliticasProducto politicas4 = new PoliticasProducto("normas4", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
-        PoliticasProducto politicas5 = new PoliticasProducto("normas5", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
-        PoliticasProducto politicas6 = new PoliticasProducto("normas6", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
-        PoliticasProducto politicas7 = new PoliticasProducto("normas7", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
+        PoliticasProducto politicas1 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.");
 
-        Producto producto1 = new Producto("BMW 323i", "auto genial", ciudadGuardada1, categoria1, imagenes1, caracteristicas1, politicas1);
-        Producto producto2 = new Producto("Chevrolet Cruze RS", "auto super genial", ciudadGuardada2, categoria3, imagenes2, caracteristicas2, politicas2);
-        Producto producto3 = new Producto("Haval H2", "auto super genial", ciudadGuardada3, categoria2, imagenes3, caracteristicas3, politicas3);
-        Producto producto4 = new Producto("Mazda CX 5", "auto super genial", ciudadGuardada4, categoria2, imagenes4, caracteristicas4, politicas4);
-        Producto producto5 = new Producto("Volkswagen Golf GTI", "auto super genial", ciudadGuardada5, categoria3, imagenes5, caracteristicas5, politicas5);
-        Producto producto6 = new Producto("Toyota C-HR", "auto super genial", ciudadGuardada6, categoria3, imagenes6, caracteristicas6, politicas6);
-        Producto producto7 = new Producto("Ford Mustang Mach I", "auto super genial", ciudadGuardada7, categoria4, imagenes7, caracteristicas7, politicas7);
+        PoliticasProducto politicas2 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.");
+
+        PoliticasProducto politicas3 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.");
+
+        PoliticasProducto politicas4 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.");
+
+        PoliticasProducto politicas5 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.");
+
+        PoliticasProducto politicas6 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.");
+
+        PoliticasProducto politicas7 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.");
+
+        Producto producto1 = new Producto("BMW 323i", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", ciudadGuardada1, categoria1, imagenes1, caracteristicas1, politicas1);
+        Producto producto2 = new Producto("Chevrolet Cruze RS", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", ciudadGuardada2, categoria3, imagenes2, caracteristicas2, politicas2);
+        Producto producto3 = new Producto("Haval H2", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", ciudadGuardada3, categoria2, imagenes3, caracteristicas3, politicas3);
+        Producto producto4 = new Producto("Mazda CX 5", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", ciudadGuardada4, categoria2, imagenes4, caracteristicas4, politicas4);
+        Producto producto5 = new Producto("Volkswagen Golf GTI", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", ciudadGuardada5, categoria3, imagenes5, caracteristicas5, politicas5);
+        Producto producto6 = new Producto("Toyota C-HR", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", ciudadGuardada6, categoria3, imagenes6, caracteristicas6, politicas6);
+        Producto producto7 = new Producto("Ford Mustang Mach I", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.", ciudadGuardada7, categoria4, imagenes7, caracteristicas7, politicas7);
 
         productoService.guardar(producto1);
         productoService.guardar(producto2);
