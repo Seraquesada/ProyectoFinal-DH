@@ -42,7 +42,7 @@ const SingleVehicle = () => {
     }
   },[])
 
-  const url = "http://localhost:8080/productos/";
+  const url = "ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/productos/";
   useEffect(()=>{
     axios.get(url + id)
     .then(res=> 

@@ -12,23 +12,23 @@ const GroupOfVehicles = ()=> {
 
   useEffect(()=>{
     if(categoria === undefined && ciudad === undefined){
-          axios.get('http://localhost:8080/productos')
+          axios.get('ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/productos')
     .then(res=>{
       setData(res.data)
     })
     }else if(categoria != undefined && ciudad === undefined){
-    axios.get(`http://localhost:8080/productos/filter?categoria=${categoria}`)
+    axios.get(`ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/productos/filter?categoria=${categoria}`)
       .then(res=>{
         setData(res.data)
     })
     }else if(categoria === undefined && ciudad != undefined){
-    axios.get(`http://localhost:8080/productos/filter?ciudad=${ciudad}`)
+    axios.get(`ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/productos/filter?ciudad=${ciudad}`)
       .then(res=>{
         setData(res.data)
     })
     }
     else{
-    axios.get(`http://localhost:8080/productos/filter?categoria=${categoria}&ciudad=${ciudad}`)
+    axios.get(`ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/productos/filter?categoria=${categoria}&ciudad=${ciudad}`)
       .then(res=>{
         setData(res.data)
     })
