@@ -20,11 +20,11 @@ const SearchBar = () => {
     const [selectDisplay, setSelectDisplay] = useState("Cargando...")
     const [userChoice, setUserChoice] = useState(undefined)
     
-    const {setCiudad,setCategoria,categoria,ciudad } = useContext(CategoryContext);
+    const {setCiudad} = useContext(CategoryContext);
 
-    useEffect(()=>{
+    /* useEffect(()=>{
         console.log(ciudad + " ciudad")
-    },[ciudad])
+    },[ciudad]) */
 
     useEffect(()=>{axios.get('ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/ciudades')
         .then(res=>{
