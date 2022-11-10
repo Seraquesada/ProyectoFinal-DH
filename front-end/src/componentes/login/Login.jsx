@@ -57,7 +57,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
       "username": document.querySelector("#emailLog").value,
       "password" : document.querySelector("#passwordLog").value
     }
-    axios.post('ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/usuarios/authenticate', payload)
+    axios.post('http://ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/usuarios/authenticate', payload)
     .then(function (response) {
       if(response.status === 200){
         localStorage.setItem('jwt', response.data.jwt);
@@ -84,7 +84,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
       "mail": document.querySelector("#email").value,
       "password" : document.querySelector("#password").value
     }
-    axios.post('ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/usuarios', payload)
+    axios.post('http://ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/usuarios', payload)
     .then(function (response) {
       console.log(response);
       if(response.status === 200){

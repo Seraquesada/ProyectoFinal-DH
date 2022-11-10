@@ -9,7 +9,7 @@ const Category = ()=> {
   const [isLoading, setLoading] = useState(true);
   
   useEffect(()=>{
-  axios.get('ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/categorias')
+  axios.get('http://ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/categorias')
   .then(res=> 
   {
     const datos = res.data
