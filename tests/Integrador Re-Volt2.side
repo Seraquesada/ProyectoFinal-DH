@@ -1466,7 +1466,7 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'Sedan aca va la categoria')]", "xpath:innerText"]
       ],
-      "value": "Sedan aca va la categoria"
+      "value": "Sedan "
     }, {
       "id": "76111695-63c6-4477-878a-c755eaace0e1",
       "comment": "",
@@ -1487,7 +1487,7 @@
         ["xpath=//h2", "xpath:position"],
         ["xpath=//h2[contains(.,'Selecciona una categoria')]", "xpath:innerText"]
       ],
-      "value": "Selecciona una categoria"
+      "value": "Selecciona"
     }]
   }, {
     "id": "e3e9e2bf-0df5-4f0e-9259-57371086b132",
@@ -1917,7 +1917,7 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'Sedan aca va la categoria')]", "xpath:innerText"]
       ],
-      "value": "Sedan aca va la categoria"
+      "value": "Sedan "
     }, {
       "id": "a60d39e1-c8d0-498d-b959-9d6679a693b2",
       "comment": "",
@@ -2014,7 +2014,7 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'Sedan aca va la categoria')]", "xpath:innerText"]
       ],
-      "value": "Sedan aca va la categoria"
+      "value": "Sedan"
     }, {
       "id": "f09a4ba2-9c46-4362-900e-115f999de0ff",
       "comment": "",
@@ -2116,7 +2116,7 @@
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'Sedan aca va la categoria')]", "xpath:innerText"]
       ],
-      "value": "Sedan aca va la categoria"
+      "value": "Sedan"
     }, {
       "id": "61df7c56-d84e-47c7-a723-12d4d8befc46",
       "comment": "",
