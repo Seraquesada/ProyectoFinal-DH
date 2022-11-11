@@ -1,8 +1,18 @@
 import { React, useEffect, useState } from 'react';
 import ItemCategory from '../item/ItemCategory';
 import Spinner from 'react-bootstrap/Spinner';
+import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 import './category.css'
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "black",
+  width: "3.5rem",
+  height: "3.5rem",
+  animation:"2s ease-in-out 10s infinite normal both running react-spinners-ClipLoader-clip"
+};
 
 const Category = ()=> {
   const [data1, setData1] = useState(null);
@@ -19,8 +29,15 @@ const Category = ()=> {
   )}, [])
   
   if (isLoading) {
-    return <Spinner animation="border" size="sm" />;
-  }
+    return (
+    <>
+    <ClipLoader
+            loading={isLoading}
+            cssOverride={override}/>
+    </>
+    )
+  };
+
   return (
       <div className='category'>
         <div className='container-category'>
