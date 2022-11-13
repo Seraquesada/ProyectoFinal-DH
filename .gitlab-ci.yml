@@ -14,10 +14,10 @@ variables:
   image: node:10
   script: |
     npm install # Install all dependencies
-    npm run dev:${APP_ENV} # Build command
+    npm run build:${APP_ENV} # Build command
   artifacts:
     paths:
-      - ./build
+      - ../dist
       
 npm_dev:
   extends: .npm_build
@@ -33,7 +33,7 @@ npm_dev:
   when: manual
   script: |
     pip install awscli #Install awscli tools
-    aws s3 sync ./build/ s3://${S3_BUCKET}
+    aws s3 sync ../dist/ s3://${S3_BUCKET}
 deploy_dev:
   extends: .deploy_aws
   stage: run
