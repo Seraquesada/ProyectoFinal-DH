@@ -7,7 +7,7 @@ variables:
 
 
 .npm_build:
-  image: node:lastest
+  image: node:latest
   script: |
     cd ./front-end
     npm cache clean --force
