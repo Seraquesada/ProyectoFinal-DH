@@ -9,8 +9,9 @@ variables:
 .npm_build:
   image: node:10
   script: |
+    cd ./front-end
     npm install # Install all dependencies
-    npm run build:${APP_ENV} # Build command
+    npm run build # Build command
   artifacts:
     paths:
       - ../dist
