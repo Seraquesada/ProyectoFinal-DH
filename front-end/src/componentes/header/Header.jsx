@@ -1,8 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import CustomModal from "../customModal/CustomModal";
 import Button from 'react-bootstrap/Button';
-import SideBarBootstrap from '../sideBarBootsStrap/sideBarBootstrap'
-import SideBar from "../sideBar/SideBar";
+import SideBarBootstrap from '../sideBarBootsStrap/SideBarBootstrap';
 import "./Header.css";
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 
