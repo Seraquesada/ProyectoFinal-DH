@@ -1,7 +1,7 @@
 import React,{useEffect,useState,useContext} from 'react';
 import Item from '../vehicle/Vehicle';
 import axios  from 'axios';
-import './groupOfVehicles.css';
+import './GroupOfVehicles.css';
 import { CategoryContext } from '../../context/CategoryContext';
 
 const GroupOfVehicles = ()=> {
