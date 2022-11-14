@@ -15,7 +15,7 @@ variables:
     npm run build # Build command
   artifacts:
     paths:
-      - ../dist
+      - ./front-end/dist
       
 npm_dev:
   extends: .npm_build
