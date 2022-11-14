@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet } from 'react-router-dom'
-import "../groupOfVehicles/groupOfVehicles.css";
-import "./vehicle.css";
+import "../groupOfVehicles/GroupOfVehicles.css";
+import "./Vehicle.css";
 import { GrStar } from "react-icons/gr";
 import {IoMdPin} from "react-icons/io";
 import{GiCarWheel,GiCarSeat} from "react-icons/gi";
