@@ -8,7 +8,7 @@ const HeaderCard = ({respuesta}) => {
         <div className="headerCard">
             <div>
             <div className="category-header">
-            <h3> {respuesta.categoria.titulo}</h3>
+            <h2> {respuesta.categoria.titulo}</h2>
             <h4> {respuesta.titulo}</h4>
             </div>
             </div>

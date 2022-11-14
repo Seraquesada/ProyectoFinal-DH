@@ -41,21 +41,21 @@ const SliderCard = ({respuesta}) => {
       <div className="container-pictures">
         <div className="card-ltside">
           {/*<h2>{array[0]?.name}</h2>*/}
-          <img className="test" src={respuesta.imagenes[0]?.url} />
+          <img loading="lazy" className="test" src={respuesta.imagenes[0]?.url} />
         </div>
 
         <div className="card">
           <div>
             {/*<h2>{array[1]?.name}</h2>*/}
-              <img src={respuesta.imagenes[1]?.url} />
+              <img loading="lazy" src={respuesta.imagenes[1]?.url} />
             {/*<h2>{array[2]?.name}</h2>*/}
-              <img src={respuesta.imagenes[2]?.url} />
+              <img loading="lazy" src={respuesta.imagenes[2]?.url} />
           </div>
           <div>
             {/*<h2>{array[3]?.name}</h2>*/}
-              <img src={respuesta.imagenes[3]?.url} />
+              <img loading="lazy" src={respuesta.imagenes[3]?.url} />
             {/*<h2>{array[4]?.name}</h2>*/}
-              <img src={respuesta.imagenes[4]?.url} />
+              <img loading="lazy" src={respuesta.imagenes[4]?.url} />
             <p className="p-ver-mas" onClick={open}>
               VER MAS
             </p>

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState,useContext } from "react";
+import { useParams,Link, Outlet } from "react-router-dom";
 
 import Header from "../header/Header";
 import SliderCard from "../card/SliderCard";
@@ -16,11 +16,16 @@ import Spinner from 'react-bootstrap/Spinner';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css"
 import "./SingleVehicle.css"
-const SingleVehicle = () => {
+import {DateContext} from "../../context/DateContext.jsx";
 
+const SingleVehicle = () => {
   const { id } = useParams();
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(null);
+
+  const {startDate} = useContext(DateContext)
+  const {setStartDate} = useContext(DateContext)
+  const {endDate} = useContext(DateContext)
+  const {setEndDate} = useContext(DateContext)
+
   const [isLoading, setLoading] = useState(true);
   const [respuesta, setRespuesta] = useState();
   const [size,SetSize] = useState(window.innerWidth);
@@ -82,7 +87,8 @@ const SingleVehicle = () => {
             />
         </div>
         <div className="container-button">
-          <button className="btn btn-warning" type="button">Iniciar Reserva</button>
+          <Link className="buttonVerMas link" to={"/singleVehicle/" + id + "/reserva"}>Iniciar Reserva</Link>
+          <Outlet/>
         </div>
       </div>
       
