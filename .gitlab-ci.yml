@@ -17,7 +17,7 @@ variables:
     paths:
       - ./front-end/dist
       
-npm_dev:
+build_front:
   extends: .npm_build
   stage: build
   before_script:
@@ -31,11 +31,11 @@ npm_dev:
   script: |
     pip install awscli #Install awscli tools
     aws s3 sync ./front-end/dist s3://${S3_BUCKET}
-deploy_dev:
+deploy_front:
   extends: .deploy_aws
   stage: deploy
   dependencies:
-    - npm_dev
+    - build_front
   before_script:
     - export S3_BUCKET=${S3_BUCKET_DEV}
   only:
