@@ -3,7 +3,7 @@ import ItemCategory from '../item/ItemCategory';
 import Spinner from 'react-bootstrap/Spinner';
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
-import './category.css'
+import './Category.css';
 
 const override = {
   display: "block",
