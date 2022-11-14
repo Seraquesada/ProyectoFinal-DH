@@ -30,7 +30,7 @@ npm_dev:
   image: python:latest
   script: |
     pip install awscli #Install awscli tools
-    aws s3 sync ../dist/* s3://${S3_BUCKET}
+    aws s3 sync ./front-end/dist s3://${S3_BUCKET}
 deploy_dev:
   extends: .deploy_aws
   stage: deploy
