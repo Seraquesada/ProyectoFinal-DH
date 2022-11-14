@@ -1,6 +1,6 @@
 stages:
   - build
-  - run
+  - deploy
 
 variables:
   S3_BUCKET_DEV: ${DEV_S3_BUCKET}
@@ -33,7 +33,7 @@ npm_dev:
     aws s3 sync ../dist/* s3://${S3_BUCKET}
 deploy_dev:
   extends: .deploy_aws
-  stage: run
+  stage: deploy
   dependencies:
     - npm_dev
   before_script:
