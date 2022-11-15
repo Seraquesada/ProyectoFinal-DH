@@ -19,6 +19,7 @@ import "./SingleVehicle.css"
 import {DateContext} from "../../context/DateContext.jsx";
 
 const SingleVehicle = () => {
+  
   const { id } = useParams();
 
   const {startDate} = useContext(DateContext)
