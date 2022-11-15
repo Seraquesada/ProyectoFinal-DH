@@ -13,7 +13,7 @@ const CategorySkeleton = ({cards}) => {
                     </div>
                     <div className="right">
                         <div>
-                            <Skeleton count={2}/>
+                            <Skeleton  count={2}/>
                         </div>
                         <div>
                             <Skeleton/>
@@ -25,7 +25,7 @@ const CategorySkeleton = ({cards}) => {
                             <Skeleton count={5}/>
                         </div>
                         <div>
-                            <Skeleton width={580} height={46} />
+                            <Skeleton width={560} height={46} />
                         </div>
                     </div>
                 </div>

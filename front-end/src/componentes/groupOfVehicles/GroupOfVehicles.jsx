@@ -48,7 +48,7 @@ const GroupOfVehicles = ()=> {
           <div className='container-reco'>
             <h2 className='tituloReco'>Recomendaciones</h2>
             <div className='itemGroupOfVehicles'>
-              {isLoading && <VehicleSkeleton cards={4}/>}
+              {isLoading && <VehicleSkeleton  cards={4}/>}
             {data?.map(singleItem=>
               <Item
                 id={singleItem.id}
