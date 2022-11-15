@@ -8,10 +8,10 @@ const CategorySkeleton = ({cards}) => {
             .map((_, i) => (
                 <div className="category-skeleton" key={i}>
                     <div className="top-row">
-                        <Skeleton  width={300} height={350}/>
+                        <Skeleton  max-width={480} height={350}/>
                     </div>
                     <div className="buttom-row">
-                        <Skeleton width={300} count={5}/>
+                        <Skeleton max-width={480} count={5}/>
                     </div>
                 </div>
             ));
