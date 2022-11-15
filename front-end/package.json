@@ -25,6 +25,7 @@
     "react-hook-form": "^7.38.0",
     "react-icons": "^4.6.0",
     "react-image-gallery": "^1.2.11",
+    "react-loading-skeleton": "^3.1.0",
     "react-multi-date-picker": "^3.3.4",
     "react-router-dom": "^6.4.2",
     "react-select": "^5.5.5",

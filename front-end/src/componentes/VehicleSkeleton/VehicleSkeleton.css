@@ -1,0 +1,11 @@
+.vehicle-skeleton{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    border-radius: 8px;
+}
+.right {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
