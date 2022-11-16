@@ -18,16 +18,13 @@ import "./SearchBar.css";
 const SearchBar = () => {
 
     
-    const {startDate} = useContext(DateContext)
-    const {setStartDate} = useContext(DateContext)
-    const {endDate} = useContext(DateContext)
-    const {setEndDate} = useContext(DateContext)
+    const {startDate, setStartDate , endDate, setEndDate} = useContext(DateContext)
     
     const [selectDisplay, setSelectDisplay] = useState("Cargando...")
     const [userChoice, setUserChoice] = useState(undefined)
     
     const {setCiudad} = useContext(CategoryContext);
-    
+
     /* useEffect(()=>{
         console.log(ciudad + " ciudad")
     },[ciudad]) */
