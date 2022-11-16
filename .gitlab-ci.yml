@@ -29,7 +29,7 @@ build_front:
 build_back:
   stage: build
   script: | 
-    cd ./back-end
+    cd ./back-end/ProyectoIntegrador/ProyectoIntegrador
     mvn package -B
   artifacts:
     paths:
