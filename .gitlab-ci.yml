@@ -34,7 +34,7 @@ build_back:
     mvn package -DskipTests=true
   artifacts:
     paths:
-      - target/*.jar
+      - "**/target"
 
 .deploy_aws:
   image: python:latest
