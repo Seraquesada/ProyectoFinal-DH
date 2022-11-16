@@ -66,7 +66,7 @@ deploy_back:
     - ssh-keyscan $EC2_IPADDRESS >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
-    - scp -o StrictHostKeyChecking=no -r -v ./back-end/ProyectoIntegrador/ProyectoIntegrador ubuntu@ip-172-31-36-196:~
+    - scp -o StrictHostKeyChecking=no -r -v ./back-end/ProyectoIntegrador/ProyectoIntegrador/target/ProyectoIntegrador-0.0.1-SNAPSHOT.jar ubuntu@ip-172-31-36-196:~
     - java -jar ProyectoIntegrador-0.0.1-SNAPSHOT.jar
   tags: 
     - back-end
