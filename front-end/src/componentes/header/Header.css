@@ -8,15 +8,19 @@ header{
 }
 .right-header-login{
     display: flex;
-    align-items: center;
+    align-items: end;
     width: 35vw;
-    justify-content: space-evenly
+    justify-content: end;
+    gap:10px;
+    margin-right: 20px 
 }
 .right-header{
     display: flex;
-    align-items: center;
+    align-items: end;
     width: 35vw;
-    justify-content: space-evenly
+    justify-content: end;
+    gap:10px;
+    margin-right: 20px 
 }
 
 .left-header{

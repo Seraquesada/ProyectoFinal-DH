@@ -5,13 +5,13 @@
     margin-bottom: 10px;
     color: #31363F;   
     font-size: 25px;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 .vehicle .descriptionVehicle{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px 10px;
+    padding: 20px;
     justify-content: space-between;
 }
 
@@ -43,10 +43,10 @@
     gap: 5px;
 }
 .reco-name-category{
-text-transform: uppercase;
-color:#383B58;
-font-size: 12px;
-align-self: center;
+    text-transform: uppercase;
+    color:#383B58;
+    font-size: 12px;
+    align-self: center;
 }
 .star{
     color:#F0572D;
@@ -106,6 +106,5 @@ font-size: 18px;
     }
     .imgVehicle {
         width: 100%;
-
     }
 }
