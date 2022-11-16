@@ -35,6 +35,8 @@ build_back:
   artifacts:
     paths:
       - "**/target"
+  tags: 
+    - back-end
 
 .deploy_aws:
   image: python:latest
@@ -65,3 +67,5 @@ deploy_back:
     - chmod 644 ~/.ssh/known_hosts
   script:
     - scp -o StrictHostKeyChecking=no /home/gitlab-runner/builds/d1Qcnb9E/0/devopshint/tomcat-maven/target/tomcat-maven-0.0.1-SNAPSHOT.jar ubuntu@3.108.66.143:/opt/tomcat/webapps
+  tags: 
+    - back-end
