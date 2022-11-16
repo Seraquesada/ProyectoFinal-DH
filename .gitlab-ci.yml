@@ -26,11 +26,21 @@ build_front:
     refs:
       - dev
 
+build_back:
+  stage: build
+  script: | 
+    cd ./back-end
+    "mvn package -B"
+  artifacts:
+    paths:
+      - target/*.jar
+
 .deploy_aws:
   image: python:latest
   script: |
     pip install awscli #Install awscli tools
     aws s3 sync ./front-end/dist s3://${S3_BUCKET}
+
 deploy_front:
   extends: .deploy_aws
   stage: deploy
@@ -41,3 +51,16 @@ deploy_front:
   only:
     refs:
       - dev
+
+deploy_back:
+  stage: deploy
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )' 
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $EC2_IPADDRESS >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - scp -o StrictHostKeyChecking=no /home/gitlab-runner/builds/d1Qcnb9E/0/devopshint/tomcat-maven/target/tomcat-maven-0.0.1-SNAPSHOT.jar ubuntu@3.108.66.143:/opt/tomcat/webapps
