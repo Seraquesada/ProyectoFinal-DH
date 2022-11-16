@@ -30,7 +30,7 @@ build_back:
   stage: build
   script: | 
     cd ./back-end
-    "mvn package -B"
+    mvn package -B
   artifacts:
     paths:
       - target/*.jar
