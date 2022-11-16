@@ -28,6 +28,7 @@ build_front:
 
 build_back:
   stage: build
+  image: maven:latest
   script: | 
     cd ./back-end/ProyectoIntegrador/ProyectoIntegrador
     mvn package -B
