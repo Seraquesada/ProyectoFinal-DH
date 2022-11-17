@@ -24,10 +24,12 @@ import { useAxiosGet } from "../../hooks/useAxiosGet";
 const SingleVehicle = () => {
 
   const { id } = useParams();
-  const url = "http://ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/productos/";
+  const url = "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/";
   const {startDate, handleDateChange , endDate} = useDateChange();
   const {size} = useHandleRisize(); 
   const {respuesta,isLoading} = useAxiosGet(url + id)
+
+  console.log(respuesta)
 
   const holidays = [
     new Date(2022, 10, 14),

@@ -11,6 +11,8 @@ const GroupOfVehicles = ()=> {
   const [isLoading, setLoading] = useState(true);
   const {categoria,ciudad} = useContext(CategoryContext)
 
+  
+
   useEffect(()=>{
     if(categoria === undefined && ciudad === undefined){
           axios.get('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos')
