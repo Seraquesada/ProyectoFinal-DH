@@ -67,7 +67,7 @@ deploy_back:
     - chmod 644 ~/.ssh/known_hosts
   script:
     - scp -o StrictHostKeyChecking=no -r -v ./back-end/ProyectoIntegrador/ProyectoIntegrador/target/ProyectoIntegrador-0.0.1-SNAPSHOT.jar ubuntu@ip-172-31-36-196:~
-    - ssh -i ${SSH_PRIVATE_KEY} ${EC2_IPADDRESS}
+    - ssh -i ${SSH_PRIVATE_KEY_FILE} ${EC2_IPADDRESS}
     - ls
     - java -jar ProyectoIntegrador-0.0.1-SNAPSHOT.jar
   tags: 
