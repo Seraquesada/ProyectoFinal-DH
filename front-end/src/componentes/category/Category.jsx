@@ -4,6 +4,7 @@ import CategorySkeleton from "../CategorySkeleton/CategorySkeleton.jsx"
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 import './Category.css';
+import { useAxiosGet } from '../../hooks/useAxiosGet';
 
 const override = {
   display: "block",
@@ -15,16 +16,9 @@ const override = {
 };
 
 const Category = ()=> {
-  const [data1, setData1] = useState([]);
-  const [isLoading, setLoading] = useState(true);
   
-  useEffect(()=>{
-  axios.get('http://ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/categorias')
-  .then(res=> {   
-      const datos = res.data
-      setData1(datos)
-      setLoading(false)
-    })},[])
+  const url ='http://ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/categorias'
+  const {respuesta,isLoading} = useAxiosGet(url)
   
   return (
       <div className='category'>
@@ -34,7 +28,7 @@ const Category = ()=> {
           </div>
         <div className='itemCategoria'>
           {isLoading && <CategorySkeleton cards={4}/>}
-          {data1?.map((item) => 
+          {respuesta?.map((item) => 
             <ItemCategory
               url_imagen = {item.urlImagen}
               key={item.id}
