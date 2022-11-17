@@ -18,16 +18,16 @@ import "react-datepicker/dist/react-datepicker.css"
 import "./SingleVehicle.css"
 import {DateContext} from "../../context/DateContext.jsx";
 import { useHandleRisize } from "../../hooks/useHandleRisize";
+import { useDateChange } from "../../hooks/useDateChange";
+import { useAxiosGet } from "../../hooks/useAxiosGet";
 
 const SingleVehicle = () => {
-  
+
   const { id } = useParams();
-
-  const {startDate, setStartDate , endDate, setEndDate} = useContext(DateContext)
-
-  const [isLoading, setLoading] = useState(true);
-  const [respuesta, setRespuesta] = useState();
+  const url = "http://ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/productos/";
+  const {startDate, handleDateChange , endDate} = useDateChange();
   const {size} = useHandleRisize(); 
+  const {respuesta,isLoading} = useAxiosGet(url + id)
 
   const holidays = [
     new Date(2022, 10, 14),
@@ -41,23 +41,7 @@ const SingleVehicle = () => {
     new Date(2022, 7, 3),
     new Date(2022, 9, 7)
   ];
-
-  const handleDateChange = (dates) => {
-    const [start, end] = dates;
-    setStartDate(start);
-    setEndDate(end);
-  };
-
-  const url = "http://ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/productos/";
-  useEffect(()=>{
-    axios.get(url + id)
-    .then(res=> 
-    {
-      const datos = res.data
-      setRespuesta(datos)
-      setLoading(false)
-    }
-    )}, [])
+  
 
   if (isLoading) {
     return                     <DatePicker
@@ -104,12 +88,8 @@ const SingleVehicle = () => {
           <Outlet/>
         </div>
       </div>
-      
       <FeaturesCard respuesta={respuesta}/>
-
       <PoliticsCard respuesta={respuesta}/>
-
-
       <Footer />
     </>
   );
