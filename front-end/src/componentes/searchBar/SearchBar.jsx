@@ -26,7 +26,7 @@ const SearchBar = () => {
         console.log(ciudad + " ciudad")
     },[ciudad]) */
 
-    useEffect(()=>{axios.get('http://ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/ciudades')
+    useEffect(()=>{axios.get('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/ciudades')
         .then(res=>{
             let options = res.data;
             options.map( (c) => {

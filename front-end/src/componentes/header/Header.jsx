@@ -3,7 +3,7 @@ import CustomModal from "../customModal/CustomModal";
 import Button from 'react-bootstrap/Button';
 import SideBarBootstrap from '../sideBarBootsStrap/SideBarBootstrap';
 import "./Header.css";
-import {BrowserRouter as Router, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
 

@@ -1,25 +1,15 @@
 import { React, useEffect, useState } from 'react';
 import ItemCategory from '../item/ItemCategory';
 import CategorySkeleton from "../CategorySkeleton/CategorySkeleton.jsx"
-import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 import './Category.css';
-
-const override = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "black",
-  width: "3.5rem",
-  height: "3.5rem",
-  animation:"2s ease-in-out 10s infinite normal both running react-spinners-ClipLoader-clip"
-};
 
 const Category = ()=> {
   const [data1, setData1] = useState([]);
   const [isLoading, setLoading] = useState(true);
   
   useEffect(()=>{
-  axios.get('http://ec2-3-134-86-241.us-east-2.compute.amazonaws.com:8080/categorias')
+  axios.get('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/categorias')
   .then(res=> {   
       const datos = res.data
       setData1(datos)
