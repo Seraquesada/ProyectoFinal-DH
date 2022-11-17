@@ -31,8 +31,6 @@ const SingleVehicle = () => {
   const [respuesta, setRespuesta] = useState();
 
 
-  console.log(respuesta)
-
   useEffect(()=>{
     axios.get(url + id)
     .then(res=> 

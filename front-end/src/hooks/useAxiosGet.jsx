@@ -9,7 +9,7 @@ export const useAxiosGet = (url) => {
         setLoading(true);
         axios.get(url)
         .then(res=>{
-            setRespuesta(res.date)
+            setRespuesta(res.data)
             setLoading(false)
         })
     },[url])

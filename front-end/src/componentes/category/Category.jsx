@@ -7,7 +7,7 @@ import { useAxiosGet } from '../../hooks/useAxiosGet';
 
 const Category = ()=> {
   
-  const url ='http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/categorias'
+  const url ="http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/categorias"
   const {respuesta,isLoading} = useAxiosGet(url)
   
   return (

@@ -12,9 +12,6 @@ const SingleVehicleReserva = () => {
     const {endDate} = useContext(DateContext)
     const {respuesta,isLoading} = useAxiosGet(url + id)
 
-    return <Spinner animation="border" size="sm" />;
-
-
 }
 
 export default SingleVehicleReserva
