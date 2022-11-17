@@ -16,6 +16,9 @@ variables:
   artifacts:
     paths:
       - ./front-end/dist
+  only:
+    refs:
+      - dev
       
 build_front:
   extends: .npm_build
@@ -35,6 +38,9 @@ build_back:
   artifacts:
     paths:
       - "**/target/*.jar"
+  only:
+    refs:
+      - dev
   tags: 
     - back-end
 
@@ -72,5 +78,7 @@ deploy_back:
 
   tags: 
     - back-end
-
+  only:
+    refs:
+      - dev
 
