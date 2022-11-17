@@ -28,6 +28,8 @@ build_front:
   only:
     refs:
       - dev
+  tags: 
+    - front-end
 
 build_back:
   stage: build
@@ -60,6 +62,8 @@ deploy_front:
   only:
     refs:
       - dev
+  tags: 
+    - front-end
 
 deploy_back:
   stage: deploy
@@ -73,8 +77,8 @@ deploy_back:
     - chmod 644 ~/.ssh/known_hosts
   script:
     - scp -o StrictHostKeyChecking=no -r -v ./back-end/ProyectoIntegrador/ProyectoIntegrador/target/ProyectoIntegrador-0.0.1-SNAPSHOT.jar ${SSH_USER}@${DEPLOY_SERVER_IP}:~
-    - ssh ${SSH_USER}@${DEPLOY_SERVER_IP} "sudo ln -s /var/ProyectoIntegrador-0.0.1-SNAPSHOT/ProyectoIntegrador-0.0.1-SNAPSHOT.jar /etc/init.d/ProyectoIntegrador-0.0.1-SNAPSHOT"
-    - ssh ${SSH_USER}@${DEPLOY_SERVER_IP} "sudo systemctl start ProyectoIntegrador-0.0.1-SNAPSHOT.service"
+    - ssh ${SSH_USER}@${DEPLOY_SERVER_IP} "sudo service ProyectoIntegrador-0.0.1-SNAPSHOT.jar stop"
+    - ssh ${SSH_USER}@${DEPLOY_SERVER_IP} "sudo service ProyectoIntegrador-0.0.1-SNAPSHOT.jar start"
   only:
     refs:
       - dev
