@@ -66,7 +66,9 @@ deploy_back:
     - ssh-keyscan $EC2_IPADDRESS >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
-    - scp -o StrictHostKeyChecking=no -r -v ./back-end/ProyectoIntegrador/ProyectoIntegrador/target/ProyectoIntegrador-0.0.1-SNAPSHOT.jar ubuntu@ip-172-31-36-196:~
-    - ls
+    - scp -o StrictHostKeyChecking=no -r -v ./back-end/ProyectoIntegrador/ProyectoIntegrador/target/ProyectoIntegrador-0.0.1-SNAPSHOT.jar ${SSH_USER}@${DEPLOY_SERVER_IP}:~
+    - ssh ${SSH_USER}@${DEPLOY_SERVER_IP} "ls"
   tags: 
     - back-end
+
+
