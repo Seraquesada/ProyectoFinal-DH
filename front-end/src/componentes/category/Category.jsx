@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import ItemCategory from '../item/ItemCategory';
 import CategorySkeleton from "../CategorySkeleton/CategorySkeleton.jsx"
-import axios from 'axios';
+
 import './Category.css';
 import { useAxiosGet } from '../../hooks/useAxiosGet';
 
