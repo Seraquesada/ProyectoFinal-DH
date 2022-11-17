@@ -28,8 +28,6 @@ build_front:
   only:
     refs:
       - dev
-  tags: 
-    - front-end
 
 build_back:
   stage: build
@@ -62,8 +60,6 @@ deploy_front:
   only:
     refs:
       - dev
-  tags: 
-    - front-end
 
 deploy_back:
   stage: deploy
