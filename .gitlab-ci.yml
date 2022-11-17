@@ -67,8 +67,8 @@ deploy_back:
     - chmod 644 ~/.ssh/known_hosts
   script:
     - scp -o StrictHostKeyChecking=no -r -v ./back-end/ProyectoIntegrador/ProyectoIntegrador/target/ProyectoIntegrador-0.0.1-SNAPSHOT.jar ${SSH_USER}@${DEPLOY_SERVER_IP}:~
-    - ssh ${SSH_USER}@${DEPLOY_SERVER_IP} "nohup java -jar ProyectoIntegrador-0.0.1-SNAPSHOT.jar > logs.log &"
-    - ssh ${SSH_USER}@${DEPLOY_SERVER_IP} "exit"
+    - ssh ${SSH_USER}@${DEPLOY_SERVER_IP} "sudo ln -s /var/ProyectoIntegrador-0.0.1-SNAPSHOT/ProyectoIntegrador-0.0.1-SNAPSHOT.jar /etc/init.d/ProyectoIntegrador-0.0.1-SNAPSHOT"
+    - ssh ${SSH_USER}@${DEPLOY_SERVER_IP} "systemctl start ProyectoIntegrador-0.0.1-SNAPSHOT.service"
 
   tags: 
     - back-end
