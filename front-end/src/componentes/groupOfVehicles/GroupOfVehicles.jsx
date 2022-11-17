@@ -1,16 +1,15 @@
 import React,{useEffect,useState,useContext} from 'react';
 import Item from '../vehicle/Vehicle';
 import VehicleSkeleton from "../VehicleSkeleton/VehicleSkeleton.jsx"
+import { CategoryContext } from '../../context/CategoryContext';
 import axios  from 'axios';
 import './GroupOfVehicles.css';
-import { CategoryContext } from '../../context/CategoryContext';
 
 const GroupOfVehicles = ()=> {
   
   const [data, setData] = useState([]);
-  const {categoria} = useContext(CategoryContext)
-  const {ciudad} = useContext(CategoryContext)
   const [isLoading, setLoading] = useState(true);
+  const {categoria,ciudad} = useContext(CategoryContext)
 
   useEffect(()=>{
     if(categoria === undefined && ciudad === undefined){

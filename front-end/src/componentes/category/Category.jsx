@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react';
+import React from 'react';
 import ItemCategory from '../item/ItemCategory';
 import CategorySkeleton from "../CategorySkeleton/CategorySkeleton.jsx"
 
