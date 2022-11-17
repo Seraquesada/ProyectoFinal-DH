@@ -1,6 +1,7 @@
 import React,{useState,useEffect, useContext} from 'react';
 import { CategoryContext } from "../../context/CategoryContext";
-import { DateContext } from '../../context/DateContext';
+
+import { useDateChange } from '../../hooks/useDateChange';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -15,15 +16,16 @@ import "./SearchBar.css";
 
 
 
+
 const SearchBar = () => {
 
-    
-    const {startDate, setStartDate , endDate, setEndDate} = useContext(DateContext)
     
     const [selectDisplay, setSelectDisplay] = useState("Cargando...")
     const [userChoice, setUserChoice] = useState(undefined)
     
     const {setCiudad} = useContext(CategoryContext);
+    const {startDate, handleDateChange , endDate} = useDateChange();
+
 
     /* useEffect(()=>{
         console.log(ciudad + " ciudad")
@@ -60,12 +62,6 @@ const SearchBar = () => {
         forms.reset();
         <Button className='btn btn-secondary' type="submit" onClick={handleLimpiarFiltro}>Limpiar Filtros</Button>
     }*/
-
-    const handleDateChange = (dates) => {
-        const [start, end] = dates;
-        setStartDate(start);
-        setEndDate(end);
-    };
 
     const holidays = [
         new Date(2022, 10, 14),
