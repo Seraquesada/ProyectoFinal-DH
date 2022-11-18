@@ -21,13 +21,11 @@ export const useDateChange = () => {
     }, [endDate]);
 
     useEffect(() => {
-        console.log(endDate)
         //setEndDate((window.localStorage.getItem('endDate')));
         
     }, [endDate]);
 
     useEffect(() => {
-        console.log(startDate)
         //startDate(JSON.parse(window.localStorage.getItem('startDate')));
     }, []);
     return {startDate, endDate, handleDateChange};
