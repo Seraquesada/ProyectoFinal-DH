@@ -16,10 +16,9 @@ import Spinner from 'react-bootstrap/Spinner';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css"
 import "./SingleVehicle.css"
-import {DateContext} from "../../context/DateContext.jsx";
 import { useHandleRisize } from "../../hooks/useHandleRisize";
 import { useDateChange } from "../../hooks/useDateChange";
-import { useAxiosGet } from "../../hooks/useAxiosGet";
+
 
 const SingleVehicle = () => {
 
@@ -54,20 +53,11 @@ const SingleVehicle = () => {
     new Date(2022, 9, 7)
   ];
   
-
-  if (isLoading) {
-    return                     <DatePicker
-    className="datepicker"
-    onChange={handleDateChange}
-    startDate={startDate}
-    endDate={endDate}
-    minDate={new Date()}
-    showDisabledMonthNavigation
-    selectsRange
-    inline
-    monthsShown={size > 510 ? 2 : 1}
-/>;
+  if(isLoading){
+    return <p> cargando</p>
   }
+
+  
   return (
     <>
       <Header />
