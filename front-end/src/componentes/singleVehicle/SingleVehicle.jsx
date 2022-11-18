@@ -1,6 +1,5 @@
-import React, { useEffect, useState,useContext } from "react";
-import { useParams,Link, Outlet } from "react-router-dom";
-
+import React, { useEffect, useState, useContext } from "react";
+import { useParams, Link, Outlet } from "react-router-dom";
 import Header from "../header/Header";
 import SliderCard from "../card/SliderCard";
 import "../card/SliderCard.css";
@@ -11,15 +10,12 @@ import FeaturesCard from "../card/FeaturesCard";
 import PoliticsCard from "../card/PoliticsCard";
 import axios from "axios";
 import Footer from "../footer/Footer";
-import Spinner from 'react-bootstrap/Spinner';
 
 import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css"
-import "./SingleVehicle.css"
-import {DateContext} from "../../context/DateContext.jsx";
+import "react-datepicker/dist/react-datepicker.css";
+import "./SingleVehicle.css";
 import { useHandleRisize } from "../../hooks/useHandleRisize";
 import { useDateChange } from "../../hooks/useDateChange";
-import { useAxiosGet } from "../../hooks/useAxiosGet";
 
 const SingleVehicle = () => {
 
@@ -56,17 +52,7 @@ const SingleVehicle = () => {
   
 
   if (isLoading) {
-    return                     <DatePicker
-    className="datepicker"
-    onChange={handleDateChange}
-    startDate={startDate}
-    endDate={endDate}
-    minDate={new Date()}
-    showDisabledMonthNavigation
-    selectsRange
-    inline
-    monthsShown={size > 510 ? 2 : 1}
-/>;
+    return <p>Aca va el skeletorrrr</p>
   }
   return (
     <>
