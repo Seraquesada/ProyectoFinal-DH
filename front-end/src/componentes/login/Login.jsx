@@ -8,10 +8,12 @@ import axios from "axios";
 
 
 
-const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
+const Login = ({authMode, setAuthMode, logIn, setUserName, setShow,setInitials}) => {
   
   const [validated, setValidated] = useState(false);
   const [badCredentials, setBadCredentials] = useState(false);
+  const [unreachable, setUnreachable] = useState(false);
+  const [registeredOK, setRegisteredOK] = useState(false);
   const [originalPasswordPattern, setOriginalPasswordPattern] = useState("");
 
 
@@ -49,7 +51,9 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
       document.querySelector("#email").value = "";
       document.querySelector("#password").value = "";
     }
-    setValidated(false)
+    setValidated(false);
+    setUnreachable(false);
+    setRegisteredOK(false);
   }
   const iniciarSesion = (e) => {
     e.preventDefault();
@@ -63,14 +67,15 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
         localStorage.setItem('jwt', response.data.jwt);
         const unjwt = parseJwt(localStorage.getItem('jwt'))
         const iniciales = unjwt.apellido.substr(0, 1).toUpperCase() + unjwt.nombre.substr(0, 1).toUpperCase();
-        localStorage.setItem('username', iniciales)
-        setUserName(iniciales)
+        const username = unjwt.nombre.substr(0, 1).toUpperCase()+unjwt.nombre.substr(1);
+        localStorage.setItem('initials', iniciales);
+        localStorage.setItem('username', username);
+        setInitials(iniciales);
+        setUserName(username);
         logIn();
-      }else{
-        console.log(response);
       }
     }).catch(function (error) {
-      error.code === 'ERR_BAD_REQUEST' ? setBadCredentials(true) : console.log(error);
+      error.code === 'ERR_BAD_REQUEST' ? setBadCredentials(true) : setUnreachable(true);
     });
     
   }
@@ -86,13 +91,12 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
     }
     axios.post('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/usuarios', payload)
     .then(function (response) {
-      console.log(response);
       if(response.status === 200){
-        setShow(false);
-    }
-    })
-    .catch(function (error) {
-      console.log(error);
+        setAuthMode("signin");
+        setRegisteredOK(true);
+      }
+    }).catch(function (error) {
+      setUnreachable(true);
     });
   }
   
@@ -102,6 +106,9 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
         <Form className="Auth-form" noValidate validated={validated} onSubmit={handleSubmit}>
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Iniciar Sesión</h3>
+              <Alert className={registeredOK ? null : "d-none"} key=      {"RegisteredOK"} variant={"success"} >
+              Registro Exitoso, por favor inicia sesión:
+              </Alert>
             <Form.Group className="mb-3" controlId="emailLog">
               <FloatingLabel controlId="emailLog" label="Correo Elecrónico" className="mb-3">
                 <Form.Control type="email" pattern="\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+" placeholder=" " required/>
@@ -113,8 +120,12 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
               </FloatingLabel>
             </Form.Group>
             <div className="d-grid gap-2 mt-3">
-              <Alert className={badCredentials ? null : "d-none"} key={"danger"} variant={"danger"} >
+              <Alert className={badCredentials ? null : "d-none"} key={"BadCredentials"} variant={"danger"} >
                 Credenciales Inválidas, por favor intenta de nuevo.
+              </Alert>
+
+              <Alert className={unreachable ? null : "d-none"} key={"Unreachable"} variant={"danger"} >
+              Lamentablemente no ha podido iniciar sesión. Por favor intente de nuevo más tarde.
               </Alert>
 
               <Button type="submit" className="btn-warning">             
@@ -191,6 +202,9 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow}) => {
             />
             </Form.Group>
             <div className="d-grid gap-2 mt-3">
+              <Alert className={unreachable ? null : "d-none"} key={"Unreachable"} variant={"danger"} >
+              Lamentablemente no ha podido registrarse. Por favor intente de nuevo más tarde.
+              </Alert>
               <Button type="submit" className="btn-warning">
                 Crear Cuenta
               </Button>

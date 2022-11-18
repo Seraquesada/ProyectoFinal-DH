@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Login from '../login/Login';
 import "./CustomModal.css";
 
-const CustomModal = ({logIn, setUserName}) => {
+const CustomModal = ({logIn, setUserName, setInitials}) => {
   const [show, setShow] = useState(false);
   const [authMode, setAuthMode] = useState("signin")
 
@@ -41,7 +41,7 @@ const CustomModal = ({logIn, setUserName}) => {
           <Modal.Title>Bienvenido a Re-Volt Rentals</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-dark">
-          <Login authMode={authMode} setAuthMode={setAuthMode} logIn={logIn} setUserName={setUserName} setShow={setShow}/>
+          <Login authMode={authMode} setAuthMode={setAuthMode} logIn={logIn} setUserName={setUserName} setInitials={setInitials} setShow={setShow}/>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

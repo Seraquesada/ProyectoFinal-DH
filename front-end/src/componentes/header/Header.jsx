@@ -8,11 +8,13 @@ import {Link} from 'react-router-dom';
 const Header = () => {
 
   const [loggedIn, setLoggedIn] = useState(false);
+  const [initials, setInitials] = useState(localStorage.getItem('initials'));
   const [userName, setUserName] = useState(localStorage.getItem('username'));
   
   const logOut = () => {
     localStorage.removeItem('jwt');
     localStorage.removeItem('username');
+    localStorage.removeItem('initials');
     setLoggedIn(false)
   }
   const logIn = () => {
@@ -42,7 +44,8 @@ const Header = () => {
         </div>
         
         <div className="right-header-login">
-          <div id="username" className="text-center text-light rounded-circle">{userName}</div>
+          <p className="loggedUserName">Hola, {userName}</p>
+          <div id="username" className="text-center text-light rounded-circle">{initials}</div>
           <Button variant="warning" onClick={logOut}>
             Cerrar Sesión
           </Button>
@@ -63,7 +66,7 @@ const Header = () => {
             
 
       <div className="right-header">
-        <CustomModal logIn={logIn} setUserName={setUserName}/>
+        <CustomModal logIn={logIn} setUserName={setUserName} setInitials={setInitials}/>
       </div>
       <SideBarBootstrap logIn={logIn} setUserName={setUserName} placement={"end"}/>
     </header>
