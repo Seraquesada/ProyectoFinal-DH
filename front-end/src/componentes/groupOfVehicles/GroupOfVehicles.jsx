@@ -9,7 +9,7 @@ const GroupOfVehicles = ()=> {
   
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  const {categoria,ciudad} = useContext(CategoryContext)
+  const {categoria,ciudad } = useContext(CategoryContext)
 
   
 
@@ -50,7 +50,10 @@ const GroupOfVehicles = ()=> {
             <h2 className='tituloReco'>Recomendaciones</h2>
             <div className='itemGroupOfVehicles'>
               {isLoading && <VehicleSkeleton  cards={4}/>}
-            {data?.map(singleItem=>
+              
+              {
+              data.length > 0 ? 
+              data?.map(singleItem=>
               <Item
                 id={singleItem.id}
                 key = {singleItem.id}
@@ -59,7 +62,11 @@ const GroupOfVehicles = ()=> {
                 location ={singleItem.ciudad.nombre}
                 description={singleItem.descripcion}
                 category = {singleItem.categoria.titulo}
-              />)}
+              />) 
+              :
+                <p> No Hay autos disponibles en esta categoria o ciudad</p>
+              }
+
             </div>
           </div>
         </div>
