@@ -107,7 +107,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow,setInitials})
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Iniciar Sesión</h3>
               <Alert className={registeredOK ? null : "d-none"} key=      {"RegisteredOK"} variant={"success"} >
-              Registro Exitoso, por favor inicia sesión:
+              ¡Registro Exitoso! Ya puedes iniciar sesión:
               </Alert>
             <Form.Group className="mb-3" controlId="emailLog">
               <FloatingLabel controlId="emailLog" label="Correo Elecrónico" className="mb-3">
