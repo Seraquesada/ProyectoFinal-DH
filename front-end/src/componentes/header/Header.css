@@ -8,7 +8,7 @@ header{
 }
 .right-header-login{
     display: flex;
-    align-items: end;
+    align-items: center;
     width: 35vw;
     justify-content: end;
     gap:10px;
@@ -16,7 +16,7 @@ header{
 }
 .right-header{
     display: flex;
-    align-items: end;
+    align-items: center;
     width: 35vw;
     justify-content: end;
     gap:10px;

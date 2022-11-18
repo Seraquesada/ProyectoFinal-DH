@@ -44,7 +44,8 @@ const SearchBar = () => {
                 delete c.longitud;
                 return c;
                 });
-                setSelectDisplay(options);
+            options.sort((a, b) => (a.label > b.label ? 1 : -1));
+            setSelectDisplay(options);
         })
     }, []);
 
