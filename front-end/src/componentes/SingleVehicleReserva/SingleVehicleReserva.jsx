@@ -1,8 +1,6 @@
-import React,{useState,useEffect,useContext} from 'react'
+import {useContext} from 'react'
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import { DateContext } from '../../context/DateContext.jsx';
-import { Spinner } from 'react-bootstrap';
 import { useAxiosGet } from '../../hooks/useAxiosGet.jsx';
 
 const SingleVehicleReserva = () => {
@@ -11,6 +9,8 @@ const SingleVehicleReserva = () => {
     const {startDate} = useContext(DateContext)
     const {endDate} = useContext(DateContext)
     const {respuesta,isLoading} = useAxiosGet(url + id)
+
+    console.log(id)
 
 }
 

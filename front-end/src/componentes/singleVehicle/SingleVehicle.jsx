@@ -2,7 +2,7 @@ import React, { useEffect, useState,useContext } from "react";
 import { useParams,Link, Outlet } from "react-router-dom";
 
 import Header from "../header/Header";
-import SliderCard from "../card/SliderCard";
+import SliderCard from "../card/SliderCard.jsx";
 import "../card/SliderCard.css";
 import HeaderCard from "../card/HeaderCard";
 import UbicationCard from "../card/UbicationCard";
@@ -24,12 +24,11 @@ import { useAxiosGet } from "../../hooks/useAxiosGet";
 const SingleVehicle = () => {
 
   const { id } = useParams();
-  const url = "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/";
+  const url = `  http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/`  ;
   const {startDate, handleDateChange , endDate} = useDateChange();
   const {size} = useHandleRisize(); 
   const [isLoading, setLoading] = useState(true);
   const [respuesta, setRespuesta] = useState();
-
 
   useEffect(()=>{
     axios.get(url + id)
@@ -53,33 +52,17 @@ const SingleVehicle = () => {
     new Date(2022, 7, 3),
     new Date(2022, 9, 7)
   ];
-  
 
-  if (isLoading) {
-    return                     <DatePicker
-    className="datepicker"
-    onChange={handleDateChange}
-    startDate={startDate}
-    endDate={endDate}
-    minDate={new Date()}
-    showDisabledMonthNavigation
-    selectsRange
-    inline
-    monthsShown={size > 510 ? 2 : 1}
-/>;
+  if(isLoading){
+    return <p>Loading</p>
   }
   return (
     <>
       <Header />
-
       <HeaderCard respuesta={respuesta} />
-      
       <UbicationCard respuesta={respuesta} />
-
       <SliderCard respuesta={respuesta} />
-
       <DescriptionCard respuesta={respuesta}/>
-      
       <div className="container-reserva">
         <div className="calendario">
         <DatePicker
