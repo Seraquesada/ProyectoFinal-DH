@@ -61,7 +61,7 @@ const SingleVehicle = () => {
       <SliderCard respuesta={respuesta} />
       <DescriptionCard respuesta={respuesta}/>
       <div className="container-reserva">
-        <div className="calendario">
+        <div className="calendario">     
         <DatePicker
             className="datepicker"
             selected={startDate}
