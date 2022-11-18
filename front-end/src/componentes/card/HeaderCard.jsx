@@ -3,7 +3,7 @@ import {BsChevronLeft} from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 const HeaderCard = ({respuesta}) => {
- console.log(respuesta)
+    
     return(
         <div className="headerCard">
             <div>

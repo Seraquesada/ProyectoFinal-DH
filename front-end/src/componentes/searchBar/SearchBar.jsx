@@ -1,7 +1,7 @@
 import React,{useState,useEffect, useContext} from 'react';
 import { CategoryContext } from "../../context/CategoryContext";
 
-import { useDateChange } from '../../hooks/useDateChange';
+import { useDateChange} from '../../hooks/useDateChange';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -9,23 +9,19 @@ import Select from 'react-select';
 import DatePicker from "react-datepicker";
 import axios  from 'axios';
 
-
 import "react-datepicker/dist/react-datepicker.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./SearchBar.css";
 
-
-
-
 const SearchBar = () => {
 
+    console.log(window.localStorage.getItem("endDate"));
     
     const [selectDisplay, setSelectDisplay] = useState("Cargando...")
     const [userChoice, setUserChoice] = useState(undefined)
     
     const {setCiudad} = useContext(CategoryContext);
-    const {startDate, handleDateChange , endDate} = useDateChange();
-
+    const {startDate, handleDateChange, endDate} = useDateChange();
 
     /* useEffect(()=>{
         console.log(ciudad + " ciudad")

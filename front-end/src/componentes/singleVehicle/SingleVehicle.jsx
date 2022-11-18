@@ -21,7 +21,7 @@ const SingleVehicle = () => {
 
   const { id } = useParams();
   const url = `  http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/`  ;
-  const {startDate, handleDateChange , endDate} = useDateChange();
+  const {startDate, endDate, handleDateChange } = useDateChange();
   const {size} = useHandleRisize(); 
   const [isLoading, setLoading] = useState(true);
   const [respuesta, setRespuesta] = useState();
@@ -70,9 +70,9 @@ const SingleVehicle = () => {
             endDate={endDate}
             minDate={new Date()}
             showDisabledMonthNavigation
-            excludeDates={holidays}
             monthsShown={size > 510 ? 2 : 1}
             inline
+            selectsRange
             />
         </div>
         <div className="container-button">
