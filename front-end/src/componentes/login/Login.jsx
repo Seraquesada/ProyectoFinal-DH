@@ -56,6 +56,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow,setInitials})
     setRegisteredOK(false);
   }
   const iniciarSesion = (e) => {
+    setRegisteredOK(false);
     e.preventDefault();
     let payload = {
       "username": document.querySelector("#emailLog").value,
@@ -92,11 +93,15 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow,setInitials})
     axios.post('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/usuarios', payload)
     .then(function (response) {
       if(response.status === 200){
+        setUnreachable(false);
         setAuthMode("signin");
         setRegisteredOK(true);
+        setValidated(false);
       }
     }).catch(function (error) {
-      setUnreachable(true);
+      if(error.code === 'ERR_BAD_REQUEST'){
+        setUnreachable(true);
+      }      
     });
   }
   
