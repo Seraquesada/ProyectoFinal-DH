@@ -31,10 +31,11 @@ justify-content: space-between;
   transition: all 0.25s;
 }
 .container-category-text{
-padding: 7px;
+  padding: 20px;
 }
 .container-category-text>h2{
-  font-size: 15px;
+  font-size: 20px;
+  font-weight:bold;
 }
 .category .item:hover{
   transform: translateY(-15px);

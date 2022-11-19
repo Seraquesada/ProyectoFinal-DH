@@ -10,13 +10,17 @@ header{
     display: flex;
     align-items: center;
     width: 35vw;
-    justify-content: space-evenly
+    justify-content: end;
+    gap:10px;
+    margin-right: 20px 
 }
 .right-header{
     display: flex;
     align-items: center;
     width: 35vw;
-    justify-content: space-evenly
+    justify-content: end;
+    gap:10px;
+    margin-right: 20px 
 }
 
 .left-header{
@@ -50,6 +54,10 @@ div#username{
     display: flex;
     font-size: 2rem;
     padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+}
+.loggedUserName{
+    color: white;
+    margin: 0;
 }
 
 @media screen and (max-width: 650px) {

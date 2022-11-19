@@ -16,6 +16,9 @@ variables:
   artifacts:
     paths:
       - ./front-end/dist
+  only:
+    refs:
+      - dev
       
 build_front:
   extends: .npm_build
@@ -26,11 +29,27 @@ build_front:
     refs:
       - dev
 
+build_back:
+  stage: build
+  image: maven:latest
+  script: | 
+    cd ./back-end/ProyectoIntegrador/ProyectoIntegrador
+    mvn package -DskipTests=true
+  artifacts:
+    paths:
+      - "**/target/*.jar"
+  only:
+    refs:
+      - dev
+  tags: 
+    - back-end
+
 .deploy_aws:
   image: python:latest
   script: |
     pip install awscli #Install awscli tools
     aws s3 sync ./front-end/dist s3://${S3_BUCKET}
+
 deploy_front:
   extends: .deploy_aws
   stage: deploy
@@ -41,3 +60,25 @@ deploy_front:
   only:
     refs:
       - dev
+
+deploy_back:
+  stage: deploy
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )' 
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $EC2_IPADDRESS >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - scp -o StrictHostKeyChecking=no -r -v ./back-end/ProyectoIntegrador/ProyectoIntegrador/target/ProyectoIntegrador-0.0.1-SNAPSHOT.jar ${SSH_USER}@${DEPLOY_SERVER_IP}:~
+    - ssh ${SSH_USER}@${DEPLOY_SERVER_IP} "sudo service ProyectoIntegrador-0.0.1-SNAPSHOT.jar stop"
+    - ssh ${SSH_USER}@${DEPLOY_SERVER_IP} "sudo service ProyectoIntegrador-0.0.1-SNAPSHOT.jar start"
+  only:
+    refs:
+      - dev
+  tags: 
+    - back-end
+  
+

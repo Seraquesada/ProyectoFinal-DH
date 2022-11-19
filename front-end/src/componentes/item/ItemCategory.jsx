@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { CategoryContext } from "../../context/CategoryContext";
 
 const ItemCategory = ({titulo,descripcion,url_imagen,id}) => {

@@ -55,7 +55,7 @@ import{GiCarWheel,GiCarSeat} from "react-icons/gi";
           <GiCarSeat/>
         </div>
         <p className="description">{description}</p>
-        <Link className="buttonVerMas link" to={"/singleVehicle/" + id }>Ver Mas</Link>
+        <Link className="buttonVerMas link" to={"/singleVehicle/" + id }>¡Alquile Ahora!</Link>
         <Outlet/>
       </div>
     </div>
