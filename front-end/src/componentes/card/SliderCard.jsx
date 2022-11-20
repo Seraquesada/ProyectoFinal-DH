@@ -61,6 +61,7 @@ const SliderCard = ({respuesta}) => {
             </p>
           </div>
         </div>
+        
       </div>
       <div className={visible ? "overlay" : "overlay-active"}>
         <div className="pop-up">

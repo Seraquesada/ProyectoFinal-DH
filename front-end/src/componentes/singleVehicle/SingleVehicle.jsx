@@ -16,6 +16,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./SingleVehicle.css";
 import { useHandleRisize } from "../../hooks/useHandleRisize";
 import { useDateChange } from "../../hooks/useDateChange";
+import SingleVehicleSkeleton from "./Skeleton/Skeleton";
 
 const SingleVehicle = () => {
 
@@ -36,7 +37,7 @@ const SingleVehicle = () => {
     })},[])
 
 
-  const holidays = [
+const holidays = [
     new Date(2022, 10, 14),
     new Date(2022, 11, 11),
     new Date(2022, 10, 28),
@@ -48,10 +49,16 @@ const SingleVehicle = () => {
     new Date(2022, 7, 3),
     new Date(2022, 9, 7)
   ];
-  
+
 
   if (isLoading) {
-    return <p>Aca va el skeletorrrr</p>
+    return (
+    <>
+      <Header/>
+      <SingleVehicleSkeleton  cards={1}/>
+      <Footer/>
+    </>
+    )
   }
   return (
     <>
