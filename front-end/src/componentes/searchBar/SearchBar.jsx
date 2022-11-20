@@ -79,7 +79,6 @@ const SearchBar = () => {
                     <Select placeholder="Elija una localidad..." className='select'  options={selectDisplay} onChange={(choice) => setUserChoice(choice.value)}/>
                     <DatePicker
                         className="datepicker"
-                        selected={startDate}
                         onChange={handleDateChange}
                         startDate={startDate}
                         endDate={endDate}
