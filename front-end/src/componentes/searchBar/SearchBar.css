@@ -24,7 +24,7 @@
     min-width:20vw ;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     .form{
         
         gap: 10px ;

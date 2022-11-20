@@ -9,11 +9,11 @@ const CategorySkeleton = ({cards}) => {
             .map((_, i) => (
                 <div className="vehicle-skeleton" key={i}>
                     <div className="left">
-                        <Skeleton  width={176} height={315}/>
+                        <Skeleton className="img-skeleton"  width={176} height={315}/>
                     </div>
-                    <div className="right">
+                    <div className="right"> 
                         <div>
-                            <Skeleton count={2}/>
+                            <Skeleton   count={2}/>
                         </div>
                         <div>
                             <Skeleton/>
@@ -24,8 +24,8 @@ const CategorySkeleton = ({cards}) => {
                         <div>
                             <Skeleton count={5}/>
                         </div>
-                        <div>
-                            <Skeleton width={580} height={46} />
+                        <div className="VerMas">
+                            <Skeleton  max-width={810} height={46} />
                         </div>
                     </div>
                 </div>

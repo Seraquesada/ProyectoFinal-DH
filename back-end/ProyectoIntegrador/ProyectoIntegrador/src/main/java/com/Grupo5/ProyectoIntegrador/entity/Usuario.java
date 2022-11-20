@@ -1,5 +1,7 @@
 package com.Grupo5.ProyectoIntegrador.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -7,9 +9,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 @Entity
 @Table(name = "usuarios")
+@JsonIgnoreProperties(value = "authorities")
 public class Usuario implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,15 +29,20 @@ public class Usuario implements UserDetails {
     @Column
     private String password;
     @Enumerated(EnumType.STRING)
+    @JsonIgnore
     private RolUsuario usuarioRol;
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnore
+    private List<Reserva> reservas;
 
-    public Usuario(String nombre, String apellido, String userName, String mail, String password, RolUsuario usuarioRol) {
+    public Usuario(String nombre, String apellido, String userName, String mail, String password, RolUsuario usuarioRol, List<Reserva> reservas) {
         this.nombre = nombre;
         this.apellido=apellido;
         this.userName = userName;
         this.mail = mail;
         this.password = password;
         this.usuarioRol = usuarioRol;
+        this.reservas = reservas;
     }
 
     public Usuario() {
@@ -120,5 +129,13 @@ public class Usuario implements UserDetails {
 
     public void setUsuarioRol(RolUsuario usuarioRol) {
         this.usuarioRol = usuarioRol;
+    }
+
+    public List<Reserva> getReservas() {
+        return reservas;
+    }
+
+    public void setReservas(List<Reserva> reservas) {
+        this.reservas = reservas;
     }
 }
