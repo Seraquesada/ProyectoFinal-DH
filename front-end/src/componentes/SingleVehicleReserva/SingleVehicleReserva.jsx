@@ -1,6 +1,7 @@
-import {useContext} from 'react'
+import {useContext, useEffect,useState} from 'react'
 import { useParams } from "react-router-dom";
 import { DateContext } from '../../context/DateContext.jsx';
+import axios from 'axios';
 import { useAxiosGet } from '../../hooks/useAxiosGet.jsx';
 import Header from '../header/Header.jsx';
 import HeaderCard from '../card/HeaderCard.jsx';
@@ -51,10 +52,5 @@ const SingleVehicleReserva = () => {
   
   }
   
-
-
-    console.log(id)
-
-
 
 export default SingleVehicleReserva

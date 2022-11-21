@@ -1,7 +1,7 @@
 .bookingBody {
     display: grid;
-    grid-template-columns: 5fr 1fr ;
-    grid-template-rows: 20% 20% 20% 20%;
+    
+    
     color:rgb(40, 14, 90);
     width: 100%
     ;
@@ -13,11 +13,8 @@
 }
 .bookingDetails {
     grid-column: 6/7 ;
-    grid-row: 1/5;
+    grid-row: 1/6;
         
-}
-.bookingDetails img{
-    size: 20px;
 }
 
 .calendario {

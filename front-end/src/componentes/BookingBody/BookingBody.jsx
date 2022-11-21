@@ -1,10 +1,11 @@
 import BookingDetails from "../BookingDetails/BookingDetails";
 import {IoKeyOutline} from 'react-icons/all'
-import {DatePicker, TimePicker} from 'react-datepicker';
+import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css"
 import { useHandleRisize } from "../../hooks/useHandleRisize";
 import { useDateChange } from "../../hooks/useDateChange";
 import './BookingBody.css'
+import TimePicker from 'react-time-picker';
 
 
 const BookingBody = ({respuesta}) => {
@@ -66,10 +67,7 @@ const holidays = [
                 <h3> Tu horario de llegada</h3>
                 <IoKeyOutline/> <p>Puedes retirar tu vehículo entre las 10:00 am y las 11:00 pm</p>
                 <p>Indica tu horario estimado de retiro</p>
-                <div className="md-form">
-                <input  type="text"placeholder="Selected time"  id="input_starttime" class="form-control timepicker"/>
-                <label for="input_starttime">Light version, 12hours</label>
-                </div>
+                
                 <TimePicker />
               
 

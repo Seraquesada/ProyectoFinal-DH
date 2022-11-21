@@ -29,7 +29,8 @@
     "react-multi-date-picker": "^3.3.4",
     "react-router-dom": "^6.4.2",
     "react-select": "^5.5.5",
-    "react-spinners": "^0.13.6"
+    "react-spinners": "^0.13.6",
+    "react-time-picker": "^5.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

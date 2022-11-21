@@ -12,19 +12,11 @@ import axios from "axios";
 import Footer from "../footer/Footer";
 
 import DatePicker from 'react-datepicker';
-<<<<<<< HEAD
-import "react-datepicker/dist/react-datepicker.css"
-import "./SingleVehicle.css"
-import { useHandleRisize } from "../../hooks/useHandleRisize";
-import { useDateChange } from "../../hooks/useDateChange";
-
-=======
 import "react-datepicker/dist/react-datepicker.css";
 import "./SingleVehicle.css";
 import { useHandleRisize } from "../../hooks/useHandleRisize";
 import { useDateChange } from "../../hooks/useDateChange";
 import SingleVehicleSkeleton from "./Skeleton/Skeleton";
->>>>>>> 156a74b964b6aa2668365108082fcbf55e90b429
 
 const SingleVehicle = () => {
 
@@ -57,11 +49,6 @@ const holidays = [
     new Date(2022, 7, 3),
     new Date(2022, 9, 7)
   ];
-<<<<<<< HEAD
-  
-  if(isLoading){
-    return <p> cargando</p>
-=======
 
 
   if (isLoading) {
@@ -72,7 +59,6 @@ const holidays = [
       <Footer/>
     </>
     )
->>>>>>> 156a74b964b6aa2668365108082fcbf55e90b429
   }
 
   
