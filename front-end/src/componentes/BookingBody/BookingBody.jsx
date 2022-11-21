@@ -6,11 +6,13 @@ import { useHandleRisize } from "../../hooks/useHandleRisize";
 import { useDateChange } from "../../hooks/useDateChange";
 import './BookingBody.css'
 import TimePicker from 'react-time-picker';
+import React, { useState } from 'react';
 
 
 const BookingBody = ({respuesta}) => {
 const {startDate, handleDateChange , endDate} = useDateChange();
 const {size} = useHandleRisize(); 
+const [value, onChange] = useState('10:00');
 
 const holidays = [
     new Date(2022, 10, 14),
@@ -68,7 +70,7 @@ const holidays = [
                 <IoKeyOutline/> <p>Puedes retirar tu vehículo entre las 10:00 am y las 11:00 pm</p>
                 <p>Indica tu horario estimado de retiro</p>
                 
-                <TimePicker />
+                <TimePicker onChange={onChange} value={value}/>
               
 
            </div>
