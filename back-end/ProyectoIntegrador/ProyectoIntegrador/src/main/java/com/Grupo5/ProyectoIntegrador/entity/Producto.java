@@ -1,5 +1,7 @@
 package com.Grupo5.ProyectoIntegrador.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -34,7 +36,11 @@ public class Producto {
     @JoinColumn(name = "politicasProducto_id" , referencedColumnName ="id")
     private PoliticasProducto politicasProducto;
 
-    public Producto(Long id, String titulo, String descripcion, Ciudad ciudad, Categoria categoria, List<Imagen> imagenes, List<Caracteristica> caracteristicas, PoliticasProducto politicasProducto) {
+    @OneToMany(mappedBy = "producto")
+    @JsonIgnore
+    private List<Reserva> reservas;
+
+    public Producto(Long id, String titulo, String descripcion, Ciudad ciudad, Categoria categoria, List<Imagen> imagenes, List<Caracteristica> caracteristicas, PoliticasProducto politicasProducto, List<Reserva> reservas) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -43,9 +49,10 @@ public class Producto {
         this.imagenes = imagenes;
         this.caracteristicas = caracteristicas;
         this.politicasProducto = politicasProducto;
+        this.reservas = reservas;
     }
 
-    public Producto(String titulo, String descripcion, Ciudad ciudad, Categoria categoria, List<Imagen> imagenes, List<Caracteristica> caracteristicas, PoliticasProducto politicasProducto) {
+    public Producto(String titulo, String descripcion, Ciudad ciudad, Categoria categoria, List<Imagen> imagenes, List<Caracteristica> caracteristicas, PoliticasProducto politicasProducto, List<Reserva> reservas) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.ciudad = ciudad;
@@ -53,6 +60,7 @@ public class Producto {
         this.imagenes = imagenes;
         this.caracteristicas = caracteristicas;
         this.politicasProducto = politicasProducto;
+        this.reservas = reservas;
     }
 
     public Producto() {
@@ -120,5 +128,13 @@ public class Producto {
 
     public void setPoliticasProducto(PoliticasProducto politicasProducto) {
         this.politicasProducto = politicasProducto;
+    }
+
+    public List<Reserva> getReservas() {
+        return reservas;
+    }
+
+    public void setReservas(List<Reserva> reservas) {
+        this.reservas = reservas;
     }
 }

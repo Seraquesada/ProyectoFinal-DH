@@ -13,24 +13,23 @@ export const useDateChange = () => {
     };
 
     useEffect(() => {
-        window.localStorage.setItem('startDate', startDate);
+        window.localStorage.setItem('startDate', startDate.toISOString().split("T")[0]);
     }, [startDate]);
 
     useEffect(() => {
-        window.localStorage.setItem('endDate', endDate);
-    }, [endDate]);
+        if(endDate !== null) {
+            window.localStorage.setItem('endDate', endDate.toISOString().split("T")[0]);
+        }
+    },[endDate])
 
     useEffect(() => {
-        console.log(endDate)
         //setEndDate((window.localStorage.getItem('endDate')));
-        console.log(endDate)
+            
     }, [endDate]);
-
+    
     useEffect(() => {
-        //startDate(JSON.parse(window.localStorage.getItem('startDate')));
+        //setStartDate(JSON.parse(window.localStorage.getItem('startDate')));
     }, []);
-
-
 
     return {startDate, endDate, handleDateChange};
 }

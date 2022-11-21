@@ -37,7 +37,7 @@ class CiudadServiceTest {
         ciudadService.actualizar(ciudad3);
 
         //Testeando metodo buscar
-        Ciudad caracteristicaAct = ciudadService.buscar(2L);
-        assertEquals("Formosa", caracteristicaAct.getNombre());
+        Ciudad ciudadAct = ciudadService.buscar(2L);
+        assertEquals("Formosa", ciudadAct.getNombre());
     }
 }

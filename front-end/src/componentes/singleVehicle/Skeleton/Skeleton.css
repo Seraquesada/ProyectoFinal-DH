@@ -1,0 +1,43 @@
+.img{
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.container-pictures-skeleton{
+    display:flex;
+    padding: 1%;
+    gap: 20px;
+    height:100%
+}
+.card-skeleton{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    gap:10px
+}
+.image{
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.a{
+    height: 50%;
+}
+
+.escondido{
+    display: none;
+}
+
+@media screen and (max-width:768px){
+    .card-skeleton,.card-ltside{
+        display: none;
+    }
+    .escondido{
+        display: block;
+        width: 100%;
+        height: 500px;
+    }
+}

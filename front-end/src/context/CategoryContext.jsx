@@ -8,7 +8,7 @@ export const CategoryProvider = ({children}) => {
     const [ciudad, setCiudad] = useState();
 
     return (
-    <CategoryContext.Provider value={{categoria, setCategoria, ciudad, setCiudad}}>
+    <CategoryContext.Provider value={{categoria, ciudad, setCategoria,  setCiudad}}>
         {children}
     </CategoryContext.Provider>
   )
