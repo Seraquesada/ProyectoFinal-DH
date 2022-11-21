@@ -5,7 +5,7 @@ const BookingDetails = ({respuesta}) => {
     return(
         <div className="descriptionCard">
             <h3> Detalle de Reserva</h3>
-            <img loading="lazy" src={respuesta.imagenes[1]?.url} />
+            <img className='auto' loading="lazy" src={respuesta.imagenes[1]?.url} />
             <h5> {respuesta.categoria.titulo}</h5>
             <h4> {respuesta.titulo}</h4>
             <h5> {respuesta.ciudad.nombre}</h5>
