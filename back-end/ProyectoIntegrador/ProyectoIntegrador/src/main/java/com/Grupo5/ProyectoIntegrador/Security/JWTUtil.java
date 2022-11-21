@@ -4,6 +4,7 @@ import com.Grupo5.ProyectoIntegrador.entity.Usuario;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.impl.TextCodec;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -38,6 +39,7 @@ public class JWTUtil {
 
     public String generateToken(Usuario userDetails) {
         Map<String, Object> claims = new HashMap<>();
+        claims.put("id", userDetails.getId());
         claims.put("nombre", userDetails.getNombre());
         claims.put("apellido", userDetails.getApellido());
         return createToken(claims, userDetails.getUsername());

@@ -11,7 +11,7 @@ function App() {
 
   return (
       <DateProvider>
-        <SkeletonTheme  baseColor="gray" highlightColor="#444">
+        <SkeletonTheme duration={3.5}  baseColor="gray" highlightColor="#444">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
