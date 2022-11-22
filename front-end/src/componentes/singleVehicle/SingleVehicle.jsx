@@ -71,8 +71,8 @@ const holidays = [
         <div className="calendario">     
         <DatePicker
             className="datepicker"
-            selected={startDate}
             onChange={handleDateChange}
+            selected={startDate}
             startDate={startDate}
             endDate={endDate}
             minDate={new Date()}

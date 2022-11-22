@@ -11,8 +11,6 @@ const GroupOfVehicles = ()=> {
   const [isLoading, setLoading] = useState(true);
   const {categoria,ciudad,setCategoria,  setCiudad } = useContext(CategoryContext)
 
-  
-
   useEffect(()=>{
     if(categoria === undefined && ciudad === undefined){
           axios.get('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos')
@@ -68,7 +66,7 @@ const GroupOfVehicles = ()=> {
               :
               <>
                 <h5> No hay autos disponibles en esta categoria o ciudad</h5>
-                <button className='mb-4 btn btn-secondary' onClick={handleClearFilter} type="submit">Reiniciar Busqueda</button>
+                <button className='reset-form mb-4 btn btn-secondary' onClick={handleClearFilter} type="submit">Reiniciar Busqueda</button>
               </>
               }
 

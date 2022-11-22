@@ -15,8 +15,6 @@ import "./SearchBar.css";
 
 const SearchBar = () => {
 
-    console.log(window.localStorage.getItem("endDate"));
-    
     const [selectDisplay, setSelectDisplay] = useState("Cargando...")
     const [userChoice, setUserChoice] = useState(undefined)
     
@@ -45,20 +43,10 @@ const SearchBar = () => {
         })
     }, []);
 
-    
-
     const handleSubmit = (event) => {
         event.preventDefault();
         setCiudad(userChoice);
-        
     }
-
-    /*const handleLimpiarFiltro = () =>{
-        setCiudad(undefined);
-        setCategoria(undefined);
-        forms.reset();
-        <Button className='btn btn-secondary' type="submit" onClick={handleLimpiarFiltro}>Limpiar Filtros</Button>
-    }*/
 
     const holidays = [
         new Date(2022, 10, 14),
