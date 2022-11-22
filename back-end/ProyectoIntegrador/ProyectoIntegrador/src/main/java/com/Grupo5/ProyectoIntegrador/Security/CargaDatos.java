@@ -3,16 +3,15 @@ package com.Grupo5.ProyectoIntegrador.Security;
 
 import com.Grupo5.ProyectoIntegrador.entity.*;
 import com.Grupo5.ProyectoIntegrador.repository.UsuarioRepository;
-import com.Grupo5.ProyectoIntegrador.service.CategoriaService;
-import com.Grupo5.ProyectoIntegrador.service.CiudadService;
-import com.Grupo5.ProyectoIntegrador.service.ImagenService;
-import com.Grupo5.ProyectoIntegrador.service.ProductoService;
+import com.Grupo5.ProyectoIntegrador.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.sql.Time;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -278,6 +277,24 @@ public class CargaDatos implements ApplicationRunner {
         productoService.guardar(producto5);
         productoService.guardar(producto6);
         productoService.guardar(producto7);
+
+        Time time1 = new Time(14, 30, 0);
+        LocalDate fechaInicio = LocalDate.of(2022, 11, 30);
+        LocalDate fechaFin = LocalDate.of(2022, 12, 15);
+        Reserva reserva1 = new Reserva(time1, fechaInicio, fechaFin , productoService.buscar(6L), usuario);
+        List<Reserva> reservaToyota = new ArrayList<>();
+        reservaToyota.add(reserva1);
+        producto6.setReservas(reservaToyota);
+        productoService.actualizar(producto6);
+
+        Time time2 = new Time(16, 30, 0);
+        LocalDate fechaInicio2 = LocalDate.of(2022, 12, 10);
+        LocalDate fechaFin2 = LocalDate.of(2022, 12, 21);
+        Reserva reserva2 = new Reserva(time2, fechaInicio2, fechaFin2, productoService.buscar(4L), usuario);
+        List<Reserva> reservaMazda = new ArrayList<>();
+        reservaMazda.add(reserva1);
+        producto6.setReservas(reservaMazda);
+        productoService.actualizar(producto4);
 
         /*Categoria categoria1 = new Categoria("Sedan", "Vehiculo de cuatro puertas y baúl. Ideal para cuatro personas y dos valijas grandes.", "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
         Categoria categoria2 = new Categoria("Sport Utility Vehicle", "Los SUVs  son  para uso en caminos mantenidos, ya sean pavimentados, de grava o de tierra. Amplios y con baul integrado, ideales para aventureros!", "https://imageio.forbes.com/specials-images/imageserve/5d389da195e0230008f6724a/2020-Ford-Explorer/0x0.jpg?format=jpg&crop=4560,2565,x430,y658,safe&width=960");
