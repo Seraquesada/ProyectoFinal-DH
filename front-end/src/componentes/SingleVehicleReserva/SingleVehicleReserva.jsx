@@ -10,8 +10,6 @@ const SingleVehicleReserva = () => {
     const {endDate} = useContext(DateContext)
     const {respuesta,isLoading} = useAxiosGet(url + id)
 
-    console.log(id)
-
 }
 
 export default SingleVehicleReserva

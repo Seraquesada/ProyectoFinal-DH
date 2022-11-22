@@ -19,6 +19,7 @@ const SearchBar = () => {
     const [userChoice, setUserChoice] = useState(undefined)
     
     const {setCiudad} = useContext(CategoryContext);
+    
     const {startDate, handleDateChange, endDate} = useDateChange();
 
     /* useEffect(()=>{
