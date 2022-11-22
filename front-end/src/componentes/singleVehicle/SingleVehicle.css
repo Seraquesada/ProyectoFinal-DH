@@ -18,7 +18,7 @@
     .container-reserva{
         grid-template-columns:auto;
         grid-template-rows: repeat(2,auto);
-        justify-content: center;
+        justify-content: center!IMPORTANT;
 
     }
 
@@ -34,7 +34,7 @@
     .container-reserva{
         grid-template-columns:auto;
         grid-template-rows: repeat(2,auto);
-        justify-content: center;
+        justify-content: center!IMPORTANT;
 
     }
 
