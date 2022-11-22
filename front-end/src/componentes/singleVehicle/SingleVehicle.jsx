@@ -22,10 +22,10 @@ const SingleVehicle = () => {
 
   const { id } = useParams();
   const url = `  http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/`  ;
-  const {startDate, endDate, handleDateChange } = useDateChange();
-  const {size} = useHandleRisize(); 
   const [isLoading, setLoading] = useState(true);
   const [respuesta, setRespuesta] = useState();
+  const {size} = useHandleRisize(); 
+  const {startDate, endDate, handleDateChange } = useDateChange();
 
   useEffect(()=>{
     axios.get(url + id)
@@ -67,21 +67,16 @@ const holidays = [
       <UbicationCard respuesta={respuesta} />
       <SliderCard respuesta={respuesta} />
       <DescriptionCard respuesta={respuesta}/>
-      <div className="container-reserva">
-        <div className="calendario">     
+      <div className="container-reserva"> 
         <DatePicker
-            className="datepicker"
             onChange={handleDateChange}
-            selected={startDate}
             startDate={startDate}
             endDate={endDate}
             minDate={new Date()}
-            showDisabledMonthNavigation
             monthsShown={size > 510 ? 2 : 1}
             inline
             selectsRange
             />
-        </div>
         <div className="container-button">
           <Link className="buttonVerMas link" to={"/singleVehicle/" + id + "/reserva"}>Iniciar Reserva</Link>
           <Outlet/>
