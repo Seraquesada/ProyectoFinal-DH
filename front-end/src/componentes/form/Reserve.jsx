@@ -4,10 +4,10 @@ import { useForm } from "../../hooks/useForm";
 import axios from "axios";
 
 const initialForm = {
-name:"",
-surname:"",
-email:"",
-city:"",
+    name:"",
+    surname:"",
+    email:"",
+    city:"",
 };
 
 const validationsForm = (form) => {
@@ -46,7 +46,10 @@ const validationsForm = (form) => {
 
 let styles = {
     fontWeight: "bold",
-    color: "#dc3545"
+    color: "#dc3545",
+    position: "relative",
+    display: "flex",
+    justifyContent:"center"
 };
 
 const Reserve = () => {
@@ -75,9 +78,9 @@ const Reserve = () => {
             onChange={handleChange}
             value={form.name}
             required
+            disabled
             />
         </div>
-        {errors.name && <p style={styles}>{errors.name}</p>}
         <div className="container-input">
           <h3>Apellido</h3>
           <input
@@ -88,9 +91,9 @@ const Reserve = () => {
             onChange={handleChange}
             value={form.surname}
             required
+            disabled
           />
         </div>
-        {errors.surname && <p style={styles}>{errors.surname}</p>}
       </div>
       <div className="controls-sn">
         <div className="container-input">
@@ -103,9 +106,9 @@ const Reserve = () => {
               onChange={handleChange}
               value={form.email}
               required
+              disabled
               />
         </div>
-        {errors.email && <p style={styles}>{errors.email}</p>}
         <div className="container-input">
           <h3>Ciudad</h3>
           <input
@@ -118,7 +121,7 @@ const Reserve = () => {
             required
             />
           </div>
-        {errors.city && <p style={styles}>{errors.city}</p>}
+        
       </div>
     </div>
   );

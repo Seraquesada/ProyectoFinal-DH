@@ -5,7 +5,7 @@
     height: 100%;
     grid-template-columns:65% 35%;
     grid-template-rows: repeat(3,auto);
-    margin-top:20px; ;
+    margin:20px 30px ;
 }
 
 .forms{
@@ -15,18 +15,10 @@
     padding:.5rem;
 }
 
-.calendario {
-    grid-column : 1/2;
-    grid-row: 2/3;
-    margin:.2rem;
-    padding:.5rem;
-    width: 100%;
-}
 
 .bookingDetails {
     grid-column: 2/3 ;
-    grid-row-start:1 ;
-    grid-row-end:4 ;
+    grid-row: 1/4;
     place-self: center;
     height: 100%;
     margin:20px
@@ -35,7 +27,7 @@
 .horariollegada{
     border: 1px solid blue;
     grid-column: 1/2;
-    grid-row:3/4;
+    grid-row:4/5;
     margin:.2rem;
     padding:.5rem;
 }

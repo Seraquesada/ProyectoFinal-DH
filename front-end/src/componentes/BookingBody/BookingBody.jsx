@@ -11,6 +11,7 @@ import "react-datepicker/dist/react-datepicker.css"
 import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/entry.nostyle';
 const BookingBody = ({respuesta}) => {
+    
 const {startDate, handleDateChange , endDate} = useDateChange();
 const {size} = useHandleRisize(); 
 const [value, onChange] = useState('10:00');
@@ -37,10 +38,8 @@ const holidays = [
             <div className="bookingDetails">
                 <BookingDetails respuesta={respuesta} />
             </div>
-            <div className="calendario">
                 <h3> Seleccioná tu fecha de reserva</h3>
                 <DatePicker
-                    className="datepicker"
                     selected={startDate}
                     onChange={handleDateChange}
                     startDate={startDate}
@@ -49,8 +48,8 @@ const holidays = [
                     excludeDates={holidays}
                     monthsShown={size > 510 ? 2 : 1}
                     inline
+                    selectsRange
                 />
-            </div>
             <div className="horariollegada">
                 <h3> Tu horario de llegada</h3>
                 <IoKeyOutline/> <p>Puedes retirar tu vehículo entre las 10:00 am y las 11:00 pm</p>
