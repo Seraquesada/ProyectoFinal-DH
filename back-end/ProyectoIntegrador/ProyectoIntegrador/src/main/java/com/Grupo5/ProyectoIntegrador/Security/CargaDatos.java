@@ -40,7 +40,7 @@ public class CargaDatos implements ApplicationRunner {
         usuario.setPassword(passHash);
         usuario.setUsuarioRol(RolUsuario.ROLE_ADMIN);
         usuarioRepository.save(usuario);
-        Categoria categoria1 = new Categoria("Sedan", "Vehículo de cuatro puertas y baúl. Ideal para cuatro personas y dos valijas grandes.", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/categorias/sedan.avif");
+       /* Categoria categoria1 = new Categoria("Sedan", "Vehículo de cuatro puertas y baúl. Ideal para cuatro personas y dos valijas grandes.", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/categorias/sedan.avif");
         Categoria categoria2 = new Categoria("Sport Utility Vehicle", "Los SUVs  son  para uso en caminos mantenidos, ya sean pavimentados, de grava o de tierra. Amplios y con baul integrado, ideales para aventureros!", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/categorias/suv.jpg");
         Categoria categoria3 = new Categoria("Hatchback", "Vehículos de tres o cinco puertas contando la puerta trasera que abre hacia arriba para brindar acceso a un área de carga. Son amplios, ideales para llevar todo tu equipaje!", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/categorias/hatckback.avif");
         Categoria categoria4 = new Categoria("Coupe", "Los cupés logran un gran equilibrio entre estilo, sustancia y espacio. La mayoría tienen dos puertas y cuatro asientos, algunos tienen asientos traseros más prácticos que otros. El baul suele ser espacioso.", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/categorias/coupe.jpg");
