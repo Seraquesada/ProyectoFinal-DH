@@ -18,7 +18,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/singleVehicle/:id" element={<SingleVehicle />} />
-            <Route path="/singleVehicle/:id/reserva" element={<Reserve />} />
             <Route path="/singleVehicle/:id/reserva" element={<SingleVehicleReserva/>} />
             
           </Routes>

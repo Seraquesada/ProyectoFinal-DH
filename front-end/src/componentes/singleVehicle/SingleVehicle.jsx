@@ -60,8 +60,6 @@ const holidays = [
     </>
     )
   }
-
-  
   return (
     <>
       <Header />
@@ -70,14 +68,15 @@ const holidays = [
       <SliderCard respuesta={respuesta} />
       <DescriptionCard respuesta={respuesta}/>
       <div className="container-reserva"> 
-        <DatePicker
-            onChange={handleDateChange}
-            startDate={startDate}
-            endDate={endDate}
-            minDate={new Date()}
-            monthsShown={size > 510 ? 2 : 1}
-            inline
-            selectsRange
+          <DatePicker
+              onChange={handleDateChange}
+              startDate={startDate}
+              endDate={endDate}
+              minDate={new Date()}
+              monthsShown={size > 510 ? 2 : 1}
+              inline
+              selectsRange
+              excludeDates={holidays}
             />
         <div className="container-button">
           <Link className="buttonVerMas link" to={"/singleVehicle/" + id + "/reserva"}>Iniciar Reserva</Link>

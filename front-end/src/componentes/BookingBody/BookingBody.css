@@ -1,31 +1,45 @@
 .bookingBody {
     display: grid;
-    
-    
     color:rgb(40, 14, 90);
-    width: 100%
-    ;
+    width: 100%;
+    height: 100%;
+    grid-template-columns:65% 35%;
+    grid-template-rows: repeat(3,auto);
+    margin-top:20px; ;
 }
-.form {
-    grid-column : 1/5;
+
+.forms{
+    grid-column : 1/2;
     grid-row: 1/2;
-    background-color: beige;
-}
-.bookingDetails {
-    grid-column: 6/7 ;
-    grid-row: 1/6;
-        
+    margin:.2rem;
+    padding:.5rem;
 }
 
 .calendario {
-    grid-column : 1/5;
-    grid-row: 3/4;
-    
+    grid-column : 1/2;
+    grid-row: 2/3;
+    margin:.2rem;
+    padding:.5rem;
+    width: 100%;
 }
+
+.bookingDetails {
+    grid-column: 2/3 ;
+    grid-row-start:1 ;
+    grid-row-end:4 ;
+    
+place-self: center;
+    height: 100%;
+    margin:20px
+}
+
 .horariollegada{
-    grid-column : 1/5;
-    grid-row: 5/6;
-    background-color: aliceblue;
-    margin: 15px;
-    
+    border: 1px solid blue;
+    grid-column: 1/2;
+    grid-row:3/4;
+    margin:.2rem;
+    padding:.5rem;
 }
+
+
+

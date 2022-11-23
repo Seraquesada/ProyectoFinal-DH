@@ -62,9 +62,9 @@ const Reserve = () => {
 
   return (
     <div className="form-reserva">
-      <h2 class="completar-datos">Completá tus datos</h2>
+      <h2 className="completar-datos">Completá tus datos</h2>
       <form onSubmit={handleSubmit}></form>
-      <div class="controls-ft">
+      <div className="controls-ft">
         <h3>Nombre</h3>
         <input
           type="text"
@@ -88,7 +88,7 @@ const Reserve = () => {
         />
         {errors.surname && <p style={styles}>{errors.surname}</p>}
       </div>
-      <div class="controls-sn">
+      <div className="controls-sn">
       <h3>Correo electronico</h3>
         <input
           type="email"
