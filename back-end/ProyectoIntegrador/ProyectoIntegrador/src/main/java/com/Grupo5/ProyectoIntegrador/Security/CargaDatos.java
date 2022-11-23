@@ -14,7 +14,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Component
 public class CargaDatos implements ApplicationRunner {
@@ -29,7 +31,7 @@ public class CargaDatos implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        /*BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = "digital";
         String passHash = passwordEncoder.encode(password);
         Usuario usuario = new Usuario();
@@ -63,7 +65,7 @@ public class CargaDatos implements ApplicationRunner {
         Ciudad ciudadGuardada6 = ciudadService.guardar(ciudad6);
         Ciudad ciudadGuardada7 = ciudadService.guardar(ciudad7);
 
-        List<Imagen> imagenes1= new ArrayList<>();
+        Set<Imagen> imagenes1= new HashSet<>();
         Imagen imagen1a =  new Imagen("Exterior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/bmw_323i/front.jpg");
         Imagen imagen1b =  new Imagen("Exterior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/bmw_323i/back.jpg");
         Imagen imagen1c =  new Imagen("Exterior - lateral", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/bmw_323i/frontII.avif");
@@ -75,7 +77,7 @@ public class CargaDatos implements ApplicationRunner {
         imagenes1.add(imagen1d);
         imagenes1.add(imagen1e);
 
-        List<Imagen> imagenes2=new ArrayList<>();
+        Set<Imagen> imagenes2=new HashSet<>();
         Imagen imagen2a =  new Imagen("Exterior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/chervolet_cruze_rs/front.webp");
         Imagen imagen2b =  new Imagen("Exterior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/chervolet_cruze_rs/side.webp");
         Imagen imagen2c =  new Imagen("Interior - volante", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/chervolet_cruze_rs/interior.webp");
@@ -88,7 +90,7 @@ public class CargaDatos implements ApplicationRunner {
         imagenes2.add(imagen2e);
 
 
-        List<Imagen> imagenes3=new ArrayList<>();
+        Set<Imagen> imagenes3=new HashSet<>();
         Imagen imagen3a =  new Imagen("Exterior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/haval_h2/front.jpg");
         Imagen imagen3b =  new Imagen("Exterior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/haval_h2/frontII.jpg");
         Imagen imagen3c =  new Imagen("Interior - volante", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/haval_h2/interior.webp");
@@ -100,7 +102,7 @@ public class CargaDatos implements ApplicationRunner {
         imagenes3.add(imagen3d);
         imagenes3.add(imagen3e);
 
-        List<Imagen> imagenes4=new ArrayList<>();
+        Set<Imagen> imagenes4=new HashSet<>();
         Imagen imagen4a =  new Imagen("Exterior - lateral - izq", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/mazda_cx_5/front.webp");
         Imagen imagen4b =  new Imagen("Exterior - lateral - der", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/mazda_cx_5/frontII.webp");
         Imagen imagen4c =  new Imagen("Interior - volante", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/mazda_cx_5/interior.jpg");
@@ -112,7 +114,7 @@ public class CargaDatos implements ApplicationRunner {
         imagenes4.add(imagen4d);
         imagenes4.add(imagen4e);
 
-        List<Imagen> imagenes5=new ArrayList<>();
+        Set<Imagen> imagenes5=new HashSet<>();
         Imagen imagen5a =  new Imagen("Exterior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/volkswagen_golf_gti/front.webp");
         Imagen imagen5b =  new Imagen("Exterior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/volkswagen_golf_gti/back.jpeg");
         Imagen imagen5c =  new Imagen("Interior - volante", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/volkswagen_golf_gti/interior.jpg");
@@ -124,7 +126,7 @@ public class CargaDatos implements ApplicationRunner {
         imagenes5.add(imagen5d);
         imagenes5.add(imagen5e);
 
-        List<Imagen> imagenes6=new ArrayList<>();
+        Set<Imagen> imagenes6=new HashSet<>();
         Imagen imagen6a =  new Imagen("Exterior - delantero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/toyota_chr/front.webp");
         Imagen imagen6b =  new Imagen("Exterior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/toyota_chr/rear.webp");
         Imagen imagen6c =  new Imagen("Interior - volante", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/toyota_chr/interior.webp");
@@ -136,7 +138,7 @@ public class CargaDatos implements ApplicationRunner {
         imagenes6.add(imagen6d);
         imagenes6.add(imagen6e);
 
-        List<Imagen> imagenes7=new ArrayList<>();
+        Set<Imagen> imagenes7=new HashSet<>();
         Imagen imagen7a =  new Imagen("Exterior - frontal", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/front.jpg");
         Imagen imagen7b =  new Imagen("Exterior - trasero", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/rear.jpg");
         Imagen imagen7c =  new Imagen("Exterior - lateral", "https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/side.webp");
@@ -149,7 +151,7 @@ public class CargaDatos implements ApplicationRunner {
         imagenes7.add(imagen7e);
 
 
-        List<Caracteristica> caracteristicas1 = new ArrayList<>();
+        Set<Caracteristica> caracteristicas1 = new HashSet<>();
         Caracteristica caracteristica1a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
         Caracteristica caracteristica1b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 3 valijas grandes");
         Caracteristica caracteristica1c =  new Caracteristica("Transmisión: ", "Automática");
@@ -163,7 +165,7 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas1.add(caracteristica1e);
         caracteristicas1.add(caracteristica1f);
 
-        List<Caracteristica> caracteristicas2 = new ArrayList<>();
+        Set<Caracteristica> caracteristicas2 = new HashSet<>();
         Caracteristica caracteristica2a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
         Caracteristica caracteristica2b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 3 valijas");
         Caracteristica caracteristica2c =  new Caracteristica("Transmisión: ", "Automática");
@@ -177,7 +179,7 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas2.add(caracteristica2e);
         caracteristicas2.add(caracteristica2f);
 
-        List<Caracteristica> caracteristicas3 = new ArrayList<>();
+        Set<Caracteristica> caracteristicas3 = new HashSet<>();
         Caracteristica caracteristica3a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
         Caracteristica caracteristica3b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 5 valijas");
         Caracteristica caracteristica3c =  new Caracteristica("Transmisión: ", "Automática");
@@ -191,7 +193,7 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas3.add(caracteristica3e);
         caracteristicas3.add(caracteristica3f);
 
-        List<Caracteristica> caracteristicas4 = new ArrayList<>();
+        Set<Caracteristica> caracteristicas4 = new HashSet<>();
         Caracteristica caracteristica4a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
         Caracteristica caracteristica4b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 5 valijas");
         Caracteristica caracteristica4c =  new Caracteristica("Transmisión: ", "Automática");
@@ -205,7 +207,7 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas4.add(caracteristica4e);
         caracteristicas4.add(caracteristica4f);
 
-        List<Caracteristica> caracteristicas5 = new ArrayList<>();
+        Set<Caracteristica> caracteristicas5 = new HashSet<>();
         Caracteristica caracteristica5a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
         Caracteristica caracteristica5b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 3 valijas");
         Caracteristica caracteristica5c =  new Caracteristica("Transmisión: ", "Automática");
@@ -219,7 +221,7 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas5.add(caracteristica5e);
         caracteristicas5.add(caracteristica5f);
 
-        List<Caracteristica> caracteristicas6 = new ArrayList<>();
+        Set<Caracteristica> caracteristicas6 = new HashSet<>();
         Caracteristica caracteristica6a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
         Caracteristica caracteristica6b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 4 valijas");
         Caracteristica caracteristica6c =  new Caracteristica("Transmisión: ", "Automática");
@@ -233,7 +235,7 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas6.add(caracteristica6e);
         caracteristicas6.add(caracteristica6f);
 
-        List<Caracteristica> caracteristicas7 = new ArrayList<>();
+        Set<Caracteristica> caracteristicas7 = new HashSet<>();
         Caracteristica caracteristica7a =  new Caracteristica("Capacidad Máxima: ", "4 adultos");
         Caracteristica caracteristica7b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 2 valijas");
         Caracteristica caracteristica7c =  new Caracteristica("Transmisión: ", "Automática");
@@ -261,7 +263,7 @@ public class CargaDatos implements ApplicationRunner {
 
         PoliticasProducto politicas7 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!");
 
-        List<Reserva> reservas=new ArrayList<>();
+        Set<Reserva> reservas=new HashSet<>();
 
         Producto producto1 = new Producto("BMW 323i", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada1, categoria1, imagenes1, caracteristicas1, politicas1, reservas);
         Producto producto2 = new Producto("Chevrolet Cruze RS", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada2, categoria3, imagenes2, caracteristicas2, politicas2, reservas);
@@ -279,7 +281,7 @@ public class CargaDatos implements ApplicationRunner {
         productoService.guardar(producto6);
         productoService.guardar(producto7);
 
-        /*Categoria categoria1 = new Categoria("Sedan", "Vehiculo de cuatro puertas y baúl. Ideal para cuatro personas y dos valijas grandes.", "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
+        Categoria categoria1 = new Categoria("Sedan", "Vehiculo de cuatro puertas y baúl. Ideal para cuatro personas y dos valijas grandes.", "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
         Categoria categoria2 = new Categoria("Sport Utility Vehicle", "Los SUVs  son  para uso en caminos mantenidos, ya sean pavimentados, de grava o de tierra. Amplios y con baul integrado, ideales para aventureros!", "https://imageio.forbes.com/specials-images/imageserve/5d389da195e0230008f6724a/2020-Ford-Explorer/0x0.jpg?format=jpg&crop=4560,2565,x430,y658,safe&width=960");
         Categoria categoriaGuardada1 = categoriaService.guardar(categoria1);
         Categoria categoriaGuardada2 = categoriaService.guardar(categoria2);

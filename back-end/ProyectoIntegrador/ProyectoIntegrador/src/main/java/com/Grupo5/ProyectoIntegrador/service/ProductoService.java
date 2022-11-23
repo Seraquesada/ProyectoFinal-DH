@@ -23,7 +23,7 @@ public class ProductoService {
     }
 
     public List<Producto> buscarTodos() {
-        return productoRepository.findAll();
+        return productoRepository.buscarProductos();
     }
     public List<Producto> buscarProductosRandom() {
         return productoRepository.buscarProductosRandom();
