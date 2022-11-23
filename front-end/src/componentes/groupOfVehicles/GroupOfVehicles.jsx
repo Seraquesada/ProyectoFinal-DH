@@ -9,9 +9,7 @@ const GroupOfVehicles = ()=> {
   
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  const {categoria,ciudad } = useContext(CategoryContext)
-
-  
+  const {categoria,ciudad,setCategoria,  setCiudad } = useContext(CategoryContext)
 
   useEffect(()=>{
     if(categoria === undefined && ciudad === undefined){
@@ -42,15 +40,17 @@ const GroupOfVehicles = ()=> {
     }
   },[categoria, ciudad])
 
-  
+  const handleClearFilter =() =>{
+    setCiudad()
+    setCategoria()
+  }
   
   return(
           <div className='groupOfVehicles'>
           <div className='container-reco'>
-            <h2 className='tituloReco'>Recomendaciones</h2>
+            <h2 className='tituloReco'>{categoria === undefined ?"Recomendaciones" : "Recomendaciones: "+ data.map(item => (item.categoria.titulo)).pop()}</h2>
             <div className='itemGroupOfVehicles'>
               {isLoading && <VehicleSkeleton  cards={4}/>}
-              
               {
               data.length > 0 ? 
               data?.map(singleItem=>
@@ -64,7 +64,10 @@ const GroupOfVehicles = ()=> {
                 category = {singleItem.categoria.titulo}
               />) 
               :
-                <p> No Hay autos disponibles en esta categoria o ciudad</p>
+              <>
+                <h5> No hay autos disponibles en esta categoria o ciudad</h5>
+                <button className='reset-form mb-4 btn btn-secondary' onClick={handleClearFilter} type="submit">Reiniciar Busqueda</button>
+              </>
               }
 
             </div>
