@@ -3,16 +3,15 @@ package com.Grupo5.ProyectoIntegrador.Security;
 
 import com.Grupo5.ProyectoIntegrador.entity.*;
 import com.Grupo5.ProyectoIntegrador.repository.UsuarioRepository;
-import com.Grupo5.ProyectoIntegrador.service.CategoriaService;
-import com.Grupo5.ProyectoIntegrador.service.CiudadService;
-import com.Grupo5.ProyectoIntegrador.service.ImagenService;
-import com.Grupo5.ProyectoIntegrador.service.ProductoService;
+import com.Grupo5.ProyectoIntegrador.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.sql.Time;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,10 +25,12 @@ public class CargaDatos implements ApplicationRunner {
     CiudadService ciudadService;
     @Autowired
     ProductoService productoService;
+    @Autowired
+    ReservaService reservaservice;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        /*BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = "digital";
         String passHash = passwordEncoder.encode(password);
         Usuario usuario = new Usuario();
@@ -261,13 +262,15 @@ public class CargaDatos implements ApplicationRunner {
 
         PoliticasProducto politicas7 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!");
 
-        Producto producto1 = new Producto("BMW 323i", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada1, categoria1, imagenes1, caracteristicas1, politicas1);
-        Producto producto2 = new Producto("Chevrolet Cruze RS", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada2, categoria3, imagenes2, caracteristicas2, politicas2);
-        Producto producto3 = new Producto("Haval H2", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada3, categoria2, imagenes3, caracteristicas3, politicas3);
-        Producto producto4 = new Producto("Mazda CX 5", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada4, categoria2, imagenes4, caracteristicas4, politicas4);
-        Producto producto5 = new Producto("Volkswagen Golf GTI", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada5, categoria3, imagenes5, caracteristicas5, politicas5);
-        Producto producto6 = new Producto("Toyota C-HR", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada6, categoria3, imagenes6, caracteristicas6, politicas6);
-        Producto producto7 = new Producto("Ford Mustang Mach I", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada7, categoria4, imagenes7, caracteristicas7, politicas7);
+        List<Reserva> reservas=new ArrayList<>();
+
+        Producto producto1 = new Producto("BMW 323i", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada1, categoria1, imagenes1, caracteristicas1, politicas1, reservas);
+        Producto producto2 = new Producto("Chevrolet Cruze RS", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada2, categoria3, imagenes2, caracteristicas2, politicas2, reservas);
+        Producto producto3 = new Producto("Haval H2", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada3, categoria2, imagenes3, caracteristicas3, politicas3, reservas);
+        Producto producto4 = new Producto("Mazda CX 5", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada4, categoria2, imagenes4, caracteristicas4, politicas4, reservas);
+        Producto producto5 = new Producto("Volkswagen Golf GTI", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada5, categoria3, imagenes5, caracteristicas5, politicas5, reservas);
+        Producto producto6 = new Producto("Toyota C-HR", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada6, categoria3, imagenes6, caracteristicas6, politicas6, reservas);
+        Producto producto7 = new Producto("Ford Mustang Mach I", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada7, categoria4, imagenes7, caracteristicas7, politicas7, reservas);
 
         productoService.guardar(producto1);
         productoService.guardar(producto2);
@@ -275,7 +278,49 @@ public class CargaDatos implements ApplicationRunner {
         productoService.guardar(producto4);
         productoService.guardar(producto5);
         productoService.guardar(producto6);
-        productoService.guardar(producto7);*/
+        productoService.guardar(producto7);
+
+        Time time1 = new Time(14, 30, 0);
+        LocalDate fechaInicio = LocalDate.of(2022, 11, 30);
+        LocalDate fechaFin = LocalDate.of(2022, 12, 15);
+        Reserva reserva1 = new Reserva(time1, fechaInicio, fechaFin , productoService.buscar(6L), usuario);
+        reservaservice.guardar(reserva1);
+
+        Time time2 = new Time(16, 30, 0);
+        LocalDate fechaInicio2 = LocalDate.of(2022, 12, 10);
+        LocalDate fechaFin2 = LocalDate.of(2022, 12, 21);
+        Reserva reserva2 = new Reserva(time2, fechaInicio2, fechaFin2, productoService.buscar(4L), usuario);
+        reservaservice.guardar(reserva2);
+
+        /*Categoria categoria1 = new Categoria("Sedan", "Vehiculo de cuatro puertas y baúl. Ideal para cuatro personas y dos valijas grandes.", "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
+        Categoria categoria2 = new Categoria("Sport Utility Vehicle", "Los SUVs  son  para uso en caminos mantenidos, ya sean pavimentados, de grava o de tierra. Amplios y con baul integrado, ideales para aventureros!", "https://imageio.forbes.com/specials-images/imageserve/5d389da195e0230008f6724a/2020-Ford-Explorer/0x0.jpg?format=jpg&crop=4560,2565,x430,y658,safe&width=960");
+        Categoria categoriaGuardada1 = categoriaService.guardar(categoria1);
+        Categoria categoriaGuardada2 = categoriaService.guardar(categoria2);
+        Ciudad ciudad1 = new Ciudad("Catamarca", -28.429150582935314, -65.78580975432385);
+        Ciudad ciudad2 = new Ciudad("Cordoba",-30.776425257706205, -64.1885096801536);
+        Ciudad ciudadGuardada1 = ciudadService.guardar(ciudad1);
+        Ciudad ciudadGuardada2 = ciudadService.guardar(ciudad2);
+        List<Imagen> imagenes=new ArrayList<>();
+        List<Caracteristica> caracteristicas = new ArrayList<>();
+        List<Reserva> reservas=new ArrayList<>();
+        PoliticasProducto politicas1 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
+        PoliticasProducto politicas2 = new PoliticasProducto("normas1", "portarse bien1", "seguridad1", "tener cuidado1", "cancelacion1", "te va a devolver el dinero su p*ta madre1");
+        Producto producto1 = new Producto("bmw", "auto genial", ciudadGuardada1, categoriaGuardada1, imagenes, caracteristicas, politicas1, reservas);
+        Producto producto2 = new Producto("audi", "auto super genial", ciudadGuardada2, categoriaGuardada2, imagenes, caracteristicas, politicas2, reservas);
+        Producto productoPrueba1 = productoService.guardar(producto1);
+        Producto productoPrueba2 = productoService.guardar(producto2);
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String password = "digital";
+        String passHash = passwordEncoder.encode(password);
+        Usuario usuario = new Usuario();
+        usuario.setNombre("Nicolas");
+        usuario.setApellido("Montero");
+        usuario.setMail("nico.monterosabeli@gmail.com");
+        usuario.setUserName("nico.monterosabeli@gmail.com");
+        usuario.setPassword(passHash);
+        usuario.setUsuarioRol(RolUsuario.ROLE_ADMIN);
+        usuario.setReservas(reservas);
+        Usuario usuario1 = usuarioRepository.save(usuario);*/
 
     }
 }
