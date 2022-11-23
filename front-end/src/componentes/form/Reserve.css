@@ -9,29 +9,24 @@
 
 .completar-datos{
     color: #383B58;
-
 }   
-
-.form-reserva input{
-    flex:auto;
-
-
-/* input shadow */
-
+.container-input{
+    width:100%
+}
+.container-input input{
+    width:80%
 }
 
-
 .controls-ft{
-    padding: 15px 20px;
     display: flex;
     flex-direction: row;
-
+    padding: 15px 20px;
 }
 
 .controls-sn{
-    padding: 15px 20px;
     display: flex;
     flex-direction: row;
+    padding: 15px 20px;
 }
 
 
@@ -39,29 +34,23 @@
     .controls-ft{
         padding: 15px 20px;
         flex-direction: column;
-        
-    
     }
-    
     .controls-sn{
         padding: 15px 20px;
         flex-direction: column;
-        
     }
 }
 
 
 @media screen and (max-width: 768px) {
-
     .controls-ft{
         padding: 15px 20px;
         flex-direction: column;
-}
+    }
 
     .controls-sn{
         padding: 15px 20px;
         flex-direction: column;
-        
     }
 };
 

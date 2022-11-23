@@ -65,51 +65,59 @@ const Reserve = () => {
       <h2 className="completar-datos">Completá tus datos</h2>
       <form onSubmit={handleSubmit}></form>
       <div className="controls-ft">
+        <div className="container-input">
         <h3>Nombre</h3>
-        <input
-          type="text"
-          name="name"
-          placeholder="Bruno"
-          onBlur={handleBlur}
-          onChange={handleChange}
-          value={form.name}
-          required
-        />
+          <input
+            type="text"
+            name="name"
+            placeholder="Bruno"
+            onBlur={handleBlur}
+            onChange={handleChange}
+            value={form.name}
+            required
+            />
+        </div>
         {errors.name && <p style={styles}>{errors.name}</p>}
-        <h3>Apellido</h3>
-        <input
-          type="text"
-          name="surname"
-          placeholder="Rodriguez"
-          onBlur={handleBlur}
-          onChange={handleChange}
-          value={form.surname}
-          required
-        />
+        <div className="container-input">
+          <h3>Apellido</h3>
+          <input
+            type="text"
+            name="surname"
+            placeholder="Rodriguez"
+            onBlur={handleBlur}
+            onChange={handleChange}
+            value={form.surname}
+            required
+          />
+        </div>
         {errors.surname && <p style={styles}>{errors.surname}</p>}
       </div>
       <div className="controls-sn">
-      <h3>Correo electronico</h3>
-        <input
-          type="email"
-          name="email"
-          placeholder="brodriguez@gmail.com"
-          onBlur={handleBlur}
-          onChange={handleChange}
-          value={form.email}
-          required
-        />
+        <div className="container-input">
+          <h3>Correo electronico</h3>
+            <input
+              type="email"
+              name="email"
+              placeholder="brodriguez@gmail.com"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={form.email}
+              required
+              />
+        </div>
         {errors.email && <p style={styles}>{errors.email}</p>}
-        <h3>Ciudad</h3>
-        <input
-          type="text"
-          name="city"
-          placeholder="Ciudad"
-          onBlur={handleBlur}
-          onChange={handleChange}
-          value={form.city}
-          required
-        />
+        <div className="container-input">
+          <h3>Ciudad</h3>
+          <input
+            type="text"
+            name="city"
+            placeholder="Ciudad"
+            onBlur={handleBlur}
+            onChange={handleChange}
+            value={form.city}
+            required
+            />
+          </div>
         {errors.city && <p style={styles}>{errors.city}</p>}
       </div>
     </div>
