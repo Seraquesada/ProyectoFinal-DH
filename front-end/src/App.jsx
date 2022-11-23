@@ -6,6 +6,8 @@ import SingleVehicle from "./componentes/singleVehicle/SingleVehicle.jsx"
 import SingleVehicleReserva from './componentes/SingleVehicleReserva/SingleVehicleReserva';
 import { DateProvider } from './context/DateContext';
 import { SkeletonTheme } from 'react-loading-skeleton';
+import Reserve from './componentes/form/Reserve.jsx';
+
 function App() {
 
 
@@ -16,7 +18,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/singleVehicle/:id" element={<SingleVehicle />} />
+            <Route path="/singleVehicle/:id/reserva" element={<Reserve />} />
             <Route path="/singleVehicle/:id/reserva" element={<SingleVehicleReserva/>} />
+            
           </Routes>
         </BrowserRouter>
         </SkeletonTheme>
