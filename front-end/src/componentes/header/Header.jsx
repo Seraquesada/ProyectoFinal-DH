@@ -50,6 +50,7 @@ const Header = () => {
             Cerrar Sesión
           </Button>
         </div>
+        <SideBarBootstrap userName={userName} initials={initials} logIn={logIn} logOut={logOut} loggedIn={loggedIn} setUserName={setUserName} setInitials={setInitials} placement={"end"}/>
       </header>
     )
   }
@@ -68,7 +69,7 @@ const Header = () => {
       <div className="right-header">
         <CustomModal logIn={logIn} setUserName={setUserName} setInitials={setInitials}/>
       </div>
-      <SideBarBootstrap logIn={logIn} setUserName={setUserName} placement={"end"}/>
+      <SideBarBootstrap logIn={logIn} setUserName={setUserName} setInitials={setInitials} placement={"end"}/>
     </header>
   )
 }

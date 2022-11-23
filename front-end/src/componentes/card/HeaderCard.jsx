@@ -12,7 +12,7 @@ const HeaderCard = ({respuesta}) => {
                 </div>
             </div>
             <Link className="flechaAtraslink" to={"/" }>
-                 <BsChevronLeft />
+                <BsChevronLeft />
             </Link>
                 
         </div>

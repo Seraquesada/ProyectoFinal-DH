@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link, Outlet } from "react-router-dom";
 import Header from "../header/Header";
-import SliderCard from "../card/SliderCard";
+import SliderCard from "../card/SliderCard.jsx";
 import "../card/SliderCard.css";
 import HeaderCard from "../card/HeaderCard";
 import UbicationCard from "../card/UbicationCard";
@@ -16,16 +16,16 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./SingleVehicle.css";
 import { useHandleRisize } from "../../hooks/useHandleRisize";
 import { useDateChange } from "../../hooks/useDateChange";
+import SingleVehicleSkeleton from "./Skeleton/Skeleton";
 
 const SingleVehicle = () => {
 
   const { id } = useParams();
-  const url = "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/";
-  const {startDate, handleDateChange , endDate} = useDateChange();
-  const {size} = useHandleRisize(); 
+  const url = `  http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/`  ;
   const [isLoading, setLoading] = useState(true);
   const [respuesta, setRespuesta] = useState();
-
+  const {size} = useHandleRisize(); 
+  const {startDate, endDate, handleDateChange } = useDateChange();
 
   useEffect(()=>{
     axios.get(url + id)
@@ -37,7 +37,7 @@ const SingleVehicle = () => {
     })},[])
 
 
-  const holidays = [
+const holidays = [
     new Date(2022, 10, 14),
     new Date(2022, 11, 11),
     new Date(2022, 10, 28),
@@ -49,38 +49,34 @@ const SingleVehicle = () => {
     new Date(2022, 7, 3),
     new Date(2022, 9, 7)
   ];
-  
+
 
   if (isLoading) {
-    return <p>Aca va el skeletorrrr</p>
+    return (
+    <>
+      <Header/>
+      <SingleVehicleSkeleton  cards={1}/>
+      <Footer/>
+    </>
+    )
   }
   return (
     <>
       <Header />
-
       <HeaderCard respuesta={respuesta} />
-      
       <UbicationCard respuesta={respuesta} />
-
       <SliderCard respuesta={respuesta} />
-
       <DescriptionCard respuesta={respuesta}/>
-      
-      <div className="container-reserva">
-        <div className="calendario">
+      <div className="container-reserva"> 
         <DatePicker
-            className="datepicker"
-            selected={startDate}
             onChange={handleDateChange}
             startDate={startDate}
             endDate={endDate}
             minDate={new Date()}
-            showDisabledMonthNavigation
-            excludeDates={holidays}
             monthsShown={size > 510 ? 2 : 1}
             inline
+            selectsRange
             />
-        </div>
         <div className="container-button">
           <Link className="buttonVerMas link" to={"/singleVehicle/" + id + "/reserva"}>Iniciar Reserva</Link>
           <Outlet/>

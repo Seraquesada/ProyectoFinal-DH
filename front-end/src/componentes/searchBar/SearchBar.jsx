@@ -1,7 +1,7 @@
 import React,{useState,useEffect, useContext} from 'react';
 import { CategoryContext } from "../../context/CategoryContext";
 
-import { useDateChange } from '../../hooks/useDateChange';
+import { useDateChange} from '../../hooks/useDateChange';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -9,23 +9,18 @@ import Select from 'react-select';
 import DatePicker from "react-datepicker";
 import axios  from 'axios';
 
-
 import "react-datepicker/dist/react-datepicker.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./SearchBar.css";
 
-
-
-
 const SearchBar = () => {
 
-    
     const [selectDisplay, setSelectDisplay] = useState("Cargando...")
     const [userChoice, setUserChoice] = useState(undefined)
     
     const {setCiudad} = useContext(CategoryContext);
-    const {startDate, handleDateChange , endDate} = useDateChange();
-
+    
+    const {startDate, handleDateChange, endDate} = useDateChange();
 
     /* useEffect(()=>{
         console.log(ciudad + " ciudad")
@@ -49,20 +44,10 @@ const SearchBar = () => {
         })
     }, []);
 
-    
-
     const handleSubmit = (event) => {
         event.preventDefault();
         setCiudad(userChoice);
-        
     }
-
-    /*const handleLimpiarFiltro = () =>{
-        setCiudad(undefined);
-        setCategoria(undefined);
-        forms.reset();
-        <Button className='btn btn-secondary' type="submit" onClick={handleLimpiarFiltro}>Limpiar Filtros</Button>
-    }*/
 
     const holidays = [
         new Date(2022, 10, 14),
@@ -83,7 +68,6 @@ const SearchBar = () => {
                     <Select placeholder="Elija una localidad..." className='select'  options={selectDisplay} onChange={(choice) => setUserChoice(choice.value)}/>
                     <DatePicker
                         className="datepicker"
-                        selected={startDate}
                         onChange={handleDateChange}
                         startDate={startDate}
                         endDate={endDate}
