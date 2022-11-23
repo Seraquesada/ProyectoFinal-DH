@@ -36,20 +36,46 @@
 
 
 @media screen and (max-width: 1134px) {
-    .containerDiv {
-        width: 54vw;
+    .controls-ft{
+        padding: 15px 20px;
+        flex-direction: column;
+        
+    
+    }
+    
+    .controls-sn{
+        padding: 15px 20px;
+        flex-direction: column;
+        
     }
 }
 
 
 @media screen and (max-width: 768px) {
-    .containerDiv {
-        width: 86vw;
+
+    .controls-ft{
+        padding: 15px 20px;
+        flex-direction: column;
+}
+
+    .controls-sn{
+        padding: 15px 20px;
+        flex-direction: column;
+        
     }
 };
 
 @media screen and (max-width: 470px) {
-    .containerDiv {
-        width: 95vw;
+    .controls-ft{
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: row;
+    
+    }
+    
+    .controls-sn{
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: row;
     }
 };

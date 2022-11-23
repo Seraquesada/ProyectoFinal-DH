@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import Reserve from "../form/Reserve";
 import BookingDetails from "../BookingDetails/BookingDetails";
 import './BookingBody.css'
@@ -8,7 +8,8 @@ import { useDateChange } from "../../hooks/useDateChange";
 import { useHandleRisize } from "../../hooks/useHandleRisize";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css"
-
+import TimePicker from 'react-time-picker';
+import 'react-time-picker/dist/entry.nostyle';
 const BookingBody = ({respuesta}) => {
 const {startDate, handleDateChange , endDate} = useDateChange();
 const {size} = useHandleRisize(); 

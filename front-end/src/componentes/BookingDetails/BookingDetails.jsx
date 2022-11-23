@@ -2,6 +2,7 @@ import { Button } from 'react-bootstrap';
 import './BookingDetails.css'
 
 const BookingDetails = ({respuesta}) => {
+    
     return(
         <div className="infoCard">
             <h3> Detalle de Reserva</h3>

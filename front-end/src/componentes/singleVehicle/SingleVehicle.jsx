@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import { useParams, Link, Outlet } from "react-router-dom";
 import Header from "../header/Header";
 import SliderCard from "../card/SliderCard.jsx";
