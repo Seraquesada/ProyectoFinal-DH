@@ -1,0 +1,9 @@
+.cursor-pointer{
+    cursor: pointer;
+}
+.cursor-pointer:hover{
+    cursor: pointer;
+    border: 1px solid orange !important;
+    border-radius: 8px;
+    width:min-content
+}

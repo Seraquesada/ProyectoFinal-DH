@@ -4,12 +4,14 @@ import VehicleSkeleton from "../VehicleSkeleton/VehicleSkeleton.jsx"
 import { CategoryContext } from '../../context/CategoryContext';
 import axios  from 'axios';
 import './GroupOfVehicles.css';
+import { DateContext } from '../../context/DateContext';
 
 const GroupOfVehicles = ()=> {
   
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const {categoria,ciudad,setCategoria,  setCiudad } = useContext(CategoryContext)
+  const {startDate, endDate} = useContext(DateContext)
 
   useEffect(()=>{
     if(categoria === undefined && ciudad === undefined){

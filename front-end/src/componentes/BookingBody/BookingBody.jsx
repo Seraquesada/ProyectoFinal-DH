@@ -1,15 +1,19 @@
 import React, { useState,useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import Reserve from "../form/Reserve";
 import BookingDetails from "../BookingDetails/BookingDetails";
 import './BookingBody.css'
 
 import {IoKeyOutline} from 'react-icons/all'
+import DatePicker from 'react-datepicker';
+import TimePicker from 'react-time-picker';
+import "react-datepicker/dist/react-datepicker.css"
+
+import { useFechasReservadas } from '../../hooks/useFechasReservadas';
 import { useDateChange } from "../../hooks/useDateChange";
 import { useHandleRisize } from "../../hooks/useHandleRisize";
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css"
-import TimePicker from 'react-time-picker';
-import 'react-time-picker/dist/entry.nostyle';
+import MyListbox from "./MyListBox/MyListBox.jsx"
+
 const BookingBody = ({respuesta}) => {
     
 const {startDate, handleDateChange , endDate} = useDateChange();
@@ -28,7 +32,9 @@ const holidays = [
     new Date(2022, 7, 3),
     new Date(2022, 9, 7)
 ];
-
+    const {id}= useParams();
+    const {fechasReservadas} = useFechasReservadas(id)
+    console.log(id)
     return(
         <div className="bookingBody">
 
@@ -54,6 +60,7 @@ const holidays = [
                 <h3> Tu horario de llegada</h3>
                 <IoKeyOutline/> <p>Puedes retirar tu vehículo entre las 10:00 am y las 11:00 pm</p>
                 <p>Indica tu horario estimado de retiro</p>
+                <MyListbox/>
             </div>
         </div>
     );

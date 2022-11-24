@@ -5,10 +5,11 @@ import './BookingDetails.css'
 
 const BookingDetails = ({respuesta}) => {
 
-    const {startDate, setStartDate , endDate, setEndDate,checkIn,setCheckIn,checkOut,setCheckOut} = useContext(DateContext)
+    const {startDate,endDate} = useContext(DateContext)
 
-    const startNormalized = startDate.toISOString().split("T")[0].split("-").join("/")
-    const endNormalized = endDate?.toISOString().split("T")[0].split("-").join("/")
+    const startNormalized = startDate.toISOString().split("T")[0]
+    const endNormalized = endDate?.toISOString().split("T")[0]
+    
     return(
         <div className="infoCard">
             <h3> Detalle de Reserva</h3>
