@@ -53,6 +53,13 @@ public class ReservaController {
         }
         return respuesta;
     }
+    @GetMapping("/producto/{id}")
+    public ResponseEntity<List<Reserva>> buscarReservaPorIdProducto(@PathVariable Long id) {
+        ResponseEntity<List<Reserva>> respuesta;
+        respuesta= ResponseEntity.ok(reservaService.buscarPorIdProducto(id));
+
+        return respuesta;
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminarReserva(@PathVariable Long id) throws ResourceNotFoundException {

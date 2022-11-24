@@ -41,6 +41,9 @@ public class ReservaService {
         }
         return reserva.get();
     }
+    public List<Reserva> buscarPorIdProducto(Long id) {
+        return reservaRepository.buscarPorIdProducto(id);
+    }
 
     public Reserva actualizar(Reserva reserva) {
         return reservaRepository.save(reserva);
