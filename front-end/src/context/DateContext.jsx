@@ -4,8 +4,8 @@ export const DateContext = createContext();
 
 export const DateProvider = ({children}) => {
 
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(null);
+    const [startDate, setStartDate] = useState(undefined);
+    const [endDate, setEndDate] = useState(undefined);
     const [checkIn,setCheckIn] = useState()
     const [checkOut,setCheckOut] = useState()
     return (

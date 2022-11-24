@@ -4,41 +4,74 @@ import VehicleSkeleton from "../VehicleSkeleton/VehicleSkeleton.jsx"
 import { CategoryContext } from '../../context/CategoryContext';
 import axios  from 'axios';
 import './GroupOfVehicles.css';
+import { DateContext } from '../../context/DateContext';
 
 const GroupOfVehicles = ()=> {
   
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const {categoria,ciudad,setCategoria,  setCiudad } = useContext(CategoryContext)
+  const {startDate, endDate} = useContext(DateContext)
+  //fechaInicio = startDate.toISOString().split("T")[0].split("-").join("-")
+  //fechaFinal = endDate.toISOString().split("T")[0].split("-").join("-")
+  
 
   useEffect(()=>{
-    if(categoria === undefined && ciudad === undefined){
+    if(categoria === undefined && ciudad === undefined && startDate === undefined){
           axios.get('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos')
     .then(res=>{
       setData(res.data)
       setLoading(false)
     })
-    }else if(categoria != undefined && ciudad === undefined){
+    }else if(categoria != undefined && ciudad === undefined && startDate === undefined){
     axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?categoria=${categoria}`)
       .then(res=>{
         setData(res.data)
         setLoading(false)
     })
-    }else if(categoria === undefined && ciudad != undefined){
+    }else if(categoria === undefined && ciudad != undefined && startDate === undefined){
     axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?ciudad=${ciudad}`)
       .then(res=>{
         setData(res.data)
         setLoading(false)
     })
     }
-    else{
+    else if(categoria != undefined && ciudad != undefined && startDate === undefined){
     axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?categoria=${categoria}&ciudad=${ciudad}`)
       .then(res=>{
         setData(res.data)
         setLoading(false)
     })
     }
-  },[categoria, ciudad])
+    else if(categoria === undefined && ciudad === undefined && startDate != undefined && endDate != undefined){
+    axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?fechaInicio=${startDate.toISOString().split("T")[0].split("-").join("-")}&fechaFinal=${endDate.toISOString().split("T")[0].split("-").join("-")}`)
+      .then(res=>{
+        setData(res.data)
+        setLoading(false)
+    })
+    }
+    else if(categoria != undefined && ciudad === undefined && startDate != undefined && endDate != undefined){
+    axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?categoria=${categoria}&fechaInicio=${startDate.toISOString().split("T")[0].split("-").join("-")}&fechaFinal=${endDate.toISOString().split("T")[0].split("-").join("-")}`)
+      .then(res=>{
+        setData(res.data)
+        setLoading(false)
+    })
+    }
+    else if(categoria === undefined && ciudad != undefined && startDate != undefined && endDate != undefined){
+    axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?ciudad=${ciudad}&fechaInicio=${startDate.toISOString().split("T")[0].split("-").join("-")}&fechaFinal=${endDate.toISOString().split("T")[0].split("-").join("-")}`)
+      .then(res=>{
+        setData(res.data)
+        setLoading(false)
+    })
+    }
+    else if(categoria != undefined && ciudad != undefined && startDate != undefined && endDate != undefined){
+    axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?categoria=${categoria}&ciudad=${ciudad}&fechaInicio=${startDate.toISOString().split("T")[0].split("-").join("-")}&fechaFinal=${endDate.toISOString().split("T")[0].split("-").join("-")}`)
+      .then(res=>{
+        setData(res.data)
+        setLoading(false)
+    })
+    }
+  },[categoria, ciudad, startDate, endDate])
 
   const handleClearFilter =() =>{
     setCiudad()
