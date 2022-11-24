@@ -34,7 +34,6 @@ const holidays = [
 ];
     const {id}= useParams();
     const {fechasReservadas} = useFechasReservadas(id)
-    console.log(id)
     return(
         <div className="bookingBody">
 

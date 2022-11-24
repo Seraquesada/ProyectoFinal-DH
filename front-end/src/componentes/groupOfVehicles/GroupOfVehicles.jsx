@@ -103,7 +103,6 @@ const GroupOfVehicles = ()=> {
                 <button className='reset-form mb-4 btn btn-secondary' onClick={handleClearFilter} type="submit">Reiniciar Busqueda</button>
               </>
               }
-
             </div>
           </div>
         </div>
