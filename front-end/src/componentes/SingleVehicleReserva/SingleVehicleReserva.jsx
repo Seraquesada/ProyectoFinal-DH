@@ -19,7 +19,6 @@ const SingleVehicleReserva = () => {
             const datos = res.data
             setRespuesta(datos)
             setLoading(false)
-            console.log(datos)
         }
     )}, [])
 
