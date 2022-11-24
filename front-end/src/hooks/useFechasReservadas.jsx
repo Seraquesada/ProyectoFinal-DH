@@ -8,15 +8,9 @@ export const useFechasReservadas = (id) => {
     const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas/producto/' + id
     const jwt= localStorage.getItem('jwt');
     
-    const authAxios = axios.create({
-        baseURL: url,
-        headers: {
-            Authorization: `Bearer ${jwt}`
 
-        }
-    })
     useEffect(() => {
-        authAxios.get()
+        axios.get(url, {headers: {"Authorization" : `Bearer ${jwt}`}} )
         .then(response => {
             setFechasReservadas(response.data)
         })

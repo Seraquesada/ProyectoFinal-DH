@@ -7,7 +7,7 @@ const BookingDetails = ({respuesta}) => {
 
     const {startDate,endDate} = useContext(DateContext)
 
-    const startNormalized = startDate.toISOString().split("T")[0]
+    const startNormalized = startDate?.toISOString().split("T")[0]
     const endNormalized = endDate?.toISOString().split("T")[0]
     
     return(

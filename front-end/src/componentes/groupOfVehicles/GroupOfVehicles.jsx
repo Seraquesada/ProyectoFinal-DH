@@ -12,12 +12,9 @@ const GroupOfVehicles = ()=> {
   const [isLoading, setLoading] = useState(true);
   const {categoria,ciudad,setCategoria,  setCiudad } = useContext(CategoryContext)
   const {startDate, endDate} = useContext(DateContext)
-<<<<<<< HEAD
-  //fechaInicio = startDate.toISOString().split("T")[0].split("-").join("-")
-  //fechaFinal = endDate.toISOString().split("T")[0].split("-").join("-")
-  
-=======
->>>>>>> 8d21ebd48c52964f9f4c1821f4f99bb99d12aa9c
+
+  const fechaInicio = startDate?.toISOString().split("T")[0].split("-").join("-")
+  const fechaFinal = endDate?.toISOString().split("T")[0].split("-").join("-")
 
   useEffect(()=>{
     if(categoria === undefined && ciudad === undefined && startDate === undefined){
@@ -105,7 +102,6 @@ const GroupOfVehicles = ()=> {
                 <button className='reset-form mb-4 btn btn-secondary' onClick={handleClearFilter} type="submit">Reiniciar Busqueda</button>
               </>
               }
-
             </div>
           </div>
         </div>
