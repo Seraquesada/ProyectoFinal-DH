@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="productos")
@@ -23,14 +24,14 @@ public class Producto {
     private Categoria categoria;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "imagen_id")
-    private List<Imagen> imagenes;
+    private Set<Imagen> imagenes;
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
             name = "caracteristicas_auto",
             joinColumns = @JoinColumn(name = "id_producto"),
             inverseJoinColumns = @JoinColumn(name = "id_caracteristica")
     )
-    private List<Caracteristica> caracteristicas;
+    private Set<Caracteristica> caracteristicas;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "politicasProducto_id" , referencedColumnName ="id")
@@ -38,9 +39,9 @@ public class Producto {
 
     @OneToMany(mappedBy = "producto")
     @JsonIgnore
-    private List<Reserva> reservas;
+    private Set<Reserva> reservas;
 
-    public Producto(Long id, String titulo, String descripcion, Ciudad ciudad, Categoria categoria, List<Imagen> imagenes, List<Caracteristica> caracteristicas, PoliticasProducto politicasProducto, List<Reserva> reservas) {
+    public Producto(Long id, String titulo, String descripcion, Ciudad ciudad, Categoria categoria, Set<Imagen> imagenes, Set<Caracteristica> caracteristicas, PoliticasProducto politicasProducto, Set<Reserva> reservas) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -52,7 +53,7 @@ public class Producto {
         this.reservas = reservas;
     }
 
-    public Producto(String titulo, String descripcion, Ciudad ciudad, Categoria categoria, List<Imagen> imagenes, List<Caracteristica> caracteristicas, PoliticasProducto politicasProducto, List<Reserva> reservas) {
+    public Producto(String titulo, String descripcion, Ciudad ciudad, Categoria categoria, Set<Imagen> imagenes, Set<Caracteristica> caracteristicas, PoliticasProducto politicasProducto, Set<Reserva> reservas) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.ciudad = ciudad;
@@ -106,19 +107,19 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public List<Imagen> getImagenes() {
+    public Set<Imagen> getImagenes() {
         return imagenes;
     }
 
-    public void setImagenes(List<Imagen> imagenes) {
+    public void setImagenes(Set<Imagen> imagenes) {
         this.imagenes = imagenes;
     }
 
-    public List<Caracteristica> getCaracteristicas() {
+    public Set<Caracteristica> getCaracteristicas() {
         return caracteristicas;
     }
 
-    public void setCaracteristicas(List<Caracteristica> caracteristicas) {
+    public void setCaracteristicas(Set<Caracteristica> caracteristicas) {
         this.caracteristicas = caracteristicas;
     }
 
@@ -130,11 +131,11 @@ public class Producto {
         this.politicasProducto = politicasProducto;
     }
 
-    public List<Reserva> getReservas() {
+    public Set<Reserva> getReservas() {
         return reservas;
     }
 
-    public void setReservas(List<Reserva> reservas) {
+    public void setReservas(Set<Reserva> reservas) {
         this.reservas = reservas;
     }
 }

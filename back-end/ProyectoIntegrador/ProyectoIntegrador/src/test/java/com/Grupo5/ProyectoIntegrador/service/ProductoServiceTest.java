@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
@@ -28,9 +30,9 @@ class ProductoServiceTest {
         Ciudad ciudad2 = new Ciudad("Cordoba",-30.776425257706205, -64.1885096801536);
         Ciudad ciudadGuardada1 = ciudadService.guardar(ciudad1);
         Ciudad ciudadGuardada2 = ciudadService.guardar(ciudad2);
-        List<Imagen> imagenes=new ArrayList<>();
-        List<Caracteristica> caracteristicas = new ArrayList<>();
-        List<Reserva> reservas=new ArrayList<>();
+        Set<Imagen> imagenes=new HashSet<>();
+        Set<Caracteristica> caracteristicas = new HashSet<>();
+        Set<Reserva> reservas=new HashSet<>();
         PoliticasProducto politicas1 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
         PoliticasProducto politicas2 = new PoliticasProducto("normas1", "portarse bien1", "seguridad1", "tener cuidado1", "cancelacion1", "te va a devolver el dinero su p*ta madre1");
         Producto producto1 = new Producto("bmw", "auto genial", ciudadGuardada1, categoriaGuardada1, imagenes, caracteristicas, politicas1, reservas);

@@ -7,6 +7,9 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +29,9 @@ public class ReservaService {
     public List<Reserva> buscarTodos() {
         return reservaRepository.findAll();
     }
+    public List<Reserva> buscarReservasInvalidas(LocalDate fechaInicio, LocalDate fechaFinal) {
+        return reservaRepository.buscarReservasInvalidas(fechaInicio, fechaFinal);
+    }
 
     public Reserva buscar(Long id) throws ResourceNotFoundException {
         Optional<Reserva> reserva = reservaRepository.findById(id);
@@ -34,6 +40,9 @@ public class ReservaService {
             throw new ResourceNotFoundException("No pudo encontrarse la reserva indicada");
         }
         return reserva.get();
+    }
+    public List<Reserva> buscarPorIdProducto(Long id) {
+        return reservaRepository.buscarPorIdProducto(id);
     }
 
     public Reserva actualizar(Reserva reserva) {
