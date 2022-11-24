@@ -13,8 +13,9 @@ const GroupOfVehicles = ()=> {
   const {categoria,ciudad,setCategoria,  setCiudad } = useContext(CategoryContext)
   const {startDate, endDate} = useContext(DateContext)
 
-  const fechaInicio = startDate?.toISOString().split("T")[0].split("-").join("-")
-  const fechaFinal = endDate?.toISOString().split("T")[0].split("-").join("-")
+ const fechaInicio = startDate?.toISOString().split("T")[0].split("-").join("-")
+ const fechaFinal = endDate?.toISOString().split("T")[0].split("-").join("-")
+
 
   useEffect(()=>{
     if(categoria === undefined && ciudad === undefined && startDate === undefined){
