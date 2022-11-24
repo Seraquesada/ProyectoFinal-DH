@@ -39,6 +39,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName, setShow,setInitials})
     let base64 = base64Url.replace('-', '+').replace('_', '/');
     return JSON.parse(window.atob(base64));
   }
+  
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin")
     if(authMode === "signin"){

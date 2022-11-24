@@ -26,7 +26,7 @@ const SingleVehicleReserva = () => {
     if(isLoading){
       return <p> Loading ...</p>
     }
-    console.log(respuesta)
+
     return (
         <>
           

@@ -1,48 +1,5 @@
-import React, { useEffect, useState, useContext } from "react";
+import React from "react";
 import "../form/Reserve.css";
-import { useForm } from "../../hooks/useForm";
-import axios from "axios";
-
-const initialForm = {
-    name:"",
-    surname:"",
-    email:"",
-    city:"",
-};
-
-const validationsForm = (form) => {
-    let errors = {};
-    let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-    let regexSurname = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-    let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
-    let regexCity = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
-
-    if (!form.name.trim()){
-        errors.name = "El campo 'Nombre' es requerido";
-    }else if (!regexName.test(form.name.trim())) {
-        errors.name = "El campo 'Nombre' sólo acepta letras y espacios en blanco";
-      };
-
-    if (!form.surname.trim()){
-        errors.surname = "El campo 'Apellido' es requerido";
-    }else if (!regexSurname.test(form.surname.trim())) {
-        errors.surname = "El campo 'Apellido' sólo acepta letras y espacios en blanco";
-      };
-
-    if (!form.email.trim()){
-        errors.email = "El campo 'Email' es requerido";
-    }else if (!regexEmail.test(form.email.trim())) {
-        errors.email = "El campo 'Email' es incorrecto";
-      };
-
-    if (!form.city.trim()){
-        errors.city = "El campo 'Ciudad' es requerido";
-    }else if (!regexCity.test(form.city.trim())) {
-        errors.city = "El campo 'Ciudad' sólo acepta letras y espacios en blanco";
-      };
-
-    return errors;
-};
 
 let styles = {
     fontWeight: "bold",
@@ -52,31 +9,25 @@ let styles = {
     justifyContent:"center"
 };
 
+function parseJwt (token) {
+  let base64Url = token.split('.')[1];
+  let base64 = base64Url.replace('-', '+').replace('_', '/');
+  return JSON.parse(window.atob(base64));
+}
+
 const Reserve = () => {
-  const {
-    form,
-    errors,
-    loading,
-    response,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-  } = useForm(initialForm, validationsForm);
 
   return (
     <div className="form-reserva">
       <h2 className="completar-datos">Completá tus datos</h2>
-      <form onSubmit={handleSubmit}></form>
+      <form></form>
       <div className="controls-ft">
         <div className="container-input">
         <h3>Nombre</h3>
           <input
             type="text"
             name="name"
-            placeholder="Bruno"
-            onBlur={handleBlur}
-            onChange={handleChange}
-            value={form.name}
+            value={parseJwt(localStorage.getItem('jwt')).nombre}
             required
             disabled
             />
@@ -87,9 +38,7 @@ const Reserve = () => {
             type="text"
             name="surname"
             placeholder="Rodriguez"
-            onBlur={handleBlur}
-            onChange={handleChange}
-            value={form.surname}
+            value={parseJwt(localStorage.getItem('jwt')).apellido}
             required
             disabled
           />
@@ -102,26 +51,11 @@ const Reserve = () => {
               type="email"
               name="email"
               placeholder="brodriguez@gmail.com"
-              onBlur={handleBlur}
-              onChange={handleChange}
-              value={form.email}
+              value={parseJwt(localStorage.getItem('jwt')).sub}
               required
               disabled
               />
         </div>
-        <div className="container-input">
-          <h3>Ciudad</h3>
-          <input
-            type="text"
-            name="city"
-            placeholder="Ciudad"
-            onBlur={handleBlur}
-            onChange={handleChange}
-            value={form.city}
-            required
-            />
-          </div>
-        
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ export const DateProvider = ({children}) => {
     const [checkIn,setCheckIn] = useState()
     const [checkOut,setCheckOut] = useState()
     return (
-    <DateContext.Provider value={{startDate, setStartDate,endDate, setEndDate,checkIn,setCheckIn,checkOut,setCheckOut}}>
+    <DateContext.Provider value={{startDate, setStartDate,endDate, setEndDate,}}>
         {children}
     </DateContext.Provider>
 )

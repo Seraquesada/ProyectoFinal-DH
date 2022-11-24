@@ -1,7 +1,14 @@
+import { useContext } from 'react';
 import { Button } from 'react-bootstrap';
+import { DateContext } from '../../context/DateContext';
 import './BookingDetails.css'
 
 const BookingDetails = ({respuesta}) => {
+
+    const {startDate,endDate} = useContext(DateContext)
+
+    const startNormalized = startDate.toISOString().split("T")[0]
+    const endNormalized = endDate?.toISOString().split("T")[0]
     
     return(
         <div className="infoCard">
@@ -11,12 +18,10 @@ const BookingDetails = ({respuesta}) => {
             <h4> {respuesta.titulo}</h4>
             <h5> {respuesta.ciudad.nombre}</h5>
             <hr></hr>
-            <h4 className='checkinOut'> Check in VA FECHA!! </h4>
+            <h4 className='checkinOut'> Check in {startNormalized} </h4>
             <hr></hr>
-            <h4 className='checkinOut'> Check out VA FECHA!! </h4>
+            <h4 className='checkinOut'> Check out {endNormalized} </h4>
             <button className='btn btn-primary'>Confirmar reserva</button>  
-
-
         </div>
     );
 };
