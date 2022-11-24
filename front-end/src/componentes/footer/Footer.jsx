@@ -3,7 +3,9 @@ import './Footer.css'
 import {BsFacebook,BsTwitter,BsInstagram} from 'react-icons/bs'
 import {GrLinkedinOption} from 'react-icons/gr'
 
+
 const Footer = () => {
+
     return(
         <footer className="footer text-dark">
                 <div className="text">

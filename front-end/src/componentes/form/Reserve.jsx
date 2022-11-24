@@ -109,19 +109,6 @@ const Reserve = () => {
               disabled
               />
         </div>
-        <div className="container-input">
-          <h3>Ciudad</h3>
-          <input
-            type="text"
-            name="city"
-            placeholder="Ciudad"
-            onBlur={handleBlur}
-            onChange={handleChange}
-            value={form.city}
-            required
-            />
-          </div>
-        
       </div>
     </div>
   );

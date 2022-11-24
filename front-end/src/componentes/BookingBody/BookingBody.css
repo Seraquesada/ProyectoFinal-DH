@@ -26,7 +26,7 @@
 }
 
 .horariollegada{
-    border: 1px solid blue;
+    background-color: white;
     grid-column: 1/2;
     grid-row:4/5;
     margin:.2rem;

@@ -36,7 +36,7 @@ const holidays = [
                 <Reserve/>
             </div>
             <div className="bookingDetails">
-                <BookingDetails respuesta={respuesta} />
+                <BookingDetails respuesta={respuesta} startDate={startDate} endDate={endDate}/>
             </div>
                 <h3> Seleccioná tu fecha de reserva</h3>
                 <DatePicker
