@@ -46,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/swagger-ui.html").permitAll()
                 .antMatchers("/reservas").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/reservas/**").hasAnyRole("USER", "ADMIN")
-                .antMatchers("/reservas/producto/**").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/reservas/producto/**").permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
