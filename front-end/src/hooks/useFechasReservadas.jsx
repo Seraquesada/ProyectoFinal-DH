@@ -10,6 +10,7 @@ export const useFechasReservadas = (id) => {
     useEffect(() => {
         axios.get(url, {headers: {"Authorization" : `Bearer ${jwt}`}} )
         .then(response => {
+            console.log(response.data)
             setFechasReservadas(response.data)
         })
     }
