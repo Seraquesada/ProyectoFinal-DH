@@ -9,7 +9,7 @@ const BookingDetails = ({respuesta}) => {
 
     const startNormalized = range[0].startDate?.toISOString().split("T")[0]
     const endNormalized = range[0].endDate?.toISOString().split("T")[0]
-    
+    console.log(respuesta)
     return(
         <div className="infoCard">
             <h3> Detalle de Reserva</h3>

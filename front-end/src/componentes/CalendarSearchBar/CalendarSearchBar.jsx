@@ -1,18 +1,18 @@
 import React from "react"
-import { useDateChange } from "../../hooks/useDateChange";
-import {DateRange} from "react-date-range"
 
+import {DateRange} from "react-date-range"
+import { useDateChange } from "../../hooks/useDateChange";
 import { useHandleRisize } from "../../hooks/useHandleRisize";
 import { useFechasReservadas } from "../../hooks/useFechasReservadas";
-import "./Calendar.css"
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-const CalendarComponent = () => {  
 
-  const {excludeDays} = useFechasReservadas()
-  const {range,handleDateChange } = useDateChange();
-  const {size} = useHandleRisize(); 
-  
+
+const CalendarSearchBar = () => {
+    const {fechasReservadas} = useFechasReservadas()
+    const {range,handleDateChange } = useDateChange();
+    const {size} = useHandleRisize(); 
+
   return (
     <div className="calendar-container">
         <DateRange
@@ -24,10 +24,10 @@ const CalendarComponent = () => {
             ranges={range}
             className="calendarElement"
             minDate={new Date()}
-            disabledDates={excludeDays()}
+            
             />
     </div>
   )
 }
 
-export default CalendarComponent
+export default CalendarSearchBar

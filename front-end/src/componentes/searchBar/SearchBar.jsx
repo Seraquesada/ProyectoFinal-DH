@@ -9,7 +9,7 @@ import axios  from 'axios';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./SearchBar.css";
-import CalendarComponent from '../Calendar/CalendarComponent';
+import CalendarSearchBar from '../CalendarSearchBar/CalendarSearchBar.jsx';
 
 const SearchBar = () => {
 
@@ -49,7 +49,7 @@ const SearchBar = () => {
     return (
             <div className="container-forms">
                 <Form className="form" onSubmit={handleSubmit}>
-                    <CalendarComponent />
+                    <CalendarSearchBar/>
                     <Select placeholder="Elija una localidad..." className='select'  options={selectDisplay} onChange={(choice) => setUserChoice(choice.value)}/>
                     <Button className='btn btn-secondary' type="submit">Buscar</Button>
                 </Form>
