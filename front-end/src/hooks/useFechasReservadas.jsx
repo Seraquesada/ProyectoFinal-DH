@@ -17,6 +17,7 @@ export const useFechasReservadas = () => {
     useEffect(() => {
         axios.get(url,config)
         .then(response => {
+            console.log(response.data)
             setFechasReservadas(response.data)
         })
     },[id])
