@@ -5,7 +5,7 @@
     height: 100%;
     grid-template-columns:65% 35%;
     grid-template-rows: repeat(3,auto);
-    margin:20px 30px ;
+    outline: 10px solid red;
 }
 
 .forms{
@@ -39,7 +39,6 @@
     .bookingBody {
         grid-template-columns:100%;
         grid-template-rows: repeat(4,auto);
-
     }
     
     .forms{
@@ -73,9 +72,7 @@
     .bookingBody {
         grid-template-columns:100%;
         grid-template-rows: repeat(4,auto);
-
     }
-    
     .forms{
         grid-row: 1/2;
         margin:.2rem;

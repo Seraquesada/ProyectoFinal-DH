@@ -13,15 +13,16 @@ const BookingBody = ({respuesta}) => {
 
     return(
         <div className="bookingBody">
-
             <div className="forms">
                 <Reserve/>
             </div>
             <div className="bookingDetails">
                 <BookingDetails respuesta={respuesta} />
             </div>
-                <h3> Seleccioná tu fecha de reserva</h3>
+            <div>
+                <h3>Seleccioná tu fecha de reserva</h3>
                 <CalendarComponent />
+            </div>
             <div className="horariollegada">
                 <h3> Tu horario de llegada</h3>
                 <IoKeyOutline/> <p>Puedes retirar tu vehículo entre las 10:00 am y las 11:00 pm</p>
