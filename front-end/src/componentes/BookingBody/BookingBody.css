@@ -5,7 +5,6 @@
     height: 100%;
     grid-template-columns:65% 35%;
     grid-template-rows: repeat(3,auto);
-    outline: 10px solid red;
 }
 
 .forms{

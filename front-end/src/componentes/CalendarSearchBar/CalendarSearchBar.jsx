@@ -24,7 +24,7 @@ const CalendarSearchBar = () => {
             ranges={range}
             className="calendarElement"
             minDate={new Date()}
-            
+            rangeColors={["orange"]}
             />
     </div>
   )

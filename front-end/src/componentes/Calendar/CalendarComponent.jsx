@@ -12,7 +12,7 @@ const CalendarComponent = () => {
   const {excludeDays} = useFechasReservadas()
   const {range,handleDateChange } = useDateChange();
   const {size} = useHandleRisize(); 
-  
+
   return (
     <div className="calendar-container">
         <DateRange
@@ -25,6 +25,7 @@ const CalendarComponent = () => {
             className="calendarElement"
             minDate={new Date()}
             disabledDates={excludeDays()}
+            rangeColors={["orange"]}
             />
     </div>
   )

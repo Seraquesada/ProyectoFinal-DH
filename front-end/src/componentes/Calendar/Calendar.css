@@ -1,6 +1,6 @@
 .calendar-container{
-    outline:1px solid black;
     height: 100%;
+    width: 100%;
 }
 
 .rdrDateDisplayWrapper{
@@ -9,4 +9,8 @@
 
 .rdrMonthAndYearWrapper{
     padding:10px
+}
+
+.rdrCalendarWrapper{
+    width: 100%;
 }
