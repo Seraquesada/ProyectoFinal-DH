@@ -12,10 +12,9 @@ const GroupOfVehicles = ()=> {
   const [isLoading, setLoading] = useState(true);
   const {categoria,ciudad,setCategoria,  setCiudad } = useContext(CategoryContext)
   const {startDate, endDate} = useContext(DateContext)
-
- const fechaInicio = startDate?.toISOString().split("T")[0].split("-").join("-")
- const fechaFinal = endDate?.toISOString().split("T")[0].split("-").join("-")
-
+  
+  const fechaInicio = startDate?.toISOString().split("T")[0]
+  const fechaFinal = endDate?.toISOString().split("T")[0]
 
   useEffect(()=>{
     if(categoria === undefined && ciudad === undefined && startDate === undefined){
@@ -82,7 +81,7 @@ const GroupOfVehicles = ()=> {
   return(
           <div className='groupOfVehicles'>
           <div className='container-reco'>
-            <h2 className='tituloReco'>{categoria === undefined ?"Recomendaciones" : "Recomendaciones: "+ data.map(item => (item.categoria.titulo)).pop()}</h2>
+            <h2 className='tituloReco'>{categoria !== undefined ? "Recomendaciones: "+ data.map(item => (item.categoria.titulo)).pop() : "Recomendaciones "}</h2>
             <div className='itemGroupOfVehicles'>
               {isLoading && <VehicleSkeleton  cards={4}/>}
               {

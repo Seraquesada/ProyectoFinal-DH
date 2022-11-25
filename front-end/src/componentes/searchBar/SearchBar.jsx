@@ -76,8 +76,8 @@ const SearchBar = () => {
                         selectsRange
                         withPortal
                         excludeDates={holidays}
+                        placeholderText="Eligir fecha check-in check-out"
                     />
-                    
                     <Button className='btn btn-secondary' type="submit">Buscar</Button>
                 </Form>
             </div>

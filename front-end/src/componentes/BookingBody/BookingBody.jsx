@@ -1,12 +1,10 @@
-import React, { useState,useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react';
 import Reserve from "../form/Reserve";
 import BookingDetails from "../BookingDetails/BookingDetails";
 import './BookingBody.css'
 
 import {IoKeyOutline} from 'react-icons/all'
 import DatePicker from 'react-datepicker';
-import TimePicker from 'react-time-picker';
 import "react-datepicker/dist/react-datepicker.css"
 
 import { useFechasReservadas } from '../../hooks/useFechasReservadas';
@@ -18,7 +16,7 @@ const BookingBody = ({respuesta}) => {
     
 const {startDate, handleDateChange , endDate} = useDateChange();
 const {size} = useHandleRisize(); 
-const [value, onChange] = useState('10:00');
+
 
 const holidays = [
     new Date(2022, 10, 14),
@@ -32,8 +30,8 @@ const holidays = [
     new Date(2022, 7, 3),
     new Date(2022, 9, 7)
 ];
-    const {id}= useParams();
-    const {fechasReservadas} = useFechasReservadas(id)
+
+    const {fechasReservadas} = useFechasReservadas()
     return(
         <div className="bookingBody">
 

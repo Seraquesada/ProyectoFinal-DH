@@ -1,19 +1,25 @@
 import { useState,useEffect }  from 'react'
+import { useParams } from 'react-router-dom';
 import axios from 'axios'
 
-export const useFechasReservadas = (id) => {
+export const useFechasReservadas = () => {
+
+    const {id} = useParams();
     const [fechasReservadas, setFechasReservadas]= useState([])
-    const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas/producto/' + id
+    const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas/producto/'+ id;
     const jwt= localStorage.getItem('jwt');
     
-
+    const config =  {
+        headers:
+        {'Authorization':`Bearer ${jwt}`}
+    };
+    
     useEffect(() => {
-        axios.get(url, {headers: {"Authorization" : `Bearer ${jwt}`}} )
+        axios.get(url,config)
         .then(response => {
             setFechasReservadas(response.data)
         })
-    }
-    ,[id])
+    },[id])
 
     return {fechasReservadas}
 }
