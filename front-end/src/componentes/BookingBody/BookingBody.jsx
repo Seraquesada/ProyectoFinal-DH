@@ -18,7 +18,7 @@ const BookingBody = ({respuesta}) => {
     
 const {startDate, handleDateChange , endDate} = useDateChange();
 const {size} = useHandleRisize(); 
-const [value, onChange] = useState('10:00');
+const [hora, setHora] = useState();
 
 const holidays = [
     new Date(2022, 10, 14),
@@ -41,7 +41,7 @@ const holidays = [
                 <Reserve/>
             </div>
             <div className="bookingDetails">
-                <BookingDetails respuesta={respuesta} startDate={startDate} endDate={endDate}/>
+                <BookingDetails respuesta={respuesta} startDate={startDate} endDate={endDate} hora={hora}/>
             </div>
                 <h3> Seleccioná tu fecha de reserva</h3>
                 <DatePicker
@@ -59,7 +59,7 @@ const holidays = [
                 <h3> Tu horario de llegada</h3>
                 <IoKeyOutline/> <p>Puedes retirar tu vehículo entre las 10:00 am y las 11:00 pm</p>
                 <p>Indica tu horario estimado de retiro</p>
-                <MyListbox/>
+                <MyListbox setHora={setHora}/>
             </div>
         </div>
     );
