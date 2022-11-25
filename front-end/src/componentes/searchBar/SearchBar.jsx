@@ -15,10 +15,7 @@ const SearchBar = () => {
 
     const [selectDisplay, setSelectDisplay] = useState("Cargando...")
     const [userChoice, setUserChoice] = useState(undefined)
-    
     const {setCiudad} = useContext(CategoryContext);
-
-
     /* useEffect(()=>{
         console.log(ciudad + " ciudad")
     },[ciudad]) */

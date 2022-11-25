@@ -19,9 +19,9 @@ const horarios = [
     { id: 13, horario: '11:00' },
 ]
 
-const MyListbox =()=> {
+const MyListbox =({setHora})=> {
     const [selected, setSelected] = useState(horarios[0])
-    console.log(selected.horario)
+    setHora(selected)
     return (
         <div className="fixed top-16 w-72">
         <Listbox value={selected} onChange={setSelected}>

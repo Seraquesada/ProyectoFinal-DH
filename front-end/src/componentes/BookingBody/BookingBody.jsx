@@ -9,24 +9,20 @@ import CalendarComponent from '../Calendar/CalendarComponent.jsx'
 
 
 const BookingBody = ({respuesta}) => {
-
+    const [hora, setHora] = useState();
     return(
         <div className="bookingBody">
             <div className="forms">
                 <Reserve/>
             </div>
             <div className="bookingDetails">
-                <BookingDetails respuesta={respuesta} />
-            </div>
-            <div>
-                <h3>Seleccioná tu fecha de reserva</h3>
-                <CalendarComponent />
+                <BookingDetails respuesta={respuesta} hora={hora}/>
             </div>
             <div className="horariollegada">
                 <h3> Tu horario de llegada</h3>
                 <IoKeyOutline/> <p>Puedes retirar tu vehículo entre las 10:00 am y las 11:00 pm</p>
                 <p>Indica tu horario estimado de retiro</p>
-                <MyListbox/>
+                <MyListbox setHora={setHora}/>
             </div>
         </div>
     );

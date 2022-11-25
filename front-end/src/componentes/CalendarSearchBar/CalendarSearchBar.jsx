@@ -3,13 +3,11 @@ import React from "react"
 import {DateRange} from "react-date-range"
 import { useDateChange } from "../../hooks/useDateChange";
 import { useHandleRisize } from "../../hooks/useHandleRisize";
-import { useFechasReservadas } from "../../hooks/useFechasReservadas";
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 
 
 const CalendarSearchBar = () => {
-    const {fechasReservadas} = useFechasReservadas()
     const {range,handleDateChange } = useDateChange();
     const {size} = useHandleRisize(); 
 
