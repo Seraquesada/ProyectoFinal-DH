@@ -1,0 +1,12 @@
+.calendar-container{
+    outline:1px solid black;
+    height: 100%;
+}
+
+.rdrDateDisplayWrapper{
+    display:none;
+}
+
+.rdrMonthAndYearWrapper{
+    padding:10px
+}

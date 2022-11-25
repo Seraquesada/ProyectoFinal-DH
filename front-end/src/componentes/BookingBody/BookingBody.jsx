@@ -6,8 +6,7 @@ import {IoKeyOutline} from 'react-icons/all'
 import "react-datepicker/dist/react-datepicker.css"
 import MyListbox from "./MyListBox/MyListBox.jsx"
 import CalendarComponent from '../Calendar/CalendarComponent.jsx'
-import 'react-date-range/dist/styles.css'; // main css file
-import 'react-date-range/dist/theme/default.css'; // theme css file
+
 
 const BookingBody = ({respuesta}) => {
 

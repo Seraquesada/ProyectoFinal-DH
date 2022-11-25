@@ -4,7 +4,9 @@ import {DateRange} from "react-date-range"
 
 import { useHandleRisize } from "../../hooks/useHandleRisize";
 import { useFechasReservadas } from "../../hooks/useFechasReservadas";
-
+import "./Calendar.css"
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 const CalendarComponent = () => {  
 
   const {fechasReservadas} = useFechasReservadas()
@@ -37,6 +39,7 @@ const CalendarComponent = () => {
             className="calendarElement"
             minDate={new Date()}
             disabledDates={holidays}
+            size="small"
             />
     </div>
   )
