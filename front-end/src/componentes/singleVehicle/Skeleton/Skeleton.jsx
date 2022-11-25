@@ -11,19 +11,19 @@ const SingleVehicleSkeleton = ({cards}) => {
             <div className="headerCard" key={i}>
                 <Skeleton cards={2}  width={200} height={20}/>
             </div>
-            <div className="ubicationCard">
+            <div className="ubicationCard" key={i}>
                 <Skeleton  width={200} height={20}/> 
             </div>
-            <div className="container-pictures-skeleton">
+            <div className="container-pictures-skeleton" key={i}>
                 <div className="card-ltside">
                     <Skeleton  height={500} />
                 </div>
-                <div className="card-skeleton">
+                <div className="card-skeleton" >
                     <div className="image">
                         <Skeleton  className="a" />
                         <Skeleton  className="a" />
                     </div>
-                    <div className="image">
+                    <div className="image"> 
                         <Skeleton  className="a" />
                         <Skeleton  className="a" />
                     </div>
@@ -32,7 +32,7 @@ const SingleVehicleSkeleton = ({cards}) => {
                     <Skeleton className="image" />
                 </div>
             </div>                
-            <div className="descriptionCard">
+            <div className="descriptionCard" key={i}>
                 <Skeleton width={200} height={20}  />
                 <Skeleton  />
                 <Skeleton  />

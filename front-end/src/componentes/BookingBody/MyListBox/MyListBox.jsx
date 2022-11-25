@@ -1,8 +1,10 @@
 
-import { useState,Fragment } from 'react'
+import { useState,Fragment,useEffect } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import "./MyListBox.css"
+
+
 const horarios = [
     { id: 1, horario: '10:00' },
     { id: 2, horario: '10:05' },
@@ -21,7 +23,11 @@ const horarios = [
 
 const MyListbox =({setHora})=> {
     const [selected, setSelected] = useState(horarios[0])
-    setHora(selected)
+
+    useEffect(()=>{
+        setHora(selected)
+    },[selected])
+    
     return (
         <div className="fixed top-16 w-72">
         <Listbox value={selected} onChange={setSelected}>

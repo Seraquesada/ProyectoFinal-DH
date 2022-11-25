@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Reserve from "../form/Reserve";
 import BookingDetails from "../BookingDetails/BookingDetails";
 import './BookingBody.css'
@@ -17,6 +17,10 @@ const BookingBody = ({respuesta}) => {
             </div>
             <div className="bookingDetails">
                 <BookingDetails respuesta={respuesta} hora={hora}/>
+            </div>
+            <div>
+                <h3>Selecciona Tu Fecha de Reserva</h3>
+                <CalendarComponent/>
             </div>
             <div className="horariollegada">
                 <h3> Tu horario de llegada</h3>

@@ -25,14 +25,12 @@ const BookingDetails = ({respuesta, hora}) => {
         }
     }
     const payload = {
-        "horaInicio" : `${hora.horario}:00`,
+        "horaInicio" : `${hora?.horario}:00`,
         "fechaInicio" : `${startNormalized}`,
         "fechaFinalizacion" : `${endNormalized}`,
         "producto" : {"id" : respuesta.id},
         "usuario" : {"id" : parseJwt(jwt).id}
     }
-    console.log(payload)
-
     const reservar = () => {
         axios.post(url, payload, headers)
         .then(function (response) {
