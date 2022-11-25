@@ -1,5 +1,6 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState} from "react";
 import { useParams, Link, Outlet } from "react-router-dom";
+
 import Header from "../header/Header";
 import SliderCard from "../card/SliderCard.jsx";
 import "../card/SliderCard.css";
@@ -10,13 +11,11 @@ import FeaturesCard from "../card/FeaturesCard";
 import PoliticsCard from "../card/PoliticsCard";
 import axios from "axios";
 import Footer from "../footer/Footer";
+import CalendarComponent from "../Calendar/CalendarComponent";
 
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
-import "./SingleVehicle.css";
-import { useHandleRisize } from "../../hooks/useHandleRisize";
-import { useDateChange } from "../../hooks/useDateChange";
 import SingleVehicleSkeleton from "./Skeleton/Skeleton";
+import "./SingleVehicle.css";
+
 
 const SingleVehicle = () => {
 
@@ -24,8 +23,7 @@ const SingleVehicle = () => {
   const url = `  http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/`  ;
   const [isLoading, setLoading] = useState(true);
   const [respuesta, setRespuesta] = useState();
-  const {size} = useHandleRisize(); 
-  const {startDate, endDate, handleDateChange } = useDateChange();
+
 
   useEffect(()=>{
     axios.get(url + id)
@@ -68,16 +66,7 @@ const holidays = [
       <SliderCard respuesta={respuesta} />
       <DescriptionCard respuesta={respuesta}/>
       <div className="container-reserva"> 
-          <DatePicker
-              onChange={handleDateChange}
-              startDate={startDate}
-              endDate={endDate}
-              minDate={new Date()}
-              monthsShown={size > 510 ? 2 : 1}
-              inline
-              selectsRange
-              excludeDates={holidays}
-            />
+      <CalendarComponent/>
         <div className="container-button">
           <Link className="buttonVerMas link" to={"/singleVehicle/" + id + "/reserva"}>Iniciar Reserva</Link>
           <Outlet/>

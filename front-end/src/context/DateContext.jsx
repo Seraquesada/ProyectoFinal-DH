@@ -1,15 +1,17 @@
 import React,{useState,createContext} from 'react'
-
+import {addDays} from "date-fns"
 export const DateContext = createContext();
-
 export const DateProvider = ({children}) => {
 
-    const [startDate, setStartDate] = useState(undefined);
-    const [endDate, setEndDate] = useState(undefined);
-    const [checkIn,setCheckIn] = useState()
-    const [checkOut,setCheckOut] = useState()
+    const [range,setRange] = useState([
+        {
+            startDate: new Date(),
+            endDate: addDays(new Date(),7),
+            key: 'selection'
+        }
+    ])
     return (
-    <DateContext.Provider value={{startDate, setStartDate,endDate, setEndDate,}}>
+    <DateContext.Provider value={{range,setRange}}>
         {children}
     </DateContext.Provider>
 )

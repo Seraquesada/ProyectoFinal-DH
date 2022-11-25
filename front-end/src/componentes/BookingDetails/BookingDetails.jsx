@@ -5,10 +5,10 @@ import './BookingDetails.css'
 
 const BookingDetails = ({respuesta}) => {
 
-    const {startDate,endDate} = useContext(DateContext)
+    const {range} = useContext(DateContext)
 
-    const startNormalized = startDate?.toISOString().split("T")[0]
-    const endNormalized = endDate?.toISOString().split("T")[0]
+    const startNormalized = range[0].startDate?.toISOString().split("T")[0]
+    const endNormalized = range[0].endDate?.toISOString().split("T")[0]
     
     return(
         <div className="infoCard">
