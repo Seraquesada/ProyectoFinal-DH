@@ -6,6 +6,7 @@ import SingleVehicle from "./componentes/singleVehicle/SingleVehicle.jsx"
 import SingleVehicleReserva from './componentes/SingleVehicleReserva/SingleVehicleReserva';
 import { DateProvider } from './context/DateContext';
 import { SkeletonTheme } from 'react-loading-skeleton';
+import reservaExitosa from './componentes/reservation/reservaExitosa';
 
 
 function App() {

@@ -37,7 +37,8 @@
     "react-router-dom": "^6.4.2",
     "react-select": "^5.5.5",
     "react-spinners": "^0.13.6",
-    "react-time-picker": "^5.1.0"
+    "react-time-picker": "^5.1.0",
+    "sweetalert2": "^11.6.14"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
