@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useContext } from 'react';
-import { Button } from 'react-bootstrap';
 import { DateContext } from '../../context/DateContext';
 import './BookingDetails.css'
 
@@ -10,7 +9,7 @@ const BookingDetails = ({respuesta, hora}) => {
 
     const startNormalized = range[0].startDate?.toISOString().split("T")[0]
     const endNormalized = range[0].endDate?.toISOString().split("T")[0]
-    const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas'
+    const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas/'
     const jwt= localStorage.getItem('jwt');
 
     function parseJwt (token) {
