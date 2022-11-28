@@ -7,12 +7,14 @@ import SingleVehicleReserva from './componentes/SingleVehicleReserva/SingleVehic
 import { DateProvider } from './context/DateContext';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import reservaExitosa from './componentes/reservation/reservaExitosa';
+import { AuthContextProvider } from './context/AuthContext';
 
 
 function App() {
 
 
   return (
+    <AuthContextProvider>
       <DateProvider>
         <SkeletonTheme duration={3.5} baseColor="gray" highlightColor="#444">
         <BrowserRouter>
@@ -24,6 +26,7 @@ function App() {
         </BrowserRouter>
         </SkeletonTheme>
       </DateProvider>
+    </AuthContextProvider>
   )
 }
 

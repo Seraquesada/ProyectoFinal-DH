@@ -8,8 +8,9 @@ import axios from "axios";
 
 
 
-const Login = ({authMode, setAuthMode, logIn, setUserName, setShow,setInitials}) => {
+const Login = ({authMode, setAuthMode, logIn, setUserName,setInitials}) => {
   
+  //pasar a authMode
   const [validated, setValidated] = useState(false);
   const [badCredentials, setBadCredentials] = useState(false);
   const [unreachable, setUnreachable] = useState(false);

@@ -45,8 +45,8 @@ export const useFechasReservadas = () => {
 
             // Each day between 6 October 2014 and 10 October 2014:
             const result = eachDayOfInterval({
-                start: addDays(new Date(excludeDatesInterval[i].fechaInicio), 1),
-                end: addDays(new Date(excludeDatesInterval[i].fechaFinalizacion), 1)
+                start: addDays(new Date(excludeDatesInterval[i]?.fechaInicio), 1),
+                end: addDays(new Date(excludeDatesInterval[i]?.fechaFinalizacion), 1)
             })
             aux.push(result)
         }

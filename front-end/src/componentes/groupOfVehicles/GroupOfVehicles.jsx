@@ -1,4 +1,4 @@
-import React, {useEffect,useState,useContext } from 'react';
+import React,{useEffect,useState,useContext} from 'react';
 import Item from '../vehicle/Vehicle';
 import VehicleSkeleton from "../VehicleSkeleton/VehicleSkeleton.jsx"
 import { CategoryContext } from '../../context/CategoryContext';
@@ -78,6 +78,10 @@ const GroupOfVehicles = ()=> {
     setCategoria()
   }
   
+  const filtro = <> <h5> No hay autos disponibles en esta categoria o ciudad</h5>
+                    <button className='reset-form mb-4 btn btn-secondary' onClick={handleClearFilter} type="submit">Reiniciar Busqueda</button>
+                </>
+
   return(
           <div className='groupOfVehicles'>
           <div className='container-reco'>
@@ -97,10 +101,7 @@ const GroupOfVehicles = ()=> {
                 category = {singleItem.categoria.titulo}
               />) 
               :
-              <>
-                <h5> No hay autos disponibles en esta categoria o ciudad</h5>
-                <button className='reset-form mb-4 btn btn-secondary' onClick={handleClearFilter} type="submit">Reiniciar Busqueda</button>
-              </>
+              isLoading? "":filtro
               }
             </div>
           </div>

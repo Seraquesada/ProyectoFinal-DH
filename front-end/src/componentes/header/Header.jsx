@@ -33,7 +33,7 @@ const Header = () => {
 
   if(loggedIn){
     return (
-      <header className="bg-dark mb-4">
+      <header className="bg-dark">
         <div className="left-header">   
         <Link to="/">      
             <img id="logo" src="https://archive.org/download/revolt_dev_version/cover.jpg" alt="logo" />
@@ -55,7 +55,7 @@ const Header = () => {
     )
   }
   return (
-    <header className="bg-dark mb-4">
+    <header className="bg-dark ">
       <div className="left-header">  
         <Link to="/">           
           <img id="logo" src="https://archive.org/download/revolt_dev_version/cover.jpg" alt="logo" />

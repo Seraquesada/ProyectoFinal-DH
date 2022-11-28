@@ -1,6 +1,6 @@
 import React from "react"
 import { useDateChange } from "../../hooks/useDateChange";
-import {DateRange} from "react-date-range"
+import { DateRange } from "react-date-range"
 
 import { useHandleRisize } from "../../hooks/useHandleRisize";
 import { useFechasReservadas } from "../../hooks/useFechasReservadas";
@@ -18,7 +18,7 @@ const CalendarComponent = () => {
         <DateRange
             editableDateInputs={true}
             moveRangeOnFirstSelection={false}
-            months={size > 510? 2 : 1}
+            months={size > 540? 2 : 1}
             onChange={handleDateChange}
             direction="horizontal"
             ranges={range}
@@ -26,6 +26,8 @@ const CalendarComponent = () => {
             minDate={new Date()}
             disabledDates={excludeDays()}
             rangeColors={["orange"]}
+
+            
             />
     </div>
   )

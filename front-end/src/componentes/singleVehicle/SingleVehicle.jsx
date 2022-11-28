@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from "react";
-import { useParams, Link, Outlet } from "react-router-dom";
+import { useParams, Link, Outlet, useNavigate } from "react-router-dom";
 
 import Header from "../header/Header";
 import SliderCard from "../card/SliderCard.jsx";
@@ -15,7 +15,8 @@ import CalendarComponent from "../Calendar/CalendarComponent";
 
 import SingleVehicleSkeleton from "./Skeleton/Skeleton";
 import "./SingleVehicle.css";
-
+import { useAuthContext } from "../../context/AuthContext";
+import { set } from "date-fns";
 
 const SingleVehicle = () => {
 
@@ -23,7 +24,10 @@ const SingleVehicle = () => {
   const url = `  http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/`  ;
   const [isLoading, setLoading] = useState(true);
   const [respuesta, setRespuesta] = useState();
-
+  const navigate = useNavigate();
+  const [existJwt, setExistJwt] = useState(false)
+  const jwt = localStorage.getItem('jwt');
+  const {handleShow} = useAuthContext()
 
   useEffect(()=>{
     axios.get(url + id)
@@ -34,20 +38,22 @@ const SingleVehicle = () => {
       setLoading(false)
     })},[])
 
+    useEffect(() => {
+      if(!jwt){
+        setExistJwt(false)
+      }else{
+        setExistJwt(true)
+      }
+    },[jwt])
 
-const holidays = [
-    new Date(2022, 10, 14),
-    new Date(2022, 11, 11),
-    new Date(2022, 10, 28),
-    new Date(2022, 12, 25),
-    new Date(2022, 1, 1),
-    new Date(2022, 1, 20),
-    new Date(2022, 2, 17),
-    new Date(2022, 5, 25),
-    new Date(2022, 7, 3),
-    new Date(2022, 9, 7)
-  ];
-
+  const handleReserve= () =>{
+    //user
+    if(!jwt){
+      handleShow();
+    }else{
+      navigate(`/singleVehicle/${id}/reserva`)
+    }
+  }
 
   if (isLoading) {
     return (
@@ -68,8 +74,7 @@ const holidays = [
       <div className="container-reserva"> 
       <CalendarComponent/>
         <div className="container-button">
-          <Link className="buttonVerMas link" to={"/singleVehicle/" + id + "/reserva"}>Iniciar Reserva</Link>
-          <Outlet/>
+          <button className="buttonVerMas link" onClick={handleReserve}>Iniciar Reserva</button>
         </div>
       </div>
       <FeaturesCard respuesta={respuesta}/>

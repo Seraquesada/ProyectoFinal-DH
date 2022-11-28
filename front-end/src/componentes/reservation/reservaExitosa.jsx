@@ -3,7 +3,7 @@ import Footer from "../footer/Footer";
 import {useEffect} from 'react';
 import Swal from "sweetalert2";
 
-function reservaExitosa(){
+function ReservaExitosa(){
 
     useEffect(()=>{
         mostrarAlerta();
@@ -19,11 +19,11 @@ function reservaExitosa(){
     return (
         <div>
         <Header />
-        <reservaExitosa/>
+        <ReservaExitosa/>
         <Footer />
         </div>
     );
     
 }
 
-export default reservaExitosa;
+export default ReservaExitosa;

@@ -4,7 +4,7 @@ import {IoMdPin} from "react-icons/io";
 
 const UbicationCard = ({respuesta}) => {
     return(
-        <div className="ubicationCard">
+        <div className="ubicationCard mb-2">
             
             <div className="infoUbicacion">
                 <h5>Ubicación del vehículo: {respuesta.ciudad.nombre}</h5>

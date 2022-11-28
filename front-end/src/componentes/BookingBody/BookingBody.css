@@ -1,39 +1,33 @@
-.bookingBody {
+.container-reserva {
     display: grid;
-    color:rgb(40, 14, 90);
-    width: 100%;
-    height: 100%;
-    grid-template-columns:65% 35%;
+    grid-template-columns:70% 15% 15%;
     grid-template-rows: repeat(3,auto);
 }
 
-.forms{
-    grid-column : 1/2;
-    grid-row: 1/2;
-    margin:.2rem;
-    padding:.5rem;
-    width:100%
-}
-
-
-.bookingDetails {
-    grid-column: 2/3 ;
-    grid-row: 1/4;
-    place-self: center;
-    height: 100%;
-    margin:20px
+.booking-body{
+    grid-column: 1/2;
+    width: 80%;
 }
 
 .horariollegada{
     background-color: white;
     grid-column: 1/2;
     grid-row:4/5;
-    margin:.2rem;
     padding:.5rem;
 }
 
+.calendarElement{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: .5rem;
+    position: relative;
+}
 
-
+.container-booking-details {
+    grid-column: 2/4 ;
+    grid-row: 1/4;
+}
 @media screen and (max-width: 768px){
     .bookingBody {
         grid-template-columns:100%;

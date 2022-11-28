@@ -44,13 +44,14 @@ const SearchBar = () => {
     }
 
     return (
-            <div className="container-forms">
-                <Form className="form" onSubmit={handleSubmit}>
-                    <CalendarSearchBar/>
-                    <Select placeholder="Elija una localidad..." className='select'  options={selectDisplay} onChange={(choice) => setUserChoice(choice.value)}/>
-                    <Button className='btn btn-secondary' type="submit">Buscar</Button>
-                </Form>
-            </div>
+
+        <div className="container-forms">
+            <Form className="form" onSubmit={handleSubmit}>
+                <CalendarSearchBar/>
+                <Select placeholder="Elija una localidad..." className='select'  options={selectDisplay} onChange={(choice) => setUserChoice(choice.value)}/>
+                <Button className='btn btn-secondary' type="submit">Buscar</Button>
+            </Form>
+        </div>
         
     )
 }

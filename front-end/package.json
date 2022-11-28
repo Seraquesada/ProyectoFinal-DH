@@ -9,11 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/styled": "^11.10.4",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@fontsource/roboto": "^4.5.8",
     "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^2.0.13",
-    "@mui/material": "^5.10.10",
+    "@mui/material": "^5.10.16",
     "@mui/x-date-pickers": "^5.0.8",
     "@popperjs/core": "^2.11.6",
     "@syncfusion/ej2-react-calendars": "^20.3.56",

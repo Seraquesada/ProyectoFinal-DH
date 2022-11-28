@@ -9,7 +9,8 @@ const BookingDetails = ({respuesta, hora}) => {
 
     const startNormalized = range[0].startDate?.toISOString().split("T")[0]
     const endNormalized = range[0].endDate?.toISOString().split("T")[0]
-    const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas/'
+    
+    const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas'
     const jwt= localStorage.getItem('jwt');
 
     function parseJwt (token) {
@@ -44,15 +45,21 @@ const BookingDetails = ({respuesta, hora}) => {
     
     return(
         <div className="infoCard">
-            <h3> Detalle de Reserva</h3>
-            <img className='auto' loading="lazy" src={respuesta.imagenes[1]?.url} />
-            <h5> {respuesta.categoria.titulo}</h5>
-            <h4> {respuesta.titulo}</h4>
-            <h5> {respuesta.ciudad.nombre}</h5>
-            <hr></hr>
-            <h4 className='checkinOut'> Check in {startNormalized} </h4>
-            <hr></hr>
-            <h4 className='checkinOut'> Check out {endNormalized} </h4>
+            <div>
+                <h3>Detalle de Reserva</h3>
+                <img className='auto' loading="lazy" src={respuesta.imagenes[1]?.url} />
+            </div>
+            <div>
+                <h5>{respuesta.categoria.titulo}</h5>
+                <h4>{respuesta.titulo}</h4>
+                <h5>{respuesta.ciudad.nombre}</h5>
+            </div>
+            <div>
+                <h4 className='checkinOut'>Check in {startNormalized}</h4>
+                <hr></hr>
+                <h4 className='checkinOut'>Check out {endNormalized}</h4>
+                <hr></hr>
+            </div>
             <button onClick={reservar} className='btn btn-primary'>Confirmar reserva</button>  
         </div>
     );
