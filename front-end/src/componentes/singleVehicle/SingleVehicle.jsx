@@ -16,7 +16,7 @@ import CalendarComponent from "../Calendar/CalendarComponent";
 import SingleVehicleSkeleton from "./Skeleton/Skeleton";
 import "./SingleVehicle.css";
 import { useAuthContext } from "../../context/AuthContext";
-import { set } from "date-fns";
+
 
 const SingleVehicle = () => {
 
@@ -46,10 +46,11 @@ const SingleVehicle = () => {
       }
     },[jwt])
 
-  const handleReserve= () =>{
+  const handleReserve= async () =>{
     //user
-    if(!jwt){
+    if(!existJwt){
       handleShow();
+      
     }else{
       navigate(`/singleVehicle/${id}/reserva`)
     }

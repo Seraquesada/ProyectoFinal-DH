@@ -1,33 +1,27 @@
 import React from "react";
 import "../form/Reserve.css";
 
-let styles = {
-    fontWeight: "bold",
-    color: "#dc3545",
-    position: "relative",
-    display: "flex",
-    justifyContent:"center"
-};
-
 function parseJwt (token) {
   let base64Url = token?.split('.')[1];
   let base64 = base64Url?.replace('-', '+').replace('_', '/');
   return JSON.parse(window.atob(base64));
 }
 
+  const jwt = localStorage.getItem('jwt');
+
 const Reserve = () => {
 
   return (
+    <>
+    <h2 className="completar-datos">Completá tus datos</h2>
     <div className="form-reserva">
-      <h2 className="completar-datos">Completá tus datos</h2>
-      <form></form>
       <div className="controls-ft">
         <div className="container-input">
         <h3>Nombre</h3>
           <input
             type="text"
             name="name"
-            value={parseJwt(localStorage.getItem('jwt')).nombre}
+            value={parseJwt(jwt).nombre}
             required
             disabled
             />
@@ -38,7 +32,7 @@ const Reserve = () => {
             type="text"
             name="surname"
             placeholder="Rodriguez"
-            value={parseJwt(localStorage.getItem('jwt')).apellido}
+            value={parseJwt(jwt).apellido}
             required
             disabled
           />
@@ -51,13 +45,14 @@ const Reserve = () => {
               type="email"
               name="email"
               placeholder="brodriguez@gmail.com"
-              value={parseJwt(localStorage.getItem('jwt')).sub}
+              value={parseJwt(jwt).sub}
               required
               disabled
               />
         </div>
       </div>
     </div>
+    </>
   );
 };
 

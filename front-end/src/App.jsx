@@ -6,12 +6,10 @@ import SingleVehicle from "./componentes/singleVehicle/SingleVehicle.jsx"
 import SingleVehicleReserva from './componentes/SingleVehicleReserva/SingleVehicleReserva';
 import { DateProvider } from './context/DateContext';
 import { SkeletonTheme } from 'react-loading-skeleton';
-import reservaExitosa from './componentes/reservation/reservaExitosa';
 import { AuthContextProvider } from './context/AuthContext';
 
 
 function App() {
-
 
   return (
     <AuthContextProvider>
@@ -22,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/singleVehicle/:id" element={<SingleVehicle />} />
             <Route path="/singleVehicle/:id/reserva" element={<SingleVehicleReserva/>} />
+            {/*Route path="/administracion" element={<MisReservas />} />*/}
           </Routes>
         </BrowserRouter>
         </SkeletonTheme>

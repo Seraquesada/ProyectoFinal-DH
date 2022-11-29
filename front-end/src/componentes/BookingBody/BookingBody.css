@@ -19,9 +19,9 @@
 .calendarElement{
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 100% !important;
     border-radius: .5rem;
-    position: relative;
+    position: relative !important;
 }
 
 .container-booking-details {
