@@ -1,25 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useAuthContext } from '../../context/AuthContext';
 import Login from '../login/Login';
 import "./CustomModal.css";
 
-const CustomModal = ({logIn, setUserName, setInitials}) => {
+const CustomModal = () => {
 
+  const {
+    show,
+    wrapperFunctionSignIn,
+    wrapperFunctionSignUp,
+    handleClose
+      } = useAuthContext()
 
-  const [authMode, setAuthMode] = useState("signin")
-  const {show,handleShow,handleClose} = useAuthContext()
-
-  const wrapperFunctionSignIn = () => {
-    handleShow();
-    setAuthMode("signin");
-  }
-  
-  const wrapperFunctionSignUp = () => {
-    handleShow();
-    setAuthMode("signup");
-  }
 
   return (
     <>
@@ -41,7 +35,7 @@ const CustomModal = ({logIn, setUserName, setInitials}) => {
           <Modal.Title>Bienvenido a Re-Volt Rentals</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-dark">
-          <Login authMode={authMode} setAuthMode={setAuthMode} logIn={logIn} setUserName={setUserName} setInitials={setInitials}/>
+          <Login/>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

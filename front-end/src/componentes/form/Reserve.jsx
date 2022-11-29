@@ -22,7 +22,6 @@ const Reserve = () => {
             type="text"
             name="name"
             value={parseJwt(jwt).nombre}
-            required
             disabled
             />
         </div>
@@ -33,7 +32,6 @@ const Reserve = () => {
             name="surname"
             placeholder="Rodriguez"
             value={parseJwt(jwt).apellido}
-            required
             disabled
           />
         </div>
@@ -46,7 +44,6 @@ const Reserve = () => {
               name="email"
               placeholder="brodriguez@gmail.com"
               value={parseJwt(jwt).sub}
-              required
               disabled
               />
         </div>

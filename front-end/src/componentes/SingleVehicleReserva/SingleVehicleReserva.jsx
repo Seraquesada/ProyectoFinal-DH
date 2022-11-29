@@ -15,13 +15,8 @@ const SingleVehicleReserva = () => {
     
     const jwt = localStorage.getItem('jwt');
 
-    const headers = {
-      headers: {
-          "Authorization" : `Bearer ${jwt}`
-      }
-  }
     useEffect(()=>{
-        axios.get(url + id,headers)
+        axios.get(url + id)
         .then(res=> {   
             const datos = res.data
             setRespuesta(datos)
