@@ -12,9 +12,16 @@ const SingleVehicleReserva = () => {
     const url = "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/";
     const [isLoading, setLoading] = useState(true);
     const [respuesta, setRespuesta] = useState();
+    
+    const jwt = localStorage.getItem('jwt');
 
+    const headers = {
+      headers: {
+          "Authorization" : `Bearer ${jwt}`
+      }
+  }
     useEffect(()=>{
-        axios.get(url + id)
+        axios.get(url + id,headers)
         .then(res=> {   
             const datos = res.data
             setRespuesta(datos)

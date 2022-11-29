@@ -25,9 +25,10 @@ const SingleVehicle = () => {
   const [isLoading, setLoading] = useState(true);
   const [respuesta, setRespuesta] = useState();
   const navigate = useNavigate();
-  const [existJwt, setExistJwt] = useState(false)
   const jwt = localStorage.getItem('jwt');
-  const {handleShow} = useAuthContext()
+  const [existJwt, setExistJwt] = useState(jwt)
+  console.log(jwt,existJwt)
+  const {handleShow,handleClose} = useAuthContext()
 
   useEffect(()=>{
     axios.get(url + id)
@@ -39,21 +40,19 @@ const SingleVehicle = () => {
     })},[])
 
     useEffect(() => {
-      if(!jwt){
-        setExistJwt(false)
-      }else{
-        setExistJwt(true)
+      if(jwt){
+        setExistJwt(jwt)
       }
     },[jwt])
 
-  const handleReserve= async () =>{
+  const handleReserve= () =>{
     //user
-    if(!existJwt){
-      handleShow();
-      
-    }else{
+    if(existJwt !== null ){
       navigate(`/singleVehicle/${id}/reserva`)
+    }else{
+      handleShow();
     }
+    
   }
 
   if (isLoading) {

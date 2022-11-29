@@ -64,6 +64,7 @@ const Login = ({authMode, setAuthMode, logIn, setUserName,setInitials}) => {
       "username": document.querySelector("#emailLog").value,
       "password" : document.querySelector("#passwordLog").value
     }
+    
     axios.post('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/usuarios/authenticate', payload)
     .then(function (response) {
       if(response.status === 200){
