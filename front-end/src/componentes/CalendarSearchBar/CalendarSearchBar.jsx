@@ -3,11 +3,11 @@ import React,{useEffect, useState,useRef} from "react"
 import {DateRange} from "react-date-range"
 import { useDateChange } from "../../hooks/useDateChange";
 import { useHandleRisize } from "../../hooks/useHandleRisize";
-import 'react-date-range/dist/styles.css'; // main css file
-import 'react-date-range/dist/theme/default.css'; // theme css file
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import format from 'date-fns/format'
+
+import "./CalendarSearchBar.css"
 
 const CalendarSearchBar = () => {
     const {range,handleDateChange } = useDateChange();
@@ -85,7 +85,7 @@ const CalendarSearchBar = () => {
                     moveRangeOnFirstSelection={false}
                     minDate={new Date()}
                     ranges={range}
-                    months={size > 510? 2 : 1}
+                    months={size > 810? 2 : 1}
                     direction="horizontal"
                     className="calendarSearchBar"
                     staticRanges={[null,null]}
