@@ -19,10 +19,10 @@ const CalendarSearchBar = () => {
   })
 
   useEffect(() => {
-      if (range) {
+      if (range && range[0].startDate != undefined && range[0].endDate != undefined) {
           setBookinRange({
-              checkin: format(range[0].startDate, "dd/MM/yyyy"),
-              checkout: format(range[0].endDate, "dd/MM/yyyy")
+              checkin: format(range[0]?.startDate, "dd/MM/yyyy"),
+              checkout: format(range[0]?.endDate, "dd/MM/yyyy")
           }
           )
       }
