@@ -126,7 +126,7 @@ export const AuthContextProvider = ({children}) => {
             "mail": document.querySelector("#email").value,
             "password" : document.querySelector("#password").value
         }
-        axios.post('http://ec2-3-133-152-253.us-east-2.compute.amazonawscompute.amazonaws.com:8080/usuarios', payload)
+        axios.post('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/usuarios', payload)
         .then(function (response) {
             if(response.status === 200){
             setUnreachable(false);
@@ -163,7 +163,8 @@ return (
             wrapperFunctionSignIn,
             wrapperFunctionSignUp,
             handleClose,
-            handleShow
+            handleShow,
+            setShow
         }
         }>
         {children}

@@ -1,16 +1,18 @@
 import React from "react";
 import "../form/Reserve.css";
 
-function parseJwt (token) {
-  let base64Url = token?.split('.')[1];
-  let base64 = base64Url?.replace('-', '+').replace('_', '/');
-  return JSON.parse(window.atob(base64));
-}
 
-  const jwt = localStorage.getItem('jwt');
 
 const Reserve = () => {
 
+  function parseJwt (token) {
+    let base64Url = token?.split('.')[1];
+    let base64 = base64Url?.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64));
+  }
+  
+    const jwt = localStorage.getItem('jwt');
+    
   return (
     <>
     <h2 className="completar-datos">Completá tus datos</h2>

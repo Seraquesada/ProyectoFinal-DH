@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { DateContext } from '../../context/DateContext';
 import './BookingDetails.css'
 
-const BookingDetails = ({respuesta, hora}) => {
+const BookingDetails = ({respuesta,hora}) => {
 
     const {range} = useContext(DateContext)
 
@@ -13,9 +13,9 @@ const BookingDetails = ({respuesta, hora}) => {
     const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas'
     const jwt= localStorage.getItem('jwt');
 
-    function parseJwt (token) {
-        let base64Url = token.split('.')[1];
-        let base64 = base64Url.replace('-', '+').replace('_', '/');
+    const parseJwt = async (token) => {
+        let base64Url = await token?.split('.')[1];
+        let base64 = await base64Url?.replace('-', '+').replace('_', '/');
         return JSON.parse(window.atob(base64));
     }
     
@@ -29,7 +29,7 @@ const BookingDetails = ({respuesta, hora}) => {
         "fechaInicio" : `${startNormalized}`,
         "fechaFinalizacion" : `${endNormalized}`,
         "producto" : {"id" : respuesta.id},
-        "usuario" : {"id" : parseJwt(jwt).id}
+        "usuario" : {"id" : parseJwt(jwt)?.id}
     }
     const reservar = () => {
         axios.post(url, payload, headers)

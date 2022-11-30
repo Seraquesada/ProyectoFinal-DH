@@ -16,32 +16,23 @@ import CalendarComponent from "../Calendar/CalendarComponent";
 import SingleVehicleSkeleton from "./Skeleton/Skeleton";
 import "./SingleVehicle.css";
 import { useAuthContext } from "../../context/AuthContext";
+import { useAxiosGet } from "../../hooks/useAxiosGet";
 
 
 const SingleVehicle = () => {
 
-  const { id } = useParams();
-  const url = `  http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/`  ;
-  const [isLoading, setLoading] = useState(true);
-  const [respuesta, setRespuesta] = useState();
   const navigate = useNavigate();
   
-  const {handleShow,loggedIn} = useAuthContext()
-  console.log(loggedIn)
-
-  useEffect(()=>{
-    axios.get(url + id)
-    .then(res=> 
-    {
-      const datos = res.data
-      setRespuesta(datos)
-      setLoading(false)
-    })},[])
+  const { id } = useParams();
+  const url = `http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/${id}`  ;
+  const {respuesta, isLoading} = useAxiosGet(url)
+  const {handleShow,loggedIn,setShow} = useAuthContext()
 
   const handleReserve= () =>{
     //user
     if(loggedIn){
       navigate(`/singleVehicle/${id}/reserva`)
+      setShow(false)
     }else{
       handleShow();
     }

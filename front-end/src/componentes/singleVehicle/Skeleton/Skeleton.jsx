@@ -8,13 +8,13 @@ const SingleVehicleSkeleton = ({cards}) => {
     .fill(0)
     .map((_, i) => (
         <>
-            <div className="headerCard" key={i}>
+            <div className="headerCard" key={1}>
                 <Skeleton cards={2}  width={200} height={20}/>
             </div>
-            <div className="ubicationCard" key={i}>
+            <div className="ubicationCard" key={2}>
                 <Skeleton  width={200} height={20}/> 
             </div>
-            <div className="container-pictures-skeleton" key={i}>
+            <div className="container-pictures-skeleton" key={3}>
                 <div className="card-ltside">
                     <Skeleton  height={500} />
                 </div>
@@ -32,7 +32,7 @@ const SingleVehicleSkeleton = ({cards}) => {
                     <Skeleton className="image" />
                 </div>
             </div>                
-            <div className="descriptionCard" key={i}>
+            <div className="descriptionCard" key={4}>
                 <Skeleton width={200} height={20}  />
                 <Skeleton  />
                 <Skeleton  />
