@@ -13,10 +13,10 @@ const CalendarSearchBar = () => {
     const {range,handleDateChange } = useDateChange();
     const {size} = useHandleRisize(); 
 
-  const [BookinRange, setBookinRange] = useState({
-      checkin: '',
-      checkout: ''
-  })
+    const [BookinRange, setBookinRange] = useState({
+        checkin: '',
+        checkout: ''
+    })
 
   useEffect(() => {
       if (range && range[0].startDate != undefined && range[0].endDate != undefined) {
@@ -66,7 +66,7 @@ const CalendarSearchBar = () => {
               sx={{ width: '50%', mr: 1 }}
               label="Check-in"
               variant="standard"
-              localeText={{ start: 'Check-in', end: 'Check-out' }}
+              localtext={{ start: 'Check-in', end: 'Check-out' }}
               onClick={() => setOpen(open => !open)}
               value={BookinRange.checkin} />
           <TextField

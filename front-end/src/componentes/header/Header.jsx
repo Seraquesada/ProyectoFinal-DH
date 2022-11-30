@@ -4,32 +4,16 @@ import Button from 'react-bootstrap/Button';
 import SideBarBootstrap from '../sideBarBootsStrap/SideBarBootstrap';
 import "./Header.css";
 import {Link} from 'react-router-dom';
+import { useAuthContext } from '../../context/AuthContext';
 
 const Header = () => {
 
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [initials, setInitials] = useState(localStorage.getItem('initials'));
-  const [userName, setUserName] = useState(localStorage.getItem('username'));
-  
-  const logOut = () => {
-    localStorage.removeItem('jwt');
-    localStorage.removeItem('username');
-    localStorage.removeItem('initials');
-    setLoggedIn(false)
-  }
-  const logIn = () => {
-    setLoggedIn(true)
-  }
-
-  const isLoggedIn = () => {
-    if(localStorage.getItem('jwt')){
-      setLoggedIn(true)
-    }
-  }
-  
-  useEffect(()=>{
-    isLoggedIn();
-  },[])
+  const {
+    loggedIn,
+    initials,
+    userName,
+    logOut,
+  } = useAuthContext()
 
   if(loggedIn){
     return (
@@ -50,7 +34,7 @@ const Header = () => {
             Cerrar Sesión
           </Button>
         </div>
-        <SideBarBootstrap userName={userName} initials={initials} logIn={logIn} logOut={logOut} loggedIn={loggedIn} setUserName={setUserName} setInitials={setInitials} placement={"end"}/>
+        <SideBarBootstrap />
       </header>
     )
   }
@@ -67,9 +51,9 @@ const Header = () => {
             
 
       <div className="right-header">
-        <CustomModal logIn={logIn} setUserName={setUserName} setInitials={setInitials}/>
+        <CustomModal />
       </div>
-      <SideBarBootstrap logIn={logIn} setUserName={setUserName} setInitials={setInitials} placement={"end"}/>
+      <SideBarBootstrap placement={"end"}/>
     </header>
   )
 }

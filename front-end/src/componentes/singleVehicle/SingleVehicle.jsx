@@ -16,7 +16,7 @@ import CalendarComponent from "../Calendar/CalendarComponent";
 import SingleVehicleSkeleton from "./Skeleton/Skeleton";
 import "./SingleVehicle.css";
 import { useAuthContext } from "../../context/AuthContext";
-import { set } from "date-fns";
+
 
 const SingleVehicle = () => {
 
@@ -25,9 +25,9 @@ const SingleVehicle = () => {
   const [isLoading, setLoading] = useState(true);
   const [respuesta, setRespuesta] = useState();
   const navigate = useNavigate();
-  const [existJwt, setExistJwt] = useState(false)
-  const jwt = localStorage.getItem('jwt');
-  const {handleShow} = useAuthContext()
+  
+  const {handleShow,loggedIn} = useAuthContext()
+  console.log(loggedIn)
 
   useEffect(()=>{
     axios.get(url + id)
@@ -38,21 +38,14 @@ const SingleVehicle = () => {
       setLoading(false)
     })},[])
 
-    useEffect(() => {
-      if(!jwt){
-        setExistJwt(false)
-      }else{
-        setExistJwt(true)
-      }
-    },[jwt])
-
   const handleReserve= () =>{
     //user
-    if(!jwt){
-      handleShow();
-    }else{
+    if(loggedIn){
       navigate(`/singleVehicle/${id}/reserva`)
+    }else{
+      handleShow();
     }
+    
   }
 
   if (isLoading) {
