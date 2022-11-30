@@ -5,8 +5,8 @@ export const DateContext = createContext();
 export const DateProvider = ({children}) => {
     const [range,setRange] = useState([
         {
-            startDate: new Date(),
-            endDate: addDays(new Date(),7),
+            startDate: undefined,
+            endDate: undefined,
             key: 'selection'
         }
     ])

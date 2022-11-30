@@ -18,15 +18,15 @@ const CalendarSearchBar = () => {
         checkout: ''
     })
 
-    useEffect(() => {
-        if (range) {
-            setBookinRange({
-                checkin: format(range[0]?.startDate, "dd/MM/yyyy"),
-                checkout: format(range[0]?.endDate, "dd/MM/yyyy")
-            }
-            )
-        }
-    }, [range])
+  useEffect(() => {
+      if (range && range[0].startDate != undefined && range[0].endDate != undefined) {
+          setBookinRange({
+              checkin: format(range[0]?.startDate, "dd/MM/yyyy"),
+              checkout: format(range[0]?.endDate, "dd/MM/yyyy")
+          }
+          )
+      }
+  }, [range])
   // FIN - Muestra visualmente las fechas seleccionadas - formato
 
   // ==========================//
