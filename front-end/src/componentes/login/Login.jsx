@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import "./Login.css";
-
 import { useAuthContext } from '../../context/AuthContext';
 
 
@@ -13,6 +12,7 @@ const Login = () => {
   
   //pasar a authMode
   const {
+    handleClose,
     validated,
     badCredentials,
     unreachable,
@@ -22,7 +22,7 @@ const Login = () => {
     checkEquals,
     changeAuthMode,
     authMode
-      } = useAuthContext()
+    } = useAuthContext()
   
   
   if (authMode === "signin") {
@@ -53,7 +53,7 @@ const Login = () => {
               Lamentablemente no ha podido iniciar sesión. Por favor intente de nuevo más tarde.
               </Alert>
 
-              <Button type="submit" className="btn-warning">             
+              <Button type="submit" className="btn-warning" onClick={handleClose}>             
                 Ingresar
               </Button>
             </div>
