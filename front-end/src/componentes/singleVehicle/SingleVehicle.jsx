@@ -1,5 +1,5 @@
-import React, { useEffect, useState} from "react";
-import { useParams, Link, Outlet, useNavigate } from "react-router-dom";
+import React from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
 import Header from "../header/Header";
 import SliderCard from "../card/SliderCard.jsx";
@@ -9,7 +9,6 @@ import UbicationCard from "../card/UbicationCard";
 import DescriptionCard from "../card/DescriptionCard";
 import FeaturesCard from "../card/FeaturesCard";
 import PoliticsCard from "../card/PoliticsCard";
-import axios from "axios";
 import Footer from "../footer/Footer";
 import CalendarComponent from "../Calendar/CalendarComponent";
 
@@ -55,7 +54,7 @@ const SingleVehicle = () => {
       <UbicationCard respuesta={respuesta} />
       <SliderCard respuesta={respuesta} />
       <DescriptionCard respuesta={respuesta}/>
-      <div className="container-reserva"> 
+      <div className="containerReserva"> 
       <CalendarComponent/>
         <div className="container-button">
           <button className="buttonVerMas link" onClick={handleReserve}>Iniciar Reserva</button>

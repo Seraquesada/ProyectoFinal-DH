@@ -11,71 +11,74 @@ const GroupOfVehicles = ()=> {
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const {categoria,ciudad,setCategoria,  setCiudad } = useContext(CategoryContext)
-  const {range} = useContext(DateContext)
+  const {range,setRange} = useContext(DateContext)
 
-  const fechaInicio = range[0].startDate?.toISOString().split("T")[0]
-  const fechaFinal = range[0].endDate?.toISOString().split("T")[0]
+  const fechaInicio = range[0]?.startDate?.toISOString().split("T")[0]
+  const fechaFinal = range[0]?.endDate?.toISOString().split("T")[0]
 
   useEffect(()=>{
-    if(categoria === undefined && ciudad === undefined && range[0].startDate === undefined){
+    if(categoria === undefined && ciudad === undefined && range[0]?.startDate === undefined){
           axios.get('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos')
     .then(res=>{
       setData(res.data)
       setLoading(false)
     })
-    }else if(categoria != undefined && ciudad === undefined && range[0].startDate === undefined){
+    }else if(categoria != undefined && ciudad === undefined && range[0]?.startDate === undefined){
     axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?categoria=${categoria}`)
       .then(res=>{
         setData(res.data)
         setLoading(false)
     })
-    }else if(categoria === undefined && ciudad != undefined && range[0].startDate === undefined){
+    }else if(categoria === undefined && ciudad != undefined && range[0]?.startDate === undefined){
     axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?ciudad=${ciudad}`)
       .then(res=>{
         setData(res.data)
         setLoading(false)
     })
     }
-    else if(categoria != undefined && ciudad != undefined && range[0].startDate === undefined){
+    else if(categoria != undefined && ciudad != undefined && range[0]?.startDate === undefined){
     axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?categoria=${categoria}&ciudad=${ciudad}`)
       .then(res=>{
         setData(res.data)
         setLoading(false)
     })
     }
-    else if(categoria === undefined && ciudad === undefined && range[0].startDate != undefined && range[0].endDate != undefined){
+    else if(categoria === undefined && ciudad === undefined && range[0]?.startDate != undefined && range[0]?.endDate != undefined){
     axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?fechaInicio=${fechaInicio}&fechaFinal=${fechaFinal}`)
       .then(res=>{
         setData(res.data)
         setLoading(false)
     })
     }
-    else if(categoria != undefined && ciudad === undefined && range[0].startDate != undefined && range[0].endDate != undefined){
+    else if(categoria != undefined && ciudad === undefined && range[0]?.startDate != undefined && range[0]?.endDate != undefined){
     axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?categoria=${categoria}&fechaInicio=${fechaInicio}&fechaFinal=${fechaFinal}`)
       .then(res=>{
         setData(res.data)
         setLoading(false)
     })
     }
-    else if(categoria === undefined && ciudad != undefined && range[0].startDate != undefined && range[0].endDate != undefined){
+    else if(categoria === undefined && ciudad != undefined && range[0]?.startDate != undefined && range[0]?.endDate != undefined){
     axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?ciudad=${ciudad}&fechaInicio=${fechaInicio}&fechaFinal=${fechaFinal}`)
       .then(res=>{
         setData(res.data)
         setLoading(false)
     })
     }
-    else if(categoria != undefined && ciudad != undefined && range[0].startDate != undefined && range[0].endDate != undefined){
+    else if(categoria != undefined && ciudad != undefined && range[0]?.startDate != undefined && range[0]?.endDate != undefined){
     axios.get(`http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?categoria=${categoria}&ciudad=${ciudad}&fechaInicio=${fechaInicio}&fechaFinal=${fechaFinal}`)
       .then(res=>{
         setData(res.data)
         setLoading(false)
     })
     }
-  },[categoria, ciudad, range[0].startDate, range[0].endDate])
+  },[categoria, ciudad, range[0]?.startDate, range[0]?.endDate])
+
 
   const handleClearFilter =() =>{
     setCiudad()
     setCategoria()
+    setRange([{startDate: undefined,endDate: undefined,key: 'selection'}])
+
   }
   
   const filtro = <> <h5> No hay autos disponibles en esta categoria o ciudad</h5>
@@ -94,7 +97,7 @@ const GroupOfVehicles = ()=> {
               <Item
                 id={singleItem.id}
                 key = {singleItem.id}
-                url_imagen = {singleItem.imagenes[0]?.url}
+                url_imagen = {singleItem.imagenes[0].url}
                 title = {singleItem.titulo}
                 location ={singleItem.ciudad.nombre}
                 description={singleItem.descripcion}

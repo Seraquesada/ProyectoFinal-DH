@@ -15,11 +15,11 @@ const Reserve = () => {
     
   return (
     <>
-    <h2 className="completar-datos">Completá tus datos</h2>
+    <h3 className="completar-datos">Completá tus datos</h3>
     <div className="form-reserva">
       <div className="controls-ft">
         <div className="container-input">
-        <h3>Nombre</h3>
+        <h4>Nombre</h4>
           <input
             type="text"
             name="name"
@@ -28,7 +28,7 @@ const Reserve = () => {
             />
         </div>
         <div className="container-input">
-          <h3>Apellido</h3>
+          <h4>Apellido</h4>
           <input
             type="text"
             name="surname"
@@ -40,7 +40,7 @@ const Reserve = () => {
       </div>
       <div className="controls-sn">
         <div className="container-input">
-          <h3>Correo electronico</h3>
+          <h4>Correo electronico</h4>
             <input
               type="email"
               name="email"
