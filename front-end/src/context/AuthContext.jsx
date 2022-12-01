@@ -22,13 +22,19 @@ export const AuthContextProvider = ({children}) => {
     const [authMode, setAuthMode] = useState("signin")
     
     const wrapperFunctionSignIn = () => {
-        handleShow();
+        setValidated(false);
+        setBadCredentials(false);
+        setUnreachable(false);
         setAuthMode("signin");
+        handleShow();
     }
     
     const wrapperFunctionSignUp = () => {
-        handleShow();
+        setValidated(false);
+        setBadCredentials(false);
+        setUnreachable(false);
         setAuthMode("signup");
+        handleShow();
     }
 
     const logOut = () => {
@@ -51,14 +57,14 @@ export const AuthContextProvider = ({children}) => {
     },[])
 
     const handleSubmit = (event) => {
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-            setValidated(true);
-        }else {
-            authMode === "signin" ? iniciarSesion(event) : registrarUsuario(event)
-        }
+            const form = event.currentTarget;
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                setValidated(true);
+            }else {
+                authMode === "signin" ? iniciarSesion(event) : registrarUsuario(event)
+            }
         }
     
         const checkEquals = (e) => {
@@ -91,8 +97,8 @@ export const AuthContextProvider = ({children}) => {
         }
 
         const iniciarSesion = (e) => {
-        setRegisteredOK(false);
         e.preventDefault();
+        setRegisteredOK(false);
         let payload = {
             "username": document.querySelector("#emailLog").value,
             "password" : document.querySelector("#passwordLog").value
@@ -109,6 +115,7 @@ export const AuthContextProvider = ({children}) => {
             localStorage.setItem('username', username);
             setInitials(iniciales);
             setUserName(username);
+            handleClose();
             logIn();
             }
         }).catch(function (error) {

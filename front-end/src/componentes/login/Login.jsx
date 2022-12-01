@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import "./Login.css";
-
 import { useAuthContext } from '../../context/AuthContext';
 
 
@@ -22,7 +21,7 @@ const Login = () => {
     checkEquals,
     changeAuthMode,
     authMode
-      } = useAuthContext()
+    } = useAuthContext()
   
   
   if (authMode === "signin") {
