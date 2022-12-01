@@ -12,7 +12,6 @@ const Login = () => {
   
   //pasar a authMode
   const {
-    handleClose,
     validated,
     badCredentials,
     unreachable,
@@ -53,7 +52,7 @@ const Login = () => {
               Lamentablemente no ha podido iniciar sesión. Por favor intente de nuevo más tarde.
               </Alert>
 
-              <Button type="submit" className="btn-warning" onClick={handleClose}>             
+              <Button type="submit" className="btn-warning">             
                 Ingresar
               </Button>
             </div>

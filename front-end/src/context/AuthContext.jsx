@@ -97,8 +97,8 @@ export const AuthContextProvider = ({children}) => {
         }
 
         const iniciarSesion = (e) => {
-        setRegisteredOK(false);
         e.preventDefault();
+        setRegisteredOK(false);
         let payload = {
             "username": document.querySelector("#emailLog").value,
             "password" : document.querySelector("#passwordLog").value
@@ -115,6 +115,7 @@ export const AuthContextProvider = ({children}) => {
             localStorage.setItem('username', username);
             setInitials(iniciales);
             setUserName(username);
+            handleClose();
             logIn();
             }
         }).catch(function (error) {
