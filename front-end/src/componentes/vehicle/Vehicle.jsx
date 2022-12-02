@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet } from 'react-router-dom'
 import "../groupOfVehicles/GroupOfVehicles.css";
 import "./Vehicle.css";
-import { GrStar } from "react-icons/gr";
+
 import {IoMdPin} from "react-icons/io";
 import{GiCarWheel,GiCarSeat} from "react-icons/gi";
 
@@ -23,23 +23,6 @@ import{GiCarWheel,GiCarSeat} from "react-icons/gi";
         <div>
           <div className="category-star">
             <p className="reco-name-category">{category}</p>
-            <p className="star">
-              <span>
-                <GrStar />
-              </span>
-              <span>
-                <GrStar />
-              </span>
-              <span>
-                <GrStar />
-              </span>
-              <span>
-                <GrStar />
-              </span>
-              <span>
-                <GrStar />
-              </span>
-            </p>
           </div>
           <h4 className="titleCard">{title}</h4>
         </div>

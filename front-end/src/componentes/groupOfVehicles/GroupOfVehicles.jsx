@@ -87,9 +87,9 @@ const GroupOfVehicles = ()=> {
 
   return(
           <div className='groupOfVehicles'>
-          <div className='container-reco'>
+          <div className='container-reco' >
             <h2 className='tituloReco'>{categoria !== undefined ? "Recomendaciones: "+ data.map(item => (item.categoria.titulo)).pop() : "Recomendaciones "}</h2>
-            <div className='itemGroupOfVehicles'>
+            <div className='itemGroupOfVehicles' >
               {isLoading && <VehicleSkeleton  cards={4}/>}
               {
               data.length > 0 ? 
