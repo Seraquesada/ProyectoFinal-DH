@@ -14,8 +14,8 @@ class CaracteristicaServiceTest {
     CaracteristicaService caracteristicaService;
     @Test
     public void CaracteristicaTest() throws Exception{
-        Caracteristica caracteristica1 = new Caracteristica("Cantidad de Puertas", "4");
-        Caracteristica caracteristica2 = new Caracteristica("Tipo motor", "v8");
+        Caracteristica caracteristica1 = new Caracteristica("Cantidad de Puertas", "4", 1);
+        Caracteristica caracteristica2 = new Caracteristica("Tipo motor", "v8", 2);
 
         //Testeando metodo guardar
         Caracteristica caracteristicaPrueba1 = caracteristicaService.guardar(caracteristica1);
@@ -33,7 +33,7 @@ class CaracteristicaServiceTest {
         assertEquals(1, listaCaracteristica2.size());
 
         //Testeamos metodo actualizar
-        Caracteristica caracteristica3 = new Caracteristica(2L,"Tipo llantas", "Montaña");
+        Caracteristica caracteristica3 = new Caracteristica(2L,"Tipo llantas", "Montaña", 3);
         caracteristicaService.actualizar(caracteristica3);
 
         //Testeando metodo buscar

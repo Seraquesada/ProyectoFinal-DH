@@ -12,16 +12,20 @@ public class Caracteristica {
     private String nombre;
     @Column
     private String valor;
+    @Column
+    private Integer icono;
 
-    public Caracteristica(Long id, String nombre, String valor) {
+    public Caracteristica(Long id, String nombre, String valor, Integer icono) {
         this.id = id;
         this.nombre = nombre;
         this.valor = valor;
+        this.icono = icono;
     }
 
-    public Caracteristica(String nombre, String valor) {
+    public Caracteristica(String nombre, String valor, Integer icono) {
         this.nombre = nombre;
         this.valor = valor;
+        this.icono = icono;
     }
 
     public Caracteristica() {
@@ -49,5 +53,13 @@ public class Caracteristica {
 
     public void setValor(String valor) {
         this.valor = valor;
+    }
+
+    public Integer getIcono() {
+        return icono;
+    }
+
+    public void setIcono(Integer icono) {
+        this.icono = icono;
     }
 }

@@ -153,12 +153,12 @@ public class CargaDatos implements ApplicationRunner {
 
 
         Set<Caracteristica> caracteristicas1 = new HashSet<>();
-        Caracteristica caracteristica1a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
-        Caracteristica caracteristica1b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 3 valijas grandes");
-        Caracteristica caracteristica1c =  new Caracteristica("Transmisión: ", "Automática");
-        Caracteristica caracteristica1d =  new Caracteristica("Cantidad de Airbags en cabina: ", "7");
-        Caracteristica caracteristica1e =  new Caracteristica("Velocidad máxima: ", "228 km/h");
-        Caracteristica caracteristica1f =  new Caracteristica("Combustible: ","Nafta Premium");
+        Caracteristica caracteristica1a =  new Caracteristica("Capacidad Máxima: ", "5 adultos", 0);
+        Caracteristica caracteristica1b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 3 valijas grandes", 1);
+        Caracteristica caracteristica1c =  new Caracteristica("Transmisión: ", "Automática", 2);
+        Caracteristica caracteristica1d =  new Caracteristica("Cantidad de Airbags en cabina: ", "7", 3);
+        Caracteristica caracteristica1e =  new Caracteristica("Velocidad máxima: ", "228 km/h", 4);
+        Caracteristica caracteristica1f =  new Caracteristica("Combustible: ","Nafta Premium", 5);
         caracteristicas1.add(caracteristica1a);
         caracteristicas1.add(caracteristica1b);
         caracteristicas1.add(caracteristica1c);
@@ -167,12 +167,12 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas1.add(caracteristica1f);
 
         Set<Caracteristica> caracteristicas2 = new HashSet<>();
-        Caracteristica caracteristica2a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
-        Caracteristica caracteristica2b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 3 valijas");
-        Caracteristica caracteristica2c =  new Caracteristica("Transmisión: ", "Automática");
-        Caracteristica caracteristica2d =  new Caracteristica("Cantidad de Airbags en cabina: ", "7");
-        Caracteristica caracteristica2e =  new Caracteristica("Velocidad máxima: ", "215 km/h");
-        Caracteristica caracteristica2f =  new Caracteristica("Combustible: ","Nafta Premium");
+        Caracteristica caracteristica2a =  new Caracteristica("Capacidad Máxima: ", "5 adultos", 0);
+        Caracteristica caracteristica2b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 3 valijas", 1);
+        Caracteristica caracteristica2c =  new Caracteristica("Transmisión: ", "Automática", 2);
+        Caracteristica caracteristica2d =  new Caracteristica("Cantidad de Airbags en cabina: ", "7", 3);
+        Caracteristica caracteristica2e =  new Caracteristica("Velocidad máxima: ", "215 km/h", 4);
+        Caracteristica caracteristica2f =  new Caracteristica("Combustible: ","Nafta Premium", 5);
         caracteristicas2.add(caracteristica2a);
         caracteristicas2.add(caracteristica2b);
         caracteristicas2.add(caracteristica2c);
@@ -181,12 +181,12 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas2.add(caracteristica2f);
 
         Set<Caracteristica> caracteristicas3 = new HashSet<>();
-        Caracteristica caracteristica3a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
-        Caracteristica caracteristica3b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 5 valijas");
-        Caracteristica caracteristica3c =  new Caracteristica("Transmisión: ", "Automática");
-        Caracteristica caracteristica3d =  new Caracteristica("Cantidad de Airbags en cabina: ", "8");
-        Caracteristica caracteristica3e =  new Caracteristica("Velocidad máxima: ", "190 km/h");
-        Caracteristica caracteristica3f =  new Caracteristica("Combustible: ","Nafta Premium");
+        Caracteristica caracteristica3a =  new Caracteristica("Capacidad Máxima: ", "5 adultos", 0);
+        Caracteristica caracteristica3b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 5 valijas", 1);
+        Caracteristica caracteristica3c =  new Caracteristica("Transmisión: ", "Automática", 2);
+        Caracteristica caracteristica3d =  new Caracteristica("Cantidad de Airbags en cabina: ", "8", 3);
+        Caracteristica caracteristica3e =  new Caracteristica("Velocidad máxima: ", "190 km/h", 4);
+        Caracteristica caracteristica3f =  new Caracteristica("Combustible: ","Nafta Premium", 5);
         caracteristicas3.add(caracteristica3a);
         caracteristicas3.add(caracteristica3b);
         caracteristicas3.add(caracteristica3c);
@@ -195,12 +195,12 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas3.add(caracteristica3f);
 
         Set<Caracteristica> caracteristicas4 = new HashSet<>();
-        Caracteristica caracteristica4a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
-        Caracteristica caracteristica4b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 5 valijas");
-        Caracteristica caracteristica4c =  new Caracteristica("Transmisión: ", "Automática");
-        Caracteristica caracteristica4d =  new Caracteristica("Cantidad de Airbags en cabina: ", "8");
-        Caracteristica caracteristica4e =  new Caracteristica("Velocidad máxima: ", "210 km/h");
-        Caracteristica caracteristica4f =  new Caracteristica("Combustible: ","Nafta Premium");
+        Caracteristica caracteristica4a =  new Caracteristica("Capacidad Máxima: ", "5 adultos", 0);
+        Caracteristica caracteristica4b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 5 valijas", 1);
+        Caracteristica caracteristica4c =  new Caracteristica("Transmisión: ", "Automática", 2);
+        Caracteristica caracteristica4d =  new Caracteristica("Cantidad de Airbags en cabina: ", "8", 3);
+        Caracteristica caracteristica4e =  new Caracteristica("Velocidad máxima: ", "210 km/h", 4);
+        Caracteristica caracteristica4f =  new Caracteristica("Combustible: ","Nafta Premium", 5);
         caracteristicas4.add(caracteristica4a);
         caracteristicas4.add(caracteristica4b);
         caracteristicas4.add(caracteristica4c);
@@ -209,12 +209,12 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas4.add(caracteristica4f);
 
         Set<Caracteristica> caracteristicas5 = new HashSet<>();
-        Caracteristica caracteristica5a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
-        Caracteristica caracteristica5b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 3 valijas");
-        Caracteristica caracteristica5c =  new Caracteristica("Transmisión: ", "Automática");
-        Caracteristica caracteristica5d =  new Caracteristica("Cantidad de Airbags en cabina: ", "5");
-        Caracteristica caracteristica5e =  new Caracteristica("Velocidad máxima: ", "245 km/h");
-        Caracteristica caracteristica5f =  new Caracteristica("Combustible: ","Nafta Premium");
+        Caracteristica caracteristica5a =  new Caracteristica("Capacidad Máxima: ", "5 adultos", 0);
+        Caracteristica caracteristica5b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 3 valijas", 1);
+        Caracteristica caracteristica5c =  new Caracteristica("Transmisión: ", "Automática", 2);
+        Caracteristica caracteristica5d =  new Caracteristica("Cantidad de Airbags en cabina: ", "5", 3);
+        Caracteristica caracteristica5e =  new Caracteristica("Velocidad máxima: ", "245 km/h", 4);
+        Caracteristica caracteristica5f =  new Caracteristica("Combustible: ","Nafta Premium", 5);
         caracteristicas5.add(caracteristica5a);
         caracteristicas5.add(caracteristica5b);
         caracteristicas5.add(caracteristica5c);
@@ -223,12 +223,12 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas5.add(caracteristica5f);
 
         Set<Caracteristica> caracteristicas6 = new HashSet<>();
-        Caracteristica caracteristica6a =  new Caracteristica("Capacidad Máxima: ", "5 adultos");
-        Caracteristica caracteristica6b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 4 valijas");
-        Caracteristica caracteristica6c =  new Caracteristica("Transmisión: ", "Automática");
-        Caracteristica caracteristica6d =  new Caracteristica("Cantidad de Airbags en cabina: ", "5");
-        Caracteristica caracteristica6e =  new Caracteristica("Velocidad máxima: ", "180 km/h");
-        Caracteristica caracteristica6f =  new Caracteristica("Combustible: ","Híbrido (Nafta Premium y Electricidad)");
+        Caracteristica caracteristica6a =  new Caracteristica("Capacidad Máxima: ", "5 adultos", 0);
+        Caracteristica caracteristica6b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 4 valijas", 1);
+        Caracteristica caracteristica6c =  new Caracteristica("Transmisión: ", "Automática", 2);
+        Caracteristica caracteristica6d =  new Caracteristica("Cantidad de Airbags en cabina: ", "5", 3);
+        Caracteristica caracteristica6e =  new Caracteristica("Velocidad máxima: ", "180 km/h", 4);
+        Caracteristica caracteristica6f =  new Caracteristica("Combustible: ","Híbrido (Nafta Premium y Electricidad)", 5);
         caracteristicas6.add(caracteristica6a);
         caracteristicas6.add(caracteristica6b);
         caracteristicas6.add(caracteristica6c);
@@ -237,12 +237,12 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas6.add(caracteristica6f);
 
         Set<Caracteristica> caracteristicas7 = new HashSet<>();
-        Caracteristica caracteristica7a =  new Caracteristica("Capacidad Máxima: ", "4 adultos");
-        Caracteristica caracteristica7b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 2 valijas");
-        Caracteristica caracteristica7c =  new Caracteristica("Transmisión: ", "Automática");
-        Caracteristica caracteristica7d =  new Caracteristica("Cantidad de Airbags en cabina: ", "5");
-        Caracteristica caracteristica7e =  new Caracteristica("Velocidad máxima: ", "270 km/h");
-        Caracteristica caracteristica7f =  new Caracteristica("Combustible: ","Nafta Premium");
+        Caracteristica caracteristica7a =  new Caracteristica("Capacidad Máxima: ", "4 adultos", 0);
+        Caracteristica caracteristica7b =  new Caracteristica("Equipaje Recomendado: ", "Hasta 2 valijas", 1);
+        Caracteristica caracteristica7c =  new Caracteristica("Transmisión: ", "Automática", 2);
+        Caracteristica caracteristica7d =  new Caracteristica("Cantidad de Airbags en cabina: ", "5", 3);
+        Caracteristica caracteristica7e =  new Caracteristica("Velocidad máxima: ", "270 km/h", 4);
+        Caracteristica caracteristica7f =  new Caracteristica("Combustible: ","Nafta Premium", 5);
         caracteristicas7.add(caracteristica7a);
         caracteristicas7.add(caracteristica7b);
         caracteristicas7.add(caracteristica7c);
@@ -250,29 +250,29 @@ public class CargaDatos implements ApplicationRunner {
         caracteristicas7.add(caracteristica7e);
         caracteristicas7.add(caracteristica7f);
 
-        PoliticasProducto politicas1 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!");
+        PoliticasProducto politicas1 = new PoliticasProducto("Normas", "Licencia de conducir válida. Conductor adicional incluido. No fumar ni ingerir bebidas alcoholicas dentro del vehiculo", "Seguridad", "Seguro de responsabilidad civil incluido. Cobertura por daño y robo con franquicia.", "Cancelacion", "Sin cargo hasta 48 horas antes del retiro. 5% del valor total del alquiler entre 24 y 48 horas antes del retiro. 15% del valor del alquiler para cancelaciones con menos de 24 horas de anticipacion.");
 
-        PoliticasProducto politicas2 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!");
+        PoliticasProducto politicas2 = new PoliticasProducto("Normas", "Licencia de conducir válida. Conductor adicional incluido. No fumar ni ingerir bebidas alcoholicas dentro del vehiculo", "Seguridad", "Seguro de responsabilidad civil incluido. Cobertura por daño y robo con franquicia.", "Cancelacion", "Sin cargo hasta 48 horas antes del retiro. 5% del valor total del alquiler entre 24 y 48 horas antes del retiro. 15% del valor del alquiler para cancelaciones con menos de 24 horas de anticipacion.");
 
-        PoliticasProducto politicas3 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!");
+        PoliticasProducto politicas3 = new PoliticasProducto("Normas", "Licencia de conducir válida. Conductor adicional incluido. No fumar ni ingerir bebidas alcoholicas dentro del vehiculo", "Seguridad", "Seguro de responsabilidad civil incluido. Cobertura por daño y robo con franquicia.", "Cancelacion", "Sin cargo hasta 48 horas antes del retiro. 5% del valor total del alquiler entre 24 y 48 horas antes del retiro. 15% del valor del alquiler para cancelaciones con menos de 24 horas de anticipacion.");
 
-        PoliticasProducto politicas4 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!");
+        PoliticasProducto politicas4 = new PoliticasProducto("Normas", "Licencia de conducir válida. Conductor adicional incluido. No fumar ni ingerir bebidas alcoholicas dentro del vehiculo", "Seguridad", "Seguro de responsabilidad civil incluido. Cobertura por daño y robo con franquicia.", "Cancelacion", "Sin cargo hasta 48 horas antes del retiro. 5% del valor total del alquiler entre 24 y 48 horas antes del retiro. 15% del valor del alquiler para cancelaciones con menos de 24 horas de anticipacion.");
 
-        PoliticasProducto politicas5 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!");
+        PoliticasProducto politicas5 = new PoliticasProducto("Normas", "Licencia de conducir válida. Conductor adicional incluido. No fumar ni ingerir bebidas alcoholicas dentro del vehiculo", "Seguridad", "Seguro de responsabilidad civil incluido. Cobertura por daño y robo con franquicia.", "Cancelacion", "Sin cargo hasta 48 horas antes del retiro. 5% del valor total del alquiler entre 24 y 48 horas antes del retiro. 15% del valor del alquiler para cancelaciones con menos de 24 horas de anticipacion.");
 
-        PoliticasProducto politicas6 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!");
+        PoliticasProducto politicas6 = new PoliticasProducto("Normas", "Licencia de conducir válida. Conductor adicional incluido. No fumar ni ingerir bebidas alcoholicas dentro del vehiculo", "Seguridad", "Seguro de responsabilidad civil incluido. Cobertura por daño y robo con franquicia.", "Cancelacion", "Sin cargo hasta 48 horas antes del retiro. 5% del valor total del alquiler entre 24 y 48 horas antes del retiro. 15% del valor del alquiler para cancelaciones con menos de 24 horas de anticipacion.");
 
-        PoliticasProducto politicas7 = new PoliticasProducto("Normas", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Seguridad", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", "Cancelacion", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!");
+        PoliticasProducto politicas7 = new PoliticasProducto("Normas", "Licencia de conducir válida. Conductor adicional incluido. No fumar ni ingerir bebidas alcoholicas dentro del vehiculo", "Seguridad", "Seguro de responsabilidad civil incluido. Cobertura por daño y robo con franquicia.", "Cancelacion", "Sin cargo hasta 48 horas antes del retiro. 5% del valor total del alquiler entre 24 y 48 horas antes del retiro. 15% del valor del alquiler para cancelaciones con menos de 24 horas de anticipacion.");
 
         Set<Reserva> reservas=new HashSet<>();
 
-        Producto producto1 = new Producto("BMW 323i", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada1, categoria1, imagenes1, caracteristicas1, politicas1, reservas);
-        Producto producto2 = new Producto("Chevrolet Cruze RS", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada2, categoria3, imagenes2, caracteristicas2, politicas2, reservas);
-        Producto producto3 = new Producto("Haval H2", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada3, categoria2, imagenes3, caracteristicas3, politicas3, reservas);
-        Producto producto4 = new Producto("Mazda CX 5", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada4, categoria2, imagenes4, caracteristicas4, politicas4, reservas);
-        Producto producto5 = new Producto("Volkswagen Golf GTI", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada5, categoria3, imagenes5, caracteristicas5, politicas5, reservas);
-        Producto producto6 = new Producto("Toyota C-HR", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada6, categoria3, imagenes6, caracteristicas6, politicas6, reservas);
-        Producto producto7 = new Producto("Ford Mustang Mach I", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!", ciudadGuardada7, categoria4, imagenes7, caracteristicas7, politicas7, reservas);
+        Producto producto1 = new Producto("BMW 323i", "El BMW 323i es un auto aleman muy confiable, ideal para una familia pequeña por sus 5 asientos, pero sin descuidar la potencia y rendimiento.", "Aeropuerto de Catamarca", ciudadGuardada1, categoria1, imagenes1, caracteristicas1, politicas1, reservas);
+        Producto producto2 = new Producto("Chevrolet Cruze RS", "El Chevrolet Cruze RS tiene todas las comodidades que una familia en viaje pueda necesitar, a un precio mas que accesible.", "Aeropuerto de Cordoba", ciudadGuardada2, categoria3, imagenes2, caracteristicas2, politicas2, reservas);
+        Producto producto3 = new Producto("Haval H2", "El Haval H2 es el auto ideal para aquellos viajantes que llevan una gran cantidad de equipaje con ellos debido a su muy espacioso baul y su capacidad de hasta 5 personas.", "Aeropuerto de Buenos Aires", ciudadGuardada3, categoria2, imagenes3, caracteristicas3, politicas3, reservas);
+        Producto producto4 = new Producto("Mazda CX 5", "El Mazda CX 5 es el vehiculo ideal para familias numerosas que deseen viajar con la maxima comodidad y en un interior de ultima tecnologia", "Terminal de La Plata", ciudadGuardada4, categoria2, imagenes4, caracteristicas4, politicas4, reservas);
+        Producto producto5 = new Producto("Volkswagen Golf GTI", "El Volkswagen Golf GTI es el auto que cualquier entusiasta de la velocidad y de disfrutar el camino pueda querer. Es un auto muy deportivo y con excelente rendimiento en carretera.", "Terminal de Bus de Comodoro Rivadavia", ciudadGuardada5, categoria3, imagenes5, caracteristicas5, politicas5, reservas);
+        Producto producto6 = new Producto("Toyota C-HR", "El Toyota C-HR es un vehiculo hibrido, con la posibilidad de funcionar a electricidad para aquellos preocupados por el medioambiente sin perder rendimiento.", "Aeropuerto de Salta", ciudadGuardada6, categoria3, imagenes6, caracteristicas6, politicas6, reservas);
+        Producto producto7 = new Producto("Ford Mustang Mach I", "Si lo que se esta buscando es velocidad y performance, el Ford Mustang Mach I es el vechiculo que estas buscando. Sacrifica un poco de espacio para equipaje y personas, a cambio del mas alto rendimiento.", "Aeropuerto de Bariloche", ciudadGuardada7, categoria4, imagenes7, caracteristicas7, politicas7, reservas);
 
         productoService.guardar(producto1);
         productoService.guardar(producto2);

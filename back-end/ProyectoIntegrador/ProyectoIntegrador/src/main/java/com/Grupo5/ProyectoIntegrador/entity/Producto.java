@@ -16,6 +16,8 @@ public class Producto {
     private String titulo;
     @Column
     private String descripcion;
+    @Column
+    private String direccion;
     @ManyToOne
     @JoinColumn(name = "ciudad_id", nullable = false)
     private Ciudad ciudad;
@@ -41,10 +43,11 @@ public class Producto {
     @JsonIgnore
     private Set<Reserva> reservas;
 
-    public Producto(Long id, String titulo, String descripcion, Ciudad ciudad, Categoria categoria, Set<Imagen> imagenes, Set<Caracteristica> caracteristicas, PoliticasProducto politicasProducto, Set<Reserva> reservas) {
+    public Producto(Long id, String titulo, String descripcion, String direccion, Ciudad ciudad, Categoria categoria, Set<Imagen> imagenes, Set<Caracteristica> caracteristicas, PoliticasProducto politicasProducto, Set<Reserva> reservas) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
+        this.direccion = direccion;
         this.ciudad = ciudad;
         this.categoria = categoria;
         this.imagenes = imagenes;
@@ -53,9 +56,10 @@ public class Producto {
         this.reservas = reservas;
     }
 
-    public Producto(String titulo, String descripcion, Ciudad ciudad, Categoria categoria, Set<Imagen> imagenes, Set<Caracteristica> caracteristicas, PoliticasProducto politicasProducto, Set<Reserva> reservas) {
+    public Producto(String titulo, String descripcion, String direccion, Ciudad ciudad, Categoria categoria, Set<Imagen> imagenes, Set<Caracteristica> caracteristicas, PoliticasProducto politicasProducto, Set<Reserva> reservas) {
         this.titulo = titulo;
         this.descripcion = descripcion;
+        this.direccion = direccion;
         this.ciudad = ciudad;
         this.categoria = categoria;
         this.imagenes = imagenes;
@@ -89,6 +93,14 @@ public class Producto {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public Ciudad getCiudad() {

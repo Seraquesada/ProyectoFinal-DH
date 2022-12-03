@@ -35,8 +35,8 @@ class ProductoServiceTest {
         Set<Reserva> reservas=new HashSet<>();
         PoliticasProducto politicas1 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
         PoliticasProducto politicas2 = new PoliticasProducto("normas1", "portarse bien1", "seguridad1", "tener cuidado1", "cancelacion1", "te va a devolver el dinero su p*ta madre1");
-        Producto producto1 = new Producto("bmw", "auto genial", ciudadGuardada1, categoriaGuardada1, imagenes, caracteristicas, politicas1, reservas);
-        Producto producto2 = new Producto("audi", "auto super genial", ciudadGuardada2, categoriaGuardada2, imagenes, caracteristicas, politicas2, reservas);
+        Producto producto1 = new Producto("bmw", "auto genial","aeropuerto", ciudadGuardada1, categoriaGuardada1, imagenes, caracteristicas, politicas1, reservas);
+        Producto producto2 = new Producto("audi", "auto super genial","puerto", ciudadGuardada2, categoriaGuardada2, imagenes, caracteristicas, politicas2, reservas);
 
         //Testeando metodo guardar
         Producto productoPrueba1 = productoService.guardar(producto1);
@@ -54,7 +54,7 @@ class ProductoServiceTest {
         assertEquals(1, listaproducto2.size());
 
         //Testeamos metodo actualizar
-        Producto producto3 = new Producto(2L,"camaro", "auto super genial", ciudadGuardada2, categoriaGuardada2, imagenes, caracteristicas, politicas1, reservas);
+        Producto producto3 = new Producto(2L,"camaro", "auto super genial","centro", ciudadGuardada2, categoriaGuardada2, imagenes, caracteristicas, politicas1, reservas);
         productoService.actualizar(producto3);
 
         //Testeando metodo buscar
