@@ -1,23 +1,25 @@
 import React from "react";
 import "../form/Reserve.css";
 
-function parseJwt (token) {
-  let base64Url = token?.split('.')[1];
-  let base64 = base64Url?.replace('-', '+').replace('_', '/');
-  return JSON.parse(window.atob(base64));
-}
 
-  const jwt = localStorage.getItem('jwt');
 
 const Reserve = () => {
 
+  function parseJwt (token) {
+    let base64Url = token?.split('.')[1];
+    let base64 = base64Url?.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64));
+  }
+  
+    const jwt = localStorage.getItem('jwt');
+    
   return (
     <>
-    <h2 className="completar-datos">Completá tus datos</h2>
+    <h3 className="completar-datos">Completá tus datos</h3>
     <div className="form-reserva">
       <div className="controls-ft">
         <div className="container-input">
-        <h3>Nombre</h3>
+        <h4>Nombre</h4>
           <input
             type="text"
             name="name"
@@ -26,7 +28,7 @@ const Reserve = () => {
             />
         </div>
         <div className="container-input">
-          <h3>Apellido</h3>
+          <h4>Apellido</h4>
           <input
             type="text"
             name="surname"
@@ -38,7 +40,7 @@ const Reserve = () => {
       </div>
       <div className="controls-sn">
         <div className="container-input">
-          <h3>Correo electronico</h3>
+          <h4>Correo electronico</h4>
             <input
               type="email"
               name="email"

@@ -8,6 +8,6 @@ export const useDateChange = () => {
         setRange([item.selection])
     };
 
-    return {range,handleDateChange};
+    return {range,setRange,handleDateChange};
 }
 

@@ -8,6 +8,7 @@ export const useFechasReservadas = () => {
 
     const {id} = useParams();
     const {excludeDatesInterval,setExcludeDatesInterval} = useContext(DateContext)
+    
     const [excludeDates,setExcludeDates] = useState([])
     const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas/producto/'+ id;
     const jwt= localStorage.getItem('jwt');

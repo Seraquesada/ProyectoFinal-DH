@@ -34,7 +34,7 @@ const Header = () => {
             Cerrar Sesión
           </Button>
         </div>
-        <SideBarBootstrap />
+        <SideBarBootstrap/>
       </header>
     )
   }

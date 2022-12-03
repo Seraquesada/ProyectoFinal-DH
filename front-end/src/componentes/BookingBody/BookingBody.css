@@ -1,21 +1,39 @@
-.container-reserva {
+
+.container-reserva{
     display: grid;
-    grid-template-columns:70% 15% 15%;
-    grid-template-rows: repeat(3,auto);
+    grid-template-columns:60% minmax(250px,1fr);
+    margin: 1.4rem;
+    gap: 40px;
+    padding:20px
 }
 
 .booking-body{
-    grid-column: 1/2;
-    width: 80%;
+    display: grid;
+    grid-template-rows: repeat(3,auto);
+    row-gap: 40px;
 }
 
+.datosUser{
+    grid-row: 1/2;
+}
+
+.calendario-container{
+    grid-row: 2/3;
+}
+
+.container-horariollegada{
+    grid-row: 3/3;
+}
 .horariollegada{
-    background-color: white;
-    grid-column: 1/2;
-    grid-row:4/5;
-    padding:.5rem;
+    padding:20px;
+    border-radius:8px;
+    background-color:#ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
+.container-booking-details{
+    place-self:start;
+    margin-top: 40px;
+}
 .calendarElement{
     display: flex;
     align-items: center;
@@ -24,49 +42,37 @@
     position: relative !important;
 }
 
-.container-booking-details {
-    grid-column: 2/4 ;
-    grid-row: 1/4;
-}
+
 @media screen and (max-width: 768px){
-    .bookingBody {
+    .container-reserva {
         grid-template-columns:100%;
         grid-template-rows: repeat(4,auto);
+        place-items: center;
+        row-gap: 5px;
     }
     
-    .forms{
+    .datosUser{
         grid-row: 1/2;
-        margin:.2rem;
         padding:.5rem;
     }
     
     .calendario {
         grid-row: 2/3;
-        margin:.2rem;
         padding:.5rem;
-        width: 100%;
     }
     
-    .bookingDetails {
-        grid-column: 1/2;
+    .container-booking-details {
         grid-row: 4/5 ;
-        place-self: center;
-        height: 100%;
-        margin:20px
-    }
-    
-    .horariollegada{
-        grid-row:3/4;
 
     }
 }
 
 @media screen and (max-width:510px){
-    .bookingBody {
+    .container-reserva  {
         grid-template-columns:100%;
         grid-template-rows: repeat(4,auto);
     }
-    .forms{
+    .datosUser{
         grid-row: 1/2;
         margin:.2rem;
         padding:.5rem;

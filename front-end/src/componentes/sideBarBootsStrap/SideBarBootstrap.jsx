@@ -8,26 +8,27 @@ import { useAuthContext } from '../../context/AuthContext';
 
 function SideBarBootstrap() {
     
-    const [show, setShow] = useState(false);
+    const [showCanvas, setShowCanvas] = useState(false);
     
     const {
+        wrapperFunctionSignIn,
+        wrapperFunctionSignUp,
         loggedIn,
         initials,
         userName,
         logOut,
     } = useAuthContext()
 
-    const handleClose = () => {
-        setShow(false);
+    const handleCloseCanvas = () => {
+        setShowCanvas(false);
         closeCross();
     }
     
-    const handleShow = () => {
-        setShow(true);
+    const handleShowCanvas = () => {
+        setShowCanvas(true);
         openCross();
     }
     const [isOpen, setIsOpen] = useState(false);
-    
     const closeCross = () => setIsOpen(false);
     const openCross = () => setIsOpen(true);
 
@@ -35,9 +36,9 @@ function SideBarBootstrap() {
 if(loggedIn){
     return(
         <>
-        <Hamburger toggled={isOpen} toggle={handleShow} className="me-2 hamburger">
+        <Hamburger toggled={isOpen} toggle={handleShowCanvas} className="me-2 hamburger">
         </Hamburger>
-        <Offcanvas show={show} onHide={handleClose} >
+        <Offcanvas show={showCanvas} onHide={handleCloseCanvas} placement={'end'}>
         <Offcanvas.Header closeButton>
         <Offcanvas.Title>Hola, {userName}</Offcanvas.Title>
         </Offcanvas.Header>
@@ -55,14 +56,20 @@ if(loggedIn){
 }
 return (
     <>
-    <Hamburger toggled={isOpen} toggle={handleShow} className="me-2 hamburger">
+    <Hamburger toggled={isOpen} toggle={handleShowCanvas} className="me-2 hamburger">
     </Hamburger>
-    <Offcanvas show={show} onHide={handleClose}>
+    <Offcanvas placement={'end'} show={showCanvas} onHide={handleCloseCanvas}>
         <Offcanvas.Header closeButton>
         <Offcanvas.Title>Menu</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-            <CustomModal />
+            <Button variant="warning" onClick={wrapperFunctionSignIn}>
+            Ingresar
+            </Button>
+
+            <Button variant="secondary" onClick={wrapperFunctionSignUp}>
+                Registrate
+            </Button>
         </Offcanvas.Body>
     </Offcanvas>
     </>
