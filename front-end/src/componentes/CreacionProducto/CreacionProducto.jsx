@@ -4,6 +4,8 @@ import Header from '../header/Header'
 import Select from 'react-select';
 import axios from 'axios';
 import Form  from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { useAxiosGet } from '../../hooks/useAxiosGet';
 import './CreacionProducto.css';
 import {TbManualGearbox,MdAirlineSeatReclineExtra,IoSpeedometerOutline,GiGasPump,BsFillPeopleFill,MdOutlineLuggage} from 'react-icons/all'
@@ -21,13 +23,8 @@ const CreacionProducto = () => {
     const [selectDisplay2, setSelectDisplay2] = useState("Cargando...")
     const [userChoiceCategory, setUserChoiceCategory] = useState(undefined)
     const [categoria, setCategoria] = useState(undefined)
-    
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        setCiudad(userChoiceCity);
-        setCategoria(userChoiceCategory);
-        console.log(payload)
-    }
+
+    console.log(userChoiceCity,userChoiceCategory)
 
     useEffect(()=>{axios.get(urlCiudades)
     .then(res=>{
@@ -47,7 +44,8 @@ const CreacionProducto = () => {
         })
     }, []);
 
-    useEffect(()=>{axios.get(urlCategorias)
+    useEffect(()=>{
+        axios.get(urlCategorias)
         .then(res=>{
             let options = res.data;
             options.map((c) => {
@@ -94,90 +92,8 @@ const CreacionProducto = () => {
         const[velocidad,SetVelocidad]=useState(undefined) 
         const[combustible,SetCombustible]=useState(undefined) 
         const[airbags,SetAirbags]=useState(undefined)
-        
-        
-    const [politicas, setPoliticas] = useState(
-        {
-            normasTitulo : "Normas",
-            normasDescripcion:"" ,
-            seguridadTitulo: "Seguridad",
-            seguridadDescripcion: "",
-            cancelacionTitulo: "Cancelacion",
-            cancelacionDescripcion: "",
-            }
-    )
 
-    const [imagenes, setImagenes] = useState(
 
-    )
-
-    const [caracteristicas, setCaracteristicas] = useState(
-        [
-
-            {
-                nombre: "Velocidad máxima: ",
-                valor: "",
-                icono:undefined,
-            },
-            {
-                nombre: "Cantidad de Airbags en cabina: ",
-                valor: "",
-                icono:undefined,
-            },
-            {
-                nombre: "Combustible: ",
-                valor: "",
-                icono:undefined,
-            },
-            {
-                nombre: "Transmisión: ",
-                valor: "",
-                icono:undefined,
-            },
-            {
-                nombre: "Equipaje Recomendado: ",
-                valor: "",
-                icono:undefined,
-            },
-            {
-                nombre: "Capacidad Máxima: ",
-                valor: "",
-                icono:undefined,
-            }
-        ]
-    )
-
-        const [producto, setProducto]= useState(
-            {
-                titulo: "",
-                descripcion : "",
-                ciudad: { id : ""},
-                categoria: { id :""},
-                imagenes:[
-                    {
-                        name: "Interior - trasero",
-                        url : ""},
-                    {
-                        name: "Exterior - lateral",
-                        url : ""},
-                    {
-                        name: "Interior - delantero",
-                        url : ""},
-                    {
-                        name: "Exterior - trasero",
-                        url : ""},
-                    {
-                        name: "Exterior - delantero",
-                        url : ""},
-                ] ,
-                caracteristicas:caracteristicas,
-                politicasProducto:politicas,
-                reservas:[]
-            }
-        )
-
-        
-/*
         const payload = {
             "titulo" : `${modelo}`,
             "descripcion" : `${descripcion}`,
@@ -254,9 +170,30 @@ const CreacionProducto = () => {
         },
         "reservas": []
     }
-*/
 
-
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setCiudad(userChoiceCity);
+        setCategoria(userChoiceCategory);
+        SetModelo(ev.target.modelo.value);
+        SetDescripcion(ev.target.descripcion.value);
+        SetUrlImagen1(ev.target.urlImagen1.value);
+        SetUrlImagen2(ev.target.urlImagen2.value);
+        SetUrlImagen3(ev.target.urlImagen3.value);
+        SetUrlImagen4(ev.target.urlImagen4.value);
+        SetUrlImagen5(ev.target.urlImagen5.value);
+        SetNormas(ev.target.normas.value);
+        SetSeguridad(ev.target.seguridad.value);
+        SetCancelacion(ev.target.cancelacion.value);
+        SetPasajeros(ev.target.pasajeros.value);
+        SetEquipaje(ev.target.equipaje.value);
+        SetTransmision(ev.target.transmision.value);
+        SetAirbags(ev.target.airbags.value);
+        SetVelocidad(ev.target.velocidad.value);
+        SetCombustible(ev.target.combustible.value);
+        console.log(payload)
+    }
+    
     const guardarProducto = () => {
         axios.post(url, producto)
             .then(function (response) {
@@ -273,88 +210,86 @@ const CreacionProducto = () => {
         const name = e.target.name
         const value = e.target.value
         setProducto((prev)=>{
-            return {...prev, [name]:value}
+            return {
+                ...prev, 
+                [name]:value,
+
+            }
         })
-        setPoliticas((prev)=>{
-            return {...prev, [name]:value}
-        })
+
     } 
-    console.log(producto)
+
     return (
     <>
         <Header/>
-        <div>
+        <div className="container-producto">
             <h2>Crear Auto</h2>
-            <Form onSubmit={ev =>{
-                ev.preventDefault();
-                SetModelo(ev.target.modelo.value);
-                SetDescripcion(ev.target.descripcion.value);
-                SetUrlImagen1(ev.target.urlImagen1.value);
-                SetUrlImagen2(ev.target.urlImagen2.value);
-                SetUrlImagen3(ev.target.urlImagen3.value);
-                SetUrlImagen4(ev.target.urlImagen4.value);
-                SetUrlImagen5(ev.target.urlImagen5.value);
-                SetNormas(ev.target.normas.value);
-                SetSeguridad(ev.target.seguridad.value);
-                SetCancelacion(ev.target.cancelacion.value);
-                SetPasajeros(ev.target.pasajeros.value);
-                SetEquipaje(ev.target.equipaje.value);
-                SetTransmision(ev.target.transmision.value);
-                SetAirbags(ev.target.airbags.value);
-                SetVelocidad(ev.target.velocidad.value);
-                SetCombustible(ev.target.combustible.value);
-
+            <Form onSubmit={() =>{
+                handleSubmit
                 guardarProducto}}>
-
-                <Select placeholder="Elija una localidad..." className='select'  options={selectDisplay1} onChange={(choice) => setUserChoiceCity(choice.value(id))}/>
-                <Select placeholder="Elija una categoria..." className='select'  options={selectDisplay2} onChange={(choice) => setUserChoiceCategory(choice.value(id))}/>
-                <input placeholder="Nombre del modelo" className="select" type="text" onChange={handleChange} name ="titulo" size="20"/>
-                <input placeholder="Describa brevemente modelo" className="select" onChange={handleChange} type="text" name="descripcion" size="50"/>
+            
+            <Row>
+                <Form.Group as={Col}>
+                    <input placeholder="Nombre del modelo" className="titulo" type="text"  name ="modelo" />
+                </Form.Group>
+                <Form.Group as={Col}>
+                    <input placeholder="Describa brevemente modelo" className="titulo" type="text" name="descripcion" />
+                </Form.Group>
+            </Row>
+            
+            <Row>
+                <Form.Group as={Col}>
+                    <Select placeholder="Elija una localidad..." options={selectDisplay1} onChange={(choice) => setUserChoiceCity(choice.value)}/>
+                </Form.Group>    
+                <Form.Group as={Col}>
+                    <Select placeholder="Elija una categoria..."   options={selectDisplay2} onChange={(choice) => setUserChoiceCategory(choice.value)}/>
+                </Form.Group>
+            </Row>
+            
                 <fieldset>
                     <legend className='grupoCaracteristicas'>Características: ( No mas de 6)</legend>
-
                     <label for="pasajeros">Pasajeros</label> <BsFillPeopleFill/>
                     <input type="checkbox" name="pasajerosOk" id="pasajeros"></input>
-                    <input placeholder="Cantidad de pasajeros"  onChange={handleChange} name="Cantidad de pasajeros" type="text" className="caracteristica" id="pasajeros"></input>
+                    <input placeholder="Cantidad de pasajeros"   name="pasajeros" type="text" className="caracteristica" id="pasajeros"></input>
                     
                     
                     <label for="equipaje">Equipaje</label> <MdOutlineLuggage/>
                     <input type="checkbox" name="equipajeOk" id="Equipaje"></input>
-                    <input placeholder="Cantidad de Equipaje"  onChange={handleChange} name="Equipaje Recomendado" type="text" className="caracteristica" id="Equipaje"></input>
+                    <input placeholder="Cantidad de Equipaje"   name="equipaje" type="text" className="caracteristica" id="Equipaje"></input>
                     
                     
                     <label for="transmision">Transmision</label> <TbManualGearbox/>
                     <input type="checkbox" name="transmisionOk" id="transmision"></input>
-                    <input placeholder="Describa la Transmision" name="Transmisión" onChange={handleChange} type="text" className="caracteristica" id="transmision"></input>
+                    <input placeholder="Describa la Transmision" name="transmision"  type="text" className="caracteristica" id="transmision"></input>
                     
                     
                     <label for="airbags">Cantidad de Airbags</label> <MdAirlineSeatReclineExtra/>
                     <input type="checkbox" name="airbagsOk" id="airbags"></input>
-                    <input placeholder="Cantidad de airbags" onChange={handleChange} name="Cantidad de Airbags en cabina" type="text" className="caracteristica" id="airbags"></input>
+                    <input placeholder="Cantidad de airbags"  name="airbags" type="text" className="caracteristica" id="airbags"></input>
                     
                     
                     <label for="velocidad">Velocidad Máxima</label>    <IoSpeedometerOutline/>
                     <input type="checkbox" name="velocidadOk" id="Velocidad"></input>
-                    <input placeholder="Velocidad Máxima"  onChange={handleChange} name="Velocidad máxima" type="text" className="caracteristica" id="Velocidad"></input>
+                    <input placeholder="Velocidad Máxima"   name="velocidad" type="text" className="caracteristica" id="Velocidad"></input>
                     
                     <label for="combustible">Combustible</label> <GiGasPump/>
                     <input type="checkbox" name="combustibleOk" id="combustible"></input>
-                    <input rows="10" cols=" 25" placeholder="Describa el combustible" onChange={handleChange} name="Combustible" type="text" className=" caracteristica" id="caracterisitica"></input>
+                    <input rows="10" cols=" 25" placeholder="Calidad y cantidad maxima de combustible"  name="combustible" type="text" className=" caracteristica" id="caracterisitica"></input>
                 </fieldset>
                 <fieldset>
                     <legend className='grupoPoliticas'>Políticas </legend>
-                    <textarea  rows="5" cols="40" placeholder="Complete Normas del vehículo..." className="politicas" type="text"  onChange={handleChange} name="normasDescripcion"/>
-                    <textarea  rows="5" cols="40" placeholder="Complete Seguridad..." className="politicas" type="text"  onChange={handleChange} name="seguridadDescripcion"/>
-                    <textarea  rows="5" cols="40" placeholder="Complete Cancelación..." className="politicas" type="text"  onChange={handleChange} name="cancelacionDescripcion"/>
+                    <textarea  rows="5" cols="40" placeholder="Complete Normas del vehículo..." className="politicas" type="text"   name="normas"/>
+                    <textarea  rows="5" cols="40" placeholder="Complete Seguridad..." className="politicas" type="text"   name="seguridad"/>
+                    <textarea  rows="5" cols="40" placeholder="Complete Cancelación..." className="politicas" type="text"   name="cancelacion"/>
                 </fieldset>              
                 
                 <fieldset>
                     <legend className='grupoImagenes'>Imagenes </legend>
-                    <textarea  rows="1" cols="40" placeholder="Copie la URL de la imagen Interior - trasero" className="imagenes" type="url" onChange={handleChange} name="Interior - trasero"/>
-                    <textarea  rows="1" cols="40" placeholder="Copie la URL de la siguiente imagen Exterior - lateral" className="imagenes" type="url" onChange={handleChange} name="Exterior - lateral"/>
-                    <textarea  rows="1" cols="40" placeholder="Copie la URL de la siguiente imagen Interior - delantero" className="imagenes" type="url" onChange={handleChange} name="Interior - delantero"/>
-                    <textarea  rows="1" cols="40" placeholder="Copie la URL de la siguiente imagen Exterior - trasero" className="imagenes" type="url" onChange={handleChange} name="Exterior - trasero"/>
-                    <textarea  rows="1" cols="40" placeholder="Copie la URL de la siguiente imagen Exterior - delantero" className="imagenes" type="url" onChange={handleChange} name="Exterior - delantero"/>
+                    <textarea  rows="1" cols="40" placeholder="Copie la URL de la imagen principal" className="imagenes" type="url"  name="urlImagen1"/>
+                    <textarea  rows="1" cols="40" placeholder="Copie la URL de la siguiente imagen " className="imagenes" type="url"  name="urlImagen2"/>
+                    <textarea  rows="1" cols="40" placeholder="Copie la URL de la siguiente imagen " className="imagenes" type="url"  name="urlImagen3"/>
+                    <textarea  rows="1" cols="40" placeholder="Copie la URL de la siguiente imagen " className="imagenes" type="url"  name="urlImagen4"/>
+                    <textarea  rows="1" cols="40" placeholder="Copie la URL de la siguiente imagen " className="imagenes" type="url"  name="urlImagen5"/>
                 </fieldset>    
                 
                 <button className='btn btn-primary'>Guardar Producto</button>  
