@@ -19,12 +19,15 @@ export const AuthContextProvider = ({children}) => {
     const [unreachable, setUnreachable] = useState(false);
     const [registeredOK, setRegisteredOK] = useState(false);
     const [originalPasswordPattern, setOriginalPasswordPattern] = useState("");
-    const [authMode, setAuthMode] = useState("signin")
+    const [authMode, setAuthMode] = useState("signin");
+    const [mustLogIn, setMustLogIn] = useState(false);
     
     const wrapperFunctionSignIn = () => {
+        setRegisteredOK(false);
         setValidated(false);
         setBadCredentials(false);
         setUnreachable(false);
+        setMustLogIn(false);
         setAuthMode("signin");
         handleShow();
     }
@@ -33,6 +36,7 @@ export const AuthContextProvider = ({children}) => {
         setValidated(false);
         setBadCredentials(false);
         setUnreachable(false);
+        setMustLogIn(false);
         setAuthMode("signup");
         handleShow();
     }
@@ -140,6 +144,7 @@ export const AuthContextProvider = ({children}) => {
             setAuthMode("signin");
             setRegisteredOK(true);
             setValidated(false);
+            setMustLogIn(false);
             }
         }).catch(function (error) {
             if(error.code === 'ERR_BAD_REQUEST'){
@@ -171,7 +176,10 @@ return (
             wrapperFunctionSignUp,
             handleClose,
             handleShow,
-            setShow
+            setShow,
+            mustLogIn,
+            setMustLogIn,
+            setAuthMode
         }
         }>
         {children}
