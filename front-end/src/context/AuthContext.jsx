@@ -91,29 +91,29 @@ export const AuthContextProvider = ({children}) => {
         }
 
         const iniciarSesion = (e) => {
-        setRegisteredOK(false);
-        e.preventDefault();
-        let payload = {
-            "username": document.querySelector("#emailLog").value,
-            "password" : document.querySelector("#passwordLog").value
-        }
-        
-        axios.post('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/usuarios/authenticate', payload)
-        .then(function (response) {
-            if(response.status === 200){
-            localStorage.setItem('jwt', response.data.jwt);
-            const unjwt = parseJwt(localStorage.getItem('jwt'))
-            const iniciales = unjwt.apellido.substr(0, 1).toUpperCase() + unjwt.nombre.substr(0, 1).toUpperCase();
-            const username = unjwt.nombre.substr(0, 1).toUpperCase()+unjwt.nombre.substr(1);
-            localStorage.setItem('initials', iniciales);
-            localStorage.setItem('username', username);
-            setInitials(iniciales);
-            setUserName(username);
-            logIn();
+            setRegisteredOK(false);
+            e.preventDefault();
+            let payload = {
+                "username": document.querySelector("#emailLog").value,
+                "password" : document.querySelector("#passwordLog").value
             }
-        }).catch(function (error) {
-            error.code === 'ERR_BAD_REQUEST' ? setBadCredentials(true) : setUnreachable(true);
-        });
+            
+            axios.post('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/usuarios/authenticate', payload)
+            .then(function (response) {
+                if(response.status === 200){
+                localStorage.setItem('jwt', response.data.jwt);
+                const unjwt = parseJwt(localStorage.getItem('jwt'))
+                const iniciales = unjwt.apellido.substr(0, 1).toUpperCase() + unjwt.nombre.substr(0, 1).toUpperCase();
+                const username = unjwt.nombre.substr(0, 1).toUpperCase()+unjwt.nombre.substr(1);
+                localStorage.setItem('initials', iniciales);
+                localStorage.setItem('username', username);
+                setInitials(iniciales);
+                setUserName(username);
+                logIn();
+                }
+            }).catch(function (error) {
+                error.code === 'ERR_BAD_REQUEST' ? setBadCredentials(true) : setUnreachable(true);
+            });
         
         }
     
