@@ -42,8 +42,8 @@ class ReservaServiceTest {
         Set<Reserva> reservas=new HashSet<>();
         PoliticasProducto politicas1 = new PoliticasProducto("normas", "portarse bien", "seguridad", "tener cuidado", "cancelacion", "te va a devolver el dinero su p*ta madre");
         PoliticasProducto politicas2 = new PoliticasProducto("normas1", "portarse bien1", "seguridad1", "tener cuidado1", "cancelacion1", "te va a devolver el dinero su p*ta madre1");
-        Producto producto1 = new Producto("bmw", "auto genial", ciudadGuardada1, categoriaGuardada1, imagenes, caracteristicas, politicas1, reservas);
-        Producto producto2 = new Producto("audi", "auto super genial", ciudadGuardada2, categoriaGuardada2, imagenes, caracteristicas, politicas2, reservas);
+        Producto producto1 = new Producto("bmw", "auto genial", "hola", ciudadGuardada1, categoriaGuardada1, imagenes, caracteristicas, politicas1, reservas);
+        Producto producto2 = new Producto("audi", "auto super genial", "chau", ciudadGuardada2, categoriaGuardada2, imagenes, caracteristicas, politicas2, reservas);
         Producto productoPrueba1 = productoService.guardar(producto1);
         Producto productoPrueba2 = productoService.guardar(producto2);
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
