@@ -18,9 +18,9 @@ function ReservaExitosa(){
 
     return (
         <div>
-        <Header />
+        <Header/>
         <ReservaExitosa/>
-        <Footer />
+        <Footer/>
         </div>
     );
     

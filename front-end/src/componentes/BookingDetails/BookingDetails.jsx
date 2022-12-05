@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useContext } from 'react';
 import { DateContext } from '../../context/DateContext';
-import './BookingDetails.css'
+import './BookingDetails.css';
 
 const BookingDetails = ({respuesta,hora}) => {
 
@@ -35,7 +35,7 @@ const BookingDetails = ({respuesta,hora}) => {
         axios.post(url, payload, headers)
         .then(function (response) {
             if(response.status === 200){
-                confirm("Se ha registrado la reserva con exito")
+                alert("Se ha registrado la reserva con exito");
             }
         })
         .catch(function (error) {

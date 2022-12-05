@@ -12,6 +12,7 @@ const Login = () => {
   
   //pasar a authMode
   const {
+    mustLogIn,
     validated,
     badCredentials,
     unreachable,
@@ -50,6 +51,10 @@ const Login = () => {
 
               <Alert className={unreachable ? null : "d-none"} key={"Unreachable"} variant={"danger"} >
               Lamentablemente no ha podido iniciar sesión. Por favor intente de nuevo más tarde.
+              </Alert>
+
+              <Alert className={mustLogIn ? null : "d-none"} key={"MustLogIn"} variant={"danger"} >
+                Para iniciar una reserva debes iniciar sesión. Si todavía no tienes una cuenta regístrate. 
               </Alert>
 
               <Button type="submit" className="btn-warning">             

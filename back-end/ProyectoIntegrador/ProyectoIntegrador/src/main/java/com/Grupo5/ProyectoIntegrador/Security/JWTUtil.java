@@ -41,6 +41,7 @@ public class JWTUtil {
         claims.put("id", userDetails.getId());
         claims.put("nombre", userDetails.getNombre());
         claims.put("apellido", userDetails.getApellido());
+        claims.put("rol", userDetails.getUsuarioRol());
         return createToken(claims, userDetails.getUsername());
     }
 

@@ -25,7 +25,7 @@ const SingleVehicle = () => {
   const { id } = useParams();
   const url = `http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/${id}`  ;
   const {respuesta, isLoading} = useAxiosGet(url)
-  const {handleShow,loggedIn,setShow} = useAuthContext()
+  const {handleShow, loggedIn, setShow, setMustLogIn, setAuthMode} = useAuthContext()
 
   const handleReserve= () =>{
     //user
@@ -33,6 +33,8 @@ const SingleVehicle = () => {
       navigate(`/singleVehicle/${id}/reserva`)
       setShow(false)
     }else{
+      setAuthMode("signin");
+      setMustLogIn(true);
       handleShow();
     }
     
