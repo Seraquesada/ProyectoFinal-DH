@@ -13,8 +13,8 @@
 }
 
 @media screen and (max-width: 768px){
-    .containerReserva{
-        grid-template-columns: 100%;
+    .container-reserva{
+        grid-template-columns: 100% !important;
         grid-template-rows: repeat(2,auto);
         justify-content: center!IMPORTANT;
     }
