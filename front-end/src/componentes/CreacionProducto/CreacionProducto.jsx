@@ -179,11 +179,23 @@ const CreacionProducto = () => {
             axios.post(url, payload)
             .then(function (response) {
                 if(response.status === 200){
-                    confirm("Se ha registrado el producto con exito")
+                    Swal.fire(
+                        {
+                            
+                            text: 'Tu vehículo se ha creado con éxito.',
+                            icon: 'success'
+                        }
+                    )
                 }
             })
             .catch(function (error) {
-                console.log(error)
+                Swal.fire(
+                    {
+                        title: 'Error...',
+                        text: 'No se ha podido crear tu vehículo',
+                        icon: 'error'
+                    }
+                )
             });
         }
     
