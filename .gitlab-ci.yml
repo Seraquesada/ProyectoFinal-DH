@@ -34,7 +34,7 @@ build_back:
   image: maven:latest
   script: | 
     cd ./back-end/ProyectoIntegrador/ProyectoIntegrador
-    mvn package -DskipTests=true
+    mvn package -X -DskipTests=true
   artifacts:
     paths:
       - "**/target/*.jar"
