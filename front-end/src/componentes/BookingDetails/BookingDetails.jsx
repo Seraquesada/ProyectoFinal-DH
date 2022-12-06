@@ -2,16 +2,16 @@ import axios from 'axios';
 import { useContext } from 'react';
 import { DateContext } from '../../context/DateContext';
 import './BookingDetails.css';
-
-const BookingDetails = ({ respuesta, hora }) => {
+import Swal from "sweetalert2";
+const BookingDetails = ({respuesta,hora}) => {
 
     const { range } = useContext(DateContext)
 
     const startNormalized = range[0].startDate?.toISOString().split("T")[0]
     const endNormalized = range[0].endDate?.toISOString().split("T")[0]
-
-    const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas'
-    const jwt = localStorage.getItem('jwt');
+    
+    const url =  'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas'
+    const jwt= localStorage.getItem('jwt');
 
     const parseJwt = (token) => {
         let base64Url = token?.split('.')[1];
@@ -35,17 +35,28 @@ const BookingDetails = ({ respuesta, hora }) => {
         }
 
         axios.post(url, payload, headers)
-            .then(function (response) {
-                if (response.status === 200) {
-                    alert("Se ha registrado la reserva con exito");
+        .then(function (response) {
+            if(response.status === 200){        
+                    Swal.fire(
+                        {
+                            title: '¡Muchas gracias!',
+                            text: 'Su reserva se ha realizado con éxito',
+                            icon: 'success'
+                        }
+                    )};
+        })
+        .catch(function (error) {
+            Swal.fire(
+                {
+                    title: 'Error...',
+                    text: 'No se ha podido realizar su reserva',
+                    icon: 'error'
                 }
-            })
-            .catch(function (error) {
-                console.log(error)
-            });
-    }
-
-    return (
+            )
+        });
+    };
+    
+    return(
         <div className="infoCard">
             <div>
                 <h3>Detalle de Reserva</h3>
