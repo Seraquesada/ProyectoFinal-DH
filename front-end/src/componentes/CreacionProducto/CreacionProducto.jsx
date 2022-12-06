@@ -21,9 +21,6 @@ const CreacionProducto = () => {
     const [selectDisplay2, setSelectDisplay2] = useState("Cargando...")
     const [userChoiceCategory, setUserChoiceCategory] = useState(undefined)
 
-
-
-
     useEffect(() => {
         axios.get(urlCiudades)
         .then(res => {
@@ -70,8 +67,8 @@ const CreacionProducto = () => {
         return JSON.parse(window.atob(base64));
     }
 
-    const [modelo, SetModelo] = useState(undefined)
-    const [descripcion, SetDescripcion] = useState(undefined)
+    const [modelo, SetModelo] = useState("")
+    const [descripcion, SetDescripcion] = useState("")
 
     const [politicas, setPoliticas] = useState(
         {
@@ -141,7 +138,12 @@ const CreacionProducto = () => {
         ]
     )
 
+    const handleChangeTituloYDescription = e =>{
+        e.target.name === "titulo" ?SetModelo(e.target.value) :SetDescripcion(e.target.value);
+    }
+
     const handleChangePoliticas = (e) => {
+
         const name = e.target.name
         const value = e.target.value
         setPoliticas((prev)=>{
@@ -162,10 +164,9 @@ const CreacionProducto = () => {
             let newObj = {...img}
             if(newObj.titulo === name ){
                 newObj.url = value
-                console.log(newObj.url,value)
+
             }
             newImgs.push(newObj)
-            console.log(newImgs)
         })
         setImagenes(newImgs) 
     }
@@ -173,7 +174,6 @@ const CreacionProducto = () => {
     const handleChangeCaracteristicas = e =>{
         const name = e.target.name.split(" ").join("")
         const value = e.target.value
-        console.log(value)
         let newCaracts = [];
         caracteristicas.forEach(img=>{
             let newObj = {...img}
@@ -188,9 +188,6 @@ const CreacionProducto = () => {
 
     const handleSubmit = (ev) => {
         ev.preventDefault();
-        SetModelo(ev.target.modelo.value);
-        SetDescripcion(ev.target.descripcion.value);
-        
         const payload = {
             "titulo": `${modelo}`,
             "descripcion": `${descripcion}`,
@@ -229,10 +226,10 @@ const CreacionProducto = () => {
 
                     <Row>
                         <Form.Group as={Col}>
-                            <input placeholder="Nombre del modelo" className="titulo" type="text" name="modelo" />
+                            <input placeholder="Nombre del modelo" className="titulo" type="text" name="titulo" onChange={handleChangeTituloYDescription} />
                         </Form.Group>
                         <Form.Group as={Col}>
-                            <input placeholder="Describa brevemente modelo" className="titulo" type="text" name="descripcion" />
+                            <input placeholder="Describa brevemente modelo" className="titulo" type="text" name="descripcion" onChange={handleChangeTituloYDescription} />
                         </Form.Group>
                     </Row>
 
