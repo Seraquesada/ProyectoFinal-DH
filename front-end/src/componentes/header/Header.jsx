@@ -18,11 +18,9 @@ const Header = () => {
     rol
   } = useAuthContext()
 
-  const pathHome = location.pathname === '/';
-  const pathAdmin = location.pathname === "/administracion"
-
+  const pathAdmin = location.pathname === "/administracion";
   const handleReDirect = () => {
-    pathHome ? navigate("/administracion") : navigate("/");
+      location.pathname === "/administracion" ?  navigate("/") : navigate("/administracion");
   }
 
   if (loggedIn) {

@@ -36,10 +36,9 @@ function SideBarBootstrap() {
     const closeCross = () => setIsOpen(false);
     const openCross = () => setIsOpen(true);
 
-    const pathAdmin = location.pathname === "/administracion"
-    const pathHome = location.pathname === '/';
+    const pathAdmin = location.pathname === "/administracion";
     const handleReDirect = () => {
-        pathHome ? navigate("/administracion") : navigate("/");
+        location.pathname === "/administracion" ?  navigate("/") : navigate("/administracion");
     }
 
 
@@ -56,7 +55,7 @@ function SideBarBootstrap() {
                         <div className="onCanvasBody">
                             <div id="username" className="text-center text-light rounded-circle">{initials}</div>
                         </div>
-                        {pathHome && rol === "ROLE_ADMIN" && <Button onClick={handleReDirect} >Crear Producto</Button>}
+                        {!pathAdmin && rol === "ROLE_ADMIN" && <Button onClick={handleReDirect} >Crear Producto</Button>}
                         {pathAdmin && rol === "ROLE_ADMIN" && <Button onClick={handleReDirect} >Volver al Inicio</Button>}
                         <Button variant="warning" onClick={logOut}>
                             Cerrar Sesión
