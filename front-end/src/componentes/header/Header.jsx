@@ -18,11 +18,9 @@ const Header = () => {
     rol
   } = useAuthContext()
 
-  const pathHome = location.pathname === '/';
-  const pathAdmin = location.pathname === "/administracion"
-
+  const pathAdmin = location.pathname === "/administracion";
   const handleReDirect = () => {
-    pathHome ? navigate("/administracion") : navigate("/");
+      location.pathname === "/administracion" ?  navigate("/") : navigate("/administracion");
   }
 
   if (loggedIn) {
@@ -41,7 +39,7 @@ const Header = () => {
           <p className="loggedUserName">Hola, {userName}</p>
           <div id="username" className="text-center text-light rounded-circle">{initials}</div>
           {!pathAdmin && rol === "ROLE_ADMIN" && <Button onClick={handleReDirect} >Crear Producto</Button>}
-          {pathAdmin && rol === "ROLE_ADMIN" && <Button onClick={handleReDirect} >Volver a Inicio</Button>}
+          {pathAdmin && rol === "ROLE_ADMIN" && <Button onClick={handleReDirect} >Volver al Inicio</Button>}
           <Button variant="warning" onClick={logOut}>
             Cerrar Sesión
           </Button>

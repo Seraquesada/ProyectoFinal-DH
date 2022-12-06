@@ -54,7 +54,8 @@ export const AuthContextProvider = ({children}) => {
     }
     const isLoggedIn = () => {
         if(localStorage.getItem('jwt')){
-        setLoggedIn(true)
+        setLoggedIn(true);
+        setRol(parseJwt(localStorage.getItem('jwt')).rol);
         }
     }
     
