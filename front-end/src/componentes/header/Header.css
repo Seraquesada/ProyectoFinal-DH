@@ -60,7 +60,7 @@ div#username{
     margin: 0;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 680px) {
     .right-header {
         display: none;
     }

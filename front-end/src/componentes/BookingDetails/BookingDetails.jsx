@@ -3,47 +3,49 @@ import { useContext } from 'react';
 import { DateContext } from '../../context/DateContext';
 import './BookingDetails.css';
 
-const BookingDetails = ({respuesta,hora}) => {
+const BookingDetails = ({ respuesta, hora }) => {
 
-    const {range} = useContext(DateContext)
+    const { range } = useContext(DateContext)
 
     const startNormalized = range[0].startDate?.toISOString().split("T")[0]
     const endNormalized = range[0].endDate?.toISOString().split("T")[0]
-    
-    const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas'
-    const jwt= localStorage.getItem('jwt');
 
-    const parseJwt = async (token) => {
-        let base64Url = await token?.split('.')[1];
-        let base64 = await base64Url?.replace('-', '+').replace('_', '/');
+    const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas'
+    const jwt = localStorage.getItem('jwt');
+
+    const parseJwt = (token) => {
+        let base64Url = token?.split('.')[1];
+        let base64 = base64Url?.replace('-', '+').replace('_', '/');
         return JSON.parse(window.atob(base64));
     }
-    
-    const headers = {
-        headers: {
-            "Authorization" : `Bearer ${jwt}`
-        }
-    }
-    const payload = {
-        "horaInicio" : `${hora?.horario}:00`,
-        "fechaInicio" : `${startNormalized}`,
-        "fechaFinalizacion" : `${endNormalized}`,
-        "producto" : {"id" : respuesta.id},
-        "usuario" : {"id" : parseJwt(jwt)?.id}
-    }
+
+
     const reservar = () => {
-        axios.post(url, payload, headers)
-        .then(function (response) {
-            if(response.status === 200){
-                alert("Se ha registrado la reserva con exito");
+        const headers = {
+            headers: {
+                "Authorization": `Bearer ${jwt}`
             }
-        })
-        .catch(function (error) {
-            console.log(error)
-        });
+        }
+        const payload = {
+            "horaInicio": `${hora?.horario}:00`,
+            "fechaInicio": `${startNormalized}`,
+            "fechaFinalizacion": `${endNormalized}`,
+            "producto": { "id": respuesta.id },
+            "usuario": { "id": parseJwt(jwt).id }
+        }
+
+        axios.post(url, payload, headers)
+            .then(function (response) {
+                if (response.status === 200) {
+                    alert("Se ha registrado la reserva con exito");
+                }
+            })
+            .catch(function (error) {
+                console.log(error)
+            });
     }
-    
-    return(
+
+    return (
         <div className="infoCard">
             <div>
                 <h3>Detalle de Reserva</h3>
@@ -60,7 +62,7 @@ const BookingDetails = ({respuesta,hora}) => {
                 <h4 className='checkinOut'>Check out {endNormalized}</h4>
                 <hr></hr>
             </div>
-            <button onClick={reservar} className='btn btn-primary'>Confirmar reserva</button>  
+            <button onClick={reservar} className='btn btn-primary'>Confirmar reserva</button>
         </div>
     );
 };

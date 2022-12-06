@@ -21,32 +21,32 @@ import { useAxiosGet } from "../../hooks/useAxiosGet";
 const SingleVehicle = () => {
 
   const navigate = useNavigate();
-  
-  const { id } = useParams();
-  const url = `http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/${id}`  ;
-  const {respuesta, isLoading} = useAxiosGet(url)
-  const {handleShow, loggedIn, setShow, setMustLogIn, setAuthMode} = useAuthContext()
 
-  const handleReserve= () =>{
+  const { id } = useParams();
+  const url = `http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/${id}`;
+  const { respuesta, isLoading } = useAxiosGet(url)
+  const { handleShow, loggedIn, setShow, setMustLogIn, setAuthMode } = useAuthContext()
+
+  const handleReserve = () => {
     //user
-    if(loggedIn){
+    if (loggedIn) {
       navigate(`/singleVehicle/${id}/reserva`)
       setShow(false)
-    }else{
+    } else {
       setAuthMode("signin");
       setMustLogIn(true);
       handleShow();
     }
-    
+
   }
 
   if (isLoading) {
     return (
-    <>
-      <Header/>
-      <SingleVehicleSkeleton  cards={1}/>
-      <Footer/>
-    </>
+      <>
+        <Header />
+        <SingleVehicleSkeleton cards={1} />
+        <Footer />
+      </>
     )
   }
   return (
@@ -55,15 +55,15 @@ const SingleVehicle = () => {
       <HeaderCard respuesta={respuesta} />
       <UbicationCard respuesta={respuesta} />
       <SliderCard respuesta={respuesta} />
-      <DescriptionCard respuesta={respuesta}/>
-      <div className="containerReserva"> 
-      <CalendarComponent/>
+      <DescriptionCard respuesta={respuesta} />
+      <div className="containerReserva">
+        <CalendarComponent />
         <div className="container-button">
           <button className="buttonVerMas link" onClick={handleReserve}>Iniciar Reserva</button>
         </div>
       </div>
-      <FeaturesCard respuesta={respuesta}/>
-      <PoliticsCard respuesta={respuesta}/>
+      <FeaturesCard respuesta={respuesta} />
+      <PoliticsCard respuesta={respuesta} />
       <Footer />
     </>
   );

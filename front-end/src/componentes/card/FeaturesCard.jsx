@@ -5,7 +5,7 @@ import {TbManualGearbox,MdAirlineSeatReclineExtra,IoSpeedometerOutline,GiGasPump
 const iconos = [<BsFillPeopleFill/>, <MdOutlineLuggage/>, <TbManualGearbox/>, <MdAirlineSeatReclineExtra/>, <IoSpeedometerOutline/>, <GiGasPump/>]
 
 const FeaturesCard = ({respuesta}) => {
-    console.log(respuesta)
+
     return(
         <div className="featuresCard">
             <h3>¿Qué tiene el auto seleccionado?</h3>

@@ -21,7 +21,9 @@ export const AuthContextProvider = ({children}) => {
     const [originalPasswordPattern, setOriginalPasswordPattern] = useState("");
     const [authMode, setAuthMode] = useState("signin");
     const [mustLogIn, setMustLogIn] = useState(false);
-    
+    const [rol,setRol] = useState()
+
+
     const wrapperFunctionSignIn = () => {
         setRegisteredOK(false);
         setValidated(false);
@@ -83,7 +85,9 @@ export const AuthContextProvider = ({children}) => {
         return JSON.parse(window.atob(base64));
         }
         
-        const changeAuthMode = () => {
+
+
+    const changeAuthMode = () => {
         setAuthMode(authMode === "signin" ? "signup" : "signin")
         if(authMode === "signin"){
             document.querySelector("#emailLog").value = "";
@@ -100,6 +104,7 @@ export const AuthContextProvider = ({children}) => {
         setRegisteredOK(false);
         }
 
+
         const iniciarSesion = (e) => {
         e.preventDefault();
         setRegisteredOK(false);
@@ -111,16 +116,17 @@ export const AuthContextProvider = ({children}) => {
         axios.post('http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/usuarios/authenticate', payload)
         .then(function (response) {
             if(response.status === 200){
-            localStorage.setItem('jwt', response.data.jwt);
-            const unjwt = parseJwt(localStorage.getItem('jwt'))
-            const iniciales = unjwt.apellido.substr(0, 1).toUpperCase() + unjwt.nombre.substr(0, 1).toUpperCase();
-            const username = unjwt.nombre.substr(0, 1).toUpperCase()+unjwt.nombre.substr(1);
-            localStorage.setItem('initials', iniciales);
-            localStorage.setItem('username', username);
-            setInitials(iniciales);
-            setUserName(username);
-            handleClose();
-            logIn();
+                localStorage.setItem('jwt', response.data.jwt);
+                const unjwt = parseJwt(localStorage.getItem('jwt'))
+                const iniciales = unjwt.apellido.substr(0, 1).toUpperCase() + unjwt.nombre.substr(0, 1).toUpperCase();
+                const username = unjwt.nombre.substr(0, 1).toUpperCase()+unjwt.nombre.substr(1);
+                localStorage.setItem('initials', iniciales);
+                localStorage.setItem('username', username);
+                setInitials(iniciales);
+                setUserName(username);
+                setRol(parseJwt(localStorage.getItem('jwt')).rol)
+                handleClose();
+                logIn();
             }
         }).catch(function (error) {
             error.code === 'ERR_BAD_REQUEST' ? setBadCredentials(true) : setUnreachable(true);
@@ -179,7 +185,8 @@ return (
             setShow,
             mustLogIn,
             setMustLogIn,
-            setAuthMode
+            setAuthMode,
+            rol
         }
         }>
         {children}
