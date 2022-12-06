@@ -41,7 +41,7 @@ const Header = () => {
           <p className="loggedUserName">Hola, {userName}</p>
           <div id="username" className="text-center text-light rounded-circle">{initials}</div>
           {!pathAdmin && rol === "ROLE_ADMIN" && <Button onClick={handleReDirect} >Crear Producto</Button>}
-          {pathAdmin && rol === "ROLE_ADMIN" && <Button onClick={handleReDirect} >Volver a Inicio</Button>}
+          {pathAdmin && rol === "ROLE_ADMIN" && <Button onClick={handleReDirect} >Volver al Inicio</Button>}
           <Button variant="warning" onClick={logOut}>
             Cerrar Sesión
           </Button>

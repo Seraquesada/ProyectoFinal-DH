@@ -1,18 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import Footer from '../footer/Footer'
-import Header from '../header/Header'
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Footer from '../footer/Footer';
+import Header from '../header/Header';
 import Select from 'react-select';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { useAxiosGet } from '../../hooks/useAxiosGet';
 import './CreacionProducto.css';
 import { TbManualGearbox, MdAirlineSeatReclineExtra, IoSpeedometerOutline, GiGasPump, BsFillPeopleFill, MdOutlineLuggage } from 'react-icons/all'
 
 
 const CreacionProducto = () => {
 
+    const navigate = useNavigate();
+    const handleReDirect = () => {
+        navigate("/");
+      }
     const urlCiudades = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/ciudades'
     const [selectDisplay1, setSelectDisplay1] = useState("Cargando...")
     const [userChoiceCity, setUserChoiceCity] = useState(undefined)
@@ -221,7 +226,7 @@ const CreacionProducto = () => {
         <>
             <Header />
             <div className="container-producto">
-                <h2>Crear Auto</h2>
+                <h2>Crear Nuevo Vehículo</h2>
                 <Form onSubmit={e=>{handleSubmit(e)}}>
 
                     <Row>
@@ -243,31 +248,31 @@ const CreacionProducto = () => {
                     </Row>
 
                     <fieldset>
-                        <legend className='grupoCaracteristicas'>Características: ( No mas de 6)</legend>
+                        <legend className='grupoCaracteristicas'>Características: (máximo 6)</legend>
                         <label for="pasajeros">Pasajeros</label> <BsFillPeopleFill />
-                        <input required placeholder="Cantidad de pasajeros" name="Capacidad Máxima:" type="text" className="caracteristica" id="pasajeros" onChange={handleChangeCaracteristicas}></input>
+                        <input required placeholder="Cantidad de Pasajeros" name="Capacidad Máxima:" type="text" className="caracteristica" id="pasajeros" onChange={handleChangeCaracteristicas}></input>
 
                         <label for="equipaje">Equipaje</label> <MdOutlineLuggage />
                         <input required placeholder="Cantidad de Equipaje" name="Equipaje Recomendado:" type="text" className="caracteristica" id="Equipaje" onChange={handleChangeCaracteristicas}></input>
 
                         <label for="transmision">Transmision</label> <TbManualGearbox />
-                        <input required placeholder="Describa la Transmision" name="Transmisión:" type="text" className="caracteristica" id="transmision" onChange={handleChangeCaracteristicas}></input>
+                        <input required placeholder="Tipo de Transmision" name="Transmisión:" type="text" className="caracteristica" id="transmision" onChange={handleChangeCaracteristicas}></input>
 
                         <label for="airbags">Cantidad de Airbags</label> <MdAirlineSeatReclineExtra />
-                        <input required placeholder="Cantidad de airbags" name="Cantidad de Airbags en cabina:" type="text" className="caracteristica" id="airbags" onChange={handleChangeCaracteristicas}></input>
+                        <input required placeholder="Cantidad de Airbags" name="Cantidad de Airbags en cabina:" type="text" className="caracteristica" id="airbags" onChange={handleChangeCaracteristicas}></input>
 
                         <label for="velocidad">Velocidad Máxima</label>    <IoSpeedometerOutline />
                         <input required placeholder="Velocidad Máxima" name="Velocidad máxima:" type="text" className="caracteristica" id="Velocidad" onChange={handleChangeCaracteristicas}></input>
 
                         <label for="combustible">Combustible</label> <GiGasPump />
-                        <input rows="10" cols=" 25" required placeholder="Que combustible usa" name="Combustible:" type="text" className=" caracteristica" id="caracterisitica" onChange={handleChangeCaracteristicas}></input>
+                        <input rows="10" cols=" 25" required placeholder="Tipo de Combustible" name="Combustible:" type="text" className=" caracteristica" id="caracterisitica" onChange={handleChangeCaracteristicas}></input>
                     </fieldset>
 
                     <fieldset>
                         <legend className='grupoPoliticas'>Políticas </legend>
-                        <textarea rows="5" cols="40" required placeholder="Complete Normas del vehículo..." className="politicas" type="text" name="normasDescripcion" onChange={handleChangePoliticas} />
-                        <textarea rows="5" cols="40" required placeholder="Complete Seguridad..." className="politicas" type="text" name="seguridadDescripcion" onChange={handleChangePoliticas} />
-                        <textarea rows="5" cols="40" required placeholder="Complete Cancelación..." className="politicas" type="text" name="cancelacionDescripcion" onChange={handleChangePoliticas} />
+                        <textarea rows="5" cols="40" required placeholder="Complete Normas Generales del Vehículo..." className="politicas" type="text" name="normasDescripcion" onChange={handleChangePoliticas} />
+                        <textarea rows="5" cols="40" required placeholder="Complete Políticas de Seguridad..." className="politicas" type="text" name="seguridadDescripcion" onChange={handleChangePoliticas} />
+                        <textarea rows="5" cols="40" required placeholder="Complete Políticas de Cancelación..." className="politicas" type="text" name="cancelacionDescripcion" onChange={handleChangePoliticas} />
                     </fieldset>
 
                     <fieldset>
@@ -279,7 +284,10 @@ const CreacionProducto = () => {
                         <textarea rows="1" cols="40" required placeholder="Copie la URL de la siguiente imagen " className="imagenes" type="url" name="Exterior - delantero" onChange={handleChangeImagenes} />
                     </fieldset>
 
-                    <button className='btn btn-primary'>Guardar Producto</button>
+                    <div className='d-flex justify-content-around'>
+                    <button className='btn btn-warning' type={"submit"}>Crear Producto</button>
+                    <Button onClick={handleReDirect} className={"btn btn-danger"}>Volver al Inicio</Button>
+                    </div>
 
                 </Form>
             </div>
