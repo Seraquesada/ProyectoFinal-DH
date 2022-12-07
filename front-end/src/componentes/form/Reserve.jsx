@@ -6,9 +6,12 @@ import "../form/Reserve.css";
 const Reserve = () => {
 
   function parseJwt (token) {
-    let base64Url = token?.split('.')[1];
-    let base64 = base64Url?.replace('-', '+').replace('_', '/');
-    return JSON.parse(window.atob(base64));
+    if(token){
+        let base64Url = token.split('.')[1];
+        let base64 = base64Url.replace('-', '+').replace('_', '/');
+        return JSON.parse(window.atob(base64));
+    }
+
   }
   
     const jwt = localStorage.getItem('jwt');
@@ -23,7 +26,7 @@ const Reserve = () => {
           <input
             type="text"
             name="name"
-            value={parseJwt(jwt).nombre}
+            value={parseJwt(jwt)?.nombre}
             disabled
             />
         </div>
@@ -33,7 +36,7 @@ const Reserve = () => {
             type="text"
             name="surname"
             placeholder="Rodriguez"
-            value={parseJwt(jwt).apellido}
+            value={parseJwt(jwt)?.apellido}
             disabled
           />
         </div>
@@ -45,7 +48,7 @@ const Reserve = () => {
               type="email"
               name="email"
               placeholder="brodriguez@gmail.com"
-              value={parseJwt(jwt).sub}
+              value={parseJwt(jwt)?.sub}
               disabled
               />
         </div>

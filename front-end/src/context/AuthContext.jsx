@@ -1,5 +1,6 @@
 import React,{ createContext,useState,useContext,useEffect } from "react";
 import axios from "axios";
+import { redirect } from "react-router-dom";
 export const AuthContext = createContext(null);
 
 export const useAuthContext = () => useContext(AuthContext) 
@@ -22,7 +23,6 @@ export const AuthContextProvider = ({children}) => {
     const [authMode, setAuthMode] = useState("signin");
     const [mustLogIn, setMustLogIn] = useState(false);
     const [rol,setRol] = useState()
-
 
     const wrapperFunctionSignIn = () => {
         setRegisteredOK(false);
