@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './CreacionProducto.css';
 import { TbManualGearbox, MdAirlineSeatReclineExtra, IoSpeedometerOutline, GiGasPump, BsFillPeopleFill, MdOutlineLuggage } from 'react-icons/all'
+import Swal from 'sweetalert2';
 
 
 const CreacionProducto = () => {
@@ -17,7 +18,7 @@ const CreacionProducto = () => {
     const navigate = useNavigate();
     const handleReDirect = () => {
         navigate("/");
-      }
+    }
     const urlCiudades = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/ciudades'
     const [selectDisplay1, setSelectDisplay1] = useState("Cargando...")
     const [userChoiceCity, setUserChoiceCity] = useState(undefined)
@@ -28,21 +29,21 @@ const CreacionProducto = () => {
 
     useEffect(() => {
         axios.get(urlCiudades)
-        .then(res => {
-            let options = res.data;
-            options.map((c) => {
-                c[`label`] = c.nombre;
-                c[`value`] = c.id;
+            .then(res => {
+                let options = res.data;
+                options.map((c) => {
+                    c[`label`] = c.nombre;
+                    c[`value`] = c.id;
 
-                delete c.nombre;
-                delete c.id;
-                delete c.latitud;
-                delete c.longitud;
-                return c;
-            });
-            options.sort((a, b) => (a.label > b.label ? 1 : -1));
-            setSelectDisplay1(options);
-        })
+                    delete c.nombre;
+                    delete c.id;
+                    delete c.latitud;
+                    delete c.longitud;
+                    return c;
+                });
+                options.sort((a, b) => (a.label > b.label ? 1 : -1));
+                setSelectDisplay1(options);
+            })
     }, []);
 
     useEffect(() => {
@@ -83,7 +84,7 @@ const CreacionProducto = () => {
             "seguridadDescripcion": ``,
             "cancelacionTitulo": "Cancelacion",
             "cancelacionDescripcion": ``,
-    }
+        }
     )
 
     const [imagenes, setImagenes] = useState([
@@ -109,7 +110,7 @@ const CreacionProducto = () => {
         }
     ])
 
-    const [caracteristicas,setCaracteristicas] = useState(
+    const [caracteristicas, setCaracteristicas] = useState(
         [
             {
                 "nombre": "Velocidad máxima: ",
@@ -143,18 +144,17 @@ const CreacionProducto = () => {
         ]
     )
 
-    const handleChangeTituloYDescription = e =>{
-        e.target.name === "titulo" ?SetModelo(e.target.value) :SetDescripcion(e.target.value);
+    const handleChangeTituloYDescription = e => {
+        e.target.name === "titulo" ? SetModelo(e.target.value) : SetDescripcion(e.target.value);
     }
 
     const handleChangePoliticas = (e) => {
-
         const name = e.target.name
         const value = e.target.value
-        setPoliticas((prev)=>{
+        setPoliticas((prev) => {
             return {
-                ...prev, 
-                [name]:value,
+                ...prev,
+                [name]: value,
             }
         })
     };
@@ -163,32 +163,32 @@ const CreacionProducto = () => {
     const handleChangeImagenes = e => {
         const name = e.target.name
         const value = e.target.value
-        
+
         let newImgs = [];
-        imagenes.forEach(img=>{
-            let newObj = {...img}
-            if(newObj.titulo === name ){
+        imagenes.forEach(img => {
+            let newObj = { ...img }
+            if (newObj.titulo === name) {
                 newObj.url = value
 
             }
             newImgs.push(newObj)
         })
-        setImagenes(newImgs) 
+        setImagenes(newImgs)
     }
 
-    const handleChangeCaracteristicas = e =>{
+    const handleChangeCaracteristicas = e => {
         const name = e.target.name.split(" ").join("")
         const value = e.target.value
         let newCaracts = [];
-        caracteristicas.forEach(img=>{
-            let newObj = {...img}
-            if(newObj.nombre.split(" ").join("") === name ){
+        caracteristicas.forEach(img => {
+            let newObj = { ...img }
+            if (newObj.nombre.split(" ").join("") === name) {
                 newObj.valor = value
-                
+
             }
             newCaracts.push(newObj)
         })
-        setCaracteristicas(newCaracts) 
+        setCaracteristicas(newCaracts)
     }
 
     const handleSubmit = (ev) => {
@@ -203,14 +203,11 @@ const CreacionProducto = () => {
                 "id": `${userChoiceCategory}`,
             },
             "imagenes": imagenes,
-            "caracteristicas":caracteristicas,
-            "politicasProducto":politicas,
+            "caracteristicas": caracteristicas,
+            "politicasProducto": politicas,
             "reservas": [],
         }
-
-        console.log(payload)
-
-        /*axios.post(url, payload)
+        axios.post(url, payload)
             .then(function (response) {
                 if(response.status === 200){
                     Swal.fire(
@@ -230,8 +227,7 @@ const CreacionProducto = () => {
                         icon: 'error'
                     }
                 )
-            });
-        */
+        });
     }
 
     return (
@@ -239,7 +235,7 @@ const CreacionProducto = () => {
             <Header />
             <div className="container-producto">
                 <h2>Crear Nuevo Vehículo</h2>
-                <Form onSubmit={e=>{handleSubmit(e)}}>
+                <Form onSubmit={e => { handleSubmit(e) }}>
 
                     <Row>
                         <Form.Group as={Col}>
@@ -290,15 +286,15 @@ const CreacionProducto = () => {
                     <fieldset>
                         <legend className='grupoImagenes'>Imagenes </legend>
                         <textarea rows="1" cols="40" required placeholder="Copie la URL de la imagen principal" className="imagenes" type="url" name="Interior - trasero" onChange={handleChangeImagenes} />
-                        <textarea rows="1" cols="40" required placeholder="Copie la URL de la siguiente imagen " className="imagenes" type="url" name="Exterior - lateral"  onChange={handleChangeImagenes} />
-                        <textarea rows="1" cols="40" required placeholder="Copie la URL de la siguiente imagen " className="imagenes" type="url" name="Interior - delantero"  onChange={handleChangeImagenes} />
+                        <textarea rows="1" cols="40" required placeholder="Copie la URL de la siguiente imagen " className="imagenes" type="url" name="Exterior - lateral" onChange={handleChangeImagenes} />
+                        <textarea rows="1" cols="40" required placeholder="Copie la URL de la siguiente imagen " className="imagenes" type="url" name="Interior - delantero" onChange={handleChangeImagenes} />
                         <textarea rows="1" cols="40" required placeholder="Copie la URL de la siguiente imagen " className="imagenes" type="url" name="Exterior - trasero" onChange={handleChangeImagenes} />
                         <textarea rows="1" cols="40" required placeholder="Copie la URL de la siguiente imagen " className="imagenes" type="url" name="Exterior - delantero" onChange={handleChangeImagenes} />
                     </fieldset>
 
                     <div className='d-flex justify-content-around'>
-                    <button className='btn btn-warning' type={"submit"}>Crear Producto</button>
-                    <Button onClick={handleReDirect} className={"btn btn-danger"}>Volver al Inicio</Button>
+                        <button className='btn btn-warning' type={"submit"}>Crear Producto</button>
+                        <Button onClick={handleReDirect} className={"btn btn-danger"}>Volver al Inicio</Button>
                     </div>
 
                 </Form>
