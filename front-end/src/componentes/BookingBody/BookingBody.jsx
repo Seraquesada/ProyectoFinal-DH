@@ -6,7 +6,7 @@ import {IoKeyOutline} from 'react-icons/all'
 import "react-datepicker/dist/react-datepicker.css"
 import MyListbox from "./MyListBox/MyListBox.jsx"
 import CalendarComponent from '../Calendar/CalendarComponent.jsx'
-
+import "../BookingDetails/BookingDetails.css"
 
 const BookingBody = ({respuesta}) => {
 

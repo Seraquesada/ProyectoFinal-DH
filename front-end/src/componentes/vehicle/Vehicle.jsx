@@ -31,7 +31,6 @@ import{GiCarWheel,GiCarSeat} from "react-icons/gi";
             <span><IoMdPin/></span>
             <p>{location}</p>
           </div>
-        <p className="linkMap"><a>MOSTRAR EN EL MAPA</a></p>
         </div>
         <div className="features">
           <GiCarWheel/>

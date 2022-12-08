@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { useContext } from 'react';
 import { DateContext } from '../../context/DateContext';
-import './BookingDetails.css';
 import Swal from "sweetalert2";
+import "./BookingDetails.css"
+
 const BookingDetails = ({respuesta,hora}) => {
-
+    
     const { range } = useContext(DateContext)
-
     const startNormalized = range[0].startDate?.toISOString().split("T")[0]
     const endNormalized = range[0].endDate?.toISOString().split("T")[0]
     
