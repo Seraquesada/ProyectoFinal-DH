@@ -1,4 +1,5 @@
 import React from "react";
+import './CaracteristicaElement.css';
 import {TbManualGearbox,MdAirlineSeatReclineExtra,IoSpeedometerOutline,GiGasPump,BsFillPeopleFill,MdOutlineLuggage} from 'react-icons/all'
 
 const iconos = [<BsFillPeopleFill/>, <MdOutlineLuggage/>, <TbManualGearbox/>, <MdAirlineSeatReclineExtra/>, <IoSpeedometerOutline/>, <GiGasPump/>]
