@@ -108,7 +108,7 @@ En cada Sprint:
 
 Se hicieron Smoke Test, Pruebas Exploratorias, Pruebas Unitarias, Test con Selenium y Postman
 
-### Vista
+### Vistas
     Página de inicio:
 
     - Incluye formulario de login y registro.
