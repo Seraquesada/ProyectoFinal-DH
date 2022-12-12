@@ -40,7 +40,6 @@ Sabiendo nuestras issues incompletas del tercer sprint, tuvimos que ser muy prod
 ## Herramientas Utilizadas
 
 ### Front end
-- HTML + CSS + JS
 - React + Vite Js
 - Node + NPM
 
