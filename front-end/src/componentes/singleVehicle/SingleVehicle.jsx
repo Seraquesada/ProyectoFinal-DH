@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
 import Header from "../header/Header";
 import SliderCard from "../card/SliderCard.jsx";
 import "../card/SliderCard.css";
@@ -11,12 +10,10 @@ import FeaturesCard from "../card/FeaturesCard";
 import PoliticsCard from "../card/PoliticsCard";
 import Footer from "../footer/Footer";
 import CalendarComponent from "../Calendar/CalendarComponent";
-
 import SingleVehicleSkeleton from "./Skeleton/Skeleton";
 import "./SingleVehicle.css";
 import { useAuthContext } from "../../context/AuthContext";
 import { useAxiosGet } from "../../hooks/useAxiosGet";
-
 
 const SingleVehicle = () => {
 
