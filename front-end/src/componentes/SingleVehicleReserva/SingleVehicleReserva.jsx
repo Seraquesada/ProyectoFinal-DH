@@ -7,7 +7,7 @@ import Footer from "../footer/Footer";
 import BookingBody from '../BookingBody/BookingBody.jsx';
 import { useAxiosGet } from '../../hooks/useAxiosGet.jsx';
 import { useAuthContext } from "../../context/AuthContext.jsx";
-
+import SingleVehicleSkeleton from "./Skeleton/Skeleton.jsx"
 
 const SingleVehicleReserva = () => {
     const { id } = useParams();
@@ -18,7 +18,7 @@ const SingleVehicleReserva = () => {
     const navigate = useNavigate();
 
     if(isLoading){
-      return <p> Loading ...</p>
+      return <SingleVehicleSkeleton/>
     }
 
     if(!loggedIn){

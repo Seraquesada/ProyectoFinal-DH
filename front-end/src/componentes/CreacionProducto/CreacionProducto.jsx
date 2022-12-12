@@ -239,19 +239,19 @@ const CreacionProducto = () => {
 
                     <Row>
                         <Form.Group as={Col}>
-                            <input placeholder="Nombre del modelo" className="titulo" type="text" name="titulo" onChange={handleChangeTituloYDescription} />
+                            <input required placeholder="Nombre del modelo" className="titulo" type="text" name="titulo" onChange={handleChangeTituloYDescription} />
                         </Form.Group>
                         <Form.Group as={Col}>
-                            <input placeholder="Describa brevemente modelo" className="titulo" type="text" name="descripcion" onChange={handleChangeTituloYDescription} />
+                            <input required placeholder="Describa brevemente modelo" className="titulo" type="text" name="descripcion" onChange={handleChangeTituloYDescription} />
                         </Form.Group>
                     </Row>
 
                     <Row>
                         <Form.Group as={Col}>
-                            <Select placeholder="Elija una localidad..." options={selectDisplay1} onChange={(choice) => setUserChoiceCity(choice.value)} />
+                            <Select  placeholder="Elija una localidad..." options={selectDisplay1} onChange={(choice) => setUserChoiceCity(choice.value)} />
                         </Form.Group>
                         <Form.Group as={Col}>
-                            <Select placeholder="Elija una categoria..." options={selectDisplay2} onChange={(choice) => setUserChoiceCategory(choice.value)} />
+                            <Select  placeholder="Elija una categoria..." options={selectDisplay2} onChange={(choice) => setUserChoiceCategory(choice.value)} />
                         </Form.Group>
                     </Row>
 
