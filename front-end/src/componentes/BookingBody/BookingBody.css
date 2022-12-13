@@ -56,7 +56,6 @@
     .container-reserva {
         grid-template-columns:100%;
         grid-template-rows: repeat(4,auto);
-        place-items: center;
         row-gap: 5px;
     }
     
