@@ -81,6 +81,9 @@ Sabiendo nuestras issues incompletas del tercer sprint, tuvimos que ser muy prod
 
 ### Base de Datos
 
+En la siguiente foto vamos a mostrar como quedo la base de datos final
+
+![image-1.png](./image-1.png)
 
 ### Infraestructura y Deployment
 
