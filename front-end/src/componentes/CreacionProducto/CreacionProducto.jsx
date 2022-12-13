@@ -12,7 +12,6 @@ import './CreacionProducto.css';
 import { TbManualGearbox, MdAirlineSeatReclineExtra, IoSpeedometerOutline, GiGasPump, BsFillPeopleFill, MdOutlineLuggage } from 'react-icons/all'
 import Swal from 'sweetalert2';
 
-
 const CreacionProducto = () => {
 
     const navigate = useNavigate();
@@ -192,7 +191,9 @@ const CreacionProducto = () => {
     }
 
     const handleSubmit = (ev) => {
+    
         ev.preventDefault();
+        ev.target.reset();
         const payload = {
             "titulo": `${modelo}`,
             "descripcion": `${descripcion}`,
@@ -207,6 +208,7 @@ const CreacionProducto = () => {
             "politicasProducto": politicas,
             "reservas": [],
         }
+
         axios.post(url, payload)
             .then(function (response) {
                 if(response.status === 200){
@@ -228,6 +230,7 @@ const CreacionProducto = () => {
                     }
                 )
         });
+        
     }
 
     return (
