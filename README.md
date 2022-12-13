@@ -84,6 +84,8 @@ Sabiendo nuestras issues incompletas del tercer sprint, tuvimos que ser muy prod
 
 ### Infraestructura y Deployment
 
+![image.png](./image.png)
+
 La aplicación web se encuentra desplegada y completamente funcional en AWS. Se puede acceder a través del siguiente link:
 
 - http://grupo5front.s3-website.us-east-2.amazonaws.com/
