@@ -294,7 +294,7 @@ public class CargaDatos implements ApplicationRunner {
         LocalDate fechaInicio2 = LocalDate.of(2022, 12, 10);
         LocalDate fechaFin2 = LocalDate.of(2022, 12, 21);
         Reserva reserva2 = new Reserva(time2, fechaInicio2, fechaFin2, productoService.buscar(4L), usuario);
-        reservaservice.guardar(reserva2);
+        reservaservice.guardar(reserva2);*/
 
         /*Categoria categoria1 = new Categoria("Sedan", "Vehiculo de cuatro puertas y baúl. Ideal para cuatro personas y dos valijas grandes.", "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
 
@@ -325,7 +325,7 @@ public class CargaDatos implements ApplicationRunner {
         usuario.setPassword(passHash);
         usuario.setUsuarioRol(RolUsuario.ROLE_ADMIN);
         usuario.setReservas(reservas);
-        Usuario usuario1 = usuarioRepository.save(usuario);
+        Usuario usuario1 = usuarioRepository.save(usuario);*/
 
     }
 }
