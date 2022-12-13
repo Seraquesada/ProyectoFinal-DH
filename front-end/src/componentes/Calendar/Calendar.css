@@ -14,3 +14,7 @@
 .rdrCalendarWrapper{
     width: max-content;
 }
+
+.rdrMonth{
+    width: 100% !important;
+}
