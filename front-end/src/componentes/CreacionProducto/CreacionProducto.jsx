@@ -11,8 +11,10 @@ import Col from 'react-bootstrap/Col';
 import './CreacionProducto.css';
 import { TbManualGearbox, MdAirlineSeatReclineExtra, IoSpeedometerOutline, GiGasPump, BsFillPeopleFill, MdOutlineLuggage } from 'react-icons/all'
 import Swal from 'sweetalert2';
+import { useAuthContext } from '../../context/AuthContext';
 
 const CreacionProducto = () => {
+
 
     const navigate = useNavigate();
     const handleReDirect = () => {
@@ -61,6 +63,14 @@ const CreacionProducto = () => {
                 setSelectDisplay2(options);
             })
     }, []);
+
+    const {loggedIn} = useAuthContext()
+    
+    useEffect(()=>{
+        if(!loggedIn){
+            return navigate("/");
+        }
+    },[loggedIn])
 
 
     const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos'

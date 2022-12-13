@@ -10,9 +10,9 @@ const SingleVehicleSkeleton = ({cards}) => {
     return Array(cards)
             .fill(0)
             .map((_, i) => (
-                <>
+                <div key={i}>
                 <Header/>
-                <div className="headerCard" key={1}>
+                <div className="headerCard" >
                     <Skeleton cards={2}  width={200} height={20}/>
                 </div>
                 <div className="container-reserva-skeleton">
@@ -34,7 +34,7 @@ const SingleVehicleSkeleton = ({cards}) => {
                     </div>
                 </div>
                 <Footer></Footer>
-                </>
+                </div>
             ));
 };
 
