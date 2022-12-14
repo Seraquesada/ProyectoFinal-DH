@@ -17,7 +17,7 @@ Intermedio: Back-End y Base de Datos. Debilidades: Testing e Infraestructura
 
 - Joaquín Sarmiento (https://www.github.com/joasarmiento) Fortalezas: Infraestructura y Base de Datos. Intermedio: Back-End. Debilidades: Testing y Front-End
 
--Esteban Casares (https://www.gitlab.com/esteban.casares) Fortalezas: Testing. Intermedio: Front-End y Base de Datos. Debilidades: Back-End e Infraestructura.
+- Esteban Casares (https://www.gitlab.com/esteban.casares) Fortalezas: Testing. Intermedio: Front-End y Base de Datos. Debilidades: Back-End e Infraestructura.
 
 ## Bitacora del Proyecto
 
