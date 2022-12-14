@@ -10,7 +10,7 @@ Una aplicación web para el alquiler temporario de automóviles, desarrollada po
 
 - Serafín Quesada (https://www.github.com/seraquesada) Fortalezas: Front-End. Intermedio: Testing y Base de Datos. Debiliadades: Back-End e Infraestructura
 
-- Luca Beati (https://www.github.com/lucabeati) Fortalezas: Front-End e Infraestructura. Intermedio: Back-End y Base de Datos. Debilidades: Testing
+- Luca Beati (https://github.com/LukaBrc) Fortalezas: Back-End e Infraestructura. Intermedio: Base de Datos, Testing. Debilidades: Front-End.
 
 - Joaquín Aldana (https://www.github.com/joacoaldana) Fortalezas: Front End.
 Intermedio: Back-End y Base de Datos. Debilidades: Testing e Infraestructura
@@ -47,27 +47,31 @@ Sabiendo nuestras issues incompletas del tercer sprint, tuvimos que ser muy prod
 - Java
 - Spring
 - Hibernate
-- API
-- Rest
+- API Rest
 - JSON
+- JWT
+- Spring Security
 
 ### Base de datos
-- MySQL
-- MySQL Workbench / DBeaver
+- AWS RDS: MySQL
+- MySQL Workbench
 
 ### Testing
-- Postman / Insomnia
+- Postman
 - Selenium
 
 ### Infraestructura
-- AWS
-- Terraform
+- AWS: RDS
+- AWS: EC2
+- AWS: S3 Buckets
+- GitLab: Pipelines
 
 ### Gestion
 - Git + Gitlab
 - Discord
 - Zoom
 - Calendly
+- Trello
 
 ## Documentación técnica del proyecto
 
