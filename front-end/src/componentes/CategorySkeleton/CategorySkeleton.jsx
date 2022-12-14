@@ -6,7 +6,7 @@ const CategorySkeleton = ({cards}) => {
     return Array(cards)
             .fill(0)
             .map((_, i) => (
-                <div className="category-skeleton" key={6}>
+                <div className="category-skeleton" key={i}>
                     <div className="top-row">
                         <Skeleton duration={4} max-width={480} height={350}/>
                     </div>

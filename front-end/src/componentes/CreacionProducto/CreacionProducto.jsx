@@ -11,9 +11,10 @@ import Col from 'react-bootstrap/Col';
 import './CreacionProducto.css';
 import { TbManualGearbox, MdAirlineSeatReclineExtra, IoSpeedometerOutline, GiGasPump, BsFillPeopleFill, MdOutlineLuggage } from 'react-icons/all'
 import Swal from 'sweetalert2';
-
+import { useAuthContext } from '../../context/AuthContext';
 
 const CreacionProducto = () => {
+
 
     const navigate = useNavigate();
     const handleReDirect = () => {
@@ -62,6 +63,14 @@ const CreacionProducto = () => {
                 setSelectDisplay2(options);
             })
     }, []);
+
+    const {loggedIn} = useAuthContext()
+    
+    useEffect(()=>{
+        if(!loggedIn){
+            return navigate("/");
+        }
+    },[loggedIn])
 
 
     const url = 'http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos'
@@ -192,7 +201,9 @@ const CreacionProducto = () => {
     }
 
     const handleSubmit = (ev) => {
+    
         ev.preventDefault();
+        ev.target.reset();
         const payload = {
             "titulo": `${modelo}`,
             "descripcion": `${descripcion}`,
@@ -207,6 +218,7 @@ const CreacionProducto = () => {
             "politicasProducto": politicas,
             "reservas": [],
         }
+
         axios.post(url, payload)
             .then(function (response) {
                 if(response.status === 200){
@@ -228,6 +240,7 @@ const CreacionProducto = () => {
                     }
                 )
         });
+        
     }
 
     return (
@@ -239,19 +252,19 @@ const CreacionProducto = () => {
 
                     <Row>
                         <Form.Group as={Col}>
-                            <input placeholder="Nombre del modelo" className="titulo" type="text" name="titulo" onChange={handleChangeTituloYDescription} />
+                            <input required placeholder="Nombre del modelo" className="titulo" type="text" name="titulo" onChange={handleChangeTituloYDescription} />
                         </Form.Group>
                         <Form.Group as={Col}>
-                            <input placeholder="Describa brevemente modelo" className="titulo" type="text" name="descripcion" onChange={handleChangeTituloYDescription} />
+                            <input required placeholder="Describa brevemente modelo" className="titulo" type="text" name="descripcion" onChange={handleChangeTituloYDescription} />
                         </Form.Group>
                     </Row>
 
                     <Row>
                         <Form.Group as={Col}>
-                            <Select placeholder="Elija una localidad..." options={selectDisplay1} onChange={(choice) => setUserChoiceCity(choice.value)} />
+                            <Select  placeholder="Elija una localidad..." options={selectDisplay1} onChange={(choice) => setUserChoiceCity(choice.value)} />
                         </Form.Group>
                         <Form.Group as={Col}>
-                            <Select placeholder="Elija una categoria..." options={selectDisplay2} onChange={(choice) => setUserChoiceCategory(choice.value)} />
+                            <Select  placeholder="Elija una categoria..." options={selectDisplay2} onChange={(choice) => setUserChoiceCategory(choice.value)} />
                         </Form.Group>
                     </Row>
 
