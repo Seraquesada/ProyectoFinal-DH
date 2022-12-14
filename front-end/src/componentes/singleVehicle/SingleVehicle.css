@@ -1,0 +1,44 @@
+.containerReserva{
+    display:grid;
+    grid-template-columns: 70% 30%;
+    margin: 0.8rem;;
+}
+.calendario{
+    z-index: -1;
+}
+
+.container-button{
+    place-self: center;
+    grid-column: 2/4;
+}
+
+@media screen and (max-width: 768px){
+
+    .containerReserva{
+        grid-template-columns: 100% !important;
+        grid-template-rows: repeat(2,auto);
+        justify-content: center!IMPORTANT;
+    }
+    
+    .container-button {
+        margin:1.2rem;
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+}
+@media screen and (max-width:510px){
+
+    .containerReserva{
+        grid-template-columns:auto;
+        grid-template-rows: repeat(2,auto);
+        justify-content: center!IMPORTANT;
+
+    }
+
+    .container-button {
+        margin:1.2rem;
+        grid-row: 2/3;
+        grid-column: 1/3;
+    }
+}

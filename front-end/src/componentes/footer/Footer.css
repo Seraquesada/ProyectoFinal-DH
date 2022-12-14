@@ -1,0 +1,48 @@
+.footer{
+    background-color:#FF9E00;
+    color:white;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    padding:5px 15px;
+    width: 100%;
+    bottom: 0;
+    z-index: -1;
+}
+.fab{
+    padding: 0px 8px;
+    font-size: 20px;
+    
+}
+
+.text{
+    align-self: center;
+    font-size:12px;   
+}
+
+.logos{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+.p-derechos{
+    margin: 0.8rem 0 0.8rem 0;
+    font-size: 0.7rem;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        font-size: 1.1rem;
+    }
+    .fab {
+        font-size: 1rem;
+    }
+}
+    
+
+@media screen and (max-width:420px){
+   .logos{
+    display: none;
+   } 
+}

@@ -1,0 +1,70 @@
+.form-reserva{
+    width: 100%;   
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #DFE4EA;
+    padding: 20px;
+}
+
+.completar-datos{
+    color: #383B58;
+}   
+.container-input{
+    width:100%
+}
+.container-input input{
+    width:90%
+}
+
+.controls-ft{
+    display: flex;
+    flex-direction: row;
+    padding: 15px 20px;
+}
+
+.controls-sn{
+    display: flex;
+    flex-direction: row;
+    padding: 15px 20px;
+}
+
+
+@media screen and (max-width: 1134px) {
+    .controls-ft{
+        padding: 15px 20px;
+        flex-direction: column;
+    }
+    .controls-sn{
+        padding: 15px 20px;
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .controls-ft{
+        padding: 15px 20px;
+        flex-direction: column;
+    }
+
+    .controls-sn{
+        padding: 15px 20px;
+        flex-direction: column;
+    }
+};
+
+@media screen and (max-width: 470px) {
+    .controls-ft{
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: row;
+    
+    }
+    
+    .controls-sn{
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: row;
+    }
+};

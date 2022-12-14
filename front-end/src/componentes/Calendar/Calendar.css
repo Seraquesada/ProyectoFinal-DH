@@ -1,0 +1,20 @@
+.calendar-container{
+    height: 100%;
+    width: 100%;
+}
+
+.rdrDateDisplayWrapper{
+    display:none;
+}
+
+.rdrMonthAndYearWrapper{
+    padding:10px
+}
+
+.rdrCalendarWrapper{
+    width: max-content;
+}
+
+.rdrMonth{
+    width: 100% !important;
+}

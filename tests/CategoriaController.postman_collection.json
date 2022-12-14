@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "2d63fbd1-a236-48c7-9c2a-162ee489dab3",
+		"name": "CategoriaController",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PostCategoria",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Post1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.titulo).to.eql(\"economico\");\r",
+							"});\r",
+							"pm.test(\"Post2\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.descripcion).to.eql(\"muy economico\");\r",
+							"});\r",
+							"pm.test(\"Post3\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.urlImagen).to.eql(\"www.imagen1.com\");\r",
+							"});\r",
+							"pm.test(\"Post4\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(1);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"titulo\" : \"economico\",\r\n\"descripcion\" : \"muy economico\",\r\n\"urlImagen\" : \"www.imagen1.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostCategoria2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Post1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.titulo).to.eql(\"premium\");\r",
+							"});\r",
+							"pm.test(\"Post2\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.descripcion).to.eql(\"muy premium\");\r",
+							"});\r",
+							"pm.test(\"Post3\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.urlImagen).to.eql(\"www.imagen2.com\");\r",
+							"});\r",
+							"pm.test(\"Post4\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(2);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"titulo\" : \"premium\",\r\n\"descripcion\" : \"muy premium\",\r\n\"urlImagen\" : \"www.imagen2.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get by ID1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.titulo).to.eql(\"economico\");\r",
+							"});\r",
+							"pm.test(\"Get by ID2\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.descripcion).to.eql(\"muy economico\");\r",
+							"});\r",
+							"pm.test(\"Get by ID3\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.urlImagen).to.eql(\"www.imagen1.com\");\r",
+							"});\r",
+							"pm.test(\"Get by ID4\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(1);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categorias/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutCategoria",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Put1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.titulo).to.eql(\"electrico\");\r",
+							"});\r",
+							"pm.test(\"Put2\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.descripcion).to.eql(\"muy electrico\");\r",
+							"});\r",
+							"pm.test(\"Put3\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.urlImagen).to.eql(\"www.imagen2.com\");\r",
+							"});\r",
+							"pm.test(\"Put4\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(2);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\" : \"2\" ,\r\n\"titulo\" : \"electrico\",\r\n\"descripcion\" : \"muy electrico\",\r\n\"urlImagen\" : \"www.imagen2.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCategoria",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(\"Se eliminó la categoria con id=1\");\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categorias/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

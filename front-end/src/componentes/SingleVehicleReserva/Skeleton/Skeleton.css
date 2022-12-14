@@ -1,0 +1,123 @@
+
+.container-reserva-skeleton{
+    display: grid;
+    grid-template-columns:60% minmax(250px,1fr);
+    margin: 1.4rem;
+    gap: 40px;
+    padding:20px
+}
+
+.booking-body-skeleton{
+    display: grid;
+    grid-template-rows: repeat(3,auto);
+    row-gap: 40px;
+}
+
+.datosUser--skeleton{
+    grid-row: 1/2;
+}
+
+.calendario-container-skeleton{
+    grid-row: 2/3;
+}
+
+.container-horariollegada-skeleton{
+    grid-row: 3/3;
+}
+.horariollegada{
+    padding:20px;
+    border-radius:8px;
+    background-color:#ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.container-booking-details-skeletons{
+    place-self:start;
+    margin-top: 40px;
+    width: 100%
+}
+.calendarElement{
+    display: flex;
+    align-items: center;
+    width: 100% !important;
+    border-radius: .5rem;
+    position: relative !important;
+}
+
+.infoCard-skeleton{
+    height: 100% !important;
+    padding: 20px  !important;
+    border-radius: 8px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+    width: 100%
+}
+
+.info{
+    height: 100%
+}
+
+.b{
+    width: 100%;
+}
+
+@media screen and (max-width: 768px){
+    .container-reserva-skeleton {
+        grid-template-columns:100%;
+        grid-template-rows: repeat(4,auto);
+        place-items: center;
+        row-gap: 5px;
+    }
+    
+    .booking-body-skeleton{
+        width: 100%;
+    }
+
+    .datosUser-skeleton{
+        grid-row: 1/2;
+        padding:.5rem;
+    }
+    
+    .calendario {
+        grid-row: 2/3;
+        padding:.5rem;
+    }
+    
+    .container-booking-details-skeletons {
+        grid-row: 4/5 ;
+
+    }
+}
+
+@media screen and (max-width:510px){
+    .container-reserva-skeleton  {
+        grid-template-columns:100%;
+        grid-template-rows: repeat(4,auto);
+    }
+    .datosUser-skeleton{
+        grid-row: 1/2;
+        margin:.2rem;
+        padding:.5rem;
+    }
+    
+    .calendario {
+        grid-row: 2/3;
+        margin:.2rem;
+        padding:.5rem;
+        width: 100%;
+    }
+    
+    .bookingDetails {
+        grid-column: 1/2;
+        grid-row: 4/5 ;
+        place-self: center;
+        height: 100%;
+        margin:20px
+    }
+    
+    .horariollegada{
+        grid-row:3/4;
+    }
+    .booking-body-skeleton{
+        width: 100%;
+    }
+}

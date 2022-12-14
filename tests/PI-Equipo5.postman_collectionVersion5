@@ -1,0 +1,1142 @@
+{
+	"info": {
+		"_postman_id": "40dc74a8-0090-4ef4-a8ac-102a279a7ed4",
+		"name": "PI-Equipo5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21574757"
+	},
+	"item": [
+		{
+			"name": "PostCategoria",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.titulo).to.eql(\"economico\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"titulo\" : \"no economico\",\r\n\"descripcion\" : \"muy economico\",\r\n\"urlImagen\" : \"www.imagen1.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Categoria By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"categoriaporID\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(5);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/categorias/5",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Categoria All",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Categoria",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"id\":5,\r\n        \"titulo\": \"algo economico\",\r\n        \"descripcion\": \"modificado\",\r\n        \"urlImagen\": \"www.imagen1.com\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Categoria",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/categorias/5",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar all ciudades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/ciudades",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"ciudades"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar productos filtro ciudad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?ciudad=1",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "ciudad",
+							"value": "1"
+						},
+						{
+							"key": "categoria",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar productos filtro ciudad LOCAL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/productos/filter?ciudad=&categoria=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "ciudad",
+							"value": ""
+						},
+						{
+							"key": "categoria",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar productos random",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar productos all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"filter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar productos filtro categoria  y ciudad",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/filter?categoria=3&ciudad=2",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "categoria",
+							"value": "3"
+						},
+						{
+							"key": "ciudad",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar producto por id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/31",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Producto 1 img 1 cAR",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"titulo\": \"prueba 1 imagen y 1 caract\",\r\n    \"descripcion\": \"autazo\",\r\n    \"ciudad\": {\r\n        \"id\": 3\r\n       \r\n    },\r\n    \"categoria\": {\r\n        \"id\": 4\r\n    },\r\n    \"imagenes\": [\r\n        \r\n        {\r\n            \r\n            \"titulo\": \"Interior - trasero\",\r\n            \"url\": \"https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/interior_rear.jpg\"\r\n        }\r\n        \r\n    ],\r\n    \"caracteristicas\": [\r\n         {\r\n            \r\n            \"nombre\": \"Transmisión: \",\r\n            \"valor\": \"Automática\",\r\n            \"icono\": 2\r\n        }\r\n    ],\r\n    \"politicasProducto\": {\r\n        \r\n        \"normasTitulo\": \"normas\",\r\n        \"normasDescripcion\": \"portarse bien\",\r\n        \"seguridadTitulo\": \"seguridad\",\r\n        \"seguridadDescripcion\": \"tener cuidado\",\r\n        \"cancelacionTitulo\": \"cancelacion\",\r\n        \"cancelacionDescripcion\": \"te va a devolver el dinero su p*ta madre\"\r\n    },\r\n    \"reservas\":[]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Producto 1 img 2 cAR",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"titulo\": \"prueba 1 imagen y 2 caract\",\r\n    \"descripcion\": \"autazo\",\r\n    \"ciudad\": {\r\n        \"id\": 3\r\n       \r\n    },\r\n    \"categoria\": {\r\n        \"id\": 4\r\n    },\r\n    \"imagenes\": [\r\n        \r\n        {\r\n            \r\n            \"titulo\": \"Interior - trasero\",\r\n            \"url\": \"https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/interior_rear.jpg\"\r\n        }\r\n        \r\n    ],\r\n    \"caracteristicas\": [\r\n         {\r\n            \r\n            \"nombre\": \"Transmisión: \",\r\n            \"valor\": \"Automática\",\r\n            \"icono\": 2\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"Transmisión: \",\r\n            \"valor\": \"Automática\",\r\n            \"icono\": 1}\r\n    ],\r\n    \"politicasProducto\": {\r\n        \r\n        \"normasTitulo\": \"normas\",\r\n        \"normasDescripcion\": \"portarse bien\",\r\n        \"seguridadTitulo\": \"seguridad\",\r\n        \"seguridadDescripcion\": \"tener cuidado\",\r\n        \"cancelacionTitulo\": \"cancelacion\",\r\n        \"cancelacionDescripcion\": \"te va a devolver el dinero su p*ta madre\"\r\n    },\r\n    \"reservas\":[]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Producto 1 img 6 cAR",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"titulo\": \"prueba 1 imagen y 6 caract tris\",\r\n    \"descripcion\": \"iconos\",\r\n    \"ciudad\": {\r\n        \"id\": 3\r\n       \r\n    },\r\n    \"categoria\": {\r\n        \"id\": 4\r\n    },\r\n    \"imagenes\": [\r\n        \r\n        {\r\n            \r\n            \"titulo\": \"Interior - trasero\",\r\n            \"url\": \"https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/interior_rear.jpg\"\r\n        }\r\n        \r\n    ],\r\n    \"caracteristicas\": [\r\n         {\r\n            \r\n            \"nombre\": \"Transmisión: \",\r\n            \"valor\": \"icono 0\",\r\n            \"icono\": 0\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"otra: \",\r\n            \"valor\": \"icono 2\",\r\n            \"icono\": 2\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"xxx: \",\r\n            \"valor\": \"icono 3\",\r\n            \"icono\": 3\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"aaa: \",\r\n            \"valor\": \"icono 4\",\r\n            \"icono\": 4\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"yyy: \",\r\n            \"valor\": \"icono 5\",\r\n            \"icono\": 5\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"rrrmisión: \",\r\n            \"valor\": \"icono 1\",\r\n            \"icono\": 1\r\n        }\r\n    ],\r\n    \"politicasProducto\": {\r\n        \r\n        \"normasTitulo\": \"normas\",\r\n        \"normasDescripcion\": \"portarse bien\",\r\n        \"seguridadTitulo\": \"seguridad\",\r\n        \"seguridadDescripcion\": \"tener cuidado\",\r\n        \"cancelacionTitulo\": \"cancelacion\",\r\n        \"cancelacionDescripcion\": \"te va a devolver el dinero su p*ta madre\"\r\n    },\r\n    \"reservas\":[]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Producto 1 img 6 cAR sin titulo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"titulo\": \"\",\r\n    \"descripcion\": \"autazo\",\r\n    \"ciudad\": {\r\n        \"id\": 3\r\n       \r\n    },\r\n    \"categoria\": {\r\n        \"id\": 4\r\n    },\r\n    \"imagenes\": [\r\n        \r\n        {\r\n            \r\n            \"titulo\": \"Interior - trasero\",\r\n            \"url\": \"https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/interior_rear.jpg\"\r\n        }\r\n        \r\n    ],\r\n    \"caracteristicas\": [\r\n         {\r\n            \r\n            \"nombre\": \"Transmisión: \",\r\n            \"valor\": \"Automática\",\r\n            \"icono\": 2\r\n        }\r\n    ],\r\n    \"politicasProducto\": {\r\n        \r\n        \"normasTitulo\": \"normas\",\r\n        \"normasDescripcion\": \"portarse bien\",\r\n        \"seguridadTitulo\": \"seguridad\",\r\n        \"seguridadDescripcion\": \"tener cuidado\",\r\n        \"cancelacionTitulo\": \"cancelacion\",\r\n        \"cancelacionDescripcion\": \"te va a devolver el dinero su p*ta madre\"\r\n    },\r\n    \"reservas\":[]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Producto 1 img 6 cAR sin Categoria",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"titulo\": \"sin categoria\",\r\n    \"descripcion\": \"autazo\",\r\n    \"ciudad\": {\r\n        \"id\": 3\r\n       \r\n    },\r\n    \r\n    \"imagenes\": [\r\n        \r\n        {\r\n            \r\n            \"titulo\": \"Interior - trasero\",\r\n            \"url\": \"https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/interior_rear.jpg\"\r\n        }\r\n        \r\n    ],\r\n    \"caracteristicas\": [\r\n         {\r\n            \r\n            \"nombre\": \"Transmisión: \",\r\n            \"valor\": \"Automática\",\r\n            \"icono\": 2\r\n        }\r\n    ],\r\n    \"politicasProducto\": {\r\n        \r\n        \"normasTitulo\": \"normas\",\r\n        \"normasDescripcion\": \"portarse bien\",\r\n        \"seguridadTitulo\": \"seguridad\",\r\n        \"seguridadDescripcion\": \"tener cuidado\",\r\n        \"cancelacionTitulo\": \"cancelacion\",\r\n        \"cancelacionDescripcion\": \"te va a devolver el dinero su p*ta madre\"\r\n    },\r\n    \"reservas\":[]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Producto poca info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"titulo\": \"poca info\",\r\n    \"descripcion\":\"\",\r\n    \"ciudad\": {\r\n        \"id\": 3\r\n       \r\n    },\r\n    \"categoria\": {\r\n        \"id\": 4\r\n    },\r\n    \"imagenes\": [\r\n        {\r\n            \r\n            \"titulo\": \"Interior - trasero\",\r\n            \"url\": \"https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/interior_rear.jpg\"\r\n        }],\r\n    \"caracteristicas\": [{\r\n            \r\n            \"nombre\": \"Transmisión: \",\r\n            \"valor\": \"icono 0\",\r\n            \"icono\": 0\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"otra: \",\r\n            \"valor\": \"icono 2\",\r\n            \"icono\": 2\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"xxx: \",\r\n            \"valor\": \"icono 3\",\r\n            \"icono\": 3\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"aaa: \",\r\n            \"valor\": \"icono 4\",\r\n            \"icono\": 4\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"yyy: \",\r\n            \"valor\": \"icono 5\",\r\n            \"icono\": 5\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"rrrmisión: \",\r\n            \"valor\": \"icono 1\",\r\n            \"icono\": 1\r\n        }],\r\n    \"politicasProducto\": {\r\n        \r\n        \"normasTitulo\": \"normas\",\r\n        \"normasDescripcion\": \"\",\r\n        \"seguridadTitulo\": \"seguridad\",\r\n        \"seguridadDescripcion\": \"\",\r\n        \"cancelacionTitulo\": \"cancelacion\",\r\n        \"cancelacionDescripcion\": \"\"\r\n    },\r\n    \"reservas\":[]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Producto con 1 imagen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"titulo\": \"el fitobol\",\r\n    \"descripcion\": \"autazo\",\r\n    \"ciudad\": {\r\n        \"id\": 3\r\n       \r\n    },\r\n    \"categoria\": {\r\n        \"id\": 4\r\n    },\r\n    \"imagenes\": [],\r\n    \"caracteristicas\": [],\r\n    \"politicasProducto\": {\r\n        \r\n        \"normasTitulo\": \"normas\",\r\n        \"normasDescripcion\": \"portarse bien\",\r\n        \"seguridadTitulo\": \"seguridad\",\r\n        \"seguridadDescripcion\": \"tener cuidado\",\r\n        \"cancelacionTitulo\": \"cancelacion\",\r\n        \"cancelacionDescripcion\": \"te va a devolver el dinero su p*ta madre\"\r\n    },\r\n    \"reservas\":[]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Producto sin categoria",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"titulo\": \"el fitobol\",\r\n    \"descripcion\": \"autazo\",\r\n    \"ciudad\": {\r\n        \"id\": 3\r\n       \r\n    },\r\n  \r\n    \"imagenes\": [],\r\n    \"caracteristicas\": [],\r\n    \"politicasProducto\": {\r\n        \r\n        \"normasTitulo\": \"normas\",\r\n        \"normasDescripcion\": \"portarse bien\",\r\n        \"seguridadTitulo\": \"seguridad\",\r\n        \"seguridadDescripcion\": \"tener cuidado\",\r\n        \"cancelacionTitulo\": \"cancelacion\",\r\n        \"cancelacionDescripcion\": \"te va a devolver el dinero su p*ta madre\"\r\n    },\r\n    \"reservas\":[]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Producto sin ciudad",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"titulo\": \"el fitobol\",\r\n    \"descripcion\": \"autazo\",\r\n    \r\n    \"categoria\": {\r\n        \"id\": 4\r\n    },\r\n    \"imagenes\": [],\r\n    \"caracteristicas\": [],\r\n    \"politicasProducto\": {\r\n        \r\n        \"normasTitulo\": \"normas\",\r\n        \"normasDescripcion\": \"portarse bien\",\r\n        \"seguridadTitulo\": \"seguridad\",\r\n        \"seguridadDescripcion\": \"tener cuidado\",\r\n        \"cancelacionTitulo\": \"cancelacion\",\r\n        \"cancelacionDescripcion\": \"te va a devolver el dinero su p*ta madre\"\r\n    },\r\n    \"reservas\":[]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Producto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaWNvLm1vbnRlcm9zYWJlbGlAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJNb250ZXJvIiwiaWQiOjEsImV4cCI6MTY3MDg1OTU1NCwibm9tYnJlIjoiTmljb2xhcyIsImlhdCI6MTY3MDg1MzQ5NCwicm9sIjoiUk9MRV9BRE1JTiJ9.2rpv59xljyW7e_W6JiiLIHnZN-ZtooMSWjnAEib9whE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 31,\r\n    \"titulo\": \"fiat\",\r\n    \"descripcion\": \"modifico\",\r\n    \"ciudad\": {\r\n        \"id\": 3\r\n        \r\n    },\r\n    \"categoria\": {\r\n        \"id\": 2,\r\n        \"titulo\": \"Sport Utility Vehicle\",\r\n        \"descripcion\": \"Los SUVs  son  para uso en caminos mantenidos, ya sean pavimentados, de grava o de tierra. Amplios y con baul integrado, ideales para aventureros!\",\r\n        \"urlImagen\": \"https://imageio.forbes.com/specials-images/imageserve/5d389da195e0230008f6724a/2020-Ford-Explorer/0x0.jpg?format=jpg&crop=4560,2565,x430,y658,safe&width=960\"\r\n    },\r\n    \"imagenes\": [ \r\n        {\r\n            \r\n            \"titulo\": \"Interior - trasero\",\r\n            \"url\": \"https://grupo5imagenes.s3.us-east-2.amazonaws.com/ford_mustang/interior_rear.jpg\"\r\n        }],\r\n    \"caracteristicas\": [{\r\n            \r\n            \"nombre\": \"Transmisión: \",\r\n            \"valor\": \"icono 0\",\r\n            \"icono\": 0\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"otra: \",\r\n            \"valor\": \"icono 2\",\r\n            \"icono\": 2\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"xxx: \",\r\n            \"valor\": \"icono 3\",\r\n            \"icono\": 3\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"aaa: \",\r\n            \"valor\": \"icono 4\",\r\n            \"icono\": 4\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"yyy: \",\r\n            \"valor\": \"icono 5\",\r\n            \"icono\": 5\r\n        },\r\n        {\r\n            \r\n            \"nombre\": \"rrrmisión: \",\r\n            \"valor\": \"icono 1\",\r\n            \"icono\": 1\r\n        }],\r\n    \"politicasProducto\": {\r\n        \"id\": 31,\r\n        \"normasTitulo\": \"normas\",\r\n        \"normasDescripcion\": \"portarse bien\",\r\n        \"seguridadTitulo\": \"seguridad\",\r\n        \"seguridadDescripcion\": \"tener cuidado\",\r\n        \"cancelacionTitulo\": \"cancelacion\",\r\n        \"cancelacionDescripcion\": \"te va a devolver el dinero \"\r\n    },\r\n    \"reservas\":[]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Producto por id LOCAL",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/productos/31",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Producto por id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/productos/31",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reserva by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaWNvLm1vbnRlcm9zYWJlbGlAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJNb250ZXJvIiwiaWQiOjEsImV4cCI6MTY2OTQyMjI5Mywibm9tYnJlIjoiTmljb2xhcyIsImlhdCI6MTY2OTQxNjIzM30.f1KQ1ekxcBZf358dPizt1ynx9e7K9U-o9wOzF-BRPnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas/1",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"reservas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear reserva",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaWNvLm1vbnRlcm9zYWJlbGlAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJNb250ZXJvIiwiaWQiOjEsImV4cCI6MTY3MDg2MzIxNiwibm9tYnJlIjoiTmljb2xhcyIsImlhdCI6MTY3MDg1NzE1Niwicm9sIjoiUk9MRV9BRE1JTiJ9.-pYFhXacpd_M6f2-UGiwntHIQu0-_1Dch3BUnFe0MTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"horaInicio\":\"20:40:10\",\r\n\"fechaInicio\":\"2022-12-05\",\r\n\"fechaFinalizacion\": \"2022-12-10\",\r\n\"producto\":{\"id\":\"3\"},\r\n\"usuario\":{\"id\":\"1\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear reserva sin Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"horaInicio\":\"20:40:10\",\r\n\"fechaInicio\":\"2022-01-04\",\r\n\"fechaFinalizacion\": \"2022-02-09\",\r\n\"producto\":{\"id\":\"1\"},\r\n\"usuario\":{\"id\":\"2\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar reservas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaWNvLm1vbnRlcm9zYWJlbGlAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJNb250ZXJvIiwiaWQiOjEsImV4cCI6MTY3MDg2MzIxNiwibm9tYnJlIjoiTmljb2xhcyIsImlhdCI6MTY3MDg1NzE1Niwicm9sIjoiUk9MRV9BRE1JTiJ9.-pYFhXacpd_M6f2-UGiwntHIQu0-_1Dch3BUnFe0MTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar reservas por Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaWNvLm1vbnRlcm9zYWJlbGlAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJNb250ZXJvIiwiaWQiOjEsImV4cCI6MTY3MDg2MzIxNiwibm9tYnJlIjoiTmljb2xhcyIsImlhdCI6MTY3MDg1NzE1Niwicm9sIjoiUk9MRV9BRE1JTiJ9.-pYFhXacpd_M6f2-UGiwntHIQu0-_1Dch3BUnFe0MTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas/1",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"reservas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar reservas por Id producto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaWNvLm1vbnRlcm9zYWJlbGlAZ21haWwuY29tIiwiYXBlbGxpZG8iOiJNb250ZXJvIiwiaWQiOjEsImV4cCI6MTY3MDg2MzIxNiwibm9tYnJlIjoiTmljb2xhcyIsImlhdCI6MTY3MDg1NzE1Niwicm9sIjoiUk9MRV9BRE1JTiJ9.-pYFhXacpd_M6f2-UGiwntHIQu0-_1Dch3BUnFe0MTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"nico.monterosabeli@gmail.com\",\r\n\"password\":\"digital\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/reservas/producto/1",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"reservas",
+						"producto",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Usuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"nico.monterosabeli@gmail.com\",\r\n\"password\":\"digital\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/usuarios/authenticate",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrar usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"nombre\": \"nuevo\",\r\n    \"apellido\": \"usuario\",\r\n    \"mail\": \"mail2@gmail.com\",\r\n    \"password\": \"$2a$10$27WJV3a2KDwDkMk.mZECC.omx/2L43qAlwyWxP8q6sYhNIHPSgABC\",\r\n    \"enabled\": true,\r\n    \"username\": null,\r\n    \"accountNonExpired\": true,\r\n    \"accountNonLocked\": true,\r\n    \"credentialsNonExpired\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-133-152-253.us-east-2.compute.amazonaws.com:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"ec2-3-133-152-253",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

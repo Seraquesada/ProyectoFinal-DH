@@ -1,0 +1,70 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    padding:1%;
+
+}
+.right-header-login{
+    display: flex;
+    align-items: center;
+    width: 35vw;
+    justify-content: end;
+    gap:10px;
+    margin-right: 20px 
+}
+.right-header{
+    display: flex;
+    align-items: center;
+    width: 35vw;
+    justify-content: end;
+    gap:10px;
+    margin-right: 20px 
+}
+
+.left-header{
+    display: flex;
+    align-items: center;
+    width: 65vw;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+input .form{
+    width:max-content;
+    border-radius: 8px;
+    text-align:center
+}
+
+img#logo{
+    display: flex;
+    width: 100px;
+    border-radius: 8px;
+    margin-right: 0.8rem;
+}
+.hamburger-react{
+    display:none;
+}
+div#username{
+    background-color: black;
+    display: flex;
+    font-size: 2rem;
+    padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+}
+.loggedUserName{
+    color: white;
+    margin: 0;
+}
+
+@media screen and (max-width: 705px) {
+    .right-header {
+        display: none;
+    }
+    .right-header-login{
+        display: none;
+    }
+}
